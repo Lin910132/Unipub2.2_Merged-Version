@@ -1,0 +1,149 @@
+/* Alert */
+"Alert" = "Alert";
+
+/* Camera */
+"Camera" = "Camera";
+
+/* Cancel */
+"Cancel" = "Cancel";
+
+/* Click to load more */
+"Click to load more" = "Click to load more";
+
+/* Could Not Send Email */
+"Could Not Send Email" = "Could Not Send Email";
+
+/* Detail */
+"Detail" = "Detail";
+
+/* Failed */
+"Failed" = "失败";
+
+/* Nick Name Clicked in YRJokeCell2.swift */
+"Hi, I'm interest in your post in Whoop, that" = "";
+
+/* Nick Name Clicked */
+"I'm interest in your post in Whoop, that " = "";
+
+/* Loading */
+"Loading" = "Loading";
+
+/* Loading Conmpleted */
+"Loading Completed" = "Loading Completed";
+
+/* Loading Failed */
+"Loading Failed" = "Loading Failed";
+
+/* My Favorite */
+"My Favorite" = "My Favorite";
+
+/* Nearby */
+"Near By" = "Near By";
+
+/* Network error! */
+"Network error!" = "Network error!";
+
+/* No */
+"No" = "No";
+
+/* No Network Access */
+"No Network Access" = "No Network Access";
+
+/* No more Comments T_T */
+"No more Comments T_T" = "No more Comments T_T";
+
+/* OK */
+"OK" = "OK";
+
+/* Opps
+   Surprised to occurd */
+"Opps" = "Opps";
+
+/* Photo */
+"Photo" = "Photo";
+
+/* Photo Library */
+"Photo Library" = "Photo Library";
+
+/* Pull to Load More */
+"Pull to Load More" = "Pull to Load More";
+
+/* Refresh Failed */
+"Refresh Failed" = "Refresh Failed";
+
+/* release to refresh */
+"Release to refresh" = "Release to refresh";
+
+/* Reloading */
+"Reloading" = "Reloading";
+
+/* Several */
+"Replies" = "Replies";
+
+/* One Reply */
+"Reply" = "Reply";
+
+/* Report */
+"Report" = "Report";
+
+/* Report success */
+"Report success" = "Report success";
+
+/* Search your School */
+"Search your School" = "Search your School";
+
+/* Selected */
+"Selected" = "Selected";
+
+/* The Content should not be empty */
+"The Content should not be empty" = "The Content should not be empty";
+
+/* Length Error */
+"The max count of photos can not be more than 6" = "The max count of photos can not be more than 6";
+
+/* Checking Report */
+"This post violate Unipub's regulation!" = "This post violate Unipub's regulation!";
+
+/* Unknown */
+"Unknown" = "";
+
+/* Warning */
+"WARNING" = "WARNING";
+
+/* Write something */
+"Write something" = "Write something";
+
+/* Yes */
+"Yes" = "Yes";
+
+/* Not Emailed Response */
+"Your device could not send e-mail.  Please check e-mail configuration and try again." = "你的装置无法发送邮件，请检查邮箱设置";
+"Back" = "Back";
+"Settings" = "Settings";
+"Profile" = "Profile";
+"New" = "New";
+"Favorite" = "Favorite";
+"Hot" = "Hot";
+"All Time Hot" = "All Time Hot";
+"Explore"="Explore";
+"Language Setting" = "Language Setting";
+//Setting Page
+"Voting" = "Voting";
+"Left" = "Left";
+"Right" = "Right";
+"Language" = "Language";
+"Privacy Policy" = "Privacy Policy";
+"Rules & Service" = "Rules & Service";
+"Terms of Serivce" = "Terms of Service";
+// Profile Page
+"Profile" = "Profile";
+"My Posts" = "My Posts";
+"My Replies" = "My Replies";
+"Settings" = "Settings";
+// New Post page
+"Post" = "Post";
+"Back" = "Back";
+"Email or Phone Number" = "Email or Phone Number";
+//Likes Page
+"Likes" = "Likes";
+"Write some comments" = "Write some comments";

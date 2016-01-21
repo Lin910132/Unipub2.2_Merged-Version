@@ -1,0 +1,149 @@
+/* Alert */
+"Alert" = "警告";
+
+/* Camera */
+"Camera" = "相机";
+
+/* Cancel */
+"Cancel" = "取消";
+
+/* Click to load more */
+"Click to load more" = "点击加载更多";
+
+/* Could Not Send Email */
+"Could Not Send Email" = "无法发送电子邮件";
+
+/* Detail */
+"Detail" = "详情";
+
+/* Failed */
+"Failed" = "失败";
+
+/* Nick Name Clicked in YRJokeCell2.swift */
+"Hi, I'm interest in your post in Whoop, that" = "Hi, I'm interest in your post in Whoop, that";
+
+/* Nick Name Clicked */
+"I'm interest in your post in Whoop, that " = "I'm interest in your post in Whoop, that ";
+
+/* Loading */
+"Loading" = "更新";
+
+/* Loading Conmpleted */
+"Loading Completed" = "读取成功";
+
+/* Loading Failed */
+"Loading Failed" = "读取失败";
+
+/* My Favorite */
+"My Favorite" = "我的圈子";
+
+/* Nearby */
+"Near By" = "附近的圈子";
+
+/* Network error! */
+"Network error!" = "网络错误";
+
+/* No */
+"No" = "不";
+
+/* No Network Access */
+"No Network Access" = "无网络接入";
+
+/* No more Comments T_T */
+"No more Comments T_T" = "没有更多的内容 T_T";
+
+/* OK */
+"OK" = "好";
+
+/* Opps
+   Surprised to occurd */
+"Opps" = "Opps";
+
+/* Photo */
+"Photo" = "照片";
+
+/* Photo Library */
+"Photo Library" = "相册";
+
+/* Pull to Load More */
+"Pull to Load More" = "下拉刷新";
+
+/* Refresh Failed */
+"Refresh Failed" = "刷新失败";
+
+/* release to refresh */
+"Release to refresh" = "发布刷新";
+
+/* Reloading */
+"Reloading" = "更新";
+
+/* Several */
+"Replies" = "回复";
+
+/* One Reply */
+"Reply" = "回复";
+
+/* Report */
+"Report" = "举报";
+
+/* Report success */
+"Report success" = "举报成功";
+
+/* Search your School */
+"Search your School" = "搜寻学校";
+
+/* Selected */
+"Selected" = "选择";
+
+/* The Content should not be empty */
+"The Content should not be empty" = "不能写空白内容，多说点吧！";
+
+/* Length Error */
+"The max count of photos can not be more than 6" = "照片只可以上传6张";
+
+/* Checking Report */
+"This post violate Unipub's regulation!" = "此贴违反Unipub规则！";
+
+/* Unknown */
+"Unknown" = "";
+
+/* Warning */
+"WARNING" = "警告";
+
+/* Write something */
+"Write something" = "说点什么逗的";
+
+/* Yes */
+"Yes" = "是";
+
+/* Not Emailed Response */
+"Your device could not send e-mail.  Please check e-mail configuration and try again." = "你的装置无法发送邮件，请检查邮箱设置";
+"Back" = "返回";
+"Settings" = "设置";
+"Profile" = "关于我";
+"New" = "最新";
+"Favorite" = "收藏";
+"Hot" = "最火";
+"All Time Hot" = "历史最火";
+"Explore"="探索";
+"Language Setting" = "语言设置";
+//Setting Page
+"Voting" = "投票";
+"Left" = "左";
+"Right" = "右";
+"Language" = "语言";
+"Privacy Policy" = "隐私与安全";
+"Rules & Info" = "软件条例与规范";
+"Terms of Service" = "关于UniPub";
+// Profile Page
+"Profile" = "关于我";
+"My Posts" = "我的信息";
+"My Replies" = "我的回复";
+"Settings" = "设置";
+// New Post page
+"Post" = "信息";
+"Back" = "返回";
+"Email or Phone Number" = "邮箱或电话";
+//Likes Page
+"Likes" = "赞";
+"Write some comments" = "说点什么有趣的";

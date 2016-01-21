@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="9531" systemVersion="15C50" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="YRSendComment" customModule="UniPub" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="322" height="50"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" minimumFontSize="17" clearButtonMode="always" translatesAutoresizingMaskIntoConstraints="NO" id="aKf-hM-ia9">
+                    <rect key="frame" x="20" y="10" width="254" height="30"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                    <textInputTraits key="textInputTraits" returnKeyType="done"/>
+                </textField>
+                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NMT-7p-GW8">
+                    <rect key="frame" x="282" y="9" width="32" height="31"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="32" id="pfY-fl-AOJ"/>
+                    </constraints>
+                    <state key="normal" image="sendHighlight">
+                        <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
+                    <connections>
+                        <action selector="sendBtnClicked:" destination="iN0-l3-epB" eventType="touchUpInside" id="dLt-46-z8a"/>
+                    </connections>
+                </button>
+            </subviews>
+            <color key="backgroundColor" red="0.95472301136363635" green="0.95472301136363635" blue="0.95472301136363635" alpha="1" colorSpace="calibratedRGB"/>
+            <constraints>
+                <constraint firstItem="NMT-7p-GW8" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="9" id="ANe-RP-wl9"/>
+                <constraint firstItem="aKf-hM-ia9" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="20" symbolic="YES" id="AU5-Zo-vid"/>
+                <constraint firstAttribute="bottom" secondItem="NMT-7p-GW8" secondAttribute="bottom" constant="10" id="P1m-OH-04g"/>
+                <constraint firstItem="aKf-hM-ia9" firstAttribute="bottom" secondItem="NMT-7p-GW8" secondAttribute="bottom" id="TIE-XZ-ldU"/>
+                <constraint firstItem="NMT-7p-GW8" firstAttribute="leading" secondItem="aKf-hM-ia9" secondAttribute="trailing" constant="8" symbolic="YES" id="dvL-4j-pRA"/>
+                <constraint firstAttribute="trailing" secondItem="NMT-7p-GW8" secondAttribute="trailing" constant="8" id="zce-J7-Zo4"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <connections>
+                <outlet property="commentText" destination="aKf-hM-ia9" id="UM5-Bd-xCR"/>
+                <outlet property="sendButton" destination="NMT-7p-GW8" id="TH8-b6-wjp"/>
+            </connections>
+            <point key="canvasLocation" x="338" y="269"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="sendHighlight" width="120" height="120"/>
+    </resources>
+</document>

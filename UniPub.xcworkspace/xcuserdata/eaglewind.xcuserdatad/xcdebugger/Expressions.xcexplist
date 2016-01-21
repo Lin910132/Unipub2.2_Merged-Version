@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<VariablesViewState
+   version = "1.0">
+   <ContextStates>
+      <ContextState
+         contextName = "SettingViewController.viewWillAppear(Bool) -&gt; ():SettingViewController.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "self.navigationItem.leftBarButtonItem?.title">
+            </PersistentString>
+            <PersistentString
+               value = "self.navigationItem.title">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+      <ContextState
+         contextName = "YRNewPostViewController.cancelButtonClicked(AnyObject) -&gt; ():YRNewPostViewController.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "self.schoolId">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
+   </ContextStates>
+</VariablesViewState>

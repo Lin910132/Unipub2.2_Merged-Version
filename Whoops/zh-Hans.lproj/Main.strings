@@ -1,0 +1,117 @@
+
+/* Class = "UILabel"; text = "我的回复"; ObjectID = "0sg-Lf-Z05"; */
+"0sg-Lf-Z05.text" = "我的回复";
+
+/* Class = "UINavigationItem"; title = "UniPub"; ObjectID = "1W5-vV-9HW"; */
+"1W5-vV-9HW.title" = "UniPub";
+
+/* Class = "UIButton"; normalTitle = "历史最火"; ObjectID = "2Af-KH-8Pe"; */
+"2Af-KH-8Pe.normalTitle" = "历史最火";
+
+/* Class = "UILabel"; text = "投票"; ObjectID = "2g1-iR-1fi"; */
+"2g1-iR-1fi.text" = "投票";
+
+/* Class = "UILabel"; text = "详情"; ObjectID = "37M-yD-vEG"; */
+"37M-yD-vEG.text" = "详情";
+
+/* Class = "UILabel"; text = "我的信息"; ObjectID = "42A-tV-pzu"; */
+"42A-tV-pzu.text" = "我的信息";
+
+/* Class = "UIButton"; normalTitle = "发送"; ObjectID = "4Y8-SM-Bb1"; */
+"4Y8-SM-Bb1.normalTitle" = "发送";
+
+/* Class = "UISegmentedControl"; 88h-rT-oyG.segmentTitles[0] = "左"; ObjectID = "88h-rT-oyG"; */
+"88h-rT-oyG.segmentTitles[0]" = "左";
+
+/* Class = "UISegmentedControl"; 88h-rT-oyG.segmentTitles[1] = "右"; ObjectID = "88h-rT-oyG"; */
+"88h-rT-oyG.segmentTitles[1]" = "右";
+
+/* Class = "UILabel"; text = "关于UniPub"; ObjectID = "8VM-t2-3Be"; */
+"8VM-t2-3Be.text" = "关于UniPub";
+
+/* Class = "UINavigationItem"; title = "语言设置"; ObjectID = "98s-Ab-M3C"; */
+"98s-Ab-M3C.title" = "语言设置";
+
+/* Class = "UIViewController"; title = "主页"; ObjectID = "9pv-A4-QxB"; */
+"9pv-A4-QxB.title" = "主页";
+
+/* Class = "UILabel"; text = "标题"; ObjectID = "Gbn-ej-KuY"; */
+"Gbn-ej-KuY.text" = "标题";
+
+/* Class = "UINavigationItem"; title = "信息"; ObjectID = "ILZ-GR-WW9"; */
+"ILZ-GR-WW9.title" = "信息";
+
+/* Class = "UITableViewController"; title = "我的回复"; ObjectID = "Lvh-BA-oUc"; */
+"Lvh-BA-oUc.title" = "我的回复";
+
+/* Class = "UINavigationItem"; title = "赞"; ObjectID = "O2P-Xs-fXX"; */
+"O2P-Xs-fXX.title" = "赞";
+
+/* Class = "UILabel"; text = "回复"; ObjectID = "OzR-yH-1sS"; */
+"OzR-yH-1sS.text" = "回复";
+
+/* Class = "UINavigationItem"; title = "关于UniPub"; ObjectID = "PEh-Wk-Nl1"; */
+"PEh-Wk-Nl1.title" = "关于UniPub";
+
+/* Class = "UIBarButtonItem"; title = "返回"; ObjectID = "PUr-6J-ymY"; */
+"PUr-6J-ymY.title" = "返回";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "Pyh-bs-I7x"; */
+"Pyh-bs-I7x.text" = "Label";
+
+/* Class = "UIButton"; normalTitle = "最火"; ObjectID = "S1Z-pf-aZw"; */
+"S1Z-pf-aZw.normalTitle" = "最火";
+
+/* Class = "UIButton"; normalTitle = "收藏"; ObjectID = "VUH-Yd-Kip"; */
+"VUH-Yd-Kip.normalTitle" = "收藏";
+
+/* Class = "UINavigationItem"; title = "探索"; ObjectID = "WAs-uu-JTX"; */
+"WAs-uu-JTX.title" = "探索";
+
+/* Class = "UITextView"; text = "The Unipub services and mobile app (collectively, the “Services”) offer users a forum to interact with other Unipub users in the same area, in order to post and share comments, and to respond to comments posted by others. In this Privacy Policy (“Policy”), we describe how we collect, use, and disclose information that we obtain about users of our Services, which are available via mobile applications offered in the Apple and Android app stores. Your use of our Services, and any dispute over privacy, is subject to this Policy and our Terms of Service, including its applicable limitations on damages and the resolution of disputes, which is available at [Terms of Use] section and incorporated by reference into this Policy.\n\nWhat Information Do We Collect About You and Why?\n\nAccount Information. When you download and use our mobile app, we assign you a username, but we do not collect your name or email address. We also collect the following information:\n\n\n** ****Geo-location Data**\n\nWe ask you to share you location information from your mobile device. If you choose not to, the Services will not function. Location information is used to place you in your local Unipub group, and as explained below.\n\nYour Content and Usage. We collect the content you submit to the Services (posts, replies and likes or unlikes), as well as information about when you submitted the content, when it was viewed, and other activities.\n\n\n** ****Infor****mation We Collect Automatically **\n\nWe may automatically collect the following information about your use Services: access time, device ID, application ID or other unique identifier; domain name, IP address, screen views; geo-location data (with your permission); language information; device name and model; operating system information; your activities within the Services; and the length of time that you are logged in. We may combine this information with other information that we have collected about you.\n\n\n** Social Media Sites**** **\n\nYou can like us on Facebook, follow us on Facebook, Renren, WeChat, Instagram and etc., and promote us on other social media sites. We collect information about who has liked us or followed us. However, we don’t associate your social media account with your **- Unipub**** account**\n\n**How We Use Your Information?**\n\nIn general, we use the information we collect about you to provide and operate the Services, respond to your requests, and to provide customer service and technical support. We may also use your information:\n\nTo place you in your local Unipub group so that you can post and review content based on your current location.\n\nTo tailor the information that we may send or display to you, offer location customization, send you push notifications and alerts, and to otherwise personalize your experiences while using our Services.\n\nTo send you notices.\n\nTo display advertising, including advertising that is targeted to you based on your location, as well as your Unipub activities.\n\nTo better understand how users access and use our Site and Services, both on an aggregated and individualized basis, in order to improve our Site and Services and respond to user desires and preferences, and for other research and analytical purposes.\n\n**How We Share Your Information**\n\nYou cannot control who views your content. So, if you don’t want to share something publicly, don’t post it. Unipub is a social network, and the content you post may be shared with and viewable by others. We do not identify you by name or contact information to other Unipubusers. However, we cannot prevent others from determining your identify from the content you posts or how you share content through third party sites.\n\nThe information we collect about you, including personally identifiable information, may be shared as follows:\n\n\n**Unipub Users**\n\nAny information that you post, including comments, replies and other information may become public. We cannot control how your information is used by others. Your posts are available to all other users. Users can also freely share any Unipub content, no matter who posted it, though other third party sites like Facebook, Renren, WeChat and Instagram.\n\n\n** ****Service Providers**** **\n\nWe may disclose the information we collect from you to third party vendors, service providers, contractors or agents who perform functions on our behalf.\n\n\n** ****Business Transfers**\n\nIf we are acquired by or merged with another company, if substantially all of our assets are transferred to another company, or as part of a bankruptcy proceeding, we may transfer the information we have collected from you to the other company.\n\nThird Parties and Business Partners. We may share the information we gather about you and other users with our third party business partners, including advertisers. For example, if you post content that mentions one of our business partners, we may share that content with them. As noted, we don’t collect name or contact information (unless you post it in your comment or reply).\n\n\n** ****In Response t****o Legal Process**** **\n\nWe also may disclose the information we collect about you in order to comply with the law, a judicial proceeding, court order, subpoena, or other legal process. While we don’t collect your name or contact information, we may share your IP address or other identifier, your location information, or any other information we have collected about you and your device.\n\n\n** To Protect Us and Others**\n\nWe also may disclose the information we collect from you where we believe it is necessary to investigate, prevent, or take action regarding illegal activities, suspected fraud, situations involving potential threats to the safety of any person, violations of our Terms of Use or this Policy, or as evidence in litigation in which Unipub is involved.\n\n\n** ****Aggregate**** and De-Identified Information**\n\nWe may also share aggregate or de-identified information about users with third parties for marketing, advertising, research or similar purposes.\n\nInvite Contacts\n\n**Your Posts**\n\nYou can delete content you have posted (including replies). Content you delete will be hidden from other users. However, Unipub may maintain a copy of such content in our records.\n\n**Push Notifications/Alerts**\n\nWe may send push notifications or alerts to your device. You can deactivate these messages at any time by changing the notification settings on your device or by changing your Unipub settings.\n\n**Third Party Analytics**\n\nWe may use automated devices and applications, included those offered by third parties to evaluate usage of our Services. We also may use other analytic means to evaluate our Services. We use these tools to help us improve our Services, performance and user experiences. We do not share your personal information with these third parties.\n\n**Third Party Ads**\n\nWe may display ads to you (including in-app ads), and we may target those ads based on your location, your Unipub activities, and other criteria (e.g., the time of day).\n\n**Third-Party Links**\n\nOur Services may contain links to third-party websites. Any access to and use of such linked websites is not governed by this Policy, but instead is governed by the privacy policies of those third party websites.\n\n**Minors**\n\nYou must be at least 15 to use our Services. Our Services are not designed for children under 13. If we discover that a child under 13 has provided us with personal information, we will delete such information from our systems.\n\n**Contact Us**\n\nIf you have questions about the privacy aspects of our Services or would like to make a complaint, please contact us at _service@hellowhoop.com_\n\n**Changes to this Policy**\n\nThis Policy is current as of the Effective Date set forth above. We may change this Policy from time to time, so please be sure to check back periodically. We will post any changes to this Policy on our Site, at _service@hellowhoop.com_ (mailto:service@hellowhoop.com). If we make any changes to this Policy that materially affect our practices with regard to the personal information we have previously collected from you, we will endeavor to provide you with notice in advance of such change by highlighting the change on our Site, or providing notice in our mobile app.\n\n"; ObjectID = "XfH-wT-rNK"; */
+"XfH-wT-rNK.text" = "The Unipub services and mobile app (collectively, the “Services”) offer users a forum to interact with other Unipub users in the same area, in order to post and share comments, and to respond to comments posted by others. In this Privacy Policy (“Policy”), we describe how we collect, use, and disclose information that we obtain about users of our Services, which are available via mobile applications offered in the Apple and Android app stores. Your use of our Services, and any dispute over privacy, is subject to this Policy and our Terms of Service, including its applicable limitations on damages and the resolution of disputes, which is available at [Terms of Use] section and incorporated by reference into this Policy.\n\nWhat Information Do We Collect About You and Why?\n\nAccount Information. When you download and use our mobile app, we assign you a username, but we do not collect your name or email address. We also collect the following information:\n\n\n** ****Geo-location Data**\n\nWe ask you to share you location information from your mobile device. If you choose not to, the Services will not function. Location information is used to place you in your local Unipub group, and as explained below.\n\nYour Content and Usage. We collect the content you submit to the Services (posts, replies and likes or unlikes), as well as information about when you submitted the content, when it was viewed, and other activities.\n\n\n** ****Infor****mation We Collect Automatically **\n\nWe may automatically collect the following information about your use Services: access time, device ID, application ID or other unique identifier; domain name, IP address, screen views; geo-location data (with your permission); language information; device name and model; operating system information; your activities within the Services; and the length of time that you are logged in. We may combine this information with other information that we have collected about you.\n\n\n** Social Media Sites**** **\n\nYou can like us on Facebook, follow us on Facebook, Renren, WeChat, Instagram and etc., and promote us on other social media sites. We collect information about who has liked us or followed us. However, we don’t associate your social media account with your **- Unipub**** account**\n\n**How We Use Your Information?**\n\nIn general, we use the information we collect about you to provide and operate the Services, respond to your requests, and to provide customer service and technical support. We may also use your information:\n\nTo place you in your local Unipub group so that you can post and review content based on your current location.\n\nTo tailor the information that we may send or display to you, offer location customization, send you push notifications and alerts, and to otherwise personalize your experiences while using our Services.\n\nTo send you notices.\n\nTo display advertising, including advertising that is targeted to you based on your location, as well as your Unipub activities.\n\nTo better understand how users access and use our Site and Services, both on an aggregated and individualized basis, in order to improve our Site and Services and respond to user desires and preferences, and for other research and analytical purposes.\n\n**How We Share Your Information**\n\nYou cannot control who views your content. So, if you don’t want to share something publicly, don’t post it. Unipub is a social network, and the content you post may be shared with and viewable by others. We do not identify you by name or contact information to other Unipubusers. However, we cannot prevent others from determining your identify from the content you posts or how you share content through third party sites.\n\nThe information we collect about you, including personally identifiable information, may be shared as follows:\n\n\n**Unipub Users**\n\nAny information that you post, including comments, replies and other information may become public. We cannot control how your information is used by others. Your posts are available to all other users. Users can also freely share any Unipub content, no matter who posted it, though other third party sites like Facebook, Renren, WeChat and Instagram.\n\n\n** ****Service Providers**** **\n\nWe may disclose the information we collect from you to third party vendors, service providers, contractors or agents who perform functions on our behalf.\n\n\n** ****Business Transfers**\n\nIf we are acquired by or merged with another company, if substantially all of our assets are transferred to another company, or as part of a bankruptcy proceeding, we may transfer the information we have collected from you to the other company.\n\nThird Parties and Business Partners. We may share the information we gather about you and other users with our third party business partners, including advertisers. For example, if you post content that mentions one of our business partners, we may share that content with them. As noted, we don’t collect name or contact information (unless you post it in your comment or reply).\n\n\n** ****In Response t****o Legal Process**** **\n\nWe also may disclose the information we collect about you in order to comply with the law, a judicial proceeding, court order, subpoena, or other legal process. While we don’t collect your name or contact information, we may share your IP address or other identifier, your location information, or any other information we have collected about you and your device.\n\n\n** To Protect Us and Others**\n\nWe also may disclose the information we collect from you where we believe it is necessary to investigate, prevent, or take action regarding illegal activities, suspected fraud, situations involving potential threats to the safety of any person, violations of our Terms of Use or this Policy, or as evidence in litigation in which Unipub is involved.\n\n\n** ****Aggregate**** and De-Identified Information**\n\nWe may also share aggregate or de-identified information about users with third parties for marketing, advertising, research or similar purposes.\n\nInvite Contacts\n\n**Your Posts**\n\nYou can delete content you have posted (including replies). Content you delete will be hidden from other users. However, Unipub may maintain a copy of such content in our records.\n\n**Push Notifications/Alerts**\n\nWe may send push notifications or alerts to your device. You can deactivate these messages at any time by changing the notification settings on your device or by changing your Unipub settings.\n\n**Third Party Analytics**\n\nWe may use automated devices and applications, included those offered by third parties to evaluate usage of our Services. We also may use other analytic means to evaluate our Services. We use these tools to help us improve our Services, performance and user experiences. We do not share your personal information with these third parties.\n\n**Third Party Ads**\n\nWe may display ads to you (including in-app ads), and we may target those ads based on your location, your Unipub activities, and other criteria (e.g., the time of day).\n\n**Third-Party Links**\n\nOur Services may contain links to third-party websites. Any access to and use of such linked websites is not governed by this Policy, but instead is governed by the privacy policies of those third party websites.\n\n**Minors**\n\nYou must be at least 15 to use our Services. Our Services are not designed for children under 13. If we discover that a child under 13 has provided us with personal information, we will delete such information from our systems.\n\n**Contact Us**\n\nIf you have questions about the privacy aspects of our Services or would like to make a complaint, please contact us at _service@hellowhoop.com_\n\n**Changes to this Policy**\n\nThis Policy is current as of the Effective Date set forth above. We may change this Policy from time to time, so please be sure to check back periodically. We will post any changes to this Policy on our Site, at _service@hellowhoop.com_ (mailto:service@hellowhoop.com). If we make any changes to this Policy that materially affect our practices with regard to the personal information we have previously collected from you, we will endeavor to provide you with notice in advance of such change by highlighting the change on our Site, or providing notice in our mobile app.\n\n";
+
+/* Class = "UINavigationItem"; title = "软件条例 & 规范"; ObjectID = "Z7R-Pk-g0v"; */
+"Z7R-Pk-g0v.title" = "软件条例 & 规范";
+
+/* Class = "UILabel"; text = "发布时间"; ObjectID = "aB7-5X-Puy"; */
+"aB7-5X-Puy.text" = "发布时间";
+
+/* Class = "UILabel"; text = "300"; ObjectID = "acr-i5-miC"; */
+"acr-i5-miC.text" = "300";
+
+/* Class = "UILabel"; text = "软件条例 & 规范"; ObjectID = "awT-29-wtC"; */
+"awT-29-wtC.text" = "软件条例 & 规范";
+
+/* Class = "UIViewController"; title = "我的信息"; ObjectID = "daP-pz-D65"; */
+"daP-pz-D65.title" = "我的信息";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "fis-Jg-Pax"; */
+"fis-Jg-Pax.text" = "Label";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "gVs-nz-GM0"; */
+"gVs-nz-GM0.text" = "Label";
+
+/* Class = "UINavigationItem"; title = "隐私与安全"; ObjectID = "hem-2C-n0M"; */
+"hem-2C-n0M.title" = "隐私与安全";
+
+/* Class = "UINavigationItem"; title = "关于我"; ObjectID = "jLh-1H-ugy"; */
+"jLh-1H-ugy.title" = "关于我";
+
+/* Class = "UILabel"; text = "语言"; ObjectID = "nG8-HO-lHe"; */
+"nG8-HO-lHe.text" = "语言";
+
+/* Class = "UILabel"; text = "隐私与安全"; ObjectID = "sB1-Bc-uOX"; */
+"sB1-Bc-uOX.text" = "隐私与安全";
+
+/* Class = "UILabel"; text = "设置"; ObjectID = "svN-4u-NkK"; */
+"svN-4u-NkK.text" = "设置";
+
+/* Class = "UIButton"; normalTitle = "最新"; ObjectID = "u1b-It-OOO"; */
+"u1b-It-OOO.normalTitle" = "最新";
+
+/* Class = "UINavigationItem"; title = "设置"; ObjectID = "w0I-Ew-Fon"; */
+"w0I-Ew-Fon.title" = "设置";
+
+/* Class = "UITextField"; placeholder = "Email or Phone Number"; ObjectID = "zwK-Yo-wLK"; */
+"zwK-Yo-wLK.placeholder" = "邮箱或电话";

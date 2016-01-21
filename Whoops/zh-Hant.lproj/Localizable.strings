@@ -1,0 +1,152 @@
+/* Alert */
+"Alert" = "警告";
+
+/* Camera */
+"Camera" = "相機";
+
+/* Cancel */
+"Cancel" = "取消";
+
+/* Click to load more */
+"Click to load more" = "點擊加載更多";
+
+/* Could Not Send Email */
+"Could Not Send Email" = "無法發送Email";
+
+/* Detail */
+"Detail" = "詳情";
+
+/* Failed */
+"Failed" = "失敗";
+
+/* Nick Name Clicked in YRJokeCell2.swift */
+"Hi, I'm interest in your post in Whoop, that" = "Hi, I'm interest in your post in Whoop, that";
+
+/* Nick Name Clicked */
+"I'm interest in your post in Whoop, that " = "I'm interest in your post in Whoop, that";
+
+/* Loading */
+"Loading" = "更新";
+
+/* Loading Conmpleted */
+"Loading Completed" = "讀取完成";
+
+/* Loading Failed */
+"Loading Failed" = "讀取失敗";
+
+/* My Favorite */
+"My Favorite" = "我的圈子";
+
+/* Nearby */
+"Near By" = "附近的圈子";
+
+/* Network error! */
+"Network error!" = "Network error!";
+
+/* No */
+"No" = "不";
+
+/* No Network Access */
+"No Network Access" = "No Network Access";
+
+/* No more Comments T_T */
+"No more Comments T_T" = "No more Comments T_T";
+
+/* OK */
+"OK" = "好";
+
+/* Opps
+   Surprised to occurd */
+"Opps" = "Opps";
+
+/* Photo */
+"Photo" = "照片";
+
+/* Photo Library */
+"Photo Library" = "相片圖庫";
+
+/* Pull to Load More */
+"Pull to Load More" = "下啦刷新";
+
+/* Refresh Failed */
+"Refresh Failed" = "重整失敗";
+
+/* Refresh Success */
+"Refresh Success" = "刷新成功";
+
+/* release to refresh */
+"Release to refresh" = "發布刷新";
+
+/* Reloading */
+"Reloading" = "更新";
+
+/* Several */
+"Replies" = "回應";
+
+/* One Reply */
+"Reply" = "回應";
+
+/* Report */
+"Report" = "檢舉";
+
+/* Report success */
+"Report success" = "檢舉成功";
+
+/* Search your School */
+"Search your School" = "搜尋學校";
+
+/* Selected */
+"Selected" = "選定";
+
+/* The Content should not be empty */
+"The Content should not be empty" = "不能留白，那就說點什麼吧！";
+
+/* Length Error */
+"The max count of photos can not be more than 6" = "照片最多只能上傳6張";
+
+/* Checking Report */
+"This post violate Unipub's regulation!" = "此帖違反Unipub的規範！";
+
+/* Unknown */
+"Unknown" = "";
+
+/* Warning */
+"WARNING" = "警告";
+
+/* Write something */
+"Write something" = "說點什麼好玩的";
+
+/* Yes */
+"Yes" = "是";
+
+/* Not Emailed Response */
+"Your device could not send e-mail.  Please check e-mail configuration and try again." = "你的裝置無法發送e-mail。請在檢查e-mail是否正確。";
+"Back" = "返回";
+"Settings" = "設置";
+"Profile" = "關於我";
+"New" = "最新";
+"Favorite" = "收藏";
+"Hot" = "最火";
+"All Time Hot" = "歷史最火";
+"Explore"="探索";
+"Language Setting" = "語言設置";
+//Setting Page
+"Voting" = "投票";
+"Left" = "左";
+"Right" = "右";
+"Language" = "語言";
+"Privacy Policy" = "隱私與安全";
+"Rules & Info" = "軟件條例與規範";
+"Terms of Service" = "關於UniPub";
+// Profile Page
+"Profile" = "關於我";
+"My Posts" = "我的信息";
+"My Replies" = "我的回覆";
+"Settings" = "設置";
+// New Post page
+"Post" = "信息";
+"Back" = "返回";
+"Email or Phone Number" = "電子郵件或電話";
+//Likes Page
+"Likes" = "讚";
+"Write some comments" = "說點什麼好玩的";

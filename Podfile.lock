@@ -1,0 +1,10 @@
+PODS:
+  - Localize-Swift (0.6)
+
+DEPENDENCIES:
+  - Localize-Swift (~> 0.2)
+
+SPEC CHECKSUMS:
+  Localize-Swift: c54aee0222f744ae30ea63fdce404acb2820166a
+
+COCOAPODS: 0.39.0
