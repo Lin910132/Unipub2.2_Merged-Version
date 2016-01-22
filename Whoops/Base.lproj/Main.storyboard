@@ -168,13 +168,13 @@ This Policy is current as of the Effective Date set forth above. We may change t
                                 <rect key="frame" x="0.0" y="64" width="375" height="32"/>
                                 <subviews>
                                     <button opaque="NO" tag="101" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="S1Z-pf-aZw">
-                                        <rect key="frame" x="107" y="2" width="46" height="30"/>
+                                        <rect key="frame" x="148" y="2" width="30" height="28"/>
                                         <constraints>
-                                            <constraint firstAttribute="height" constant="30" id="Db4-R3-D19"/>
-                                            <constraint firstAttribute="width" constant="46" id="biI-wR-OM1"/>
+                                            <constraint firstAttribute="width" constant="30" id="BbL-bY-j8b"/>
+                                            <constraint firstAttribute="height" constant="28" id="TTR-n9-1jJ"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" type="system" pointSize="13"/>
-                                        <state key="normal">
+                                        <state key="normal" title="Hot">
                                             <color key="titleColor" red="1" green="1" blue="1" alpha="0.47999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
                                             <color key="titleShadowColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         </state>
@@ -189,13 +189,13 @@ This Policy is current as of the Effective Date set forth above. We may change t
                                         </connections>
                                     </button>
                                     <button opaque="NO" tag="102" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VUH-Yd-Kip">
-                                        <rect key="frame" x="153" y="2" width="69" height="30"/>
+                                        <rect key="frame" x="188" y="2" width="49" height="28"/>
                                         <constraints>
-                                            <constraint firstAttribute="height" constant="30" id="3dV-Lp-Fsy"/>
-                                            <constraint firstAttribute="width" constant="69" id="zUO-kY-Gnw"/>
+                                            <constraint firstAttribute="height" constant="28" id="Lrh-Qj-jId"/>
+                                            <constraint firstAttribute="width" constant="49" id="apf-fq-9AT"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" type="system" pointSize="13"/>
-                                        <state key="normal">
+                                        <state key="normal" title="Favorite">
                                             <color key="titleColor" red="1" green="1" blue="1" alpha="0.47999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
                                             <color key="titleShadowColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         </state>
@@ -210,13 +210,13 @@ This Policy is current as of the Effective Date set forth above. We may change t
                                         </connections>
                                     </button>
                                     <button opaque="NO" tag="103" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2Af-KH-8Pe">
-                                        <rect key="frame" x="220" y="2" width="92" height="30"/>
+                                        <rect key="frame" x="247" y="2" width="74" height="28"/>
                                         <constraints>
-                                            <constraint firstAttribute="height" constant="30" id="H0T-io-JzO"/>
-                                            <constraint firstAttribute="width" constant="92" id="X7m-mx-JDw"/>
+                                            <constraint firstAttribute="height" constant="28" id="1rW-gO-epu"/>
+                                            <constraint firstAttribute="width" constant="74" id="xyf-NJ-zPX"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" type="system" pointSize="13"/>
-                                        <state key="normal">
+                                        <state key="normal" title="All Time Hot">
                                             <color key="titleColor" red="1" green="1" blue="1" alpha="0.47999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
                                             <color key="titleShadowColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         </state>
@@ -230,14 +230,28 @@ This Policy is current as of the Effective Date set forth above. We may change t
                                             <action selector="tabBarButtonClicked:" destination="9pv-A4-QxB" eventType="touchUpInside" id="7TA-QL-iZc"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" tag="100" contentMode="scaleToFill" selected="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="u1b-It-OOO">
-                                        <rect key="frame" x="60" y="2" width="46" height="30"/>
+                                    <button opaque="NO" tag="104" contentMode="scaleToFill" selected="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yjn-vR-w4H">
+                                        <rect key="frame" x="46" y="1" width="52" height="30"/>
                                         <constraints>
-                                            <constraint firstAttribute="height" constant="30" id="G1S-aC-Kx2"/>
-                                            <constraint firstAttribute="width" constant="46" id="v76-Ju-4cT"/>
+                                            <constraint firstAttribute="height" constant="30" id="X3k-Id-BhO"/>
+                                            <constraint firstAttribute="width" constant="52" id="wBa-X0-5KG"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" type="system" pointSize="13"/>
-                                        <state key="normal">
+                                        <state key="normal" title="😘 Rank">
+                                            <color key="titleColor" red="1" green="1" blue="1" alpha="0.47999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="tabBarButtonClicked:" destination="9pv-A4-QxB" eventType="touchUpInside" id="RMg-8g-Bhf"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" tag="100" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="u1b-It-OOO">
+                                        <rect key="frame" x="108" y="2" width="30" height="28"/>
+                                        <constraints>
+                                            <constraint firstAttribute="width" constant="30" id="OS0-Sp-q5q"/>
+                                            <constraint firstAttribute="height" constant="28" id="WFC-RW-qSh"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                        <state key="normal" title="New">
                                             <color key="titleColor" red="1" green="1" blue="1" alpha="0.47999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
                                             <color key="titleShadowColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                         </state>
@@ -254,16 +268,24 @@ This Policy is current as of the Effective Date set forth above. We may change t
                                 </subviews>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <constraints>
-                                    <constraint firstItem="u1b-It-OOO" firstAttribute="top" secondItem="YVq-Ps-uq4" secondAttribute="top" constant="2" id="87h-7u-aCp"/>
-                                    <constraint firstItem="S1Z-pf-aZw" firstAttribute="leading" secondItem="u1b-It-OOO" secondAttribute="trailing" constant="1" id="UFk-Th-6TR"/>
-                                    <constraint firstItem="VUH-Yd-Kip" firstAttribute="leading" secondItem="S1Z-pf-aZw" secondAttribute="trailing" id="X83-d8-VuD"/>
-                                    <constraint firstItem="VUH-Yd-Kip" firstAttribute="top" secondItem="YVq-Ps-uq4" secondAttribute="top" constant="2" id="dbR-B9-i9N"/>
-                                    <constraint firstItem="S1Z-pf-aZw" firstAttribute="top" secondItem="YVq-Ps-uq4" secondAttribute="top" constant="2" id="eam-eo-H5C"/>
+                                    <constraint firstItem="u1b-It-OOO" firstAttribute="leading" secondItem="yjn-vR-w4H" secondAttribute="trailing" constant="10" id="32f-dx-BMP"/>
+                                    <constraint firstItem="VUH-Yd-Kip" firstAttribute="centerX" secondItem="YVq-Ps-uq4" secondAttribute="centerX" constant="25" id="Ltp-ws-l8s"/>
+                                    <constraint firstItem="S1Z-pf-aZw" firstAttribute="leading" secondItem="u1b-It-OOO" secondAttribute="trailing" constant="10" id="PFj-0F-bHX"/>
+                                    <constraint firstItem="yjn-vR-w4H" firstAttribute="centerY" secondItem="YVq-Ps-uq4" secondAttribute="centerY" id="SGk-ZW-Nqr"/>
+                                    <constraint firstItem="VUH-Yd-Kip" firstAttribute="leading" secondItem="S1Z-pf-aZw" secondAttribute="trailing" constant="10" id="V6u-X6-xko"/>
+                                    <constraint firstItem="2Af-KH-8Pe" firstAttribute="leading" secondItem="VUH-Yd-Kip" secondAttribute="trailing" constant="10" id="ZYL-Vy-lUv"/>
+                                    <constraint firstItem="VUH-Yd-Kip" firstAttribute="centerY" secondItem="YVq-Ps-uq4" secondAttribute="centerY" id="gnd-99-n2s"/>
+                                    <constraint firstItem="S1Z-pf-aZw" firstAttribute="centerY" secondItem="YVq-Ps-uq4" secondAttribute="centerY" id="iz9-ZW-L1C"/>
+                                    <constraint firstItem="u1b-It-OOO" firstAttribute="centerY" secondItem="YVq-Ps-uq4" secondAttribute="centerY" id="jsK-O0-diz"/>
+                                    <constraint firstItem="2Af-KH-8Pe" firstAttribute="centerY" secondItem="YVq-Ps-uq4" secondAttribute="centerY" id="kYB-3g-c4o"/>
                                     <constraint firstAttribute="height" constant="32" id="ksd-Ea-oqx"/>
-                                    <constraint firstItem="2Af-KH-8Pe" firstAttribute="leading" secondItem="VUH-Yd-Kip" secondAttribute="trailing" constant="-2" id="nLc-IU-VJ2"/>
-                                    <constraint firstAttribute="centerX" secondItem="VUH-Yd-Kip" secondAttribute="centerX" id="vDu-fL-t8m"/>
-                                    <constraint firstItem="2Af-KH-8Pe" firstAttribute="top" secondItem="YVq-Ps-uq4" secondAttribute="top" constant="2" id="yQQ-5t-Bak"/>
+                                    <constraint firstItem="u1b-It-OOO" firstAttribute="leading" secondItem="yjn-vR-w4H" secondAttribute="trailing" id="lag-Gz-HF9"/>
                                 </constraints>
+                                <variation key="default">
+                                    <mask key="constraints">
+                                        <exclude reference="lag-Gz-HF9"/>
+                                    </mask>
+                                </variation>
                             </view>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="A2Z-bp-gL3">
                                 <rect key="frame" x="0.0" y="94" width="375" height="524"/>
@@ -287,6 +309,7 @@ This Policy is current as of the Effective Date set forth above. We may change t
                         <outlet property="favoriteBtn" destination="VUH-Yd-Kip" id="L9W-gz-4qc"/>
                         <outlet property="hotBtn" destination="S1Z-pf-aZw" id="eQW-Am-MW4"/>
                         <outlet property="newBtn" destination="u1b-It-OOO" id="EJt-bx-cJa"/>
+                        <outlet property="rankBtn" destination="yjn-vR-w4H" id="KID-M3-ZTv"/>
                         <outlet property="tableView" destination="A2Z-bp-gL3" id="qOz-MJ-8fT"/>
                         <outlet property="topBarview" destination="YVq-Ps-uq4" id="Co3-WZ-uXp"/>
                         <segue destination="RhR-4p-SGt" kind="show" identifier="showComment" id="p84-es-z4M"/>

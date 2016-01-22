@@ -20,6 +20,7 @@ class YRMainViewController: UIViewController,UITableViewDelegate,UITableViewData
     @IBOutlet weak var favoriteBtn: UIButton!
     @IBOutlet weak var hotBtn: UIButton!
     @IBOutlet weak var allTimeHotBtn: UIButton!
+    @IBOutlet weak var rankBtn: UIButton!
     
     
     
@@ -31,7 +32,7 @@ class YRMainViewController: UIViewController,UITableViewDelegate,UITableViewData
     //    var tableView:UITableView?
     var dataArray = NSMutableArray()
     //var imageArray = NSMutableArray()
-    var page = [1,1,1,1]
+    var page = [1,1,1,1,1]
     var refreshView:YRRefreshView?
     let locationManager: CLLocationManager = CLLocationManager()
     var stopLoading: Bool = false
@@ -40,9 +41,9 @@ class YRMainViewController: UIViewController,UITableViewDelegate,UITableViewData
     var school:Int = 0
     var userId:String = "0"
     
-    var type:Int = 0
+    var type:Int = 4
     
-    let itemArray = ["New","Hot","Favorite","All Time Hot"]
+    let itemArray = ["New","Hot","Favorite","All Time Hot","Rank"]
 
     override func viewDidLoad()
     {
@@ -120,6 +121,7 @@ class YRMainViewController: UIViewController,UITableViewDelegate,UITableViewData
         self.hotBtn.setTitle(itemArray[1].localized(), forState: .Normal)
         self.favoriteBtn.setTitle(itemArray[2].localized(), forState: .Normal)
         self.allTimeHotBtn.setTitle(itemArray[3].localized(), forState: .Normal)
+        self.rankBtn.setTitle("😘" + itemArray[4].localized(), forState: .Normal)
     }
     override func viewWillAppear(animated: Bool)
     {
@@ -150,26 +152,14 @@ class YRMainViewController: UIViewController,UITableViewDelegate,UITableViewData
 //        var width = self.view.frame.size.width
 //        var height = self.view.frame.size.height
         //        self.tableView = UITableView(frame:CGRectMake(0,0,width,height-49))
+        rankBtn.setTitleColor(UIColor.whiteColor(), forState: .Selected)
+        
         self.tableView!.delegate = self;
         self.tableView!.dataSource = self;
-        
         
         let nib = UINib(nibName:"YRJokeCell", bundle: nil)
         
         self.tableView?.registerNib(nib, forCellReuseIdentifier: identifier)
-//        var rect = self.tableView.frame;
-        
-        
-        //var arr =  NSBundle.mainBundle().loadNibNamed("YRRefreshView" ,owner: self, options: nil) as Array
-        //self.refreshView = arr[0] as? YRRefreshView
-        //self.refreshView!.delegate = self
-        //self.tableView!.tableFooterView = self.refreshView
-    
-        //tableView.toLoadMoreAction({ () -> Void in
-        //    self.page[self.type]++
-        //    self.loadData(self.type)
-        //    //self.tableView.doneRefresh()
-        //})
         
         self.view.addSubview(self.tableView!)
         
@@ -293,6 +283,10 @@ class YRMainViewController: UIViewController,UITableViewDelegate,UITableViewData
             }
         }
         url += "&uid=\(FileUtility.getUserId())"
+        
+        //if (type == 4){
+        //    url = "http://104.131.91.181:8080/whoops/post/listByActivity?activityId=1"
+        //}
         
         return url
     }
@@ -420,7 +414,7 @@ class YRMainViewController: UIViewController,UITableViewDelegate,UITableViewData
         let index = sender.tag
         self.stopLoading = false
         
-        for var i = 0;i<4;i++
+        for var i = 0;i<5;i++
         {
             let button = self.view.viewWithTag(i+100) as! UIButton
             if button.tag == index
