@@ -384,7 +384,9 @@ class SearchViewController: UIViewController,UITableViewDelegate, UITableViewDat
         
         let searchPredicateCn = NSPredicate(format: "(nameCn contains[cd] %@)", searchController.searchBar.text!)
         let searchPredicateEn = NSPredicate(format: "(nameEn contains[cd] %@)", searchController.searchBar.text!)
-        let predicate = NSCompoundPredicate(type: NSCompoundPredicateType.OrPredicateType, subpredicates: [searchPredicateCn, searchPredicateEn])
+        let searchPredicateAbbr = NSPredicate(format: "(nameAbbr contains[cd] %@)", searchController.searchBar.text!)
+        
+        let predicate = NSCompoundPredicate(type: NSCompoundPredicateType.OrPredicateType, subpredicates: [searchPredicateCn, searchPredicateEn, searchPredicateAbbr])
         
         let array = _db.filteredArrayUsingPredicate(predicate)
 
