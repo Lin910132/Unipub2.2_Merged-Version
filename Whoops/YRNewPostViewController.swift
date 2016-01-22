@@ -326,7 +326,7 @@ class YRNewPostViewController: UIViewController, UIImagePickerControllerDelegate
             return
         }
         actionSheet.addButtonWithTitle("Cancel".localized())
-        actionSheet.addButtonWithTitle("Caamera".localized())
+        actionSheet.addButtonWithTitle("Camera".localized())
         actionSheet.addButtonWithTitle("Photo Library".localized())
         actionSheet.cancelButtonIndex = 0
         actionSheet.delegate = self
