@@ -136,6 +136,7 @@ class YRMainViewController: UIViewController,UITableViewDelegate,UITableViewData
         self.hotBtn.setTitle(itemArray[1].localized(), forState: .Normal)
         self.favoriteBtn.setTitle(itemArray[2].localized(), forState: .Normal)
         self.allTimeHotBtn.setTitle(itemArray[3].localized(), forState: .Normal)
+        self.rankBtn.setTitle("😘" + itemArray[4].localized(), forState: .Normal)
         
     }
     
