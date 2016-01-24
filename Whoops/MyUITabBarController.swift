@@ -45,8 +45,15 @@ class MyUITabBarController: UITabBarController, UITabBarControllerDelegate{
     
     func badgeUpdate(aNot:NSNotification){
         let tabItem = self.tabBar.items![3];
-        let badgeNumber = aNot.userInfo!["badgeNumber"] as! String
-        tabItem.badgeValue = badgeNumber
+        let badgeString = aNot.userInfo!["badgeNumber"] as! String
+        let badgeNumber: Int64? = Int64 (badgeString)
+        
+        if (badgeNumber >= 20){
+            tabItem.badgeValue = badgeString + "+"
+        }else{
+            tabItem.badgeValue = badgeString
+        }
+        
     }
     
     
