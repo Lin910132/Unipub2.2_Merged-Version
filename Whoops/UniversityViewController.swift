@@ -43,7 +43,9 @@ class UniversityViewController: UITableViewController, YRRefreshViewDelegate,MFM
     
     func setupViews()
     {
-        if (Int64 (schoolId) == 82){
+        
+        if (Int64 (schoolId) == 81){
+            postBtn.enabled = false
             self.navigationItem.setRightBarButtonItem(nil, animated: true)
         }
         

@@ -438,9 +438,9 @@ class YRJokeCell2: UITableViewCell
             
             
             //self.refreshMainDelegate?.refreshMain()
-            self.refreshCommentDelegate?.refreshCommentByFavor()
-            self.refreshUniversityDelete?.refreshUniversityByFavor()
-            self.refreshMyRepliesDelegate?.refreshMyRepliesByFavor()
+            //self.refreshCommentDelegate?.refreshCommentByFavor()
+            //self.refreshUniversityDelete?.refreshUniversityByFavor()
+            //self.refreshMyRepliesDelegate?.refreshMyRepliesByFavor()
             
             
         })
