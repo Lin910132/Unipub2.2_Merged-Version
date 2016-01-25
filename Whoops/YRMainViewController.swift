@@ -41,7 +41,7 @@ class YRMainViewController: UIViewController,UITableViewDelegate,UITableViewData
     var school:Int = 0
     var userId:String = "0"
     
-    var type:Int = 4
+    var type:Int = 0
     
     let itemArray = ["New","Hot","Favorite","All Time Hot","Rank"]
 
@@ -153,7 +153,10 @@ class YRMainViewController: UIViewController,UITableViewDelegate,UITableViewData
 //        var width = self.view.frame.size.width
 //        var height = self.view.frame.size.height
         //        self.tableView = UITableView(frame:CGRectMake(0,0,width,height-49))
+        
+        rankBtn.hidden = true
         rankBtn.setTitleColor(UIColor.whiteColor(), forState: .Selected)
+        newBtn.selected = true
         
         self.tableView!.delegate = self;
         self.tableView!.dataSource = self;

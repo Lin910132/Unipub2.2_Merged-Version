@@ -19,7 +19,9 @@ class UniversityViewController: UITableViewController, YRRefreshViewDelegate,MFM
     var refreshView:YRRefreshView?
     var currentUniversity = String()
     var schoolId = String()
-    
+
+    @IBOutlet var postBtn: UIBarButtonItem!
+
     
     @IBAction func showPostButton(sender: AnyObject) {
         
@@ -41,6 +43,15 @@ class UniversityViewController: UITableViewController, YRRefreshViewDelegate,MFM
     
     func setupViews()
     {
+        if (Int64 (schoolId) == 82){
+            self.navigationItem.setRightBarButtonItem(nil, animated: true)
+        }
+        
+        if (Int64 (schoolId) > 10000){
+            postBtn.enabled = false
+            self.navigationItem.setRightBarButtonItem(nil, animated: true)
+        }
+        
         let nib = UINib(nibName:"YRJokeCell", bundle: nil)
         self.tableView.registerNib(nib, forCellReuseIdentifier: identifier)
         
