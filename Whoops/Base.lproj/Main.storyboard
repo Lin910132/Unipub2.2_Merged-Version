@@ -2263,7 +2263,7 @@ If you have any questions about these Terms or otherwise need to contact Unipub 
                                 <color key="tintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                                 <color key="separatorColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="searchResult" id="5ba-jh-7aG" customClass="SearchResultCell" customModule="UniPub" customModuleProvider="target">
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="searchResult" id="5ba-jh-7aG" customClass="SearchResultCell" customModule="UniPub" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="113.5" width="375" height="50"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="5ba-jh-7aG" id="3qx-TI-cYF">
@@ -2318,7 +2318,7 @@ If you have any questions about these Terms or otherwise need to contact Unipub 
                                             <segue destination="n3u-xl-SSi" kind="show" id="NUi-C3-wVh"/>
                                         </connections>
                                     </tableViewCell>
-                                    <tableViewCell contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" reuseIdentifier="headCell" rowHeight="50" id="vSA-3R-2bV" customClass="SearchHeadCell" customModule="UniPub" customModuleProvider="target">
+                                    <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="headCell" rowHeight="50" id="vSA-3R-2bV" customClass="SearchHeadCell" customModule="UniPub" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="163.5" width="375" height="50"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="vSA-3R-2bV" id="h9d-KI-Csj">
