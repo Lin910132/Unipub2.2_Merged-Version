@@ -49,6 +49,9 @@
 /* No Network Access */
 "No Network Access" = "无网络接入";
 
+// No Nearby
+"No School Nearby" = "周围没有学校";
+
 /* No more Comments T_T */
 "No more Comments T_T" = "没有更多的内容 T_T";
 

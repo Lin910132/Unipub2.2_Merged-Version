@@ -68,6 +68,9 @@ class SearchViewController: UIViewController,UITableViewDelegate, UITableViewDat
         loadDB(dbUrl, target: _db)
         loadDB(myFavoriteUrl, target: myFavorite)
         
+        //if (_db == NSNull()){
+        //    UIView.showAlertView("Opps".localized(),message: "No School Nearby".localized())
+        //}
         
         var arr =  NSBundle.mainBundle().loadNibNamed("YRRefreshView" ,owner: self, options: nil) as Array
         self.refreshView = arr[0] as? YRRefreshView
@@ -158,40 +161,24 @@ class SearchViewController: UIViewController,UITableViewDelegate, UITableViewDat
 
         let url = "http://104.131.91.181:8080/whoops/school/listSchoolByLocation?latitude=\(self.lat)&longitude=\(self.lng)"
         self.nearby.removeAllObjects()
-        self.refreshView!.startLoading()
         
         YRHttpRequest.requestWithURL(url,completionHandler:{ data in
             
             if data as! NSObject == NSNull()
             {
-                UIView.showAlertView("Opps",message:"Loading Failed")
+                UIView.showAlertView("Opps".localized(),message: "No School Nearby".localized())
                 return
             }
             
             let arr = data["data"] as! NSArray
             
-            self.nearby = NSMutableArray()
             for data : AnyObject  in arr
             {
                 self.nearby.addObject(data)
-                
             }
             self.searchTableView.reloadData()
+            sender.endRefreshing()
         })
-        
-        /*self.refreshView?.startLoading()
-        self.myFavorite.removeAllObjects()
-        self.nearby.removeAllObjects()
-        let nearbyUrl = "http://104.131.91.181:8080/whoops/school/listSchoolByLocation?latitude=\(self.lat)&longitude=\(self.lng)"
-        let myFavoriteUrl = "http://104.131.91.181:8080/whoops/favorSchool/listByUid?uid=\(self.uid)"
-        loadDB(myFavoriteUrl, target: self.myFavorite)
-        loadDB(nearbyUrl, target: self.nearby)*/
-        
-        //self.searchTableView.reloadData()
-        self.refreshView!.stopLoading()
-        
-        sender.endRefreshing()
-
     }
     
     
@@ -216,14 +203,18 @@ class SearchViewController: UIViewController,UITableViewDelegate, UITableViewDat
     func loadDB(url:String, target: NSMutableArray)
     {
         //if target === self.myFavorite {self.myFavorite.removeAllObjects()}
+        
+        //There is an empty string coming in, and I don't know why
+        if (url == ""){
+            return
+        }
+        
         target.removeAllObjects()
         YRHttpRequest.requestWithURL(url,completionHandler:{ data in
             
             if data as! NSObject == NSNull()
             {
-                let myAltert=UIAlertController(title: "Alert".localized(), message: "No Network Access".localized(), preferredStyle: UIAlertControllerStyle.Alert)
-                myAltert.addAction(UIAlertAction(title: "OK".localized(), style: UIAlertActionStyle.Default, handler: nil))
-                self.presentViewController(myAltert, animated: true, completion: nil)
+                UIView.showAlertView("Alert".localized(),message: "No Network Access".localized())
                 return
             }
             

@@ -360,9 +360,9 @@ class YRJokeCell2: UITableViewCell
         nickName.textColor = UIColor(red:149.0/255.0 , green:149.0/255.0 , blue:149.0/255.0 , alpha: 1.0);
         nickName.font = UIFont.systemFontOfSize(13);
         nickName.text = data.stringAttributeForKey("nickName") as String;
-        if (nickName.text == ""){
-            nickName.text = "Unknown";
-        }
+        //if (nickName.text == ""){
+        //    nickName.text = "Unknown";
+        //}
         viewBottom.addSubview(nickName);
         
         let btnNick = UIButton(frame: CGRectMake(75, (bottomHeight - 16)/2, ivBack.frame.width - 164, 16));

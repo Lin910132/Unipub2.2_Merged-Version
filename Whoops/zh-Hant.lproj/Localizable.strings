@@ -41,13 +41,16 @@
 "Near By" = "附近的圈子";
 
 /* Network error! */
-"Network error!" = "Network error!";
+"Network error!" = "網絡錯誤！";
 
 /* No */
 "No" = "不";
 
 /* No Network Access */
-"No Network Access" = "No Network Access";
+"No Network Access" = "無網絡連接！";
+
+// No School Nearby
+"No School Nearby" = "周圍沒有學校！";
 
 /* No more Comments T_T */
 "No more Comments T_T" = "No more Comments T_T";
