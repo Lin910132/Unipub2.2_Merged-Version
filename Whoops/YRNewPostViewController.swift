@@ -60,8 +60,10 @@ class YRNewPostViewController: UIViewController, UIImagePickerControllerDelegate
         self.navigationItem.title = "Post".localized()
         self.navigationItem.leftBarButtonItem?.title = "Back".localized()
         self.nickNameText.placeholder = "Email or Phone Number".localized()
-        self.contentTextView.text = placeHolder.localized()
-//        self.navigationItem.leftBarButtonItem = UIBarButtonItem(title: "Back".localized(), style: UIBarButtonItemStyle.Plain, target: self, action: "goBackBtn")
+        
+        //need to be put in viewDidLoad to set only once
+        //self.contentTextView.text = placeHolder.localized()
+
     }
 //    func goBackBtn(){
 ////        self.navigationController?.popViewControllerAnimated(true)
@@ -89,6 +91,7 @@ class YRNewPostViewController: UIViewController, UIImagePickerControllerDelegate
             locationManager.startUpdatingLocation()
         }
         
+        self.contentTextView.text = placeHolder.localized()
         
     }
     
