@@ -148,3 +148,7 @@
 //Likes Page
 "Likes" = "Likes";
 "Write some comments" = "Write some comments";
+
+"Someone liked your post" = "Someone liked your post";
+"Someone disliked your post" = "Someone disliked your post";
+"Someone replied your post" = "Someone replied your post";
