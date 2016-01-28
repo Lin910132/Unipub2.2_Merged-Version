@@ -191,6 +191,7 @@ class YRMainViewController: UIViewController,UITableViewDelegate,UITableViewData
             if data as! NSObject == NSNull()
             {
                 UIView.showAlertView("Alert".localized(), message: "Loading Failed".localized())
+                sender.endRefreshing()
                 return
             }
             

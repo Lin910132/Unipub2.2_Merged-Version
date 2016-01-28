@@ -169,6 +169,7 @@ class SearchViewController: UIViewController,UITableViewDelegate, UITableViewDat
             if data as! NSObject == NSNull()
             {
                 UIView.showAlertView("Opps".localized(),message: "No School Nearby".localized())
+                sender.endRefreshing()
                 return
             }
             

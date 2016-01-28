@@ -96,6 +96,7 @@ class MyPostsViewController: UIViewController, UITableViewDataSource, UITableVie
             if data as! NSObject == NSNull()
             {
                 UIView.showAlertView("Opps",message:"Loading Failed")
+                sender.endRefreshing()
                 return
             }
             

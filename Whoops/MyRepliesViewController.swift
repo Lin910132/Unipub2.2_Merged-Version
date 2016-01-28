@@ -64,6 +64,7 @@ class MyRepliesViewController: UITableViewController,MFMailComposeViewController
             if data as! NSObject == NSNull()
             {
                 UIView.showAlertView("Opps".localized(), message: "Loading Failed".localized())
+                sender.endRefreshing()
                 return
             }
             
