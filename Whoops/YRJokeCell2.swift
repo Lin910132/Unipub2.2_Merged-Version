@@ -649,8 +649,11 @@ class YRJokeCell2: UITableViewCell
     {
         
         imageDataArray.removeAllObjects()
+        
         for imageView in imgList {
-            
+            if imageView.image==nil {
+                return
+            }
             imageDataArray.addObject(imageView.image!)
         }
         

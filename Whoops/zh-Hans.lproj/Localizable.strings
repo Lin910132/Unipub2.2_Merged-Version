@@ -151,3 +151,7 @@
 //Likes Page
 "Likes" = "赞";
 "Write some comments" = "说点什么有趣的";
+
+"Someone liked your post" = "有人赞了你的帖子";
+"Someone disliked your post" = "有人踩了你的帖子";
+"Someone replied your post" = " 有人回复了你的帖子";

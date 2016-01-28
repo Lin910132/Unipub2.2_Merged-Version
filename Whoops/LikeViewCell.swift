@@ -28,7 +28,23 @@ class LikeViewCell: UITableViewCell {
             return ;
         }
         
-        let content = self.data.stringAttributeForKey("msg")
+        let likedString = "Someone liked your post"
+        let dislikedString = "Someone disliked your post"
+        let repliedString = "Someone replied your post"
+        
+        var convertedMsg : String
+        
+        let rawMessage = self.data.stringAttributeForKey("msg")
+        if rawMessage.containsString(likedString){
+            convertedMsg = rawMessage.stringByReplacingOccurrencesOfString(likedString, withString: likedString.localized())
+        }else if rawMessage.containsString(dislikedString) {
+            convertedMsg = rawMessage.stringByReplacingOccurrencesOfString(dislikedString, withString: dislikedString.localized())
+        }else{
+            convertedMsg = rawMessage.stringByReplacingOccurrencesOfString(repliedString, withString: repliedString.localized())
+        }
+        
+        let content = convertedMsg
+        
         let width = self.title.width()
         let height = content.stringHeightWith(17,width:width)
         
