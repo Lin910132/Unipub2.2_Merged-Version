@@ -25,7 +25,9 @@ class UniversityViewController: UITableViewController, YRRefreshViewDelegate,MFM
     
     @IBAction func showPostButton(sender: AnyObject) {
         
-        SchoolObject.schoolId = self.schoolId;
+        SchoolObject.schoolId = self.schoolId
+        SchoolObject.schoolName = currentUniversity
+        
         let mainStoryboard = UIStoryboard(name: "Main", bundle: NSBundle.mainBundle())
         let vc : UIViewController = mainStoryboard.instantiateViewControllerWithIdentifier("postNavigation")
         //isSchool = true

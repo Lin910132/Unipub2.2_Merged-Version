@@ -59,8 +59,9 @@ class YRNewPostViewController: UIViewController, UIImagePickerControllerDelegate
         
         self.navigationItem.title = "Post".localized()
         self.navigationItem.leftBarButtonItem?.title = "Back".localized()
-        self.nickNameText.placeholder = "Email or Phone Number".localized()
-        
+        //self.nickNameText.placeholder = "Email or Phone Number".localized()
+        self.nickNameText.enabled = false
+        self.nickNameText.text = schoolName
         //need to be put in viewDidLoad to set only once
         //self.contentTextView.text = placeHolder.localized()
 
@@ -78,6 +79,7 @@ class YRNewPostViewController: UIViewController, UIImagePickerControllerDelegate
         self.view.addSubview(imgView)
         
         self.schoolId = SchoolObject.result
+        self.schoolName = SchoolObject.schoolName
         
         contentTextView.delegate = self
         self.automaticallyAdjustsScrollViewInsets = false
@@ -149,12 +151,14 @@ class YRNewPostViewController: UIViewController, UIImagePickerControllerDelegate
             if imgList.count == 0 {
                 createNewPost()
                 SchoolObject.schoolId = "0";
+                SchoolObject.schoolName = "";
                 NSNotificationCenter.defaultCenter().postNotificationName("load", object: nil)
                 NSNotificationCenter.defaultCenter().postNotificationName("loadMain", object: nil)
                 
             }else{
                 postWithPic()
                 SchoolObject.schoolId = "0";
+                SchoolObject.schoolName = "";
                 NSNotificationCenter.defaultCenter().postNotificationName("load", object: nil)
                 NSNotificationCenter.defaultCenter().postNotificationName("loadMain", object: nil)
             }
