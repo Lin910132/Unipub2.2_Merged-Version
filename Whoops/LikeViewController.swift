@@ -24,37 +24,75 @@ class LikeViewController: UIViewController, UITableViewDelegate, UITableViewData
         _db.removeAllObjects()
         let nib = UINib(nibName:"LikeViewCell", bundle: nil)
         self.likeTableView.registerNib(nib, forCellReuseIdentifier: identifier)
-        
-        //load_Data()
+        addRefreshControll()
+        load_Data()
         // Do any additional setup after loading the view.
     }
 
     
     override func viewWillAppear(animated: Bool) {
-        self.navigationItem.title = "Likes".localized()
+        //self.navigationItem.title = "Likes".localized()
         
-        _db.removeAllObjects()
-        self.page = 1
-        load_Data()
+        //_db.removeAllObjects()
+        //self.page = 1
+        //load_Data()
     }
     
-    func load_Data(){
+    func addRefreshControll()
+    {
+        let fresh:UIRefreshControl = UIRefreshControl()
+        fresh.addTarget(self, action: "actionRefreshHandler:", forControlEvents: UIControlEvents.ValueChanged)
+        fresh.tintColor = UIColor.whiteColor()
+        self.likeTableView.addSubview(fresh)
+    }
+    
+    func actionRefreshHandler(sender: UIRefreshControl)
+    {
+        self.page = 1
         let url = FileUtility.getUrlDomain() + "msg/getMsgByUId?uid=\(self.uid)&pageNum=\(self.page)"
-        //var url = "http://104.131.91.181:8080/whoops/msg/getMsgByUId?uid=97&pageNum=1"
+        
         YRHttpRequest.requestWithURL(url,completionHandler:{ data in
             
             if data as! NSObject == NSNull()
             {
-                UIView.showAlertView("Alert".localized(), message: "Loading Failed".localized())
+                UIView.showAlertView("Opps".localized(),message: "Loading Failed".localized())
                 return
             }
             
             let arr = data["data"] as! NSArray
             
+            
+            
+            self._db = NSMutableArray()
+            for data : AnyObject  in arr
+            {
+                self._db.addObject(data)
+                
+            }
+            self.likeTableView!.reloadData()
+            sender.endRefreshing()
+        })
+    }
+    
+    func load_Data(){
+        let url = FileUtility.getUrlDomain() + "msg/getMsgByUId?uid=\(self.uid)&pageNum=\(self.page)"
+        //var url = "http://104.131.91.181:8080/whoops/msg/getMsgByUId?uid=97&pageNum=1"
+        
+        YRHttpRequest.requestWithURL(url,completionHandler:{ data in
+            
+            if data as! NSObject == NSNull()
+            {
+                UIView.showAlertView("Opps",message: "Loading Failed".localized())
+                return
+            }
+            
+            let arr = data["data"] as! NSArray
+            if self.page == 1 {
+                self._db = NSMutableArray()
+            }
+            
             if (arr.count == 0){
-                self.stopLoading = true
-            }else{
-                self.stopLoading = false
+                self.likeTableView.endLoadMoreData()
             }
             
             for data : AnyObject  in arr
@@ -72,22 +110,13 @@ class LikeViewController: UIViewController, UITableViewDelegate, UITableViewData
                 if isExist == false {
                     self._db.addObject(data)
                 }
-
+                
             }
-
-//            let defaults = NSUserDefaults.standardUserDefaults()
-//            let dataSave = NSKeyedArchiver.archivedDataWithRootObject(arr)
-//            defaults.setObject(dataSave, forKey: "likes")
-//            defaults.synchronize()
-//            
-//            let tabItem = self.tabBarController?.tabBar.items![3];
-//            //if badgeNumber>0 {
-//            tabItem!.badgeValue = nil
-
             
-            self.likeTableView.reloadData()
-
+            self.likeTableView!.reloadData()
+            
         })
+        
     }
     
     
