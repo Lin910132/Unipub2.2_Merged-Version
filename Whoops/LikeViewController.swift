@@ -56,6 +56,7 @@ class LikeViewController: UIViewController, UITableViewDelegate, UITableViewData
             if data as! NSObject == NSNull()
             {
                 UIView.showAlertView("Opps".localized(),message: "Loading Failed".localized())
+                sender.endRefreshing()
                 return
             }
             
@@ -77,22 +78,20 @@ class LikeViewController: UIViewController, UITableViewDelegate, UITableViewData
     func load_Data(){
         let url = FileUtility.getUrlDomain() + "msg/getMsgByUId?uid=\(self.uid)&pageNum=\(self.page)"
         //var url = "http://104.131.91.181:8080/whoops/msg/getMsgByUId?uid=97&pageNum=1"
-        
         YRHttpRequest.requestWithURL(url,completionHandler:{ data in
             
             if data as! NSObject == NSNull()
             {
-                UIView.showAlertView("Opps",message: "Loading Failed".localized())
+                UIView.showAlertView("Alert".localized(), message: "Loading Failed".localized())
                 return
             }
             
             let arr = data["data"] as! NSArray
-            if self.page == 1 {
-                self._db = NSMutableArray()
-            }
             
             if (arr.count == 0){
-                self.likeTableView.endLoadMoreData()
+                self.stopLoading = true
+            }else{
+                self.stopLoading = false
             }
             
             for data : AnyObject  in arr
@@ -110,13 +109,12 @@ class LikeViewController: UIViewController, UITableViewDelegate, UITableViewData
                 if isExist == false {
                     self._db.addObject(data)
                 }
-                
+
             }
             
-            self.likeTableView!.reloadData()
-            
+            self.likeTableView.reloadData()
+
         })
-        
     }
     
     
