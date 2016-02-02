@@ -36,10 +36,15 @@ class LikeViewController: UIViewController, UITableViewDelegate, UITableViewData
         //_db.removeAllObjects()
         //self.page = 1
         //load_Data()
-        let tabItem = self.tabBarController?.tabBar.items![3];
+        let tabItem = self.tabBarController?.tabBar.items![3]
         var notificationNumber: Int64 = 0
+        
         if tabItem?.badgeValue != nil {
-            notificationNumber = Int64 ((tabItem?.badgeValue)!)!
+            var badgeNumber = (tabItem?.badgeValue)! as String
+            if (badgeNumber.characters.last == "+"){
+                badgeNumber = badgeNumber.substringToIndex(badgeNumber.characters.count - 1)
+            }
+            notificationNumber = Int64 (badgeNumber)!
         }
         
         if notificationNumber > 0{
