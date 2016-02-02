@@ -24,7 +24,7 @@ class LikeViewController: UIViewController, UITableViewDelegate, UITableViewData
         _db.removeAllObjects()
         let nib = UINib(nibName:"LikeViewCell", bundle: nil)
         self.likeTableView.registerNib(nib, forCellReuseIdentifier: identifier)
-        addRefreshControll()
+        //addRefreshControll()
         load_Data()
         // Do any additional setup after loading the view.
     }
@@ -36,6 +36,17 @@ class LikeViewController: UIViewController, UITableViewDelegate, UITableViewData
         //_db.removeAllObjects()
         //self.page = 1
         //load_Data()
+        let tabItem = self.tabBarController?.tabBar.items![3];
+        var notificationNumber: Int64 = 0
+        if tabItem?.badgeValue != nil {
+            notificationNumber = Int64 ((tabItem?.badgeValue)!)!
+        }
+        
+        if notificationNumber > 0{
+            _db.removeAllObjects()
+            self.page = 1
+            load_Data()
+        }
     }
     
     func addRefreshControll()

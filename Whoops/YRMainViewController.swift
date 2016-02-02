@@ -41,7 +41,7 @@ class YRMainViewController: UIViewController,UITableViewDelegate,UITableViewData
     var school:Int = 0
     var userId:String = "0"
     
-    var type:Int = 0
+    var type:Int = 4
     
     let itemArray = ["New","Hot","Favorite","All Time Hot","Rank"]
 
@@ -121,7 +121,7 @@ class YRMainViewController: UIViewController,UITableViewDelegate,UITableViewData
         self.hotBtn.setTitle(itemArray[1].localized(), forState: .Normal)
         self.favoriteBtn.setTitle(itemArray[2].localized(), forState: .Normal)
         self.allTimeHotBtn.setTitle(itemArray[3].localized(), forState: .Normal)
-        self.rankBtn.setTitle("😘" + itemArray[4].localized(), forState: .Normal)
+        self.rankBtn.setTitle("✨" + itemArray[4].localized() + "✨", forState: .Normal)
     }
     override func viewWillAppear(animated: Bool)
     {
@@ -136,7 +136,7 @@ class YRMainViewController: UIViewController,UITableViewDelegate,UITableViewData
         self.hotBtn.setTitle(itemArray[1].localized(), forState: .Normal)
         self.favoriteBtn.setTitle(itemArray[2].localized(), forState: .Normal)
         self.allTimeHotBtn.setTitle(itemArray[3].localized(), forState: .Normal)
-        self.rankBtn.setTitle("😘" + itemArray[4].localized(), forState: .Normal)
+        self.rankBtn.setTitle("✨" + itemArray[4].localized() + "✨", forState: .Normal)
         
     }
     
@@ -154,9 +154,8 @@ class YRMainViewController: UIViewController,UITableViewDelegate,UITableViewData
 //        var height = self.view.frame.size.height
         //        self.tableView = UITableView(frame:CGRectMake(0,0,width,height-49))
         
-        rankBtn.hidden = true
         rankBtn.setTitleColor(UIColor.whiteColor(), forState: .Selected)
-        newBtn.selected = true
+        rankBtn.selected = true
         
         self.tableView!.delegate = self;
         self.tableView!.dataSource = self;
@@ -289,9 +288,9 @@ class YRMainViewController: UIViewController,UITableViewDelegate,UITableViewData
         }
         url += "&uid=\(FileUtility.getUserId())"
         
-        //if (type == 4){
-        //    url = "http://104.131.91.181:8080/whoops/post/listByActivity?activityId=1"
-        //}
+        if (type == 4){
+            url = FileUtility.getUrlDomain() + "post/listByActivity?activityId=1&pageNum=\(page[type])"
+        }
         
         return url
     }

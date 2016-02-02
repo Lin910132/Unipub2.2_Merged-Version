@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9531" systemVersion="15C50" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="49e-Tb-3d3">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9531" systemVersion="15D21" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="49e-Tb-3d3">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
@@ -165,13 +165,13 @@ This Policy is current as of the Effective Date set forth above. We may change t
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="YVq-Ps-uq4">
-                                <rect key="frame" x="0.0" y="64" width="375" height="32"/>
+                                <rect key="frame" x="0.0" y="64" width="375" height="40"/>
                                 <subviews>
                                     <button opaque="NO" tag="101" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="S1Z-pf-aZw">
-                                        <rect key="frame" x="123" y="2" width="30" height="28"/>
+                                        <rect key="frame" x="224" y="6" width="30" height="28"/>
                                         <constraints>
-                                            <constraint firstAttribute="width" constant="30" id="BbL-bY-j8b"/>
-                                            <constraint firstAttribute="height" constant="28" id="TTR-n9-1jJ"/>
+                                            <constraint firstAttribute="height" constant="28" id="Kr9-Uf-VFn"/>
+                                            <constraint firstAttribute="width" constant="30" id="koH-OD-r4G"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                         <state key="normal" title="Hot">
@@ -189,10 +189,10 @@ This Policy is current as of the Effective Date set forth above. We may change t
                                         </connections>
                                     </button>
                                     <button opaque="NO" tag="102" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VUH-Yd-Kip">
-                                        <rect key="frame" x="163" y="2" width="49" height="28"/>
+                                        <rect key="frame" x="90" y="6" width="49" height="28"/>
                                         <constraints>
-                                            <constraint firstAttribute="height" constant="28" id="Lrh-Qj-jId"/>
-                                            <constraint firstAttribute="width" constant="49" id="apf-fq-9AT"/>
+                                            <constraint firstAttribute="height" constant="28" id="8rp-Q5-m1v"/>
+                                            <constraint firstAttribute="width" constant="49" id="yVX-qi-P9c"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                         <state key="normal" title="Favorite">
@@ -210,10 +210,10 @@ This Policy is current as of the Effective Date set forth above. We may change t
                                         </connections>
                                     </button>
                                     <button opaque="NO" tag="103" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2Af-KH-8Pe">
-                                        <rect key="frame" x="222" y="2" width="74" height="28"/>
+                                        <rect key="frame" x="254" y="6" width="74" height="28"/>
                                         <constraints>
-                                            <constraint firstAttribute="height" constant="28" id="1rW-gO-epu"/>
-                                            <constraint firstAttribute="width" constant="74" id="xyf-NJ-zPX"/>
+                                            <constraint firstAttribute="height" constant="28" id="AO9-0Z-bkm"/>
+                                            <constraint firstAttribute="width" constant="74" id="Vcb-DO-tGE"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                         <state key="normal" title="All Time Hot">
@@ -230,25 +230,33 @@ This Policy is current as of the Effective Date set forth above. We may change t
                                             <action selector="tabBarButtonClicked:" destination="9pv-A4-QxB" eventType="touchUpInside" id="7TA-QL-iZc"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" tag="104" contentMode="scaleToFill" selected="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yjn-vR-w4H">
-                                        <rect key="frame" x="21" y="1" width="52" height="30"/>
+                                    <button opaque="NO" tag="104" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yjn-vR-w4H">
+                                        <rect key="frame" x="143" y="4" width="79" height="32"/>
                                         <constraints>
-                                            <constraint firstAttribute="height" constant="30" id="X3k-Id-BhO"/>
-                                            <constraint firstAttribute="width" constant="52" id="wBa-X0-5KG"/>
+                                            <constraint firstAttribute="width" constant="75" id="OxQ-uo-QbQ"/>
+                                            <constraint firstAttribute="width" constant="79" id="PCQ-AJ-pGX"/>
+                                            <constraint firstAttribute="height" constant="30" id="dXm-FC-GHk"/>
+                                            <constraint firstAttribute="height" constant="32" id="zb3-qS-j6V"/>
                                         </constraints>
-                                        <fontDescription key="fontDescription" type="system" pointSize="13"/>
-                                        <state key="normal" title="😘 Rank">
+                                        <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                        <state key="normal" title="✨Rank✨">
                                             <color key="titleColor" red="1" green="1" blue="1" alpha="0.47999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
                                         </state>
+                                        <variation key="default">
+                                            <mask key="constraints">
+                                                <exclude reference="OxQ-uo-QbQ"/>
+                                                <exclude reference="dXm-FC-GHk"/>
+                                            </mask>
+                                        </variation>
                                         <connections>
                                             <action selector="tabBarButtonClicked:" destination="9pv-A4-QxB" eventType="touchUpInside" id="RMg-8g-Bhf"/>
                                         </connections>
                                     </button>
                                     <button opaque="NO" tag="100" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="u1b-It-OOO">
-                                        <rect key="frame" x="83" y="2" width="30" height="28"/>
+                                        <rect key="frame" x="57" y="6" width="30" height="28"/>
                                         <constraints>
-                                            <constraint firstAttribute="width" constant="30" id="OS0-Sp-q5q"/>
-                                            <constraint firstAttribute="height" constant="28" id="WFC-RW-qSh"/>
+                                            <constraint firstAttribute="width" constant="30" id="hSs-QV-bxR"/>
+                                            <constraint firstAttribute="height" constant="28" id="sW6-V3-1hJ"/>
                                         </constraints>
                                         <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                         <state key="normal" title="New">
@@ -268,18 +276,18 @@ This Policy is current as of the Effective Date set forth above. We may change t
                                 </subviews>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <constraints>
-                                    <constraint firstItem="u1b-It-OOO" firstAttribute="leading" secondItem="yjn-vR-w4H" secondAttribute="trailing" constant="10" id="32f-dx-BMP"/>
-                                    <constraint firstItem="VUH-Yd-Kip" firstAttribute="centerX" secondItem="YVq-Ps-uq4" secondAttribute="centerX" id="Ltp-ws-l8s"/>
-                                    <constraint firstItem="S1Z-pf-aZw" firstAttribute="leading" secondItem="u1b-It-OOO" secondAttribute="trailing" constant="10" id="PFj-0F-bHX"/>
-                                    <constraint firstItem="yjn-vR-w4H" firstAttribute="centerY" secondItem="YVq-Ps-uq4" secondAttribute="centerY" id="SGk-ZW-Nqr"/>
-                                    <constraint firstItem="VUH-Yd-Kip" firstAttribute="leading" secondItem="S1Z-pf-aZw" secondAttribute="trailing" constant="10" id="V6u-X6-xko"/>
-                                    <constraint firstItem="2Af-KH-8Pe" firstAttribute="leading" secondItem="VUH-Yd-Kip" secondAttribute="trailing" constant="10" id="ZYL-Vy-lUv"/>
-                                    <constraint firstItem="VUH-Yd-Kip" firstAttribute="centerY" secondItem="YVq-Ps-uq4" secondAttribute="centerY" id="gnd-99-n2s"/>
-                                    <constraint firstItem="S1Z-pf-aZw" firstAttribute="centerY" secondItem="YVq-Ps-uq4" secondAttribute="centerY" id="iz9-ZW-L1C"/>
-                                    <constraint firstItem="u1b-It-OOO" firstAttribute="centerY" secondItem="YVq-Ps-uq4" secondAttribute="centerY" id="jsK-O0-diz"/>
-                                    <constraint firstItem="2Af-KH-8Pe" firstAttribute="centerY" secondItem="YVq-Ps-uq4" secondAttribute="centerY" id="kYB-3g-c4o"/>
-                                    <constraint firstAttribute="height" constant="32" id="ksd-Ea-oqx"/>
+                                    <constraint firstItem="S1Z-pf-aZw" firstAttribute="leading" secondItem="yjn-vR-w4H" secondAttribute="trailing" constant="2" id="3S8-NT-EaK"/>
+                                    <constraint firstItem="VUH-Yd-Kip" firstAttribute="leading" secondItem="u1b-It-OOO" secondAttribute="trailing" constant="3" id="52S-AQ-OzD"/>
+                                    <constraint firstItem="yjn-vR-w4H" firstAttribute="centerY" secondItem="YVq-Ps-uq4" secondAttribute="centerY" id="Owf-O7-gxr"/>
+                                    <constraint firstItem="2Af-KH-8Pe" firstAttribute="leading" secondItem="S1Z-pf-aZw" secondAttribute="trailing" id="PUq-p2-40R"/>
+                                    <constraint firstItem="yjn-vR-w4H" firstAttribute="centerX" secondItem="YVq-Ps-uq4" secondAttribute="centerX" constant="-5" id="aM0-UY-B9L"/>
+                                    <constraint firstItem="2Af-KH-8Pe" firstAttribute="centerY" secondItem="YVq-Ps-uq4" secondAttribute="centerY" id="ekB-if-aS7"/>
+                                    <constraint firstAttribute="height" constant="40" id="ksd-Ea-oqx"/>
                                     <constraint firstItem="u1b-It-OOO" firstAttribute="leading" secondItem="yjn-vR-w4H" secondAttribute="trailing" id="lag-Gz-HF9"/>
+                                    <constraint firstItem="S1Z-pf-aZw" firstAttribute="centerY" secondItem="YVq-Ps-uq4" secondAttribute="centerY" id="mki-Ug-qYd"/>
+                                    <constraint firstItem="u1b-It-OOO" firstAttribute="centerY" secondItem="YVq-Ps-uq4" secondAttribute="centerY" id="upc-0d-veY"/>
+                                    <constraint firstItem="yjn-vR-w4H" firstAttribute="leading" secondItem="VUH-Yd-Kip" secondAttribute="trailing" constant="4" id="wZs-Gq-qsc"/>
+                                    <constraint firstItem="VUH-Yd-Kip" firstAttribute="centerY" secondItem="YVq-Ps-uq4" secondAttribute="centerY" id="yJD-Ky-MQd"/>
                                 </constraints>
                                 <variation key="default">
                                     <mask key="constraints">
@@ -288,7 +296,7 @@ This Policy is current as of the Effective Date set forth above. We may change t
                                 </variation>
                             </view>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="A2Z-bp-gL3">
-                                <rect key="frame" x="0.0" y="94" width="375" height="524"/>
+                                <rect key="frame" x="0.0" y="102" width="375" height="516"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                             </tableView>
                         </subviews>
