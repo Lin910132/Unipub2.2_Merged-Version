@@ -286,11 +286,13 @@ class YRMainViewController: UIViewController,UITableViewDelegate,UITableViewData
                 url += "post/listHotAll?pageNum=\(page[type])"
             }
         }
-        url += "&uid=\(FileUtility.getUserId())"
         
         if (type == 4){
             url = FileUtility.getUrlDomain() + "post/listByActivity?activityId=1&pageNum=\(page[type])"
         }
+        url += "&uid=\(FileUtility.getUserId())"
+        
+        
         
         return url
     }
