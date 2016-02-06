@@ -28,6 +28,12 @@ class CheckLocationViewController: UIViewController,CLLocationManagerDelegate {
         }
     }
     
+    @IBAction func TakeBtnClicked(sender: AnyObject) {
+        if let url = NSURL(string:UIApplicationOpenSettingsURLString) {
+            UIApplication.sharedApplication().openURL(url)
+        }
+    }
+    
     func ios8()->Bool{
         let version:NSString = UIDevice.currentDevice().systemVersion
         let bigVersion = version.substringToIndex(1)
