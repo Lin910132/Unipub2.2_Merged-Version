@@ -2473,6 +2473,24 @@ If you have any questions about these Terms or otherwise need to contact Unipub 
             </objects>
             <point key="canvasLocation" x="731.5" y="590.5"/>
         </scene>
+        <!--Check Location View Controller-->
+        <scene sceneID="gro-uN-HKR">
+            <objects>
+                <viewController storyboardIdentifier="CheckLocation" id="xQA-EL-gam" customClass="CheckLocationViewController" customModule="UniPub" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="7rX-Ww-3nh"/>
+                        <viewControllerLayoutGuide type="bottom" id="uhl-YT-JVV"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Ith-bv-m5r">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="515-5n-q9Q" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-613.5" y="2544"/>
+        </scene>
         <!--New Post View Controller-->
         <scene sceneID="SHS-f2-jMm">
             <objects>

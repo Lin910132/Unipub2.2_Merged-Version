@@ -46,6 +46,7 @@
 		8690039D1AA78F1000D46DED /* PostTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8690039C1AA78F1000D46DED /* PostTableViewCell.swift */; };
 		8698ECBD1AAA16CE000E04E6 /* SearchHeadCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8698ECBC1AAA16CE000E04E6 /* SearchHeadCell.swift */; };
 		869931CF1BB7935B00EF5C9C /* libFlurry_7.1.1.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 869931CE1BB7935B00EF5C9C /* libFlurry_7.1.1.a */; };
+		86A11FCA1C6466440028CE4C /* CheckLocationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86A11FC91C6466440028CE4C /* CheckLocationViewController.swift */; };
 		86A2E6481AAC9ECC00499C13 /* UniversityViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86A2E6471AAC9ECC00499C13 /* UniversityViewController.swift */; };
 		86D0A4F81AE012A100D86953 /* LikeViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86D0A4F61AE012A100D86953 /* LikeViewCell.swift */; };
 		86D0A4F91AE012A100D86953 /* LikeViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 86D0A4F71AE012A100D86953 /* LikeViewCell.xib */; };
@@ -136,6 +137,7 @@
 		869931CC1BB7934E00EF5C9C /* Flurry.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Flurry.h; path = Flurry/Flurry.h; sourceTree = SOURCE_ROOT; };
 		869931CD1BB7935B00EF5C9C /* FlurryWatch.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FlurryWatch.h; path = Flurry/FlurryWatch.h; sourceTree = SOURCE_ROOT; };
 		869931CE1BB7935B00EF5C9C /* libFlurry_7.1.1.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libFlurry_7.1.1.a; path = Flurry/libFlurry_7.1.1.a; sourceTree = SOURCE_ROOT; };
+		86A11FC91C6466440028CE4C /* CheckLocationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CheckLocationViewController.swift; sourceTree = "<group>"; };
 		86A2E6471AAC9ECC00499C13 /* UniversityViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UniversityViewController.swift; sourceTree = "<group>"; };
 		86D0A4F61AE012A100D86953 /* LikeViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LikeViewCell.swift; sourceTree = "<group>"; };
 		86D0A4F71AE012A100D86953 /* LikeViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LikeViewCell.xib; sourceTree = "<group>"; };
@@ -283,6 +285,7 @@
 				860D538B1BBCCCAD00F16202 /* UniversityPageObj.swift */,
 				9CC38CD51C3DC4AA00D559B2 /* LanguageSettingTableViewController.swift */,
 				2F0A4F3F1C4E1A7100C9580A /* ImagesDetailViewController.swift */,
+				86A11FC91C6466440028CE4C /* CheckLocationViewController.swift */,
 			);
 			name = viewController;
 			sourceTree = "<group>";
@@ -553,6 +556,7 @@
 				86D0A4F81AE012A100D86953 /* LikeViewCell.swift in Sources */,
 				860D538C1BBCCCAD00F16202 /* UniversityPageObj.swift in Sources */,
 				E3780B0A1B1FE67500EB662E /* YRJokeCell2.swift in Sources */,
+				86A11FCA1C6466440028CE4C /* CheckLocationViewController.swift in Sources */,
 				868A30561A9E972700FC9EF9 /* AppDelegate.swift in Sources */,
 				9C1B7BD31C419665001924A5 /* Terms&ServiceViewController.swift in Sources */,
 				9C1B7BD51C419708001924A5 /* Rules&InfoViewController.swift in Sources */,
