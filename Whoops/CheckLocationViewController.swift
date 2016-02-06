@@ -13,9 +13,28 @@ class CheckLocationViewController: UIViewController,CLLocationManagerDelegate {
 
     let locationManager: CLLocationManager = CLLocationManager()
     
+    @IBOutlet var titleLabel: UILabel!
+    @IBOutlet var summaryLabel: UILabel!
+    
+    @IBOutlet var step1: UILabel!
+    @IBOutlet var step2: UILabel!
+    @IBOutlet var step3: UILabel!
+    @IBOutlet var step4: UILabel!
+    @IBOutlet var setLocation: UIButton!
+    
     override func viewDidLoad() {
         locationManager.delegate = self
         self.view.backgroundColor = UIColor.applicationMainColor()
+    }
+    
+    override func viewWillAppear(animated: Bool) {
+        titleLabel.text = "WHOOPS".localized() + "..."
+        summaryLabel.text = "Unipub needs your location in order to work. Here are a few quick steps to fix this.".localized()
+        step1.text = "1. " + "Open your Settings".localized()
+        step2.text = "2. " + "Scroll to Privacy and tap on it".localized()
+        step3.text = "3. " + "Tap on Location Services".localized()
+        step4.text = "4. " + "Find Unipub and turn Location On".localized()
+        setLocation.setTitle("TAKE ME THERE".localized() + "!", forState: UIControlState.Normal)
     }
     
     func locationManager(manager: CLLocationManager, didChangeAuthorizationStatus status: CLAuthorizationStatus) {
