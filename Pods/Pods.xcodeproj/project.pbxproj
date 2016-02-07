@@ -232,6 +232,11 @@
 			attributes = {
 				LastSwiftUpdateCheck = 0700;
 				LastUpgradeCheck = 0700;
+				TargetAttributes = {
+					3CB51CC21BAFC56F670577DAB81D8A42 = {
+						DevelopmentTeam = 72739DGUJR;
+					};
+				};
 			};
 			buildConfigurationList = 2D8E8EC45A3A1A1D94AE762CB5028504 /* Build configuration list for PBXProject "Pods" */;
 			compatibilityVersion = "Xcode 3.2";
@@ -316,6 +321,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = FFFA98956ADFA791894E85D583D867BC /* Localize-Swift.xcconfig */;
 			buildSettings = {
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CURRENT_PROJECT_VERSION = 1;
 				DEFINES_MODULE = YES;
@@ -331,6 +337,7 @@
 				MODULEMAP_FILE = "Target Support Files/Localize-Swift/Localize-Swift.modulemap";
 				MTL_ENABLE_DEBUG_INFO = NO;
 				PRODUCT_NAME = Localize_Swift;
+				PROVISIONING_PROFILE = "";
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -343,6 +350,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = FFFA98956ADFA791894E85D583D867BC /* Localize-Swift.xcconfig */;
 			buildSettings = {
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CURRENT_PROJECT_VERSION = 1;
 				DEFINES_MODULE = YES;
@@ -358,6 +366,7 @@
 				MODULEMAP_FILE = "Target Support Files/Localize-Swift/Localize-Swift.modulemap";
 				MTL_ENABLE_DEBUG_INFO = YES;
 				PRODUCT_NAME = Localize_Swift;
+				PROVISIONING_PROFILE = "";
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";

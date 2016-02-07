@@ -12,6 +12,9 @@
 #import <Bolts/Bolts.h>
 #import <Parse/Parse.h>
 #import "Flurry.h"
+#import "QBAnimationSequence.h"
+#import "QBAnimationGroup.h"
+#import "QBAnimationItem.h"
 
 
 
