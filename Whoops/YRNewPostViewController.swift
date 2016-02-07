@@ -31,6 +31,8 @@ class YRNewPostViewController: UIViewController, UIImagePickerControllerDelegate
     @IBOutlet weak var countWordLabel: UILabel!
     @IBOutlet weak var sendButton: UIBarButtonItem!
     
+    var mainController:MyUITabBarController!
+    
     
     let placeHolder = "Write something"
     let locationManager = CLLocationManager()
@@ -180,22 +182,29 @@ class YRNewPostViewController: UIViewController, UIImagePickerControllerDelegate
             //navigationController?.popViewControllerAnimated(true)
             
         }*/
-        let mainStoryboard = UIStoryboard(name: "Main", bundle: NSBundle.mainBundle())
+//        let mainStoryboard = UIStoryboard(name: "Main", bundle: NSBundle.mainBundle())
         if self.schoolId == "0"{
-            let vc : UIViewController = mainStoryboard.instantiateViewControllerWithIdentifier("tabBarId")
-            self.presentViewController(vc, animated: true, completion: nil)
-        }else{
+            self.mainController.selectedIndex = 0
+            
+            let viewController:YRMainViewController = (self.mainController.viewControllers![0] as! UINavigationController).topViewController as! YRMainViewController
+            viewController.fromPost = true
+            self.dismissViewControllerAnimated(true, completion: nil)
+        }
+        else{
             self.dismissViewControllerAnimated(true, completion: nil)
         }
     }
     
     @IBAction func cancelButtonClicked(sender: AnyObject) {
-        let mainStoryboard = UIStoryboard(name: "Main", bundle: NSBundle.mainBundle())
         if self.schoolId == "0"{
-            let vc : UIViewController = mainStoryboard.instantiateViewControllerWithIdentifier("tabBarId")
-            self.presentViewController(vc, animated: true, completion: nil)
-        }else //if isSchool{
-        {self.dismissViewControllerAnimated(true, completion: nil)
+            self.mainController.selectedIndex = 0
+            let viewController:YRMainViewController = (self.mainController.viewControllers![0] as! UINavigationController).topViewController as! YRMainViewController
+            viewController.fromPost = true
+            self.dismissViewControllerAnimated(true, completion: nil)
+        }
+        else //if isSchool{
+        {
+            self.dismissViewControllerAnimated(true, completion: nil)
         //}else{
             //self.navigationController?.popViewControllerAnimated(true)
         }
@@ -270,12 +279,14 @@ class YRNewPostViewController: UIViewController, UIImagePickerControllerDelegate
                     imgView.frame = CGRectMake(CGFloat(tempWidth), height/2  - imgWidth, imgWidth, imgWidth)
                     self.view.addSubview(imgView)
                     //                toolView.frame = CGRectMake(0, height/2+200, width-300, 62)
-                    toolViewHeighContraint.setValue(30 + imgWidth, forKey: "Constant")
+                    toolView.frame = CGRectMake(toolView.frame.origin.x, imgView.frame.origin.y + imgWidth + 20, toolView.frame.size.width, toolView.frame.size.height)
+//                    toolViewHeighContraint.setValue(30 + imgWidth, forKey: "Constant")
                 }else{
                     let tempWidth = 10 * (imgList.count-3) + (imgList.count-4) * Int(imgWidth)
                     imgView.frame = CGRectMake(CGFloat(tempWidth), height/2  + 10, imgWidth, imgWidth)
                     self.view.addSubview(imgView)
-                    toolViewHeighContraint.setValue(40 + imgWidth * 2, forKey: "Constant")
+                    toolView.frame = CGRectMake(toolView.frame.origin.x, imgView.frame.origin.y + imgWidth + 20, toolView.frame.size.width, toolView.frame.size.height)
+//                    toolViewHeighContraint.setValue(40 + imgWidth * 2, forKey: "Constant")
                     
                 }
                 
@@ -302,12 +313,14 @@ class YRNewPostViewController: UIViewController, UIImagePickerControllerDelegate
                 imgView.frame = CGRectMake(CGFloat(tempWidth), height/2  - imgWidth, imgWidth, imgWidth)
                 self.view.addSubview(imgView)
                 //                toolView.frame = CGRectMake(0, height/2+200, width-300, 62)
-                toolViewHeighContraint.setValue(30 + imgWidth, forKey: "Constant")
+                toolView.frame = CGRectMake(toolView.frame.origin.x, imgView.frame.origin.y + imgWidth + 20, toolView.frame.size.width, toolView.frame.size.height)
+//                toolViewHeighContraint.setValue(30 + imgWidth, forKey: "Constant")
             }else{
                 let tempWidth = 10 * (imgList.count-3) + (imgList.count-4) * Int(imgWidth)
                 imgView.frame = CGRectMake(CGFloat(tempWidth), height/2  + 10, imgWidth, imgWidth)
                 self.view.addSubview(imgView)
-                toolViewHeighContraint.setValue(40 + imgWidth * 2, forKey: "Constant")
+                toolView.frame = CGRectMake(toolView.frame.origin.x, imgView.frame.origin.y + imgWidth + 20, toolView.frame.size.width, toolView.frame.size.height)
+//                toolViewHeighContraint.setValue(40 + imgWidth * 2, forKey: "Constant")
                 
             }
             imgList.removeLast()
@@ -372,13 +385,14 @@ class YRNewPostViewController: UIViewController, UIImagePickerControllerDelegate
                 imgView.frame = CGRectMake(CGFloat(tempWidth), height/2  - imgWidth, imgWidth, imgWidth)
                 self.view.addSubview(imgView)
                 //                toolView.frame = CGRectMake(0, height/2+200, width-300, 62)
-                toolViewHeighContraint.setValue(30 + imgWidth, forKey: "Constant")
+//                toolViewHeighContraint.setValue(30 + imgWidth, forKey: "Constant")
+                toolView.frame = CGRectMake(toolView.frame.origin.x, imgView.frame.origin.y + imgWidth + 20, toolView.frame.size.width, toolView.frame.size.height)
             }else{
                 let tempWidth = 10 * (imgList.count-3) + (imgList.count-4) * Int(imgWidth)
                 imgView.frame = CGRectMake(CGFloat(tempWidth), height/2  + 10, imgWidth, imgWidth)
                 self.view.addSubview(imgView)
-                toolViewHeighContraint.setValue(40 + imgWidth * 2, forKey: "Constant")
-                
+//                toolViewHeighContraint.setValue(40 + imgWidth * 2, forKey: "Constant")
+                toolView.frame = CGRectMake(toolView.frame.origin.x, imgView.frame.origin.y + imgWidth + 20, toolView.frame.size.width, toolView.frame.size.height)
             }
             
         }
@@ -401,12 +415,14 @@ class YRNewPostViewController: UIViewController, UIImagePickerControllerDelegate
                 imgView.frame = CGRectMake(CGFloat(tempWidth), height/2  - imgWidth, imgWidth, imgWidth)
                 self.view.addSubview(imgView)
                 //                toolView.frame = CGRectMake(0, height/2+200, width-300, 62)
-                toolViewHeighContraint.setValue(30 + imgWidth, forKey: "Constant")
+//                toolViewHeighContraint.setValue(30 + imgWidth, forKey: "Constant")
+                toolView.frame = CGRectMake(toolView.frame.origin.x, imgView.frame.origin.y + imgWidth + 20, toolView.frame.size.width, toolView.frame.size.height)
             }else{
                 let tempWidth = 10 * (imgList.count-3) + (imgList.count-4) * Int(imgWidth)
                 imgView.frame = CGRectMake(CGFloat(tempWidth), height/2  + 10, imgWidth, imgWidth)
                 self.view.addSubview(imgView)
-                toolViewHeighContraint.setValue(40 + imgWidth * 2, forKey: "Constant")
+//                toolViewHeighContraint.setValue(40 + imgWidth * 2, forKey: "Constant")
+                toolView.frame = CGRectMake(toolView.frame.origin.x, imgView.frame.origin.y + imgWidth + 20, toolView.frame.size.width, toolView.frame.size.height)
                 
             }
             imgList.removeLast()
