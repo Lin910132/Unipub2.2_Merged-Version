@@ -2544,9 +2544,7 @@ If you have any questions about these Terms or otherwise need to contact Unipub 
                                 <rect key="frame" x="-42" y="-21" width="42" height="21"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="18" id="3Bj-jo-T8H"/>
-                                    <constraint firstAttribute="width" constant="145" id="D1i-eG-FXT">
-                                        <variation key="widthClass=compact" constant="200"/>
-                                    </constraint>
+                                    <constraint firstAttribute="width" constant="145" id="D1i-eG-FXT"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
@@ -2649,7 +2647,7 @@ If you have any questions about these Terms or otherwise need to contact Unipub 
                             <constraint firstItem="ifM-XT-RS5" firstAttribute="top" secondItem="21q-pw-mza" secondAttribute="bottom" constant="9" id="Jj8-f1-GBn"/>
                             <constraint firstItem="21q-pw-mza" firstAttribute="top" secondItem="23l-Zk-pbq" secondAttribute="bottom" constant="19" id="Kvp-I6-z6c"/>
                             <constraint firstItem="Td0-sd-EVg" firstAttribute="top" secondItem="7rX-Ww-3nh" secondAttribute="bottom" id="PUE-lS-uhB">
-                                <variation key="widthClass=compact" constant="50"/>
+                                <variation key="widthClass=compact" constant="15"/>
                             </constraint>
                             <constraint firstItem="Td0-sd-EVg" firstAttribute="leading" secondItem="Ith-bv-m5r" secondAttribute="leadingMargin" id="RY4-1P-kba"/>
                             <constraint firstItem="ifM-XT-RS5" firstAttribute="leading" secondItem="Ith-bv-m5r" secondAttribute="leadingMargin" id="Vvr-6c-TPp"/>
