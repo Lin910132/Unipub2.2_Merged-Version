@@ -101,7 +101,7 @@ class YRMainViewController: UIViewController,UITableViewDelegate,UITableViewData
                 }
                 
             }
-            //self.page[self.type]++
+            self.page[self.type]++
             self.tableView!.reloadData()
             //self.refreshView!.stopLoading()
 
@@ -202,8 +202,7 @@ class YRMainViewController: UIViewController,UITableViewDelegate,UITableViewData
                 self.dataArray.addObject(data)
                 
             }
-            //Don't increase page, or you'll lose page 2
-            //self.page[self.type]++
+            self.page[self.type]++
             self.tableView!.reloadData()
             //self.refreshView!.stopLoading()
             
