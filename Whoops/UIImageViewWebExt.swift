@@ -13,8 +13,8 @@ extension UIImageView
 {
     func setImage(urlString:String,placeHolder:UIImage!)
     {
-        let u = urlString.stringByAddingPercentEncodingWithAllowedCharacters(NSCharacterSet.URLQueryAllowedCharacterSet())
-        //let u = urlString.stringByAddingPercentEscapesUsingEncoding(NSUTF8StringEncoding)
+    
+        let u = urlString.stringByAddingPercentEscapesUsingEncoding(NSUTF8StringEncoding)
         let url = NSURL(string:u!)
         let cacheFilename = url?.lastPathComponent
         let cachePath = FileUtility.cachePath(cacheFilename!)

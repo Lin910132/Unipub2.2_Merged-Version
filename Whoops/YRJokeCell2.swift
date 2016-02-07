@@ -199,39 +199,6 @@ class YRJokeCell2: UITableViewCell
                 
                 textYpostion = imgWidth + yPosition;
             }
-            else if(imgArray.count == 4){
-                var widthTmp:CGFloat;
-                widthTmp = (CGFloat)(width - offset)/2;
-                var imgWidth:CGFloat;
-                imgWidth = height>widthTmp ? widthTmp:height;
-                var index = 0
-                for imgUrl in imgArray
-                {
-                    var x:CGFloat;
-                    x = xPositon + CGFloat(index%2 * Int(imgWidth + offset));
-                    var y:CGFloat;
-                    y = yPosition + CGFloat(index/2 * Int(widthTmp + offset));
-                    
-                    let imgView = UIImageView(frame:CGRectMake(x, y, imgWidth, imgWidth));
-                    let maskLayer = CAShapeLayer()
-                    let path = CGPathCreateWithRect(imgView.bounds, nil)
-                    maskLayer.path = path
-                    imgView.layer.mask = maskLayer
-                    
-                    imgView.contentMode = UIViewContentMode.ScaleAspectFill;
-                    self.imgList.append(imgView)
-                    imgView.userInteractionEnabled = true
-                    let tap = UITapGestureRecognizer(target: self, action: "imageViewTapped:")
-                    imgView.addGestureRecognizer(tap)
-                    let imagURL = FileUtility.getUrlImage() + (imgUrl as! String)
-                    imgView.tag = index;
-                    imgView.setImage(imagURL,placeHolder: UIImage(named: "Logoo.png"))
-                    index++;
-                    ivBack.addSubview(imgView);
-                }
-                
-                textYpostion = yPosition + CGFloat(2 * Int(imgWidth + offset));
-            }
             else if(imgArray.count >= 3)
             {
                 //3张图片及以上
@@ -585,14 +552,6 @@ class YRJokeCell2: UITableViewCell
                 imgWidth = height>widthTmp ? widthTmp:height;
                 
                 textTmpYpostion = imgWidth + yPosition;
-            }
-            else if(imgArray.count == 4){
-                var widthTmp:CGFloat;
-                widthTmp = (CGFloat)(width - offset)/2;
-                var imgWidth:CGFloat;
-                imgWidth = height>widthTmp ? widthTmp:height;
-                
-                textTmpYpostion = yPosition + CGFloat(2 * Int(imgWidth + offset));
             }
             else if(imgArray.count >= 3)
             {
