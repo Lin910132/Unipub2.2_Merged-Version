@@ -76,11 +76,14 @@ class YRSendComment:UIView , UITextFieldDelegate{
     
     @IBAction func sendBtnClicked(sender:UIButton)
     {
-        let content = commentText.text!
+        var content = commentText.text!
         if content.isEmpty{
 //            UIView.showAlertView("WARNING",message:"Comment should not be empty")
             return
         }
+        
+        
+         content = content.stringByReplacingOccurrencesOfString("+", withString: "%2B", options: NSStringCompareOptions.LiteralSearch, range: nil)
         
         let url = FileUtility.getUrlDomain() + "comment/add?"
         let paraData = "content=\(content)&postId=\(postId)&uid=\(FileUtility.getUserId())"

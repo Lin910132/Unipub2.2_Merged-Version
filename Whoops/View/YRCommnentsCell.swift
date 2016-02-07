@@ -55,7 +55,7 @@ class YRCommnentsCell: UITableViewCell {
         
     }
 
-    
+    /*
     @IBAction func likeImageClick(){
         /*let myalert = UIAlertView()
         myalert.title = "准备好了吗"
@@ -98,7 +98,7 @@ class YRCommnentsCell: UITableViewCell {
             })
             
 
-    }
+    }*/
 
     
     
