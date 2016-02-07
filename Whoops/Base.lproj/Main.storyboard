@@ -2345,7 +2345,6 @@ If you have any questions about these Terms or otherwise need to contact Unipub 
             <point key="canvasLocation" x="725.25" y="554.5"/>
 >>>>>>> master
         </scene>
-<<<<<<< HEAD
         <!--Check Location View Controller-->
         <scene sceneID="gro-uN-HKR">
             <objects>
@@ -2611,8 +2610,6 @@ If you have any questions about these Terms or otherwise need to contact Unipub 
             <point key="canvasLocation" x="-613.5" y="2772"/>
 >>>>>>> master
         </scene>
-=======
->>>>>>> parent of eaa37f3... Add check location viewController
         <!--New Post View Controller-->
         <scene sceneID="SHS-f2-jMm">
             <objects>
