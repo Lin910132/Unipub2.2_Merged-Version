@@ -158,3 +158,13 @@
 "Someone liked your post" = "有人讚了你的帖子";
 "Someone disliked your post" = "有人踩了你的帖子";
 "Someone replied your post" = "有人回應了你的帖子";
+
+//Location Page
+
+"WHOOPS" = "啊哦...";
+"Unipub needs your location in order to work. Here are a few quick steps to fix this." = "Unipub需要您的位置信息才能正常運行。可以參照下面的步驟打開定位服務哦！";
+"Open your Settings" = "打開設置";
+"Scroll to Privacy and tap on it" = "找到 隱私 并點擊";
+"Tap on Location Services" = "點擊定位服務";
+"Find Unipub and turn Location On" = "找到Unipub并開啟定位服務就可以啦！";
+"TAKE ME THERE" = "帶我去";
