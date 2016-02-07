@@ -150,7 +150,7 @@ This Policy is current as of the Effective Date set forth above. We may change t
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="WIG-dF-Gvl" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2679.75" y="2144.5"/>
+            <point key="canvasLocation" x="2350.5" y="2096.5"/>
         </scene>
         <!--Home Page-->
         <scene sceneID="hNz-n2-bh7">
@@ -325,7 +325,7 @@ This Policy is current as of the Effective Date set forth above. We may change t
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="W5J-7L-Pyd" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-5.25" y="-238.5"/>
+            <point key="canvasLocation" x="-61.5" y="-238.5"/>
         </scene>
         <!--Rules Info View Controller-->
         <scene sceneID="hgt-bp-k4O">
@@ -355,7 +355,7 @@ This Policy is current as of the Effective Date set forth above. We may change t
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="XXa-CB-Gfs" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1925.25" y="2948.5"/>
+            <point key="canvasLocation" x="1889.5" y="2936.5"/>
         </scene>
         <!--Terms of Service-->
         <scene sceneID="3dm-qh-puK">
@@ -1942,7 +1942,7 @@ If you have any questions about these Terms or otherwise need to contact Unipub 
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Q9a-dY-Wmj" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3542.25" y="2116.5"/>
+            <point key="canvasLocation" x="2823.5" y="2096.5"/>
         </scene>
         <!--Settings-->
         <scene sceneID="lOo-AM-NfQ">
@@ -2211,7 +2211,7 @@ If you have any questions about these Terms or otherwise need to contact Unipub 
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="HZR-NG-bMS" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2655.75" y="2957.5"/>
+            <point key="canvasLocation" x="2350.5" y="2929.5"/>
         </scene>
         <!--University View Controller-->
         <scene sceneID="i7e-6D-cmP">
@@ -2251,7 +2251,7 @@ If you have any questions about these Terms or otherwise need to contact Unipub 
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5jT-BW-aKt" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3321.75" y="-230.5"/>
+            <point key="canvasLocation" x="2248.5" y="-238.5"/>
         </scene>
         <!--Explore-->
         <scene sceneID="wg7-f3-ORb">
@@ -2406,7 +2406,7 @@ If you have any questions about these Terms or otherwise need to contact Unipub 
                     </connections>
                 </searchDisplayController>
             </objects>
-            <point key="canvasLocation" x="2502.75" y="-230.5"/>
+            <point key="canvasLocation" x="1753.5" y="-238.5"/>
         </scene>
         <!--Like View Controller-->
         <scene sceneID="q2o-qI-qsC">
@@ -2444,7 +2444,7 @@ If you have any questions about these Terms or otherwise need to contact Unipub 
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="X5V-kk-WVP" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2510.25" y="579.5"/>
+            <point key="canvasLocation" x="1833.5" y="583.5"/>
         </scene>
         <!--MyUI Tab Bar Controller-->
         <scene sceneID="yl2-sM-qoP">
@@ -2471,7 +2471,7 @@ If you have any questions about these Terms or otherwise need to contact Unipub 
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="HuB-VB-40B" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="725.25" y="554.5"/>
+            <point key="canvasLocation" x="731.5" y="590.5"/>
         </scene>
         <!--Check Location View Controller-->
         <scene sceneID="gro-uN-HKR">
@@ -2489,7 +2489,7 @@ If you have any questions about these Terms or otherwise need to contact Unipub 
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="515-5n-q9Q" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-613.5" y="2772"/>
+            <point key="canvasLocation" x="-613.5" y="2544"/>
         </scene>
         <!--New Post View Controller-->
         <scene sceneID="SHS-f2-jMm">
@@ -2640,7 +2640,7 @@ If you have any questions about these Terms or otherwise need to contact Unipub 
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="VIH-bb-Rjs" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="75.75" y="2761.5"/>
+            <point key="canvasLocation" x="215.5" y="2577.5"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="xTz-8v-nCD">
@@ -2669,7 +2669,7 @@ If you have any questions about these Terms or otherwise need to contact Unipub 
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hbs-Gw-TF3" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-774.75" y="-238.5"/>
+            <point key="canvasLocation" x="-593.5" y="-238.5"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="TXb-mg-Vrc">
@@ -2695,7 +2695,7 @@ If you have any questions about these Terms or otherwise need to contact Unipub 
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Kyy-Eb-cn7" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1568.25" y="559.5"/>
+            <point key="canvasLocation" x="1286.5" y="583.5"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="eEI-yf-JiH">
@@ -2722,7 +2722,7 @@ If you have any questions about these Terms or otherwise need to contact Unipub 
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Shf-ew-b4B" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1568.25" y="-210.5"/>
+            <point key="canvasLocation" x="1206.5" y="-238.5"/>
         </scene>
         <!--Comments View Controller-->
         <scene sceneID="BTZ-3J-g1k">
@@ -2767,7 +2767,7 @@ If you have any questions about these Terms or otherwise need to contact Unipub 
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dhq-0V-KZB" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="675.75" y="-238.5"/>
+            <point key="canvasLocation" x="448.5" y="-238.5"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="4Oz-rV-w9i">
@@ -2793,7 +2793,7 @@ If you have any questions about these Terms or otherwise need to contact Unipub 
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="XE8-kH-c5N" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-785.25" y="1741.5"/>
+            <point key="canvasLocation" x="223.5" y="1761.5"/>
         </scene>
         <!--Profile Table View Controller-->
         <scene sceneID="WJO-tS-lou">
@@ -2929,7 +2929,7 @@ If you have any questions about these Terms or otherwise need to contact Unipub 
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="XaZ-t6-j0k" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="923.25" y="1733.5"/>
+            <point key="canvasLocation" x="1368.5" y="1761.5"/>
         </scene>
         <!--My Replies-->
         <scene sceneID="AMO-52-gJd">
@@ -2959,7 +2959,7 @@ If you have any questions about these Terms or otherwise need to contact Unipub 
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="QT0-la-cqq" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="893.25" y="2833.5"/>
+            <point key="canvasLocation" x="1368.5" y="2629.5"/>
         </scene>
         <!--My Post-->
         <scene sceneID="Oqg-6V-erh">
@@ -3090,7 +3090,7 @@ If you have any questions about these Terms or otherwise need to contact Unipub 
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="v6N-WG-dWw" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2679.75" y="1353.5"/>
+            <point key="canvasLocation" x="2350.5" y="1361.5"/>
         </scene>
         <!--Images Detail View Controller-->
         <scene sceneID="ivi-wB-UDw">
@@ -3124,7 +3124,7 @@ If you have any questions about these Terms or otherwise need to contact Unipub 
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8Jk-SN-3y7" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3542.25" y="1353.5"/>
+            <point key="canvasLocation" x="2793.5" y="1361.5"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="G8k-Al-hug">
@@ -3151,7 +3151,7 @@ If you have any questions about these Terms or otherwise need to contact Unipub 
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="DkK-9i-8hn" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="75.75" y="1741.5"/>
+            <point key="canvasLocation" x="832.5" y="1761.5"/>
         </scene>
     </scenes>
     <resources>
