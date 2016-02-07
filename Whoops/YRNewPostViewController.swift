@@ -542,8 +542,7 @@ class YRNewPostViewController: UIViewController, UIImagePickerControllerDelegate
     
     
     func createNewPost(){
-        var content = contentTextView.text;
-        content = content.stringByReplacingOccurrencesOfString("+", withString: "%2B", options: NSStringCompareOptions.LiteralSearch, range: nil)
+        let content = contentTextView.text;
         let url = FileUtility.getUrlDomain() + "post/addNoPic?"
         var paraData = "content=\(content)"
         let nickName:String = nickNameText.text!
@@ -567,10 +566,7 @@ class YRNewPostViewController: UIViewController, UIImagePickerControllerDelegate
         
     }
     func postWithPic(){
-        var content = contentTextView.text;
-        
-        content = content.stringByReplacingOccurrencesOfString("+", withString: "%2B", options: NSStringCompareOptions.LiteralSearch, range: nil)
-        
+        let content = contentTextView.text;
         let nickName:String = nickNameText.text!
         let request = createRequest(content: content, nickName: nickName)
         try? NSURLConnection.sendSynchronousRequest(request, returningResponse: nil)

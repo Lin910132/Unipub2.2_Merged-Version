@@ -114,14 +114,8 @@ class YRMainViewController: UIViewController,UITableViewDelegate,UITableViewData
                 }
                 
             }
-<<<<<<< HEAD
             self.page[self.type]++
             (self.tableArray[self.type] as! UITableView).reloadData()
-=======
-            //self.page[self.type]++
-            self.tableView!.reloadData()
-            //self.refreshView!.stopLoading()
->>>>>>> master
 
         })
         
@@ -229,15 +223,8 @@ class YRMainViewController: UIViewController,UITableViewDelegate,UITableViewData
                 self.dataArray[self.type].addObject(data)
                 
             }
-<<<<<<< HEAD
             self.page[self.type]++
             (self.tableArray[self.type] as! UITableView).reloadData()
-=======
-            //Don't increase page, or you'll lose page 2
-            //self.page[self.type]++
-            self.tableView!.reloadData()
-            //self.refreshView!.stopLoading()
->>>>>>> master
             
             sender.endRefreshing()
         })
@@ -313,13 +300,11 @@ class YRMainViewController: UIViewController,UITableViewDelegate,UITableViewData
                 url += "post/listHotAll?pageNum=\(page[type])"
             }
         }
+        url += "&uid=\(FileUtility.getUserId())"
         
         if (type == 2){ //4
             url = FileUtility.getUrlDomain() + "post/listByActivity?activityId=1&pageNum=\(page[type])"
         }
-        url += "&uid=\(FileUtility.getUserId())"
-        
-        
         
         return url
     }

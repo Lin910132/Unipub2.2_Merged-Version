@@ -153,13 +153,3 @@
 "Someone liked your post" = "Someone liked your post";
 "Someone disliked your post" = "Someone disliked your post";
 "Someone replied your post" = "Someone replied your post";
-
-//Location page
-
-"WHOOPS" = "WHOOPS";
-"Unipub needs your location in order to work. Here are a few quick steps to fix this." = "Unipub needs your location in order to work. Here are a few quick steps to fix this.";
-"Open your Settings" = "Open your Settings";
-"Scroll to Privacy and tap on it" = "Scroll to Privacy and tap on it";
-"Tap on Location Services" = "Tap on Location Services";
-"Find Unipub and turn Location On" = "Find Unipub and turn Location On";
-"TAKE ME THERE" = "TAKE ME THERE";
