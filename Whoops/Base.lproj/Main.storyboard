@@ -2591,7 +2591,9 @@ If you have any questions about these Terms or otherwise need to contact Unipub 
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="4. Find Unipub and turn Location On" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="i2X-3z-3L9">
                                 <rect key="frame" x="-42" y="-21" width="42" height="21"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="253" id="YSn-bz-5eW"/>
+                                    <constraint firstAttribute="width" constant="253" id="YSn-bz-5eW">
+                                        <variation key="widthClass=compact" constant="300"/>
+                                    </constraint>
                                     <constraint firstAttribute="height" constant="18" id="o8x-lf-BDf"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="15"/>
@@ -2713,6 +2715,15 @@ If you have any questions about these Terms or otherwise need to contact Unipub 
                             </mask>
                         </variation>
                     </view>
+                    <connections>
+                        <outlet property="setLocation" destination="inM-cP-b5H" id="bW0-uL-tNO"/>
+                        <outlet property="step1" destination="21q-pw-mza" id="y1X-br-Oh5"/>
+                        <outlet property="step2" destination="ifM-XT-RS5" id="7Xs-HJ-plb"/>
+                        <outlet property="step3" destination="o3o-dH-Zwz" id="EVo-yK-q6L"/>
+                        <outlet property="step4" destination="i2X-3z-3L9" id="gpY-Au-6I4"/>
+                        <outlet property="summaryLabel" destination="23l-Zk-pbq" id="cSe-Of-53t"/>
+                        <outlet property="titleLabel" destination="Td0-sd-EVg" id="DGJ-mi-JNH"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="515-5n-q9Q" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
