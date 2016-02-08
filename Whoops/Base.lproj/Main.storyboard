@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9531" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" initialViewController="49e-Tb-3d3">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9531" systemVersion="15D21" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" initialViewController="49e-Tb-3d3">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
@@ -138,7 +138,7 @@ This Policy is current as of the Effective Date set forth above. We may change t
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="WIG-dF-Gvl" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2350.5" y="2096.5"/>
+            <point key="canvasLocation" x="2679.75" y="2144.5"/>
         </scene>
         <!--Home Page-->
         <scene sceneID="hNz-n2-bh7">
@@ -276,7 +276,7 @@ This Policy is current as of the Effective Date set forth above. We may change t
                     </connections>
                 </swipeGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="-61.5" y="-238.5"/>
+            <point key="canvasLocation" x="-5.25" y="-238.5"/>
         </scene>
         <!--Rules Info View Controller-->
         <scene sceneID="hgt-bp-k4O">
@@ -297,7 +297,7 @@ This Policy is current as of the Effective Date set forth above. We may change t
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="XXa-CB-Gfs" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1889.5" y="2936.5"/>
+            <point key="canvasLocation" x="1925.25" y="2948.5"/>
         </scene>
         <!--Terms of Service-->
         <scene sceneID="3dm-qh-puK">
@@ -1875,7 +1875,7 @@ If you have any questions about these Terms or otherwise need to contact Unipub 
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Q9a-dY-Wmj" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2823.5" y="2096.5"/>
+            <point key="canvasLocation" x="3542.25" y="2116.5"/>
         </scene>
         <!--Settings-->
         <scene sceneID="lOo-AM-NfQ">
@@ -1951,10 +1951,10 @@ If you have any questions about these Terms or otherwise need to contact Unipub 
                             <tableViewSection id="0tW-hy-t0F">
                                 <cells>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="none" accessoryType="disclosureIndicator" indentationWidth="10" id="Tb5-TP-kCQ">
-                                        <rect key="frame" x="0.0" y="35" width="375" height="44"/>
+                                        <rect key="frame" x="0.0" y="99" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Tb5-TP-kCQ" id="sYJ-im-8oq">
-                                            <rect key="frame" x="0.0" y="0.0" width="342" height="43"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="342" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Languages" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="nG8-HO-lHe">
@@ -1975,10 +1975,10 @@ If you have any questions about these Terms or otherwise need to contact Unipub 
                             <tableViewSection id="wxZ-bi-qvx">
                                 <cells>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="none" accessoryType="disclosureIndicator" indentationWidth="10" id="Pbn-go-Cjq">
-                                        <rect key="frame" x="0.0" y="99" width="375" height="44"/>
+                                        <rect key="frame" x="0.0" y="163" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Pbn-go-Cjq" id="KdD-np-Hr3">
-                                            <rect key="frame" x="0.0" y="0.0" width="342" height="43"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="342" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Privacy Policy" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="sB1-Bc-uOX">
@@ -1995,10 +1995,10 @@ If you have any questions about these Terms or otherwise need to contact Unipub 
                                         </connections>
                                     </tableViewCell>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="none" accessoryType="disclosureIndicator" indentationWidth="10" id="7Ye-zd-uDY">
-                                        <rect key="frame" x="0.0" y="143" width="375" height="44"/>
+                                        <rect key="frame" x="0.0" y="207" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="7Ye-zd-uDY" id="9bJ-NV-gAd">
-                                            <rect key="frame" x="0.0" y="0.0" width="342" height="43"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="342" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Rules &amp; Info" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="awT-29-wtC">
@@ -2015,10 +2015,10 @@ If you have any questions about these Terms or otherwise need to contact Unipub 
                                         </connections>
                                     </tableViewCell>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="none" accessoryType="disclosureIndicator" indentationWidth="10" id="JPZ-mr-w6U">
-                                        <rect key="frame" x="0.0" y="187" width="375" height="44"/>
+                                        <rect key="frame" x="0.0" y="251" width="375" height="44"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="JPZ-mr-w6U" id="lS1-uz-5Mb">
-                                            <rect key="frame" x="0.0" y="0.0" width="342" height="43"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="342" height="43.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Terms of Service" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="8VM-t2-3Be">
@@ -2065,21 +2065,21 @@ If you have any questions about these Terms or otherwise need to contact Unipub 
                         <color key="backgroundColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="calibratedRGB"/>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="langCell" textLabel="Gbn-ej-KuY" detailTextLabel="37M-yD-vEG" style="IBUITableViewCellStyleValue1" id="1UY-9v-6Kq">
-                                <rect key="frame" x="0.0" y="50" width="375" height="44"/>
+                                <rect key="frame" x="0.0" y="113.5" width="375" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="1UY-9v-6Kq" id="hRf-gE-c9E">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="Gbn-ej-KuY">
-                                            <rect key="frame" x="15" y="12" width="32" height="20"/>
+                                            <rect key="frame" x="15" y="12" width="31.5" height="19.5"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                             <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" multipleTouchEnabled="YES" contentMode="left" text="Detail" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="37M-yD-vEG">
-                                            <rect key="frame" x="318" y="12" width="42" height="20"/>
+                                            <rect key="frame" x="318.5" y="12" width="41.5" height="19.5"/>
                                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="16"/>
                                             <color key="textColor" red="0.55686274509803924" green="0.55686274509803924" blue="0.57647058823529407" alpha="1" colorSpace="calibratedRGB"/>
@@ -2100,7 +2100,7 @@ If you have any questions about these Terms or otherwise need to contact Unipub 
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="HZR-NG-bMS" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2350.5" y="2929.5"/>
+            <point key="canvasLocation" x="2655.75" y="2957.5"/>
         </scene>
         <!--University View Controller-->
         <scene sceneID="i7e-6D-cmP">
@@ -2140,7 +2140,7 @@ If you have any questions about these Terms or otherwise need to contact Unipub 
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="5jT-BW-aKt" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2248.5" y="-238.5"/>
+            <point key="canvasLocation" x="3321.75" y="-230.5"/>
         </scene>
         <!--Explore-->
         <scene sceneID="wg7-f3-ORb">
@@ -2158,10 +2158,10 @@ If you have any questions about these Terms or otherwise need to contact Unipub 
                                 <color key="separatorColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                 <prototypes>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="searchResult" id="5ba-jh-7aG" customClass="SearchResultCell" customModule="UniPub" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="50" width="375" height="50"/>
+                                        <rect key="frame" x="0.0" y="49.5" width="375" height="50"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="5ba-jh-7aG" id="3qx-TI-cYF">
-                                            <rect key="frame" x="0.0" y="0.0" width="342" height="49"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="342" height="49.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" id="cA2-ik-IRr">
@@ -2198,10 +2198,10 @@ If you have any questions about these Terms or otherwise need to contact Unipub 
                                         </connections>
                                     </tableViewCell>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="headCell" rowHeight="50" id="vSA-3R-2bV" customClass="SearchHeadCell" customModule="UniPub" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="100" width="375" height="50"/>
+                                        <rect key="frame" x="0.0" y="99.5" width="375" height="50"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="vSA-3R-2bV" id="h9d-KI-Csj">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="49"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="49.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" id="NbL-di-IQz">
@@ -2251,7 +2251,7 @@ If you have any questions about these Terms or otherwise need to contact Unipub 
                     </connections>
                 </searchDisplayController>
             </objects>
-            <point key="canvasLocation" x="1753.5" y="-238.5"/>
+            <point key="canvasLocation" x="2502.75" y="-230.5"/>
         </scene>
         <!--Like View Controller-->
         <scene sceneID="q2o-qI-qsC">
@@ -2280,7 +2280,7 @@ If you have any questions about these Terms or otherwise need to contact Unipub 
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="X5V-kk-WVP" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1833.5" y="583.5"/>
+            <point key="canvasLocation" x="2510.25" y="579.5"/>
         </scene>
         <!--MyUI Tab Bar Controller-->
         <scene sceneID="yl2-sM-qoP">
@@ -2307,25 +2307,21 @@ If you have any questions about these Terms or otherwise need to contact Unipub 
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="HuB-VB-40B" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="731.5" y="590.5"/>
+            <point key="canvasLocation" x="725.25" y="554.5"/>
         </scene>
         <!--Check Location View Controller-->
         <scene sceneID="gro-uN-HKR">
             <objects>
                 <viewController storyboardIdentifier="CheckLocation" id="xQA-EL-gam" customClass="CheckLocationViewController" customModule="UniPub" customModuleProvider="target" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="7rX-Ww-3nh"/>
-                        <viewControllerLayoutGuide type="bottom" id="uhl-YT-JVV"/>
-                    </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="Ith-bv-m5r">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="515-5n-q9Q" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-613.5" y="2544"/>
+            <point key="canvasLocation" x="-613.5" y="2772"/>
         </scene>
         <!--New Post View Controller-->
         <scene sceneID="SHS-f2-jMm">
@@ -2421,7 +2417,7 @@ If you have any questions about these Terms or otherwise need to contact Unipub 
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="VIH-bb-Rjs" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="215.5" y="2577.5"/>
+            <point key="canvasLocation" x="75.75" y="2761.5"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="xTz-8v-nCD">
@@ -2450,7 +2446,7 @@ If you have any questions about these Terms or otherwise need to contact Unipub 
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hbs-Gw-TF3" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-593.5" y="-238.5"/>
+            <point key="canvasLocation" x="-774.75" y="-238.5"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="TXb-mg-Vrc">
@@ -2476,7 +2472,7 @@ If you have any questions about these Terms or otherwise need to contact Unipub 
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Kyy-Eb-cn7" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1286.5" y="583.5"/>
+            <point key="canvasLocation" x="1568.25" y="559.5"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="eEI-yf-JiH">
@@ -2503,7 +2499,7 @@ If you have any questions about these Terms or otherwise need to contact Unipub 
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Shf-ew-b4B" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1206.5" y="-238.5"/>
+            <point key="canvasLocation" x="1568.25" y="-210.5"/>
         </scene>
         <!--Comments View Controller-->
         <scene sceneID="BTZ-3J-g1k">
@@ -2549,7 +2545,42 @@ If you have any questions about these Terms or otherwise need to contact Unipub 
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dhq-0V-KZB" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="448.5" y="-238.5"/>
+            <point key="canvasLocation" x="675.75" y="-238.5"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="h8T-Aq-42W">
+            <objects>
+                <navigationController id="wdh-os-f0w" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="" image="Post" id="t6j-e1-hkz">
+                        <inset key="imageInsets" minX="0.0" minY="4" maxX="0.0" maxY="-4"/>
+                    </tabBarItem>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="XrF-qW-GjW">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="barTintColor" red="0.1647058824" green="0.4941176471" blue="0.83137254900000002" alpha="1" colorSpace="calibratedRGB"/>
+                    </navigationBar>
+                    <connections>
+                        <segue destination="FIJ-kr-nMq" kind="relationship" relationship="rootViewController" id="9rP-99-2mk"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="uN1-Aw-HmL" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1267" y="681"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="tBn-f6-KgE">
+            <objects>
+                <viewController id="FIJ-kr-nMq" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="ckT-qT-mRi">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="DsW-BA-75E"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="qOR-MA-zVQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-869" y="681"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="4Oz-rV-w9i">
@@ -2575,7 +2606,7 @@ If you have any questions about these Terms or otherwise need to contact Unipub 
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="XE8-kH-c5N" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="223.5" y="1761.5"/>
+            <point key="canvasLocation" x="-785.25" y="1741.5"/>
         </scene>
         <!--Profile Table View Controller-->
         <scene sceneID="WJO-tS-lou">
@@ -2591,10 +2622,10 @@ If you have any questions about these Terms or otherwise need to contact Unipub 
                             <tableViewSection id="eMt-7Y-x7v">
                                 <cells>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" rowHeight="250" id="PnX-vB-X04">
-                                        <rect key="frame" x="0.0" y="35" width="375" height="250"/>
+                                        <rect key="frame" x="0.0" y="99" width="375" height="250"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="PnX-vB-X04" id="2ek-YG-TdZ">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="249"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="249.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Logoo" id="4eK-Kq-Ms6">
@@ -2611,10 +2642,10 @@ If you have any questions about these Terms or otherwise need to contact Unipub 
                             <tableViewSection id="IDx-dA-N5s">
                                 <cells>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="none" accessoryType="disclosureIndicator" indentationWidth="10" rowHeight="55" id="egl-r4-mpQ">
-                                        <rect key="frame" x="0.0" y="305" width="375" height="55"/>
+                                        <rect key="frame" x="0.0" y="369" width="375" height="55"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="egl-r4-mpQ" id="lxb-eC-A5E">
-                                            <rect key="frame" x="0.0" y="0.0" width="342" height="54"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="342" height="54.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="My Posts" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="42A-tV-pzu">
@@ -2634,10 +2665,10 @@ If you have any questions about these Terms or otherwise need to contact Unipub 
                                         </connections>
                                     </tableViewCell>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="none" accessoryType="disclosureIndicator" indentationWidth="10" rowHeight="55" id="uCw-gC-PLr">
-                                        <rect key="frame" x="0.0" y="360" width="375" height="55"/>
+                                        <rect key="frame" x="0.0" y="424" width="375" height="55"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="uCw-gC-PLr" id="MxD-jF-ECD">
-                                            <rect key="frame" x="0.0" y="0.0" width="342" height="54"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="342" height="54.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="My Replies" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="0sg-Lf-Z05">
@@ -2657,10 +2688,10 @@ If you have any questions about these Terms or otherwise need to contact Unipub 
                                         </connections>
                                     </tableViewCell>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="none" accessoryType="disclosureIndicator" indentationWidth="10" rowHeight="55" id="GQ1-0h-Oq9">
-                                        <rect key="frame" x="0.0" y="415" width="375" height="55"/>
+                                        <rect key="frame" x="0.0" y="479" width="375" height="55"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="GQ1-0h-Oq9" id="LnK-5V-u7w">
-                                            <rect key="frame" x="0.0" y="0.0" width="342" height="54"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="342" height="54.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Settings" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" id="svN-4u-NkK">
@@ -2697,7 +2728,7 @@ If you have any questions about these Terms or otherwise need to contact Unipub 
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="XaZ-t6-j0k" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1368.5" y="1761.5"/>
+            <point key="canvasLocation" x="923.25" y="1733.5"/>
         </scene>
         <!--My Replies-->
         <scene sceneID="AMO-52-gJd">
@@ -2710,10 +2741,10 @@ If you have any questions about these Terms or otherwise need to contact Unipub 
                         <color key="separatorColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                         <prototypes>
                             <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="cell" id="3Sj-ZK-JRR">
-                                <rect key="frame" x="0.0" y="22" width="375" height="44"/>
+                                <rect key="frame" x="0.0" y="86" width="375" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="3Sj-ZK-JRR" id="eYX-TJ-EiH">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </tableViewCellContentView>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
@@ -2728,7 +2759,7 @@ If you have any questions about these Terms or otherwise need to contact Unipub 
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="QT0-la-cqq" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1368.5" y="2629.5"/>
+            <point key="canvasLocation" x="893.25" y="2833.5"/>
         </scene>
         <!--My Post-->
         <scene sceneID="Oqg-6V-erh">
@@ -2746,10 +2777,10 @@ If you have any questions about these Terms or otherwise need to contact Unipub 
                                 <inset key="separatorInset" minX="15" minY="0.0" maxX="0.0" maxY="0.0"/>
                                 <prototypes>
                                     <tableViewCell contentMode="scaleToFill" selectionStyle="none" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="myPost" rowHeight="320" id="ICs-Ua-37T" customClass="PostTableViewCell" customModule="UniPub" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="22" width="375" height="320"/>
+                                        <rect key="frame" x="0.0" y="86" width="375" height="320"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="ICs-Ua-37T" id="00Q-pW-gBZ">
-                                            <rect key="frame" x="0.0" y="0.0" width="342" height="319"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="342" height="319.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" id="ibD-lP-AqU">
@@ -2817,10 +2848,10 @@ If you have any questions about these Terms or otherwise need to contact Unipub 
                         <color key="separatorColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
                             <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="WTU-sW-Txx">
-                                <rect key="frame" x="0.0" y="50" width="375" height="44"/>
+                                <rect key="frame" x="0.0" y="113.5" width="375" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="WTU-sW-Txx" id="ZE8-b1-L6t">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                 </tableViewCellContentView>
                                 <color key="backgroundColor" red="0.97647058823529409" green="0.97647058823529409" blue="0.97647058823529409" alpha="0.0" colorSpace="custom" customColorSpace="sRGB"/>
@@ -2835,7 +2866,7 @@ If you have any questions about these Terms or otherwise need to contact Unipub 
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="v6N-WG-dWw" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2350.5" y="1361.5"/>
+            <point key="canvasLocation" x="2679.75" y="1353.5"/>
         </scene>
         <!--Images Detail View Controller-->
         <scene sceneID="ivi-wB-UDw">
@@ -2860,7 +2891,7 @@ If you have any questions about these Terms or otherwise need to contact Unipub 
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8Jk-SN-3y7" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2793.5" y="1361.5"/>
+            <point key="canvasLocation" x="3542.25" y="1353.5"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="G8k-Al-hug">
@@ -2887,7 +2918,7 @@ If you have any questions about these Terms or otherwise need to contact Unipub 
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="DkK-9i-8hn" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="832.5" y="1761.5"/>
+            <point key="canvasLocation" x="75.75" y="1741.5"/>
         </scene>
     </scenes>
     <resources>
