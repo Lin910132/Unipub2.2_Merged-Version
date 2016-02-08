@@ -299,6 +299,7 @@ class SearchViewController: UIViewController,UITableViewDelegate, UITableViewDat
         let row = indexPath.row
         cell.currentIndex = indexPath.row
         cell.delegate = self
+        var isLike : Bool = false
         
         if self.resultSearchController.active
         {
@@ -314,7 +315,22 @@ class SearchViewController: UIViewController,UITableViewDelegate, UITableViewDat
             cell.backgroundView = nil
             cell.backgroundColor = UIColor.clearColor()
             cell.accessoryType = UITableViewCellAccessoryType.DisclosureIndicator
-            cell.likeButton.setImage(UIImage(named: "SearchLike"), forState: UIControlState.Normal)
+            
+            for (var i = 0; i < self.myFavorite.count; i++){
+                let item = myFavorite[i] as! NSDictionary
+                
+                if (item.stringAttributeForKey("nameEn") == data.stringAttributeForKey("nameEn")){
+                    isLike = true;
+                    break;
+                }
+            }
+            
+            if isLike {
+                cell.likeButton.setImage(UIImage(named: "Like"), forState: UIControlState.Normal)
+            }else{
+                cell.likeButton.setImage(UIImage(named: "SearchLike"), forState: UIControlState.Normal)
+            }
+            
             cell.frontImg.image = UIImage(named: "frontImg")
             return cell
         }
@@ -364,7 +380,22 @@ class SearchViewController: UIViewController,UITableViewDelegate, UITableViewDat
                 cell.backgroundColor = UIColor.clearColor()
                 //cell.tailImg.image = UIImage(named: "115")
                 cell.accessoryType = UITableViewCellAccessoryType.DisclosureIndicator
-                cell.likeButton.setImage(UIImage(named: "SearchLike"), forState: UIControlState.Normal)
+                
+                for (var i = 0; i < self.myFavorite.count; i++){
+                    let item = myFavorite[i] as! NSDictionary
+                    
+                    if (item.stringAttributeForKey("nameEn") == data.stringAttributeForKey("nameEn")){
+                        isLike = true;
+                        break;
+                    }
+                }
+                
+                if isLike {
+                    cell.likeButton.setImage(UIImage(named: "Like"), forState: UIControlState.Normal)
+                }else{
+                    cell.likeButton.setImage(UIImage(named: "SearchLike"), forState: UIControlState.Normal)
+                }
+                
                 cell.frontImg.image = UIImage(named: "frontImg")
                 return cell
             }
