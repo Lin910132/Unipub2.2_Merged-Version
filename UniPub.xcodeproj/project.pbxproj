@@ -88,9 +88,6 @@
 		E3A5CCAD1BB90693009B1E24 /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E39DE6D61B28DAC700744D27 /* CFNetwork.framework */; };
 		E3A5CCAF1BB90693009B1E24 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E39DE6D41B28DAB000744D27 /* AudioToolbox.framework */; };
 		E3A5CCB11BB90693009B1E24 /* MessageUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7E2882FA1B1DEA04003F95EB /* MessageUI.framework */; };
-		E6A8EE441C62F89C000E88BA /* QBAnimationGroup.m in Sources */ = {isa = PBXBuildFile; fileRef = E6A8EE3F1C62F89C000E88BA /* QBAnimationGroup.m */; };
-		E6A8EE451C62F89C000E88BA /* QBAnimationItem.m in Sources */ = {isa = PBXBuildFile; fileRef = E6A8EE411C62F89C000E88BA /* QBAnimationItem.m */; };
-		E6A8EE461C62F89C000E88BA /* QBAnimationSequence.m in Sources */ = {isa = PBXBuildFile; fileRef = E6A8EE431C62F89C000E88BA /* QBAnimationSequence.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -192,12 +189,6 @@
 		E39DE6EA1B28DB5300744D27 /* Social.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Social.framework; path = System/Library/Frameworks/Social.framework; sourceTree = SDKROOT; };
 		E3A5CC951BB90181009B1E24 /* Bolts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Bolts.framework; sourceTree = "<group>"; };
 		E3A5CC961BB90181009B1E24 /* Parse.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Parse.framework; sourceTree = "<group>"; };
-		E6A8EE3E1C62F89C000E88BA /* QBAnimationGroup.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = QBAnimationGroup.h; path = QBAnimation/QBAnimationGroup.h; sourceTree = "<group>"; };
-		E6A8EE3F1C62F89C000E88BA /* QBAnimationGroup.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = QBAnimationGroup.m; path = QBAnimation/QBAnimationGroup.m; sourceTree = "<group>"; };
-		E6A8EE401C62F89C000E88BA /* QBAnimationItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = QBAnimationItem.h; path = QBAnimation/QBAnimationItem.h; sourceTree = "<group>"; };
-		E6A8EE411C62F89C000E88BA /* QBAnimationItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = QBAnimationItem.m; path = QBAnimation/QBAnimationItem.m; sourceTree = "<group>"; };
-		E6A8EE421C62F89C000E88BA /* QBAnimationSequence.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = QBAnimationSequence.h; path = QBAnimation/QBAnimationSequence.h; sourceTree = "<group>"; };
-		E6A8EE431C62F89C000E88BA /* QBAnimationSequence.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = QBAnimationSequence.m; path = QBAnimation/QBAnimationSequence.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -343,7 +334,6 @@
 		868A30521A9E972700FC9EF9 /* Whoops */ = {
 			isa = PBXGroup;
 			children = (
-				E6A8EE3D1C62F883000E88BA /* QBAnimation */,
 				869931CD1BB7935B00EF5C9C /* FlurryWatch.h */,
 				869931CE1BB7935B00EF5C9C /* libFlurry_7.1.1.a */,
 				869931CC1BB7934E00EF5C9C /* Flurry.h */,
@@ -403,19 +393,6 @@
 			children = (
 			);
 			name = image;
-			sourceTree = "<group>";
-		};
-		E6A8EE3D1C62F883000E88BA /* QBAnimation */ = {
-			isa = PBXGroup;
-			children = (
-				E6A8EE3E1C62F89C000E88BA /* QBAnimationGroup.h */,
-				E6A8EE3F1C62F89C000E88BA /* QBAnimationGroup.m */,
-				E6A8EE401C62F89C000E88BA /* QBAnimationItem.h */,
-				E6A8EE411C62F89C000E88BA /* QBAnimationItem.m */,
-				E6A8EE421C62F89C000E88BA /* QBAnimationSequence.h */,
-				E6A8EE431C62F89C000E88BA /* QBAnimationSequence.m */,
-			);
-			name = QBAnimation;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -588,20 +565,17 @@
 				2363F99C1AA00FBC009957D1 /* YRNewPostViewController.swift in Sources */,
 				73BB8A021AAF53AE00CAECB5 /* YRSendComment.swift in Sources */,
 				738AA8101AABD4A7008E6649 /* SearchResultCell.swift in Sources */,
-				E6A8EE451C62F89C000E88BA /* QBAnimationItem.m in Sources */,
 				239A38521A9FFB13000976E0 /* YRRefreshView.swift in Sources */,
 				86F32C261B84216D00689CE6 /* SettingViewController.swift in Sources */,
 				9CC38CD61C3DC4AA00D559B2 /* LanguageSettingTableViewController.swift in Sources */,
 				86D0A4FB1AE019AB00D86953 /* LikeViewController.swift in Sources */,
 				738AA80E1AABD48D008E6649 /* SearchViewController.swift in Sources */,
-				E6A8EE441C62F89C000E88BA /* QBAnimationGroup.m in Sources */,
 				8690039D1AA78F1000D46DED /* PostTableViewCell.swift in Sources */,
 				86450F411AACDFB9001D6CE8 /* MyRepliesViewController.swift in Sources */,
 				239A38441A9FF70E000976E0 /* YRMainViewController.swift in Sources */,
 				8698ECBD1AAA16CE000E04E6 /* SearchHeadCell.swift in Sources */,
 				86450F3F1AACB254001D6CE8 /* MyPostCommentViewController.swift in Sources */,
 				239A384F1A9FFB13000976E0 /* YRImageZoomingView.swift in Sources */,
-				E6A8EE461C62F89C000E88BA /* QBAnimationSequence.m in Sources */,
 				732E123E1AB3A57C00E7F925 /* NSMutableData.swift in Sources */,
 				868A30581A9E972700FC9EF9 /* FirstViewController.swift in Sources */,
 				9C1B7BD71C4197E9001924A5 /* PrivacyPolicyViewController.swift in Sources */,
@@ -746,8 +720,8 @@
 			baseConfigurationReference = C66441048DCA2C00B78DCB04 /* Pods.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_IDENTITY = "iPhone Distribution: Hangzhou Junru Technology Co. ,Ltd. (72739DGUJR)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Hangzhou Junru Technology Co. ,Ltd. (72739DGUJR)";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
@@ -770,7 +744,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = Daniel.Whoop;
 				PRODUCT_NAME = UniPub;
-				PROVISIONING_PROFILE = "d2e4dba9-4719-4946-be83-01ed3eb739fd";
+				PROVISIONING_PROFILE = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "Whoops/Swift-Bridging-OC.h";
 			};
 			name = Debug;
@@ -780,8 +754,8 @@
 			baseConfigurationReference = 25CC2D89A772B3841F72F2BA /* Pods.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_IDENTITY = "iPhone Distribution: Hangzhou Junru Technology Co. ,Ltd. (72739DGUJR)";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: Hangzhou Junru Technology Co. ,Ltd. (72739DGUJR)";
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
@@ -804,7 +778,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = Daniel.Whoop;
 				PRODUCT_NAME = UniPub;
-				PROVISIONING_PROFILE = "d2e4dba9-4719-4946-be83-01ed3eb739fd";
+				PROVISIONING_PROFILE = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "Whoops/Swift-Bridging-OC.h";
 			};
 			name = Release;
