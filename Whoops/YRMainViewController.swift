@@ -115,7 +115,8 @@ class YRMainViewController: UIViewController,UITableViewDelegate,UITableViewData
                 
             }
             self.page[self.type]++
-            (self.tableArray[self.type] as! UITableView).reloadData()
+            self.tableView!.reloadData()
+            //self.refreshView!.stopLoading()
 
         })
         
@@ -224,7 +225,8 @@ class YRMainViewController: UIViewController,UITableViewDelegate,UITableViewData
                 
             }
             self.page[self.type]++
-            (self.tableArray[self.type] as! UITableView).reloadData()
+            self.tableView!.reloadData()
+            //self.refreshView!.stopLoading()
             
             sender.endRefreshing()
         })
