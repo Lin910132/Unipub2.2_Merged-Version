@@ -38,6 +38,9 @@
 		860D538C1BBCCCAD00F16202 /* UniversityPageObj.swift in Sources */ = {isa = PBXBuildFile; fileRef = 860D538B1BBCCCAD00F16202 /* UniversityPageObj.swift */; };
 		86450F3F1AACB254001D6CE8 /* MyPostCommentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86450F3E1AACB254001D6CE8 /* MyPostCommentViewController.swift */; };
 		86450F411AACDFB9001D6CE8 /* MyRepliesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86450F401AACDFB9001D6CE8 /* MyRepliesViewController.swift */; };
+		8670A7FE1C6F8D2C00A3F7ED /* QBAnimationSequence.m in Sources */ = {isa = PBXBuildFile; fileRef = 8670A7F81C6F8D2C00A3F7ED /* QBAnimationSequence.m */; };
+		8670A7FF1C6F8D2C00A3F7ED /* QBAnimationItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 8670A7FA1C6F8D2C00A3F7ED /* QBAnimationItem.m */; };
+		8670A8001C6F8D2C00A3F7ED /* QBAnimationGroup.m in Sources */ = {isa = PBXBuildFile; fileRef = 8670A7FC1C6F8D2C00A3F7ED /* QBAnimationGroup.m */; };
 		8682A3351C1D3B04006ECD52 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8682A3341C1D3B04006ECD52 /* Images.xcassets */; };
 		868A30561A9E972700FC9EF9 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 868A30551A9E972700FC9EF9 /* AppDelegate.swift */; };
 		868A30581A9E972700FC9EF9 /* FirstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 868A30571A9E972700FC9EF9 /* FirstViewController.swift */; };
@@ -125,6 +128,12 @@
 		860D538B1BBCCCAD00F16202 /* UniversityPageObj.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UniversityPageObj.swift; sourceTree = "<group>"; };
 		86450F3E1AACB254001D6CE8 /* MyPostCommentViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyPostCommentViewController.swift; sourceTree = "<group>"; };
 		86450F401AACDFB9001D6CE8 /* MyRepliesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyRepliesViewController.swift; sourceTree = "<group>"; };
+		8670A7F81C6F8D2C00A3F7ED /* QBAnimationSequence.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QBAnimationSequence.m; sourceTree = "<group>"; };
+		8670A7F91C6F8D2C00A3F7ED /* QBAnimationSequence.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QBAnimationSequence.h; sourceTree = "<group>"; };
+		8670A7FA1C6F8D2C00A3F7ED /* QBAnimationItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QBAnimationItem.m; sourceTree = "<group>"; };
+		8670A7FB1C6F8D2C00A3F7ED /* QBAnimationItem.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QBAnimationItem.h; sourceTree = "<group>"; };
+		8670A7FC1C6F8D2C00A3F7ED /* QBAnimationGroup.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QBAnimationGroup.m; sourceTree = "<group>"; };
+		8670A7FD1C6F8D2C00A3F7ED /* QBAnimationGroup.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QBAnimationGroup.h; sourceTree = "<group>"; };
 		8682A3341C1D3B04006ECD52 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		868A30501A9E972700FC9EF9 /* UniPub.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = UniPub.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		868A30541A9E972700FC9EF9 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -231,6 +240,7 @@
 		239581EA1AA0C1560028188F /* oc */ = {
 			isa = PBXGroup;
 			children = (
+				8670A7F71C6F8D1D00A3F7ED /* QBAnimation */,
 				239581EB1AA0C1B60028188F /* KCTextView.h */,
 				239581EC1AA0C30F0028188F /* Swift-Bridging-OC.h */,
 				239581ED1AA0C34E0028188F /* KCTextView.m */,
@@ -310,6 +320,19 @@
 				9B88E2B01AD6CAFE00B5E051 /* UIViewControllerExt.swift */,
 			);
 			name = util;
+			sourceTree = "<group>";
+		};
+		8670A7F71C6F8D1D00A3F7ED /* QBAnimation */ = {
+			isa = PBXGroup;
+			children = (
+				8670A7F81C6F8D2C00A3F7ED /* QBAnimationSequence.m */,
+				8670A7F91C6F8D2C00A3F7ED /* QBAnimationSequence.h */,
+				8670A7FA1C6F8D2C00A3F7ED /* QBAnimationItem.m */,
+				8670A7FB1C6F8D2C00A3F7ED /* QBAnimationItem.h */,
+				8670A7FC1C6F8D2C00A3F7ED /* QBAnimationGroup.m */,
+				8670A7FD1C6F8D2C00A3F7ED /* QBAnimationGroup.h */,
+			);
+			name = QBAnimation;
 			sourceTree = "<group>";
 		};
 		868A30471A9E972700FC9EF9 = {
@@ -533,6 +556,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				239581EE1AA0C34E0028188F /* KCTextView.m in Sources */,
+				8670A7FF1C6F8D2C00A3F7ED /* QBAnimationItem.m in Sources */,
 				239A383F1A9FF414000976E0 /* YRHttpRequest.swift in Sources */,
 				239A383E1A9FF414000976E0 /* UIImageViewWebExt.swift in Sources */,
 				E34F95551B814A6300EF5E24 /* DKImagePickerController.swift in Sources */,
@@ -556,12 +580,14 @@
 				86D0A4F81AE012A100D86953 /* LikeViewCell.swift in Sources */,
 				860D538C1BBCCCAD00F16202 /* UniversityPageObj.swift in Sources */,
 				E3780B0A1B1FE67500EB662E /* YRJokeCell2.swift in Sources */,
+				8670A8001C6F8D2C00A3F7ED /* QBAnimationGroup.m in Sources */,
 				86A11FCA1C6466440028CE4C /* CheckLocationViewController.swift in Sources */,
 				868A30561A9E972700FC9EF9 /* AppDelegate.swift in Sources */,
 				9C1B7BD31C419665001924A5 /* Terms&ServiceViewController.swift in Sources */,
 				9C1B7BD51C419708001924A5 /* Rules&InfoViewController.swift in Sources */,
 				E3780B081B1FE67500EB662E /* YRJokeCell.swift in Sources */,
 				9B88E2B11AD6CAFE00B5E051 /* UIViewControllerExt.swift in Sources */,
+				8670A7FE1C6F8D2C00A3F7ED /* QBAnimationSequence.m in Sources */,
 				2363F99C1AA00FBC009957D1 /* YRNewPostViewController.swift in Sources */,
 				73BB8A021AAF53AE00CAECB5 /* YRSendComment.swift in Sources */,
 				738AA8101AABD4A7008E6649 /* SearchResultCell.swift in Sources */,
