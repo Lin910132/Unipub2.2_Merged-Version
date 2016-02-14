@@ -34,6 +34,7 @@ class PhotoDetailViewController:MWPhotoBrowser, MWPhotoBrowserDelegate{
         self.autoPlayOnAppear = false
         self.setCurrentPhotoIndex(0)
         self.registerGestureRecorgnizer()
+        self.setCurrentPhotoIndex(UInt(startImageIndex))
         super.viewDidLoad()
     }
     

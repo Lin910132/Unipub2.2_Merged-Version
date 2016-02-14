@@ -143,11 +143,16 @@ class YRMainViewController: UIViewController,UITableViewDelegate,UITableViewData
         (self.tableArray[currentIndex] as! UITableView).scrollsToTop = true
         
         if (fromPost == true){
-            fromPost = false
             self.tabBarButtonClicked(buttons[0])
+            fromPost = false
         }
         else {
             self.tabBarButtonClicked(buttons[currentIndex])
+        }
+        
+        
+        for (var i = 0; i < 5; i++){
+            
         }
     }
     
@@ -215,6 +220,7 @@ class YRMainViewController: UIViewController,UITableViewDelegate,UITableViewData
             fresh.tintColor = UIColor.grayColor()
             fresh.attributedTitle = NSAttributedString(string: "Loading".localized())
             (self.tableArray[i] as! UITableView).addSubview(fresh)
+            fresh.hidden = true
             refreshArray.addObject(fresh)
         }
     }
@@ -416,12 +422,14 @@ class YRMainViewController: UIViewController,UITableViewDelegate,UITableViewData
     {
         
         let imageArray = noti.userInfo!["imageArray"] as! NSArray
+        let imageIndex = noti.userInfo!["imageIndex"] as! Int
 
         
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         let imgDetailVC = storyboard.instantiateViewControllerWithIdentifier("photoDetailViewController") as! PhotoDetailViewController
         imgDetailVC.imageArray = imageArray as! [UIImage];
         imgDetailVC.parentController = self
+        imgDetailVC.startImageIndex = imageIndex
         imgDetailVC.modalTransitionStyle = UIModalTransitionStyle.FlipHorizontal
 
         self.tabBarController?.tabBar.hidden = true
@@ -512,10 +520,13 @@ class YRMainViewController: UIViewController,UITableViewDelegate,UITableViewData
         animateButtons(offset, direction: direction)
         scrollPageWithIndex(self.type)
         
-        for (var i = 0; i < 5; i++){
-            (self.refreshArray[i] as! UIRefreshControl).hidden = true
+        if (self.fromPost == true){
+        
+            for (var i = 0; i < 5; i++){
+                (self.refreshArray[i] as! UIRefreshControl).hidden = true
+            }
+            (self.refreshArray[self.type] as! UIRefreshControl).hidden = false
         }
-        (self.refreshArray[self.type] as! UIRefreshControl).hidden = false
     }
     
     
