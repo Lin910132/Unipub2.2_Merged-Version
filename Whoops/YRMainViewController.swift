@@ -150,10 +150,6 @@ class YRMainViewController: UIViewController,UITableViewDelegate,UITableViewData
             self.tabBarButtonClicked(buttons[currentIndex])
         }
         
-        
-        for (var i = 0; i < 5; i++){
-            
-        }
     }
     
     override func viewWillAppear(animated: Bool)
@@ -199,6 +195,7 @@ class YRMainViewController: UIViewController,UITableViewDelegate,UITableViewData
             view.addSubview(table)
             self.scrollView.addSubview(view)
             self.scrollView.scrollsToTop = false
+
         }
         
         self.scrollView.contentSize = CGSizeMake(mainWidth * 5, scrollView.frame.height)
@@ -842,6 +839,12 @@ class YRMainViewController: UIViewController,UITableViewDelegate,UITableViewData
             }
             
             (buttons[newIndex] as! UIButton).selected = true
+            
+            
+            // Enable scroll to top in each tableview
+            (tableArray[currentIndex] as! UITableView).scrollsToTop = false
+            (tableArray[newIndex] as! UITableView).scrollsToTop = true
+            
             currentIndex = newIndex
             
             if (bEnd == true){
