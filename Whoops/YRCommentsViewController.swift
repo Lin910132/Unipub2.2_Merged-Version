@@ -24,7 +24,7 @@ class YRCommentsViewController: UIViewController,UITableViewDelegate,UITableView
     var sendView:YRSendComment?
     
     var refreshCommentDelete:YRRefreshCommentDelegate?
-    
+    var listController:YRMainViewController?
     
     override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: NSBundle?) {
         super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
@@ -326,6 +326,12 @@ class YRCommentsViewController: UIViewController,UITableViewDelegate,UITableView
             })
             
         }
+    }
+    
+    
+    override func viewWillDisappear(animated: Bool) {
+        super.viewWillDisappear(animated)
+        self.listController?.fromDetail = true
     }
     
     /*

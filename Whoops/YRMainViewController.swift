@@ -52,7 +52,8 @@ class YRMainViewController: UIViewController,UITableViewDelegate,UITableViewData
     var newIndex = 2
     var fromPost = false
     var fromDetail = false
-    
+    let refreshTag = 1001
+    var refreshArray = NSMutableArray()
     
     @IBOutlet var m_LeftSwipeGesture: UISwipeGestureRecognizer!
     @IBOutlet var m_RightSwipeGesture: UISwipeGestureRecognizer!
@@ -202,13 +203,14 @@ class YRMainViewController: UIViewController,UITableViewDelegate,UITableViewData
     }
     
     func addRefreshControl(){
-        
+        refreshArray.removeAllObjects()
         for (var i = 0; i < 5; i++){
             let fresh:UIRefreshControl = UIRefreshControl()
             fresh.addTarget(self, action: "actionRefreshHandler:", forControlEvents: UIControlEvents.ValueChanged)
             fresh.tintColor = UIColor.grayColor()
             fresh.attributedTitle = NSAttributedString(string: "Loading".localized())
             (self.tableArray[i] as! UITableView).addSubview(fresh)
+            refreshArray.addObject(fresh)
         }
     }
     
@@ -392,6 +394,7 @@ class YRMainViewController: UIViewController,UITableViewDelegate,UITableViewData
         let commentsVC = YRCommentsViewController(nibName :nil, bundle: nil)
         commentsVC.jokeId = data.stringAttributeForKey("id")
         commentsVC.hidesBottomBarWhenPushed = true
+        commentsVC.listController = self
         
         tableView.deselectRowAtIndexPath(indexPath, animated: true)
         
@@ -408,17 +411,17 @@ class YRMainViewController: UIViewController,UITableViewDelegate,UITableViewData
     {
         
         let imageArray = noti.userInfo!["imageArray"] as! NSArray
-        let imageIndex = noti.userInfo!["imageIndex"] as! Int
-/*
+
         
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
-        let imgDetailVC = storyboard.instantiateViewControllerWithIdentifier("imagesDetail") as! ImagesDetailViewController
-        imgDetailVC.imageArray = imageArray;
-        
+        let imgDetailVC = storyboard.instantiateViewControllerWithIdentifier("photoDetailViewController") as! PhotoDetailViewController
+        imgDetailVC.imageArray = imageArray as! [UIImage];
+        imgDetailVC.parentController = self
         imgDetailVC.modalTransitionStyle = UIModalTransitionStyle.FlipHorizontal
+
+        self.tabBarController?.tabBar.hidden = true
         
         self.presentViewController(imgDetailVC, animated: true, completion: nil)
-*/
         
     }
     func locationManager(manager: CLLocationManager, didUpdateLocations locations: [CLLocation]){
@@ -492,6 +495,11 @@ class YRMainViewController: UIViewController,UITableViewDelegate,UITableViewData
         
         animateButtons(offset, direction: direction)
         scrollPageWithIndex(self.type)
+        
+        for (var i = 0; i < 5; i++){
+            (self.refreshArray[i] as! UIRefreshControl).hidden = true
+        }
+        (self.refreshArray[self.type] as! UIRefreshControl).hidden = false
     }
     
     
