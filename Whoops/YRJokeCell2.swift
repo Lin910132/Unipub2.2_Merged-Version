@@ -63,6 +63,9 @@ class YRJokeCell2: UITableViewCell
     var imageDataArray = NSMutableArray()
     
     var imgList = [UIImageView]()
+    
+    
+    let baseTagValue = 1000
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
@@ -149,6 +152,7 @@ class YRJokeCell2: UITableViewCell
                 
                 self.imgList.append(imgView)
                 
+                imgView.tag = baseTagValue
                 
                 ivBack.addSubview(imgView);
                 let imgUrl = imgArray.objectAtIndex(0) as! NSString;
@@ -192,6 +196,7 @@ class YRJokeCell2: UITableViewCell
                     let imagURL = FileUtility.getUrlImage() + (imgUrl as! String)
                     imgView.tag = index;
                     imgView.setImage(imagURL,placeHolder: UIImage(named: "Logoo.png"))
+                    imgView.tag = baseTagValue + index
                     index++;
                     ivBack.addSubview(imgView);
                     
@@ -226,6 +231,8 @@ class YRJokeCell2: UITableViewCell
                     let imagURL = FileUtility.getUrlImage() + (imgUrl as! String)
                     imgView.tag = index;
                     imgView.setImage(imagURL,placeHolder: UIImage(named: "Logoo.png"))
+                    
+                    imgView.tag = baseTagValue + index
                     index++;
                     ivBack.addSubview(imgView);
                 }
@@ -259,6 +266,7 @@ class YRJokeCell2: UITableViewCell
                     let imagURL = FileUtility.getUrlImage() + (imgUrl as! String)
                     imgView.tag = index;
                     imgView.setImage(imagURL,placeHolder: UIImage(named: "Logoo.png"))
+                    imgView.tag = baseTagValue + index
                     index++;
                     ivBack.addSubview(imgView);
                 }
@@ -698,7 +706,10 @@ class YRJokeCell2: UITableViewCell
             imageDataArray.addObject(imageView.image!)
         }
         
-        NSNotificationCenter.defaultCenter().postNotification(NSNotification(name: "imageCellTap", object:nil, userInfo: ["imageArray":imageDataArray]));
+        
+        let imgIndex = (sender.view?.tag)! - baseTagValue
+        
+        NSNotificationCenter.defaultCenter().postNotification(NSNotification(name: "imageCellTap", object:nil, userInfo: ["imageArray":imageDataArray, "imageIndex":imgIndex]));
        
         
    /*
