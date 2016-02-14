@@ -31,6 +31,8 @@ class YRNewPostViewController: UIViewController, UIImagePickerControllerDelegate
     @IBOutlet weak var countWordLabel: UILabel!
     @IBOutlet weak var sendButton: UIBarButtonItem!
     
+    var mainController:MyUITabBarController!
+    
     
     let placeHolder = "Write something"
     let locationManager = CLLocationManager()
@@ -180,22 +182,29 @@ class YRNewPostViewController: UIViewController, UIImagePickerControllerDelegate
             //navigationController?.popViewControllerAnimated(true)
             
         }*/
-        let mainStoryboard = UIStoryboard(name: "Main", bundle: NSBundle.mainBundle())
+//        let mainStoryboard = UIStoryboard(name: "Main", bundle: NSBundle.mainBundle())
         if self.schoolId == "0"{
-            let vc : UIViewController = mainStoryboard.instantiateViewControllerWithIdentifier("tabBarId")
-            self.presentViewController(vc, animated: true, completion: nil)
-        }else{
+            self.mainController.selectedIndex = 0
+            
+            let viewController:YRMainViewController = (self.mainController.viewControllers![0] as! UINavigationController).topViewController as! YRMainViewController
+            viewController.fromPost = true
+            self.dismissViewControllerAnimated(true, completion: nil)
+        }
+        else{
             self.dismissViewControllerAnimated(true, completion: nil)
         }
     }
     
     @IBAction func cancelButtonClicked(sender: AnyObject) {
-        let mainStoryboard = UIStoryboard(name: "Main", bundle: NSBundle.mainBundle())
         if self.schoolId == "0"{
-            let vc : UIViewController = mainStoryboard.instantiateViewControllerWithIdentifier("tabBarId")
-            self.presentViewController(vc, animated: true, completion: nil)
-        }else //if isSchool{
-        {self.dismissViewControllerAnimated(true, completion: nil)
+            self.mainController.selectedIndex = 0
+            let viewController:YRMainViewController = (self.mainController.viewControllers![0] as! UINavigationController).topViewController as! YRMainViewController
+            viewController.fromPost = true
+            self.dismissViewControllerAnimated(true, completion: nil)
+        }
+        else //if isSchool{
+        {
+            self.dismissViewControllerAnimated(true, completion: nil)
         //}else{
             //self.navigationController?.popViewControllerAnimated(true)
         }

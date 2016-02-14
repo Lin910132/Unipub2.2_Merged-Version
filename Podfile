@@ -4,3 +4,4 @@ use_frameworks!
 
 
 pod 'Localize-Swift', '~> 0.2'
+pod "MWPhotoBrowser"

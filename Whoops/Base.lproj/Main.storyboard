@@ -2454,6 +2454,25 @@ If you have any questions about these Terms or otherwise need to contact Unipub 
             </objects>
             <point key="canvasLocation" x="2510.25" y="579.5"/>
         </scene>
+        <!--Photo Detail View Controller-->
+        <scene sceneID="eom-7f-mdI">
+            <objects>
+                <viewController storyboardIdentifier="photoDetailViewController" id="cM1-GP-Lh0" customClass="PhotoDetailViewController" customModule="UniPub" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="8ZO-w6-69C"/>
+                        <viewControllerLayoutGuide type="bottom" id="aO4-5V-JMu"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="06o-Ma-9Y8">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="yxd-gu-Nby" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="3081.5" y="579.5"/>
+        </scene>
         <!--MyUI Tab Bar Controller-->
         <scene sceneID="yl2-sM-qoP">
             <objects>

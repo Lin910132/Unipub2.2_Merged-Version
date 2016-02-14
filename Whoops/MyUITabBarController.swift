@@ -11,6 +11,9 @@ import Foundation
 
 class MyUITabBarController: UITabBarController, UITabBarControllerDelegate{
     
+    var oldSelectedIndex = 0
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.tabBar.backgroundColor = UIColor.applicationTabBarColor();
@@ -76,7 +79,21 @@ class MyUITabBarController: UITabBarController, UITabBarControllerDelegate{
     
     
     override func tabBar(tabBar: UITabBar, didSelectItem item: UITabBarItem) {
-        if item.tag == 4{
+        
+        if (item.tag == 3){
+            
+            let mainStoryboard = UIStoryboard(name: "Main", bundle: NSBundle.mainBundle())
+            let vc : UIViewController = mainStoryboard.instantiateViewControllerWithIdentifier("postNavigation")
+            
+            ((vc as! UINavigationController).topViewController as! YRNewPostViewController).mainController = self
+            
+            //isSchool = true
+            self.presentViewController(vc, animated: true, completion: nil)
+            
+//            let postController:YRNewPostViewController! = (self.viewControllers![2] as! UINavigationController).topViewController as! YRNewPostViewController
+//            postController.mainController = self
+        }
+        else if (item.tag == 4){
             let uid : String = FileUtility.getUserId()
             let url = FileUtility.getUrlDomain() + "msg/getMsgByUId?uid=\(uid)"
             //var url = "http://104.131.91.181:8080/whoops/msg/getMsgByUId?uid=97&pageNum=1"
@@ -97,6 +114,12 @@ class MyUITabBarController: UITabBarController, UITabBarControllerDelegate{
             })
 
         }
+        else if (item.tag == 1){
+            let controller:YRMainViewController = (self.viewControllers![0] as! UINavigationController).topViewController as! YRMainViewController
+            controller.fromDetail = true
+        }
+        
+        oldSelectedIndex = self.selectedIndex
     }
     
 
