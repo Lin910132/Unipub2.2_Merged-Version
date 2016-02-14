@@ -51,7 +51,6 @@
 		869931CF1BB7935B00EF5C9C /* libFlurry_7.1.1.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 869931CE1BB7935B00EF5C9C /* libFlurry_7.1.1.a */; };
 		86A11FCA1C6466440028CE4C /* CheckLocationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86A11FC91C6466440028CE4C /* CheckLocationViewController.swift */; };
 		86A2E6481AAC9ECC00499C13 /* UniversityViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86A2E6471AAC9ECC00499C13 /* UniversityViewController.swift */; };
-		86C73A771C7073F200ADB45C /* PhotoDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86C73A761C7073F200ADB45C /* PhotoDetailViewController.swift */; };
 		86D0A4F81AE012A100D86953 /* LikeViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86D0A4F61AE012A100D86953 /* LikeViewCell.swift */; };
 		86D0A4F91AE012A100D86953 /* LikeViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 86D0A4F71AE012A100D86953 /* LikeViewCell.xib */; };
 		86D0A4FB1AE019AB00D86953 /* LikeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86D0A4FA1AE019AB00D86953 /* LikeViewController.swift */; };
@@ -149,7 +148,6 @@
 		869931CE1BB7935B00EF5C9C /* libFlurry_7.1.1.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libFlurry_7.1.1.a; path = Flurry/libFlurry_7.1.1.a; sourceTree = SOURCE_ROOT; };
 		86A11FC91C6466440028CE4C /* CheckLocationViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CheckLocationViewController.swift; sourceTree = "<group>"; };
 		86A2E6471AAC9ECC00499C13 /* UniversityViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UniversityViewController.swift; sourceTree = "<group>"; };
-		86C73A761C7073F200ADB45C /* PhotoDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PhotoDetailViewController.swift; sourceTree = "<group>"; };
 		86D0A4F61AE012A100D86953 /* LikeViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LikeViewCell.swift; sourceTree = "<group>"; };
 		86D0A4F71AE012A100D86953 /* LikeViewCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = LikeViewCell.xib; sourceTree = "<group>"; };
 		86D0A4FA1AE019AB00D86953 /* LikeViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LikeViewController.swift; sourceTree = "<group>"; };
@@ -298,7 +296,6 @@
 				9CC38CD51C3DC4AA00D559B2 /* LanguageSettingTableViewController.swift */,
 				2F0A4F3F1C4E1A7100C9580A /* ImagesDetailViewController.swift */,
 				86A11FC91C6466440028CE4C /* CheckLocationViewController.swift */,
-				86C73A761C7073F200ADB45C /* PhotoDetailViewController.swift */,
 			);
 			name = viewController;
 			sourceTree = "<group>";
@@ -593,7 +590,6 @@
 				8670A7FE1C6F8D2C00A3F7ED /* QBAnimationSequence.m in Sources */,
 				2363F99C1AA00FBC009957D1 /* YRNewPostViewController.swift in Sources */,
 				73BB8A021AAF53AE00CAECB5 /* YRSendComment.swift in Sources */,
-				86C73A771C7073F200ADB45C /* PhotoDetailViewController.swift in Sources */,
 				738AA8101AABD4A7008E6649 /* SearchResultCell.swift in Sources */,
 				239A38521A9FFB13000976E0 /* YRRefreshView.swift in Sources */,
 				86F32C261B84216D00689CE6 /* SettingViewController.swift in Sources */,
