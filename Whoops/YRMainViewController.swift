@@ -139,7 +139,7 @@ class YRMainViewController: UIViewController,UITableViewDelegate,UITableViewData
         }
         
         self.loadTableViews()
-        self.addRefreshControl()
+        //self.addRefreshControl()
         (self.tableArray[currentIndex] as! UITableView).scrollsToTop = true
         
         if (fromPost == true){
@@ -203,6 +203,8 @@ class YRMainViewController: UIViewController,UITableViewDelegate,UITableViewData
     {
         self.scrollView.delegate = self
         rankBtn.setTitleColor(UIColor.whiteColor(), forState: .Selected)
+        self.loadTableViews()
+        self.addRefreshControl()
     }
     
     func addRefreshControl(){
