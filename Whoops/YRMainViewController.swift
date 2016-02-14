@@ -421,17 +421,6 @@ class YRMainViewController: UIViewController,UITableViewDelegate,UITableViewData
 */
         
     }
-    
-    func locationManager(manager: CLLocationManager, didChangeAuthorizationStatus status: CLAuthorizationStatus) {
-        if(ios8()){
-            if CLLocationManager.authorizationStatus() == CLAuthorizationStatus.Denied {
-                let mainStoryboard = UIStoryboard(name: "Main", bundle: NSBundle.mainBundle())
-                let vc : UIViewController = mainStoryboard.instantiateViewControllerWithIdentifier("CheckLocation")
-                self.presentViewController(vc, animated: true, completion: nil)
-            }
-        }
-    }
-    
     func locationManager(manager: CLLocationManager, didUpdateLocations locations: [CLLocation]){
         
         let location:CLLocation = locations[locations.count-1] 
