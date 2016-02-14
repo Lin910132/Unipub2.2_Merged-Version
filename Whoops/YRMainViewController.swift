@@ -69,7 +69,6 @@ class YRMainViewController: UIViewController,UITableViewDelegate,UITableViewData
             }
         }
         
-        scrollView.scrollsToTop = false
         NSNotificationCenter.defaultCenter().addObserver(self, selector: "SendButtonRefresh:",name:"loadMain", object: nil)
         
         locationManager.startUpdatingLocation()
@@ -141,6 +140,7 @@ class YRMainViewController: UIViewController,UITableViewDelegate,UITableViewData
         
         self.loadTableViews()
         self.addRefreshControl()
+        (self.tableArray[currentIndex] as! UITableView).scrollsToTop = true
         
         if (fromPost == true){
             fromPost = false
@@ -179,6 +179,7 @@ class YRMainViewController: UIViewController,UITableViewDelegate,UITableViewData
             table.registerNib(nib, forCellReuseIdentifier: identifier)
             table.tag = 1000 + i
             table.separatorStyle = .None
+            table.scrollsToTop = false
             tableArray.addObject(table)
             loadingFlag[i] = 0
         }
@@ -192,6 +193,7 @@ class YRMainViewController: UIViewController,UITableViewDelegate,UITableViewData
             table.frame = CGRectMake(0, 0, view.frame.width, view.frame.height)
             view.addSubview(table)
             self.scrollView.addSubview(view)
+            self.scrollView.scrollsToTop = false
         }
         
         self.scrollView.contentSize = CGSizeMake(mainWidth * 5, scrollView.frame.height)
