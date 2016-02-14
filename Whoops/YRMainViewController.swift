@@ -68,6 +68,7 @@ class YRMainViewController: UIViewController,UITableViewDelegate,UITableViewData
             }
         }
         
+        scrollView.scrollsToTop = false
         NSNotificationCenter.defaultCenter().addObserver(self, selector: "SendButtonRefresh:",name:"loadMain", object: nil)
         
         locationManager.startUpdatingLocation()
@@ -117,7 +118,7 @@ class YRMainViewController: UIViewController,UITableViewDelegate,UITableViewData
                 }
                 
             }
-            self.page[self.type]++
+            //self.page[self.type]++
             (self.tableArray[self.type] as! UITableView).reloadData()
 
         })
@@ -234,7 +235,7 @@ class YRMainViewController: UIViewController,UITableViewDelegate,UITableViewData
                 self.dataArray[self.type].addObject(data)
                 
             }
-            self.page[self.type]++
+            //self.page[self.type]++
             (self.tableArray[self.type] as! UITableView).reloadData()
             
             sender.endRefreshing()
@@ -316,11 +317,11 @@ class YRMainViewController: UIViewController,UITableViewDelegate,UITableViewData
                 url += "post/listHotAll?pageNum=\(page[type])"
             }
         }
-        url += "&uid=\(FileUtility.getUserId())"
         
         if (type == 2){ //4
             url = FileUtility.getUrlDomain() + "post/listByActivity?activityId=1&pageNum=\(page[type])"
         }
+        url += "&uid=\(FileUtility.getUserId())"
         
         return url
     }
@@ -421,6 +422,17 @@ class YRMainViewController: UIViewController,UITableViewDelegate,UITableViewData
 */
         
     }
+    
+    func locationManager(manager: CLLocationManager, didChangeAuthorizationStatus status: CLAuthorizationStatus) {
+        if(ios8()){
+            if CLLocationManager.authorizationStatus() == CLAuthorizationStatus.Denied {
+                let mainStoryboard = UIStoryboard(name: "Main", bundle: NSBundle.mainBundle())
+                let vc : UIViewController = mainStoryboard.instantiateViewControllerWithIdentifier("CheckLocation")
+                self.presentViewController(vc, animated: true, completion: nil)
+            }
+        }
+    }
+    
     func locationManager(manager: CLLocationManager, didUpdateLocations locations: [CLLocation]){
         
         let location:CLLocation = locations[locations.count-1] 
