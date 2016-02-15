@@ -411,7 +411,7 @@ class YRMainViewController: UIViewController,UITableViewDelegate,UITableViewData
     
     func refreshView(refreshView:YRRefreshView,didClickButton btn:UIButton)
     {
-        self.page[self.type]++
+        //self.page[self.type]++
         loadData(self.type)
     }
     
@@ -480,6 +480,9 @@ class YRMainViewController: UIViewController,UITableViewDelegate,UITableViewData
                 button.selected = false
             }
         }
+        
+        (tableArray[currentIndex] as! UITableView).scrollsToTop = false
+        (tableArray[newIndex] as! UITableView).scrollsToTop = true
         
         self.page[self.type] = 1
         self.dataArray[self.type] = NSMutableArray()
