@@ -201,14 +201,6 @@ class YRMainViewController: UIViewController,UITableViewDelegate,UITableViewData
         self.scrollView.contentSize = CGSizeMake(mainWidth * 5, scrollView.frame.height)
     }
     
-    override func shouldAutorotate() -> Bool {
-        return false
-    }
-    
-    override func supportedInterfaceOrientations() -> UIInterfaceOrientationMask {
-        return UIInterfaceOrientationMask.Portrait
-    }
-    
     func setupViews()
     {
         self.scrollView.delegate = self
