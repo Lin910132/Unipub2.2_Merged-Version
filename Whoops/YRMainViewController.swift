@@ -138,7 +138,7 @@ class YRMainViewController: UIViewController,UITableViewDelegate,UITableViewData
             return
         }
         
-        //self.loadTableViews()
+        self.loadTableViews()
         //self.addRefreshControl()
         (self.tableArray[currentIndex] as! UITableView).scrollsToTop = true
         
