@@ -486,8 +486,8 @@ class YRMainViewController: UIViewController,UITableViewDelegate,UITableViewData
         if (self.loadingFlag[newIndex] == 0){
             self.page[self.type] = 1
             self.dataArray[self.type] = NSMutableArray()
-            (tableArray[newIndex] as! UITableView).reloadData()
             self.loadData(newIndex)
+            (tableArray[newIndex] as! UITableView).reloadData()
             self.loadingFlag[newIndex] = 1
             self.stopLoading = false
         }
@@ -866,8 +866,8 @@ class YRMainViewController: UIViewController,UITableViewDelegate,UITableViewData
             if (self.loadingFlag[newIndex] == 0){
                 self.page[self.type] = 1
                 self.dataArray[self.type] = NSMutableArray()
-                (tableArray[newIndex] as! UITableView).reloadData()
                 self.loadData(newIndex)
+                (tableArray[newIndex] as! UITableView).reloadData()
                 self.loadingFlag[newIndex] = 1
             }
         }
