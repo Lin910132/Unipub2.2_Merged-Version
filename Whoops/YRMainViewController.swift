@@ -41,7 +41,7 @@ class YRMainViewController: UIViewController,UITableViewDelegate,UITableViewData
     var school:Int = 0
     var userId:String = "0"
     
-    var type:Int = 4
+    var type:Int = 2
     
     let itemArray = ["New","Hot","Favorite","All Time Hot","Rank"]
     var loadingFlag = [0, 0, 0, 0, 0]
