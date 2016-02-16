@@ -362,7 +362,7 @@ class YRMainViewController: UIViewController,UITableViewDelegate,UITableViewData
                 return i
             }
         }
-        return -1
+        return self.type
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell{
