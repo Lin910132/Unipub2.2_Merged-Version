@@ -138,7 +138,7 @@ class YRMainViewController: UIViewController,UITableViewDelegate,UITableViewData
             return
         }
         
-        self.loadTableViews()
+        //self.loadTableViews()
         //self.addRefreshControl()
         (self.tableArray[currentIndex] as! UITableView).scrollsToTop = true
         
@@ -199,6 +199,14 @@ class YRMainViewController: UIViewController,UITableViewDelegate,UITableViewData
         }
         
         self.scrollView.contentSize = CGSizeMake(mainWidth * 5, scrollView.frame.height)
+    }
+    
+    override func shouldAutorotate() -> Bool {
+        return false
+    }
+    
+    override func supportedInterfaceOrientations() -> UIInterfaceOrientationMask {
+        return UIInterfaceOrientationMask.Portrait
     }
     
     func setupViews()
@@ -465,7 +473,6 @@ class YRMainViewController: UIViewController,UITableViewDelegate,UITableViewData
     
     @IBAction func tabBarButtonClicked(sender: AnyObject) {
         let index = sender.tag
-        self.stopLoading = false
         
         for var i = 0;i<5;i++
         {
@@ -484,10 +491,16 @@ class YRMainViewController: UIViewController,UITableViewDelegate,UITableViewData
         (tableArray[currentIndex] as! UITableView).scrollsToTop = false
         (tableArray[newIndex] as! UITableView).scrollsToTop = true
         
-        self.page[self.type] = 1
-        self.dataArray[self.type] = NSMutableArray()
+        if (self.loadingFlag[newIndex] == 0){
+            self.page[self.type] = 1
+            self.dataArray[self.type] = NSMutableArray()
+            (tableArray[newIndex] as! UITableView).reloadData()
+            self.loadData(newIndex)
+            self.loadingFlag[newIndex] = 1
+            self.stopLoading = false
+        }
+        //(tableArray[newIndex] as! UITableView).reloadData()
         
-        (tableArray[newIndex] as! UITableView).reloadData()
         self.type = index - 100
         self.loadData(index-100)
 
@@ -520,6 +533,7 @@ class YRMainViewController: UIViewController,UITableViewDelegate,UITableViewData
         animateButtons(offset, direction: direction)
         scrollPageWithIndex(self.type)
         
+        /*
         if (self.fromPost == true){
         
             for (var i = 0; i < 5; i++){
@@ -527,6 +541,8 @@ class YRMainViewController: UIViewController,UITableViewDelegate,UITableViewData
             }
             (self.refreshArray[self.type] as! UIRefreshControl).hidden = false
         }
+        */
+
     }
     
     
@@ -854,8 +870,8 @@ class YRMainViewController: UIViewController,UITableViewDelegate,UITableViewData
                 scrollView.scrollRectToVisible(CGRectMake(scrollView.frame.width * CGFloat(currentIndex), 0, scrollView.frame.width, scrollView.frame.height), animated: false)
             }
             
+            self.type = newIndex
             if (self.loadingFlag[newIndex] == 0){
-                self.type = newIndex
                 self.page[self.type] = 1
                 self.dataArray[self.type] = NSMutableArray()
                 (tableArray[newIndex] as! UITableView).reloadData()
