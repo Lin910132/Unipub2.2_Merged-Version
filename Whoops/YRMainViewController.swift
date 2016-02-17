@@ -35,7 +35,7 @@ class YRMainViewController: UIViewController,UITableViewDelegate,UITableViewData
     var page = [1,1,1,1,1]
     var refreshView:YRRefreshView?
     let locationManager: CLLocationManager = CLLocationManager()
-    var stopLoading: Bool = false
+    var stopLoading = [false, false, false, false, false]
     var lat:Double = 0
     var lng:Double = 0
     var school:Int = 0
@@ -45,7 +45,7 @@ class YRMainViewController: UIViewController,UITableViewDelegate,UITableViewData
     
     let itemArray = ["New","Hot","Favorite","All Time Hot","Rank"]
     var loadingFlag = [0, 0, 0, 0, 0]
-    
+    var currentDataCount = [0, 0, 0, 0, 0]
     var buttons = NSMutableArray()
     var tableArray = NSMutableArray()
     var currentIndex = 2
@@ -87,7 +87,8 @@ class YRMainViewController: UIViewController,UITableViewDelegate,UITableViewData
     
     func SendButtonRefresh(sender:UIRefreshControl){
         page[self.type] = 1
-        self.stopLoading = false
+        self.stopLoading[self.type] = false
+        self.currentDataCount[self.type] = 0
         let url = urlString(self.type)
         //self.refreshView!.startLoading()
         YRHttpRequest.requestWithURL(url,completionHandler:{ data in
@@ -224,7 +225,8 @@ class YRMainViewController: UIViewController,UITableViewDelegate,UITableViewData
     
     func actionRefreshHandler(sender:UIRefreshControl){
         page[self.type] = 1
-        self.stopLoading = false
+        self.stopLoading[self.type] = false
+        self.currentDataCount[self.type] = 0
         let url = urlString(self.type)
         //self.refreshView!.startLoading()
         YRHttpRequest.requestWithURL(url,completionHandler:{ data in
@@ -271,9 +273,9 @@ class YRMainViewController: UIViewController,UITableViewDelegate,UITableViewData
             }
             
             if (arr.count == 0){
-                self.stopLoading = true
+                self.stopLoading[type] = true
             }else{
-                self.stopLoading = false
+                self.stopLoading[type] = false
             }
             
             for data : AnyObject  in arr
@@ -352,6 +354,14 @@ class YRMainViewController: UIViewController,UITableViewDelegate,UITableViewData
         // #warning Incomplete method implementation.
         // Return the number of rows in the section.
         let tableIndex = getTableIndex(tableView)
+        
+        if (self.currentDataCount[tableIndex] < self.dataArray[tableIndex].count){
+            self.currentDataCount[tableIndex] = self.dataArray[tableIndex].count
+            self.stopLoading[tableIndex] = false
+        }else{
+            self.stopLoading[tableIndex] = true
+        }
+        
         return self.dataArray[tableIndex].count
     }
     
@@ -380,7 +390,7 @@ class YRMainViewController: UIViewController,UITableViewDelegate,UITableViewData
         cell!.delegate = self;
         cell!.refreshMainDelegate = self
         cell!.backgroundColor = UIColor(red:246.0/255.0 , green:246.0/255.0 , blue:246.0/255.0 , alpha: 1.0);
-        if (indexPath.row == self.dataArray[tableIndex].count-1) && (self.stopLoading == false){
+        if (indexPath.row == self.dataArray[tableIndex].count-1) && (self.stopLoading[self.type] == false){
             self.page[self.type]++
             loadData(self.type)
         }
@@ -491,7 +501,8 @@ class YRMainViewController: UIViewController,UITableViewDelegate,UITableViewData
             self.loadData(newIndex)
             (tableArray[newIndex] as! UITableView).reloadData()
             self.loadingFlag[newIndex] = 1
-            self.stopLoading = false
+            self.stopLoading[self.type] = false
+            self.currentDataCount[self.type] = 0
         }
         //(tableArray[newIndex] as! UITableView).reloadData()
         //self.loadData(index-100)
@@ -872,7 +883,8 @@ class YRMainViewController: UIViewController,UITableViewDelegate,UITableViewData
                 self.loadData(newIndex)
                 (tableArray[newIndex] as! UITableView).reloadData()
                 self.loadingFlag[newIndex] = 1
-                self.stopLoading = false
+                self.stopLoading[self.type] = false
+                self.currentDataCount[self.type] = 0
             }
         }
     }
