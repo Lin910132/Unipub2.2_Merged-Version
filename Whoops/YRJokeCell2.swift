@@ -569,7 +569,7 @@ class YRJokeCell2: UITableViewCell
 //        var xPositon:CGFloat = 5;
         let yPosition:CGFloat = 20;
         var width:CGFloat;
-        width = (CGFloat)(UIScreen.mainScreen().bounds.width - 20 - 55); //图片区域的宽度
+        width = (CGFloat)(UIScreen.mainScreen().bounds.width - 55); //图片区域的宽度
         
         
         
