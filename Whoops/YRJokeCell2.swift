@@ -97,7 +97,7 @@ class YRJokeCell2: UITableViewCell
         
         self.backgroundColor = UIColor(red: 244.0/255.0, green: 244.0/255.0, blue: 244.0/255.0, alpha: 1.0);
         //背景图片
-        let ivBack = UIImageView(frame:CGRectMake(10, 7, UIScreen.mainScreen().bounds.width - 20, 187));
+        let ivBack = UIImageView(frame:CGRectMake(0, 7, UIScreen.mainScreen().bounds.width, 187));
         ivBack.backgroundColor = UIColor.whiteColor();
         ivBack.layer.shadowOffset = CGSizeMake(10, 10);
         ivBack.layer.shadowColor = UIColor(red:237.0/255.0 , green:237.0/255.0, blue:237.0/255.0 , alpha: 1.0).CGColor;
@@ -299,7 +299,7 @@ class YRJokeCell2: UITableViewCell
             lbPostion = textYpostion;
         }
         
-        let lableContent = UILabel(frame: CGRectMake(3, lbPostion, ivBack.frame.size.width-6, 1000));
+        let lableContent = UILabel(frame: CGRectMake(12, lbPostion, ivBack.frame.size.width-6, 1000));
         lableContent.numberOfLines = 0;
         lableContent.textColor = UIColor(red:60.0/255.0 , green:60.0/255.0 , blue: 60.0/255.0, alpha: 1.0);
         lableContent.font = UIFont.systemFontOfSize(17);
@@ -478,7 +478,7 @@ class YRJokeCell2: UITableViewCell
             //let isFavor = post["isFavor"] as! String;
             
             
-            //self.refreshMainDelegate?.refreshMain()
+            self.refreshMainDelegate?.refreshMain()
             //self.refreshCommentDelegate?.refreshCommentByFavor()
             //self.refreshUniversityDelete?.refreshUniversityByFavor()
             //self.refreshMyRepliesDelegate?.refreshMyRepliesByFavor()

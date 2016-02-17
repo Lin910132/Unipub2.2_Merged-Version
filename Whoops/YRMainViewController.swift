@@ -568,8 +568,9 @@ class YRMainViewController: UIViewController,UITableViewDelegate,UITableViewData
     }
     
     func refreshMain(){
-        let fresh:UIRefreshControl = UIRefreshControl()
-        self.actionRefreshHandler(fresh)
+        //let fresh:UIRefreshControl = UIRefreshControl()
+        //self.actionRefreshHandler(fresh)
+        self.loadingFlag[1] = 0
     }
     
     
