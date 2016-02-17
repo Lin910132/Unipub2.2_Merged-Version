@@ -483,6 +483,8 @@ class YRMainViewController: UIViewController,UITableViewDelegate,UITableViewData
         (tableArray[currentIndex] as! UITableView).scrollsToTop = false
         (tableArray[newIndex] as! UITableView).scrollsToTop = true
         
+        
+        self.type = index - 100
         if (self.loadingFlag[newIndex] == 0){
             self.page[self.type] = 1
             self.dataArray[self.type] = NSMutableArray()
@@ -492,9 +494,7 @@ class YRMainViewController: UIViewController,UITableViewDelegate,UITableViewData
             self.stopLoading = false
         }
         //(tableArray[newIndex] as! UITableView).reloadData()
-        
-        self.type = index - 100
-        self.loadData(index-100)
+        //self.loadData(index-100)
 
 /*
         0 1 2 3 4
@@ -570,7 +570,9 @@ class YRMainViewController: UIViewController,UITableViewDelegate,UITableViewData
     func refreshMain(){
         //let fresh:UIRefreshControl = UIRefreshControl()
         //self.actionRefreshHandler(fresh)
-        self.loadingFlag[1] = 0
+        for (var i=0; i<5; i++){
+            self.loadingFlag[i] = 0
+        }
     }
     
     
@@ -870,6 +872,7 @@ class YRMainViewController: UIViewController,UITableViewDelegate,UITableViewData
                 self.loadData(newIndex)
                 (tableArray[newIndex] as! UITableView).reloadData()
                 self.loadingFlag[newIndex] = 1
+                self.stopLoading = false
             }
         }
     }
