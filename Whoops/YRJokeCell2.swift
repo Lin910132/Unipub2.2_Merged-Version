@@ -337,7 +337,7 @@ class YRJokeCell2: UITableViewCell
         ivBack.frame = rectBack;
         
         //喜欢按钮
-        let like = UIButton(frame:CGRectMake(ivBack.frame.size.width-36, ((textYpostion - yPosition)/3 - 34)/2 + yPosition, 34, 34));
+        let like = UIButton(frame:CGRectMake(ivBack.frame.size.width-42, ((textYpostion - yPosition)/3 - 34)/2 + yPosition, 34, 34));
         let isLike = data.stringAttributeForKey("isLike") as String;
         if isLike == "1" {
             like.setImage(UIImage(named:"Likefill"), forState: UIControlState.Normal);
@@ -349,7 +349,7 @@ class YRJokeCell2: UITableViewCell
         ivBack.addSubview(self.likeButton);
         
         //喜欢数量
-        likeNum = UILabel(frame: CGRectMake(ivBack.frame.size.width-52, (textYpostion - yPosition)/3 + ((textYpostion - yPosition)/3 - 34)/2 + yPosition, 67, 34));
+        likeNum = UILabel(frame: CGRectMake(ivBack.frame.size.width-58, (textYpostion - yPosition)/3 + ((textYpostion - yPosition)/3 - 34)/2 + yPosition, 67, 34));
         likeNum.textAlignment = NSTextAlignment.Center;
         likeNum.textColor = UIColor(red:121.0/255.0 , green:122.0/255.0 , blue:124.0/255.0 , alpha: 1.0);
         if (data.stringAttributeForKey("likeNum") == NSNull())
@@ -363,7 +363,7 @@ class YRJokeCell2: UITableViewCell
         ivBack.addSubview(likeNum);
         
         //不喜欢
-        let unlike = UIButton(frame:CGRectMake(ivBack.frame.size.width-36, 2*(textYpostion - yPosition)/3+((textYpostion - yPosition)/3 - 34)/2 + yPosition, 34, 34));
+        let unlike = UIButton(frame:CGRectMake(ivBack.frame.size.width-42, 2*(textYpostion - yPosition)/3+((textYpostion - yPosition)/3 - 34)/2 + yPosition, 34, 34));
         
         if isLike == "-1" {
             unlike.setImage(UIImage(named:"unlikefill"), forState: UIControlState.Normal);
