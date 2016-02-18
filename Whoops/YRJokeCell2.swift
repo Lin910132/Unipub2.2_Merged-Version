@@ -556,13 +556,15 @@ class YRJokeCell2: UITableViewCell
     
     class func cellHeightByData(data:NSDictionary)->CGFloat
     {
-        let mainWidth = UIScreen.mainScreen().bounds.width
-        let lableContent = UILabel(frame: CGRectMake(3, 193, mainWidth - 26, 1000));
         
+        //lableContent比背景宽度少6，现在的背景宽度是mainWidth
+        let mainWidth = UIScreen.mainScreen().bounds.width
+        let lableContent = UILabel(frame: CGRectMake(3, 193, mainWidth-6, 1000));
+    
         lableContent.numberOfLines = 0;
         lableContent.font = UIFont.systemFontOfSize(17);
         let text = data.stringAttributeForKey("content");
-        let size = text.stringHeightWith(17,width:mainWidth - 26);
+        let size = text.stringHeightWith(17,width:mainWidth - 6);
         //size = size + 20.0;
         //设置图片
         let imageStr = data.stringAttributeForKey("image") as NSString;
@@ -629,7 +631,7 @@ class YRJokeCell2: UITableViewCell
         else
         {
             isTop = true;
-            textTmpYpostion = 138;
+            textTmpYpostion = 118;
         }
         
         var lbPostion:CGFloat;
@@ -651,13 +653,13 @@ class YRJokeCell2: UITableViewCell
         
         if(isTop)
         {
-            if(size + 20 + lbPostion > 153)
+            if(size + 20 + lbPostion > 133)
             {
-                bottomY = size + lbPostion + 30;
+                bottomY = size + lbPostion + 20;
             }
             else
             {
-                bottomY = 153;
+                bottomY = 133;
             }
             
             resut = bottomY + bottomHeight;
