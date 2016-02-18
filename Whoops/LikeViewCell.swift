@@ -51,10 +51,10 @@ class LikeViewCell: UITableViewCell {
         self.title.setHeight(height)
         self.title.text = content
         
-        self.content.hidden = true
-        //if self.data.stringAttributeForKey("msg") != NSNull() {
-        //    self.title.text = self.data.stringAttributeForKey("msg")
-        //}
+        self.content.hidden = false
+        if self.data.stringAttributeForKey("content") != NSNull() {
+            self.content.text = self.data.stringAttributeForKey("content")
+        }
         //self.title.text = "You have a msg!!"
         
     }
