@@ -359,7 +359,9 @@ class YRMainViewController: UIViewController,UITableViewDelegate,UITableViewData
             self.currentDataCount[tableIndex] = self.dataArray[tableIndex].count
             self.stopLoading[tableIndex] = false
         }else{
-            self.stopLoading[tableIndex] = true
+            if (self.page[self.type]>1){
+                self.stopLoading[tableIndex] = true
+            }
         }
         
         return self.dataArray[tableIndex].count
