@@ -481,7 +481,7 @@ class YRJokeCell2: UITableViewCell
             
             
             self.refreshMainDelegate?.refreshMain()
-            self.refreshMainDelegate?.FaveBtnClicked(sender.superview?.superview as! YRJokeCell2)
+            //self.refreshMainDelegate?.FaveBtnClicked(sender.superview?.superview as! YRJokeCell2)
             //self.refreshCommentDelegate?.refreshCommentByFavor()
             //self.refreshUniversityDelete?.refreshUniversityByFavor()
             //self.refreshMyRepliesDelegate?.refreshMyRepliesByFavor()
