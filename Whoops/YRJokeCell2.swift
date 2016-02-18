@@ -22,6 +22,7 @@ protocol YRRefreshMainDelegate
 {
     
     func refreshMain();
+    func FaveBtnClicked(cell:YRJokeCell2)
 }
 
 protocol YRRefreshCommentDelegate
@@ -47,6 +48,7 @@ protocol YRRefreshMyRepliesDelegate
 
 class YRJokeCell2: UITableViewCell
 {
+        
     
     var delegate:YRJokeCellDelegate?
     var refreshMainDelegate:YRRefreshMainDelegate?
@@ -479,6 +481,7 @@ class YRJokeCell2: UITableViewCell
             
             
             self.refreshMainDelegate?.refreshMain()
+            self.refreshMainDelegate?.FaveBtnClicked(sender.superview?.superview as! YRJokeCell2)
             //self.refreshCommentDelegate?.refreshCommentByFavor()
             //self.refreshUniversityDelete?.refreshUniversityByFavor()
             //self.refreshMyRepliesDelegate?.refreshMyRepliesByFavor()

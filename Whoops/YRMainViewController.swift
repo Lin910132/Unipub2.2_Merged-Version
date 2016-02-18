@@ -376,7 +376,6 @@ class YRMainViewController: UIViewController,UITableViewDelegate,UITableViewData
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell{
-        
         let tableIndex = getTableIndex(tableView)
         let index = indexPath.row
         let data = self.dataArray[tableIndex][index] as! NSDictionary
@@ -586,7 +585,14 @@ class YRMainViewController: UIViewController,UITableViewDelegate,UITableViewData
         }
     }
     
-    
+    func FaveBtnClicked(cell:YRJokeCell2){
+        
+        let indexPath = (tableArray[self.type] as! UITableView).indexPathForCell(cell)
+        let row = indexPath?.row
+        //(self.dataArray[self.type][row!] as! NSDictionary)["isFave"] =
+        //(tableArray[self.type] as! UITableView).reloadRowsAtIndexPaths([indexPath!], withRowAnimation: UITableViewRowAnimation.None)
+        
+    }
     
     func showSendMailErrorAlert() {
         let sendMailErrorAlert = UIAlertView(title: "Could Not Send Email".localized(), message: "Your device could not send e-mail.  Please check e-mail configuration and try again.".localized(), delegate: self, cancelButtonTitle: "OK".localized())

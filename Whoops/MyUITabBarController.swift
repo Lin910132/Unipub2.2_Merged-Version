@@ -51,7 +51,7 @@ class MyUITabBarController: UITabBarController, UITabBarControllerDelegate{
         let badgeString = aNot.userInfo!["badgeNumber"] as! String
         let badgeNumber: Int64? = Int64 (badgeString)
         
-        if (badgeNumber >= 20){
+        if (badgeNumber >= 10){
             tabItem.badgeValue = badgeString + "+"
         }else{
             tabItem.badgeValue = badgeString
