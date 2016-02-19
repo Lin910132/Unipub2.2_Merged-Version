@@ -136,6 +136,11 @@ class YRMainViewController: UIViewController,UITableViewDelegate,UITableViewData
     override func viewDidAppear(animated: Bool) {
         if (fromDetail == true){
             fromDetail = false
+            
+            for (var i = 0; i < 5; i++){
+                (self.tableArray[i] as! UITableView).reloadData()
+            }
+            
             return
         }
         
@@ -387,9 +392,13 @@ class YRMainViewController: UIViewController,UITableViewDelegate,UITableViewData
         }
         
         cell!.data = data
+        cell!.tableIndex = tableIndex
+        cell!.rowIndex = index
+        cell?.bInMain = true
         cell!.setCellUp()
         cell!.delegate = self;
         cell!.refreshMainDelegate = self
+        cell!.mainController = self
         cell!.backgroundColor = UIColor(red:246.0/255.0 , green:246.0/255.0 , blue:246.0/255.0 , alpha: 1.0);
         if (indexPath.row == self.dataArray[tableIndex].count-1) && (self.stopLoading[self.type] == false){
             self.page[self.type]++
@@ -412,6 +421,8 @@ class YRMainViewController: UIViewController,UITableViewDelegate,UITableViewData
         let data = self.dataArray[tableIndex][index] as! NSDictionary
         let commentsVC = YRCommentsViewController(nibName :nil, bundle: nil)
         commentsVC.jokeId = data.stringAttributeForKey("id")
+        commentsVC.tableIndex = tableIndex
+        commentsVC.rowIndex = index
         commentsVC.hidesBottomBarWhenPushed = true
         commentsVC.listController = self
         
@@ -937,6 +948,33 @@ class YRMainViewController: UIViewController,UITableViewDelegate,UITableViewData
         }
         else if (scrollView.contentOffset.x > frame.width * 4){
             scrollView.scrollRectToVisible(CGRectMake(0, 0, frame.width, frame.height), animated: false)
+        }
+    }
+    
+    func changeButtonState(tbIndex:Int, rIndex:Int, key:String, value:String){
+        let data:NSMutableDictionary = NSMutableDictionary(dictionary: dataArray[tbIndex][rIndex] as! [NSObject : AnyObject])
+        var bChanged = false
+        if (key == "isFavor"){
+            data.setValue(value, forKey: key)
+            bChanged = true
+        }
+        else if (key == "isLike"){
+            data.setValue(value, forKey: key)
+            bChanged = true
+        }
+        else if (key == "likeNum"){
+            if (value == "0"){
+                data.setValue(NSNull(), forKey: key)
+            }
+            else {
+                data.setValue(value, forKey: key)
+            }
+            bChanged = true
+        }
+        
+        if (bChanged == true){
+            let newData:NSDictionary = NSDictionary(dictionary: data)
+            dataArray[tbIndex].replaceObjectAtIndex(rIndex, withObject: newData)
         }
     }
 }

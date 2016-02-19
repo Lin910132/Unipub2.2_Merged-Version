@@ -26,6 +26,9 @@ class YRCommentsViewController: UIViewController,UITableViewDelegate,UITableView
     var refreshCommentDelete:YRRefreshCommentDelegate?
     var listController:YRMainViewController?
     
+    var tableIndex:Int = 0
+    var rowIndex:Int = 0
+    
     override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: NSBundle?) {
         super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
         // Custom initialization
@@ -210,6 +213,10 @@ class YRCommentsViewController: UIViewController,UITableViewDelegate,UITableView
             self.headerView = YRJokeCell2(style: .Default, reuseIdentifier: "cell")
             let post = data["data"] as! NSDictionary
             self.headerView?.data = post
+            self.headerView?.bInMain = true
+            self.headerView?.rowIndex = self.rowIndex
+            self.headerView?.tableIndex = self.tableIndex
+            self.headerView?.mainController = self.listController
             self.headerView?.setCellUp()
             self.headerView?.frame = CGRectMake(0, 0, self.view.frame.size.width,YRJokeCell2.cellHeightByData(post))
             self.headerView?.backgroundColor = UIColor(red:246.0/255.0 , green:246.0/255.0 , blue:246.0/255.0 , alpha: 1.0);
@@ -251,6 +258,7 @@ class YRCommentsViewController: UIViewController,UITableViewDelegate,UITableView
         let index = indexPath.row
         let data = self.dataArray[index] as! NSDictionary
         cell!.data = data
+        
         cell!.selectionStyle = UITableViewCellSelectionStyle.None
         cell!.backgroundColor = UIColor.whiteColor();
         return cell!

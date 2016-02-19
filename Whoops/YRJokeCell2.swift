@@ -67,7 +67,15 @@ class YRJokeCell2: UITableViewCell
     var imgList = [UIImageView]()
     
     
+    var tableIndex:Int = 0
+    var rowIndex:Int = 0
+    var mainController:YRMainViewController!
+    var bInMain:Bool = false
+    
     let baseTagValue = 1000
+    
+    
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
@@ -492,9 +500,15 @@ class YRJokeCell2: UITableViewCell
         if isFaveFlag == true {
             self.favButton.setImage(UIImage(named:"star"), forState: UIControlState.Normal);
             isFaveFlag = false
+            if (self.bInMain == true){
+                self.mainController.changeButtonState(tableIndex, rIndex: rowIndex, key: "isFavor", value: "")
+            }
         }else{
             self.favButton.setImage(UIImage(named:"starB1"), forState: UIControlState.Normal);
             isFaveFlag = true
+            if (self.bInMain == true){
+                self.mainController.changeButtonState(tableIndex, rIndex: rowIndex, key: "isFavor", value: "favor")
+            }
         }
         
         
@@ -518,8 +532,17 @@ class YRJokeCell2: UITableViewCell
             if isLike == "1" {
                 self.likeButton.setImage(UIImage(named:"Likefill"), forState: UIControlState.Normal);
                 self.unlikeButton.setImage(UIImage(named:"unlikeNew"), forState: UIControlState.Normal);
+                if (self.bInMain == true){
+                    self.mainController.changeButtonState(self.tableIndex, rIndex: self.rowIndex, key: "isLike", value: "1")
+                    self.mainController.changeButtonState(self.tableIndex, rIndex: self.rowIndex, key: "likeNum", value: self.likeNum.text!)
+                }
+                
             }else{
                 self.likeButton.setImage(UIImage(named:"LikeNew"), forState: UIControlState.Normal);
+                if (self.bInMain == true){
+                    self.mainController.changeButtonState(self.tableIndex, rIndex: self.rowIndex, key: "isLike", value: "0")
+                    self.mainController.changeButtonState(self.tableIndex, rIndex: self.rowIndex, key: "likeNum", value: self.likeNum.text!)
+                }
             }
 
             
@@ -546,8 +569,16 @@ class YRJokeCell2: UITableViewCell
             if isLike == "-1" {
                 self.unlikeButton.setImage(UIImage(named:"unlikefill"), forState: UIControlState.Normal);
                 self.likeButton.setImage(UIImage(named:"LikeNew"), forState: UIControlState.Normal);
+                if (self.bInMain == true){
+                    self.mainController.changeButtonState(self.tableIndex, rIndex: self.rowIndex, key: "isLike", value: "-1")
+                    self.mainController.changeButtonState(self.tableIndex, rIndex: self.rowIndex, key: "likeNum", value: self.likeNum.text!)
+                }
             }else{
                 self.unlikeButton.setImage(UIImage(named:"unlikeNew"), forState: UIControlState.Normal);
+                if (self.bInMain == true){
+                    self.mainController.changeButtonState(self.tableIndex, rIndex: self.rowIndex, key: "isLike", value: "0")
+                    self.mainController.changeButtonState(self.tableIndex, rIndex: self.rowIndex, key: "likeNum", value: self.likeNum.text!)
+                }
             }
 
             
