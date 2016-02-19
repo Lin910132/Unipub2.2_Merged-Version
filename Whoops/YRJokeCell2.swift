@@ -325,7 +325,7 @@ class YRJokeCell2: UITableViewCell
         {
             if(size + 20 + lbPostion > 153)
             {
-                bottomY = size + lbPostion + 30;
+                bottomY = size + lbPostion + 20;
             }
             else
             {
