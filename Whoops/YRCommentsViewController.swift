@@ -347,7 +347,9 @@ class YRCommentsViewController: UIViewController,UITableViewDelegate,UITableView
     
     override func viewWillDisappear(animated: Bool) {
         super.viewWillDisappear(animated)
-        self.listController?.fromDetail = true
+        if (self.category == 1){
+            self.listController?.fromDetail = true
+        }
     }
     
     /*

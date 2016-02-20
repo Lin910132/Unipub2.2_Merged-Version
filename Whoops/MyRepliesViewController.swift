@@ -211,7 +211,7 @@ class MyRepliesViewController: UITableViewController,MFMailComposeViewController
         commentsVC.hidesBottomBarWhenPushed = true
         commentsVC.replyController = self
         commentsVC.rowIndex = index
-        commentsVC.category = 2
+        commentsVC.category = 4
         tableView.deselectRowAtIndexPath(indexPath, animated: true)
         self.navigationController?.pushViewController(commentsVC, animated: true)
     }

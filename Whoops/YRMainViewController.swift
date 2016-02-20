@@ -134,13 +134,14 @@ class YRMainViewController: UIViewController,UITableViewDelegate,UITableViewData
         
     }
     override func viewDidAppear(animated: Bool) {
+        
+        
         if (fromDetail == true){
             fromDetail = false
-            
+
             for (var i = 0; i < 5; i++){
                 (self.tableArray[i] as! UITableView).reloadData()
             }
-            
             return
         }
         
