@@ -425,6 +425,7 @@ class YRMainViewController: UIViewController,UITableViewDelegate,UITableViewData
         commentsVC.jokeId = data.stringAttributeForKey("id")
         commentsVC.tableIndex = tableIndex
         commentsVC.rowIndex = index
+        commentsVC.category = 1
         commentsVC.hidesBottomBarWhenPushed = true
         commentsVC.listController = self
         
