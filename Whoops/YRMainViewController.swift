@@ -395,6 +395,7 @@ class YRMainViewController: UIViewController,UITableViewDelegate,UITableViewData
         cell!.tableIndex = tableIndex
         cell!.rowIndex = index
         cell?.bInMain = true
+        cell?.category = 1
         cell!.setCellUp()
         cell!.delegate = self;
         cell!.refreshMainDelegate = self

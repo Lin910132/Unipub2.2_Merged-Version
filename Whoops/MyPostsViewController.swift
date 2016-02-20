@@ -193,6 +193,9 @@ class MyPostsViewController: UIViewController, UITableViewDataSource, UITableVie
         }
         
         cell!.data = data
+        cell?.category = 3
+        cell?.postViewController = self
+        cell?.rowIndex = index
         cell!.setCellUp()
         cell!.delegate = self;
         cell!.backgroundColor = UIColor(red:246.0/255.0 , green:246.0/255.0 , blue:246.0/255.0 , alpha: 1.0);
@@ -236,7 +239,9 @@ class MyPostsViewController: UIViewController, UITableViewDataSource, UITableVie
         let commentsVC = YRCommentsViewController(nibName :nil, bundle: nil)
         commentsVC.jokeId = data.stringAttributeForKey("id")
         commentsVC.hidesBottomBarWhenPushed = true
-        
+        commentsVC.postController = self
+        commentsVC.rowIndex = index
+        commentsVC.category = 3
         PostTableView.deselectRowAtIndexPath(indexPath, animated: true)
         self.navigationController?.pushViewController(commentsVC, animated: true)
     }
@@ -271,8 +276,38 @@ class MyPostsViewController: UIViewController, UITableViewDataSource, UITableVie
         
     }
     
-
+    override func viewDidAppear(animated: Bool) {
+        super.viewDidAppear(animated)
+        self.PostTableView.reloadData()
+    }
  
+    func changeButtonState(tbIndex:Int, rIndex:Int, key:String, value:String){
+        let data:NSMutableDictionary = NSMutableDictionary(dictionary: dataArray[rIndex] as! [NSObject : AnyObject])
+        var bChanged = false
+        if (key == "isFavor"){
+            data.setValue(value, forKey: key)
+            bChanged = true
+        }
+        else if (key == "isLike"){
+            data.setValue(value, forKey: key)
+            bChanged = true
+        }
+        else if (key == "likeNum"){
+            if (value == "0"){
+                data.setValue(NSNull(), forKey: key)
+            }
+            else {
+                data.setValue(value, forKey: key)
+            }
+            bChanged = true
+        }
+        
+        if (bChanged == true){
+            let newData:NSDictionary = NSDictionary(dictionary: data)
+            dataArray.replaceObjectAtIndex(rIndex, withObject: newData)
+        }
+    }
+    
     /*
     // MARK: - Navigation
 

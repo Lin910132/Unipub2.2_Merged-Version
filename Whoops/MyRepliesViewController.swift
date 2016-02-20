@@ -186,6 +186,9 @@ class MyRepliesViewController: UITableViewController,MFMailComposeViewController
         }
         
         cell!.data = data
+        cell?.category = 4
+        cell?.replyController = self
+        cell?.rowIndex = index
         cell!.setCellUp()
         cell!.delegate = self;
         cell!.refreshMyRepliesDelegate = self
@@ -206,7 +209,9 @@ class MyRepliesViewController: UITableViewController,MFMailComposeViewController
         let commentsVC = YRCommentsViewController(nibName :nil, bundle: nil)
         commentsVC.jokeId = data.stringAttributeForKey("id")
         commentsVC.hidesBottomBarWhenPushed = true
-        
+        commentsVC.replyController = self
+        commentsVC.rowIndex = index
+        commentsVC.category = 2
         tableView.deselectRowAtIndexPath(indexPath, animated: true)
         self.navigationController?.pushViewController(commentsVC, animated: true)
     }
@@ -255,5 +260,35 @@ class MyRepliesViewController: UITableViewController,MFMailComposeViewController
         
     }
 
+    func changeButtonState(tbIndex:Int, rIndex:Int, key:String, value:String){
+        let data:NSMutableDictionary = NSMutableDictionary(dictionary: dataArray[rIndex] as! [NSObject : AnyObject])
+        var bChanged = false
+        if (key == "isFavor"){
+            data.setValue(value, forKey: key)
+            bChanged = true
+        }
+        else if (key == "isLike"){
+            data.setValue(value, forKey: key)
+            bChanged = true
+        }
+        else if (key == "likeNum"){
+            if (value == "0"){
+                data.setValue(NSNull(), forKey: key)
+            }
+            else {
+                data.setValue(value, forKey: key)
+            }
+            bChanged = true
+        }
         
+        if (bChanged == true){
+            let newData:NSDictionary = NSDictionary(dictionary: data)
+            dataArray.replaceObjectAtIndex(rIndex, withObject: newData)
+        }
+    }
+    
+    override func viewDidAppear(animated: Bool) {
+        super.viewDidAppear(animated)
+        self.tableView.reloadData()
+    }
 }

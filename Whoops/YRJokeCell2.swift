@@ -70,7 +70,16 @@ class YRJokeCell2: UITableViewCell
     var tableIndex:Int = 0
     var rowIndex:Int = 0
     var mainController:YRMainViewController!
+    var universityController:UniversityViewController!
+    var postViewController:MyPostsViewController!
+    var replyController:MyRepliesViewController!
+    
+    
     var bInMain:Bool = false
+    
+    //main:1, university:2, post:3, reply:4
+    
+    var category:Int = 0
     
     let baseTagValue = 1000
     
@@ -500,14 +509,32 @@ class YRJokeCell2: UITableViewCell
         if isFaveFlag == true {
             self.favButton.setImage(UIImage(named:"star"), forState: UIControlState.Normal);
             isFaveFlag = false
-            if (self.bInMain == true){
+            if (self.category == 1){
                 self.mainController.changeButtonState(tableIndex, rIndex: rowIndex, key: "isFavor", value: "")
+            }
+            else if (self.category == 2){
+                self.universityController.changeButtonState(0, rIndex: rowIndex, key: "isFavor", value: "")
+            }
+            else if (self.category == 3){
+                self.postViewController.changeButtonState(0, rIndex: rowIndex, key: "isFavor", value: "")
+            }
+            else if (self.category == 4){
+                self.replyController.changeButtonState(0, rIndex: rowIndex, key: "isFavor", value: "")
             }
         }else{
             self.favButton.setImage(UIImage(named:"starB1"), forState: UIControlState.Normal);
             isFaveFlag = true
-            if (self.bInMain == true){
+            if (self.category == 1){
                 self.mainController.changeButtonState(tableIndex, rIndex: rowIndex, key: "isFavor", value: "favor")
+            }
+            else if (self.category == 2){
+                self.universityController.changeButtonState(0, rIndex: rowIndex, key: "isFavor", value: "favor")
+            }
+            else if (self.category == 3){
+                self.postViewController.changeButtonState(0, rIndex: rowIndex, key: "isFavor", value: "favor")
+            }
+            else if (self.category == 4){
+                self.replyController.changeButtonState(0, rIndex: rowIndex, key: "isFavor", value: "favor")
             }
         }
         
@@ -532,16 +559,40 @@ class YRJokeCell2: UITableViewCell
             if isLike == "1" {
                 self.likeButton.setImage(UIImage(named:"Likefill"), forState: UIControlState.Normal);
                 self.unlikeButton.setImage(UIImage(named:"unlikeNew"), forState: UIControlState.Normal);
-                if (self.bInMain == true){
+                if (self.category == 1){
                     self.mainController.changeButtonState(self.tableIndex, rIndex: self.rowIndex, key: "isLike", value: "1")
                     self.mainController.changeButtonState(self.tableIndex, rIndex: self.rowIndex, key: "likeNum", value: self.likeNum.text!)
+                }
+                else if (self.category == 2){
+                    self.universityController.changeButtonState(0, rIndex: self.rowIndex, key: "isLike", value: "1")
+                    self.universityController.changeButtonState(0, rIndex: self.rowIndex, key: "likeNum", value: self.likeNum.text!)
+                }
+                else if (self.category == 3){
+                    self.postViewController.changeButtonState(0, rIndex: self.rowIndex, key: "isLike", value: "1")
+                    self.postViewController.changeButtonState(0, rIndex: self.rowIndex, key: "likeNum", value: self.likeNum.text!)
+                }
+                else if (self.category == 4){
+                    self.replyController.changeButtonState(0, rIndex: self.rowIndex, key: "isLike", value: "1")
+                    self.replyController.changeButtonState(0, rIndex: self.rowIndex, key: "likeNum", value: self.likeNum.text!)
                 }
                 
             }else{
                 self.likeButton.setImage(UIImage(named:"LikeNew"), forState: UIControlState.Normal);
-                if (self.bInMain == true){
+                if (self.category == 1){
                     self.mainController.changeButtonState(self.tableIndex, rIndex: self.rowIndex, key: "isLike", value: "0")
                     self.mainController.changeButtonState(self.tableIndex, rIndex: self.rowIndex, key: "likeNum", value: self.likeNum.text!)
+                }
+                else if (self.category == 2){
+                    self.universityController.changeButtonState(0, rIndex: self.rowIndex, key: "isLike", value: "0")
+                    self.universityController.changeButtonState(0, rIndex: self.rowIndex, key: "likeNum", value: self.likeNum.text!)
+                }
+                else if (self.category == 3){
+                    self.postViewController.changeButtonState(0, rIndex: self.rowIndex, key: "isLike", value: "0")
+                    self.postViewController.changeButtonState(0, rIndex: self.rowIndex, key: "likeNum", value: self.likeNum.text!)
+                }
+                else if (self.category == 4){
+                    self.replyController.changeButtonState(0, rIndex: self.rowIndex, key: "isLike", value: "0")
+                    self.replyController.changeButtonState(0, rIndex: self.rowIndex, key: "likeNum", value: self.likeNum.text!)
                 }
             }
 
@@ -569,15 +620,39 @@ class YRJokeCell2: UITableViewCell
             if isLike == "-1" {
                 self.unlikeButton.setImage(UIImage(named:"unlikefill"), forState: UIControlState.Normal);
                 self.likeButton.setImage(UIImage(named:"LikeNew"), forState: UIControlState.Normal);
-                if (self.bInMain == true){
+                if (self.category == 1){
                     self.mainController.changeButtonState(self.tableIndex, rIndex: self.rowIndex, key: "isLike", value: "-1")
                     self.mainController.changeButtonState(self.tableIndex, rIndex: self.rowIndex, key: "likeNum", value: self.likeNum.text!)
                 }
+                else if (self.category == 2){
+                    self.universityController.changeButtonState(0, rIndex: self.rowIndex, key: "isLike", value: "-1")
+                    self.universityController.changeButtonState(0, rIndex: self.rowIndex, key: "likeNum", value: self.likeNum.text!)
+                }
+                else if (self.category == 3){
+                    self.postViewController.changeButtonState(0, rIndex: self.rowIndex, key: "isLike", value: "-1")
+                    self.postViewController.changeButtonState(0, rIndex: self.rowIndex, key: "likeNum", value: self.likeNum.text!)
+                }
+                else if (self.category == 4){
+                    self.replyController.changeButtonState(0, rIndex: self.rowIndex, key: "isLike", value: "-1")
+                    self.replyController.changeButtonState(0, rIndex: self.rowIndex, key: "likeNum", value: self.likeNum.text!)
+                }
             }else{
                 self.unlikeButton.setImage(UIImage(named:"unlikeNew"), forState: UIControlState.Normal);
-                if (self.bInMain == true){
+                if (self.category == 1){
                     self.mainController.changeButtonState(self.tableIndex, rIndex: self.rowIndex, key: "isLike", value: "0")
                     self.mainController.changeButtonState(self.tableIndex, rIndex: self.rowIndex, key: "likeNum", value: self.likeNum.text!)
+                }
+                else if (self.category == 2){
+                    self.universityController.changeButtonState(0, rIndex: self.rowIndex, key: "isLike", value: "0")
+                    self.universityController.changeButtonState(0, rIndex: self.rowIndex, key: "likeNum", value: self.likeNum.text!)
+                }
+                else if (self.category == 3){
+                    self.postViewController.changeButtonState(0, rIndex: self.rowIndex, key: "isLike", value: "0")
+                    self.postViewController.changeButtonState(0, rIndex: self.rowIndex, key: "likeNum", value: self.likeNum.text!)
+                }
+                else if (self.category == 4){
+                    self.replyController.changeButtonState(0, rIndex: self.rowIndex, key: "isLike", value: "0")
+                    self.replyController.changeButtonState(0, rIndex: self.rowIndex, key: "likeNum", value: self.likeNum.text!)
                 }
             }
 

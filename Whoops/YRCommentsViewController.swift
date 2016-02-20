@@ -25,6 +25,10 @@ class YRCommentsViewController: UIViewController,UITableViewDelegate,UITableView
     
     var refreshCommentDelete:YRRefreshCommentDelegate?
     var listController:YRMainViewController?
+    var universityController:UniversityViewController?
+    var postController:MyPostsViewController?
+    var replyController:MyRepliesViewController?
+    var category:Int = 0
     
     var tableIndex:Int = 0
     var rowIndex:Int = 0
@@ -214,9 +218,13 @@ class YRCommentsViewController: UIViewController,UITableViewDelegate,UITableView
             let post = data["data"] as! NSDictionary
             self.headerView?.data = post
             self.headerView?.bInMain = true
+            self.headerView?.category = self.category
             self.headerView?.rowIndex = self.rowIndex
             self.headerView?.tableIndex = self.tableIndex
             self.headerView?.mainController = self.listController
+            self.headerView?.postViewController = self.postController
+            self.headerView?.replyController = self.replyController
+            self.headerView?.universityController = self.universityController
             self.headerView?.setCellUp()
             self.headerView?.frame = CGRectMake(0, 0, self.view.frame.size.width,YRJokeCell2.cellHeightByData(post))
             self.headerView?.backgroundColor = UIColor(red:246.0/255.0 , green:246.0/255.0 , blue:246.0/255.0 , alpha: 1.0);
