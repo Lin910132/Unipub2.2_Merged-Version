@@ -139,9 +139,9 @@ class YRMainViewController: UIViewController,UITableViewDelegate,UITableViewData
         if (fromDetail == true){
             fromDetail = false
 
-            for (var i = 0; i < 5; i++){
-                (self.tableArray[i] as! UITableView).reloadData()
-            }
+            //for (var i = 0; i < 5; i++){
+            //    (self.tableArray[i] as! UITableView).reloadData()
+            //}
             return
         }
         
@@ -394,7 +394,7 @@ class YRMainViewController: UIViewController,UITableViewDelegate,UITableViewData
         
         cell!.data = data
         cell!.tableIndex = tableIndex
-        cell!.rowIndex = index
+        cell!.rowIndex = indexPath
         cell?.bInMain = true
         cell?.category = 1
         cell!.setCellUp()
@@ -418,9 +418,9 @@ class YRMainViewController: UIViewController,UITableViewDelegate,UITableViewData
     }
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath)
     {
-        let index = indexPath.row
+        let index = indexPath
         let tableIndex = getTableIndex(tableView)
-        let data = self.dataArray[tableIndex][index] as! NSDictionary
+        let data = self.dataArray[tableIndex][index.row] as! NSDictionary
         let commentsVC = YRCommentsViewController(nibName :nil, bundle: nil)
         commentsVC.jokeId = data.stringAttributeForKey("id")
         commentsVC.tableIndex = tableIndex
@@ -603,8 +603,8 @@ class YRMainViewController: UIViewController,UITableViewDelegate,UITableViewData
     
     func FaveBtnClicked(cell:YRJokeCell2){
         
-        let indexPath = (tableArray[self.type] as! UITableView).indexPathForCell(cell)
-        let row = indexPath?.row
+        //let indexPath = (tableArray[self.type] as! UITableView).indexPathForCell(cell)
+        //let row = indexPath?.row
         //(self.dataArray[self.type][row!] as! NSDictionary)["isFave"] =
         //(tableArray[self.type] as! UITableView).reloadRowsAtIndexPaths([indexPath!], withRowAnimation: UITableViewRowAnimation.None)
         
@@ -954,8 +954,8 @@ class YRMainViewController: UIViewController,UITableViewDelegate,UITableViewData
         }
     }
     
-    func changeButtonState(tbIndex:Int, rIndex:Int, key:String, value:String){
-        let data:NSMutableDictionary = NSMutableDictionary(dictionary: dataArray[tbIndex][rIndex] as! [NSObject : AnyObject])
+    func changeButtonState(tbIndex:Int, rIndex:NSIndexPath, key:String, value:String){
+        let data:NSMutableDictionary = NSMutableDictionary(dictionary: dataArray[tbIndex][rIndex.row] as! [NSObject : AnyObject])
         var bChanged = false
         if (key == "isFavor"){
             data.setValue(value, forKey: key)
@@ -977,7 +977,10 @@ class YRMainViewController: UIViewController,UITableViewDelegate,UITableViewData
         
         if (bChanged == true){
             let newData:NSDictionary = NSDictionary(dictionary: data)
-            dataArray[tbIndex].replaceObjectAtIndex(rIndex, withObject: newData)
+            dataArray[tbIndex].replaceObjectAtIndex(rIndex.row, withObject: newData)
         }
+        
+        (tableArray[tbIndex] as! UITableView).reloadRowsAtIndexPaths([rIndex], withRowAnimation: UITableViewRowAnimation.None)
+
     }
 }

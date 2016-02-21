@@ -45,7 +45,7 @@ class UniversityViewController: UITableViewController, YRRefreshViewDelegate,MFM
     
     override func viewDidAppear(animated: Bool) {
         super.viewDidAppear(animated)
-        self.tableView.reloadData()
+        //self.tableView.reloadData()
     }
     
     func setupViews()
@@ -244,7 +244,7 @@ class UniversityViewController: UITableViewController, YRRefreshViewDelegate,MFM
         
         cell!.data = data
         cell!.setCellUp()
-        cell?.rowIndex = index
+        cell?.rowIndex = indexPath
         cell?.universityController = self
         cell?.category = 2
         cell!.delegate = self;
@@ -259,7 +259,7 @@ class UniversityViewController: UITableViewController, YRRefreshViewDelegate,MFM
         let commentsVC = YRCommentsViewController(nibName :nil, bundle: nil)
         commentsVC.jokeId = data.stringAttributeForKey("id")
         commentsVC.universityController = self
-        commentsVC.rowIndex = index
+        commentsVC.rowIndex = indexPath
         commentsVC.category = 2
         commentsVC.hidesBottomBarWhenPushed = true
         //self.navigationItem.title = "Back".localized()
@@ -322,8 +322,8 @@ class UniversityViewController: UITableViewController, YRRefreshViewDelegate,MFM
         
     }
     
-    func changeButtonState(tbIndex:Int, rIndex:Int, key:String, value:String){
-        let data:NSMutableDictionary = NSMutableDictionary(dictionary: dataArray[rIndex] as! [NSObject : AnyObject])
+    func changeButtonState(tbIndex:Int, rIndex:NSIndexPath, key:String, value:String){
+        let data:NSMutableDictionary = NSMutableDictionary(dictionary: dataArray[rIndex.row] as! [NSObject : AnyObject])
         var bChanged = false
         if (key == "isFavor"){
             data.setValue(value, forKey: key)
@@ -345,8 +345,10 @@ class UniversityViewController: UITableViewController, YRRefreshViewDelegate,MFM
         
         if (bChanged == true){
             let newData:NSDictionary = NSDictionary(dictionary: data)
-            dataArray.replaceObjectAtIndex(rIndex, withObject: newData)
+            dataArray.replaceObjectAtIndex(rIndex.row, withObject: newData)
         }
+        
+        self.tableView!.reloadRowsAtIndexPaths([rIndex], withRowAnimation: UITableViewRowAnimation.None)
     }
     
 }

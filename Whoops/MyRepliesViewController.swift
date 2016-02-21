@@ -188,7 +188,7 @@ class MyRepliesViewController: UITableViewController,MFMailComposeViewController
         cell!.data = data
         cell?.category = 4
         cell?.replyController = self
-        cell?.rowIndex = index
+        cell?.rowIndex = indexPath
         cell!.setCellUp()
         cell!.delegate = self;
         cell!.refreshMyRepliesDelegate = self
@@ -210,7 +210,7 @@ class MyRepliesViewController: UITableViewController,MFMailComposeViewController
         commentsVC.jokeId = data.stringAttributeForKey("id")
         commentsVC.hidesBottomBarWhenPushed = true
         commentsVC.replyController = self
-        commentsVC.rowIndex = index
+        commentsVC.rowIndex = indexPath
         commentsVC.category = 4
         tableView.deselectRowAtIndexPath(indexPath, animated: true)
         self.navigationController?.pushViewController(commentsVC, animated: true)
@@ -260,8 +260,8 @@ class MyRepliesViewController: UITableViewController,MFMailComposeViewController
         
     }
 
-    func changeButtonState(tbIndex:Int, rIndex:Int, key:String, value:String){
-        let data:NSMutableDictionary = NSMutableDictionary(dictionary: dataArray[rIndex] as! [NSObject : AnyObject])
+    func changeButtonState(tbIndex:Int, rIndex:NSIndexPath, key:String, value:String){
+        let data:NSMutableDictionary = NSMutableDictionary(dictionary: dataArray[rIndex.row] as! [NSObject : AnyObject])
         var bChanged = false
         if (key == "isFavor"){
             data.setValue(value, forKey: key)
@@ -283,12 +283,14 @@ class MyRepliesViewController: UITableViewController,MFMailComposeViewController
         
         if (bChanged == true){
             let newData:NSDictionary = NSDictionary(dictionary: data)
-            dataArray.replaceObjectAtIndex(rIndex, withObject: newData)
+            dataArray.replaceObjectAtIndex(rIndex.row, withObject: newData)
         }
+        
+        self.tableView!.reloadRowsAtIndexPaths([rIndex], withRowAnimation: UITableViewRowAnimation.None)
     }
     
     override func viewDidAppear(animated: Bool) {
         super.viewDidAppear(animated)
-        self.tableView.reloadData()
+        //self.tableView.reloadData()
     }
 }

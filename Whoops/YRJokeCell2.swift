@@ -68,7 +68,7 @@ class YRJokeCell2: UITableViewCell
     
     
     var tableIndex:Int = 0
-    var rowIndex:Int = 0
+    var rowIndex = NSIndexPath()
     var mainController:YRMainViewController!
     var universityController:UniversityViewController!
     var postViewController:MyPostsViewController!

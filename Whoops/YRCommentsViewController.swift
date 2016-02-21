@@ -31,7 +31,7 @@ class YRCommentsViewController: UIViewController,UITableViewDelegate,UITableView
     var category:Int = 0
     
     var tableIndex:Int = 0
-    var rowIndex:Int = 0
+    var rowIndex = NSIndexPath()
     
     override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: NSBundle?) {
         super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
