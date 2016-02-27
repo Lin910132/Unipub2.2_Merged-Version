@@ -452,9 +452,9 @@ class YRMainViewController: UIViewController,UITableViewDelegate,UITableViewData
         imgDetailVC.imageArray = imageArray as! [UIImage];
         imgDetailVC.parentController = self
         imgDetailVC.startImageIndex = imageIndex
-        imgDetailVC.modalTransitionStyle = UIModalTransitionStyle.FlipHorizontal
+        imgDetailVC.modalTransitionStyle = UIModalTransitionStyle.PartialCurl
 
-        self.tabBarController?.tabBar.hidden = true
+        //self.tabBarController?.tabBar.hidden = true
         
         self.presentViewController(imgDetailVC, animated: true, completion: nil)
         
