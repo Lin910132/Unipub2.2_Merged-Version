@@ -31,7 +31,7 @@ class LikeViewController: UIViewController, UITableViewDelegate, UITableViewData
 
     
     override func viewWillAppear(animated: Bool) {
-        //self.navigationItem.title = "Likes".localized()
+        self.navigationItem.title = "Likes".localized()
         
         //_db.removeAllObjects()
         //self.page = 1
