@@ -51,9 +51,7 @@ class PhotoDetailViewController:MWPhotoBrowser, MWPhotoBrowserDelegate{
     func dismissByTap(recorgnize: UIGestureRecognizer){
         self.parentController?.fromDetail = true
 
-        self.dismissViewControllerAnimated(true, completion: {
-            self.parentController?.tabBarController?.tabBar.hidden = false
-        })
+        self.dismissViewControllerAnimated(true, completion: nil)
     }
     
     func numberOfPhotosInPhotoBrowser(photoBrowser: MWPhotoBrowser!) -> UInt{
