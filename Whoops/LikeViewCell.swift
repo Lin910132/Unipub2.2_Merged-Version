@@ -31,6 +31,7 @@ class LikeViewCell: UITableViewCell {
         let likedString = "Someone liked your post"
         let dislikedString = "Someone disliked your post"
         let repliedString = "Someone replied your post"
+        let repliedComment = "Someone replies the post you commented"
         
         var convertedMsg : String
         
@@ -39,8 +40,10 @@ class LikeViewCell: UITableViewCell {
             convertedMsg = rawMessage.stringByReplacingOccurrencesOfString(likedString, withString: likedString.localized())
         }else if rawMessage.containsString(dislikedString) {
             convertedMsg = rawMessage.stringByReplacingOccurrencesOfString(dislikedString, withString: dislikedString.localized())
-        }else{
+        }else if rawMessage.containsString(repliedString) {
             convertedMsg = rawMessage.stringByReplacingOccurrencesOfString(repliedString, withString: repliedString.localized())
+        }else {
+            convertedMsg = rawMessage.stringByReplacingOccurrencesOfString(repliedComment, withString: repliedComment.localized())
         }
         
         let content = convertedMsg
@@ -51,10 +54,10 @@ class LikeViewCell: UITableViewCell {
         self.title.setHeight(height)
         self.title.text = content
         
-        self.content.hidden = true
-        //if self.data.stringAttributeForKey("msg") != NSNull() {
-        //    self.title.text = self.data.stringAttributeForKey("msg")
-        //}
+        self.content.hidden = false
+        if self.data.stringAttributeForKey("content") != NSNull() {
+            self.content.text = self.data.stringAttributeForKey("content")
+        }
         //self.title.text = "You have a msg!!"
         
     }

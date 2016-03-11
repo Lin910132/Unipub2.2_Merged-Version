@@ -458,6 +458,11 @@
 					868A304F1A9E972700FC9EF9 = {
 						CreatedOnToolsVersion = 6.1.1;
 						DevelopmentTeam = 72739DGUJR;
+						SystemCapabilities = {
+							com.apple.Push = {
+								enabled = 1;
+							};
+						};
 					};
 				};
 			};

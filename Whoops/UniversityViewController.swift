@@ -43,6 +43,11 @@ class UniversityViewController: UITableViewController, YRRefreshViewDelegate,MFM
         loadData()
     }
     
+    override func viewDidAppear(animated: Bool) {
+        super.viewDidAppear(animated)
+        //self.tableView.reloadData()
+    }
+    
     func setupViews()
     {
         
@@ -239,6 +244,9 @@ class UniversityViewController: UITableViewController, YRRefreshViewDelegate,MFM
         
         cell!.data = data
         cell!.setCellUp()
+        cell?.rowIndex = indexPath
+        cell?.universityController = self
+        cell?.category = 2
         cell!.delegate = self;
         cell!.refreshUniversityDelete = self
         cell!.backgroundColor = UIColor(red:246.0/255.0 , green:246.0/255.0 , blue:246.0/255.0 , alpha: 1.0);
@@ -250,6 +258,9 @@ class UniversityViewController: UITableViewController, YRRefreshViewDelegate,MFM
         let data = self.dataArray[index] as! NSDictionary
         let commentsVC = YRCommentsViewController(nibName :nil, bundle: nil)
         commentsVC.jokeId = data.stringAttributeForKey("id")
+        commentsVC.universityController = self
+        commentsVC.rowIndex = indexPath
+        commentsVC.category = 2
         commentsVC.hidesBottomBarWhenPushed = true
         //self.navigationItem.title = "Back".localized()
         tableView.deselectRowAtIndexPath(indexPath, animated: true)
@@ -311,6 +322,33 @@ class UniversityViewController: UITableViewController, YRRefreshViewDelegate,MFM
         
     }
     
-    
+    func changeButtonState(tbIndex:Int, rIndex:NSIndexPath, key:String, value:String){
+        let data:NSMutableDictionary = NSMutableDictionary(dictionary: dataArray[rIndex.row] as! [NSObject : AnyObject])
+        var bChanged = false
+        if (key == "isFavor"){
+            data.setValue(value, forKey: key)
+            bChanged = true
+        }
+        else if (key == "isLike"){
+            data.setValue(value, forKey: key)
+            bChanged = true
+        }
+        else if (key == "likeNum"){
+            if (value == "0"){
+                data.setValue(NSNull(), forKey: key)
+            }
+            else {
+                data.setValue(value, forKey: key)
+            }
+            bChanged = true
+        }
+        
+        if (bChanged == true){
+            let newData:NSDictionary = NSDictionary(dictionary: data)
+            dataArray.replaceObjectAtIndex(rIndex.row, withObject: newData)
+        }
+        
+        self.tableView!.reloadRowsAtIndexPaths([rIndex], withRowAnimation: UITableViewRowAnimation.None)
+    }
     
 }

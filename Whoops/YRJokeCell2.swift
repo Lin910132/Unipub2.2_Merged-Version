@@ -22,6 +22,7 @@ protocol YRRefreshMainDelegate
 {
     
     func refreshMain();
+    func FaveBtnClicked(cell:YRJokeCell2)
 }
 
 protocol YRRefreshCommentDelegate
@@ -47,6 +48,7 @@ protocol YRRefreshMyRepliesDelegate
 
 class YRJokeCell2: UITableViewCell
 {
+        
     
     var delegate:YRJokeCellDelegate?
     var refreshMainDelegate:YRRefreshMainDelegate?
@@ -65,7 +67,24 @@ class YRJokeCell2: UITableViewCell
     var imgList = [UIImageView]()
     
     
+    var tableIndex:Int = 0
+    var rowIndex = NSIndexPath()
+    var mainController:YRMainViewController!
+    var universityController:UniversityViewController!
+    var postViewController:MyPostsViewController!
+    var replyController:MyRepliesViewController!
+    
+    
+    var bInMain:Bool = false
+    
+    //main:1, university:2, post:3, reply:4
+    
+    var category:Int = 0
+    
     let baseTagValue = 1000
+    
+    
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
@@ -97,7 +116,7 @@ class YRJokeCell2: UITableViewCell
         
         self.backgroundColor = UIColor(red: 244.0/255.0, green: 244.0/255.0, blue: 244.0/255.0, alpha: 1.0);
         //背景图片
-        let ivBack = UIImageView(frame:CGRectMake(10, 7, UIScreen.mainScreen().bounds.width - 20, 187));
+        let ivBack = UIImageView(frame:CGRectMake(0, 7, UIScreen.mainScreen().bounds.width, 187));
         ivBack.backgroundColor = UIColor.whiteColor();
         ivBack.layer.shadowOffset = CGSizeMake(10, 10);
         ivBack.layer.shadowColor = UIColor(red:237.0/255.0 , green:237.0/255.0, blue:237.0/255.0 , alpha: 1.0).CGColor;
@@ -299,7 +318,7 @@ class YRJokeCell2: UITableViewCell
             lbPostion = textYpostion;
         }
         
-        let lableContent = UILabel(frame: CGRectMake(3, lbPostion, ivBack.frame.size.width-6, 1000));
+        let lableContent = UILabel(frame: CGRectMake(12, lbPostion, ivBack.frame.size.width-6, 1000));
         lableContent.numberOfLines = 0;
         lableContent.textColor = UIColor(red:60.0/255.0 , green:60.0/255.0 , blue: 60.0/255.0, alpha: 1.0);
         lableContent.font = UIFont.systemFontOfSize(17);
@@ -323,7 +342,7 @@ class YRJokeCell2: UITableViewCell
         {
             if(size + 20 + lbPostion > 153)
             {
-                bottomY = size + lbPostion + 30;
+                bottomY = size + lbPostion + 20;
             }
             else
             {
@@ -337,7 +356,7 @@ class YRJokeCell2: UITableViewCell
         ivBack.frame = rectBack;
         
         //喜欢按钮
-        let like = UIButton(frame:CGRectMake(ivBack.frame.size.width-36, ((textYpostion - yPosition)/3 - 34)/2 + yPosition, 34, 34));
+        let like = UIButton(frame:CGRectMake(ivBack.frame.size.width-42, ((textYpostion - yPosition)/3 - 34)/2 + yPosition, 34, 34));
         let isLike = data.stringAttributeForKey("isLike") as String;
         if isLike == "1" {
             like.setImage(UIImage(named:"Likefill"), forState: UIControlState.Normal);
@@ -349,7 +368,7 @@ class YRJokeCell2: UITableViewCell
         ivBack.addSubview(self.likeButton);
         
         //喜欢数量
-        likeNum = UILabel(frame: CGRectMake(ivBack.frame.size.width-52, (textYpostion - yPosition)/3 + ((textYpostion - yPosition)/3 - 34)/2 + yPosition, 67, 34));
+        likeNum = UILabel(frame: CGRectMake(ivBack.frame.size.width-58, (textYpostion - yPosition)/3 + ((textYpostion - yPosition)/3 - 34)/2 + yPosition, 67, 34));
         likeNum.textAlignment = NSTextAlignment.Center;
         likeNum.textColor = UIColor(red:121.0/255.0 , green:122.0/255.0 , blue:124.0/255.0 , alpha: 1.0);
         if (data.stringAttributeForKey("likeNum") == NSNull())
@@ -363,7 +382,7 @@ class YRJokeCell2: UITableViewCell
         ivBack.addSubview(likeNum);
         
         //不喜欢
-        let unlike = UIButton(frame:CGRectMake(ivBack.frame.size.width-36, 2*(textYpostion - yPosition)/3+((textYpostion - yPosition)/3 - 34)/2 + yPosition, 34, 34));
+        let unlike = UIButton(frame:CGRectMake(ivBack.frame.size.width-42, 2*(textYpostion - yPosition)/3+((textYpostion - yPosition)/3 - 34)/2 + yPosition, 34, 34));
         
         if isLike == "-1" {
             unlike.setImage(UIImage(named:"unlikefill"), forState: UIControlState.Normal);
@@ -478,7 +497,8 @@ class YRJokeCell2: UITableViewCell
             //let isFavor = post["isFavor"] as! String;
             
             
-            //self.refreshMainDelegate?.refreshMain()
+            self.refreshMainDelegate?.refreshMain()
+            //self.refreshMainDelegate?.FaveBtnClicked(sender.superview?.superview as! YRJokeCell2)
             //self.refreshCommentDelegate?.refreshCommentByFavor()
             //self.refreshUniversityDelete?.refreshUniversityByFavor()
             //self.refreshMyRepliesDelegate?.refreshMyRepliesByFavor()
@@ -489,9 +509,33 @@ class YRJokeCell2: UITableViewCell
         if isFaveFlag == true {
             self.favButton.setImage(UIImage(named:"star"), forState: UIControlState.Normal);
             isFaveFlag = false
+            if (self.category == 1){
+                self.mainController.changeButtonState(tableIndex, rIndex: rowIndex, key: "isFavor", value: "")
+            }
+            else if (self.category == 2){
+                self.universityController.changeButtonState(0, rIndex: rowIndex, key: "isFavor", value: "")
+            }
+            else if (self.category == 3){
+                self.postViewController.changeButtonState(0, rIndex: rowIndex, key: "isFavor", value: "")
+            }
+            else if (self.category == 4){
+                self.replyController.changeButtonState(0, rIndex: rowIndex, key: "isFavor", value: "")
+            }
         }else{
             self.favButton.setImage(UIImage(named:"starB1"), forState: UIControlState.Normal);
             isFaveFlag = true
+            if (self.category == 1){
+                self.mainController.changeButtonState(tableIndex, rIndex: rowIndex, key: "isFavor", value: "favor")
+            }
+            else if (self.category == 2){
+                self.universityController.changeButtonState(0, rIndex: rowIndex, key: "isFavor", value: "favor")
+            }
+            else if (self.category == 3){
+                self.postViewController.changeButtonState(0, rIndex: rowIndex, key: "isFavor", value: "favor")
+            }
+            else if (self.category == 4){
+                self.replyController.changeButtonState(0, rIndex: rowIndex, key: "isFavor", value: "favor")
+            }
         }
         
         
@@ -515,8 +559,41 @@ class YRJokeCell2: UITableViewCell
             if isLike == "1" {
                 self.likeButton.setImage(UIImage(named:"Likefill"), forState: UIControlState.Normal);
                 self.unlikeButton.setImage(UIImage(named:"unlikeNew"), forState: UIControlState.Normal);
+                if (self.category == 1){
+                    self.mainController.changeButtonState(self.tableIndex, rIndex: self.rowIndex, key: "isLike", value: "1")
+                    self.mainController.changeButtonState(self.tableIndex, rIndex: self.rowIndex, key: "likeNum", value: self.likeNum.text!)
+                }
+                else if (self.category == 2){
+                    self.universityController.changeButtonState(0, rIndex: self.rowIndex, key: "isLike", value: "1")
+                    self.universityController.changeButtonState(0, rIndex: self.rowIndex, key: "likeNum", value: self.likeNum.text!)
+                }
+                else if (self.category == 3){
+                    self.postViewController.changeButtonState(0, rIndex: self.rowIndex, key: "isLike", value: "1")
+                    self.postViewController.changeButtonState(0, rIndex: self.rowIndex, key: "likeNum", value: self.likeNum.text!)
+                }
+                else if (self.category == 4){
+                    self.replyController.changeButtonState(0, rIndex: self.rowIndex, key: "isLike", value: "1")
+                    self.replyController.changeButtonState(0, rIndex: self.rowIndex, key: "likeNum", value: self.likeNum.text!)
+                }
+                
             }else{
                 self.likeButton.setImage(UIImage(named:"LikeNew"), forState: UIControlState.Normal);
+                if (self.category == 1){
+                    self.mainController.changeButtonState(self.tableIndex, rIndex: self.rowIndex, key: "isLike", value: "0")
+                    self.mainController.changeButtonState(self.tableIndex, rIndex: self.rowIndex, key: "likeNum", value: self.likeNum.text!)
+                }
+                else if (self.category == 2){
+                    self.universityController.changeButtonState(0, rIndex: self.rowIndex, key: "isLike", value: "0")
+                    self.universityController.changeButtonState(0, rIndex: self.rowIndex, key: "likeNum", value: self.likeNum.text!)
+                }
+                else if (self.category == 3){
+                    self.postViewController.changeButtonState(0, rIndex: self.rowIndex, key: "isLike", value: "0")
+                    self.postViewController.changeButtonState(0, rIndex: self.rowIndex, key: "likeNum", value: self.likeNum.text!)
+                }
+                else if (self.category == 4){
+                    self.replyController.changeButtonState(0, rIndex: self.rowIndex, key: "isLike", value: "0")
+                    self.replyController.changeButtonState(0, rIndex: self.rowIndex, key: "likeNum", value: self.likeNum.text!)
+                }
             }
 
             
@@ -543,8 +620,40 @@ class YRJokeCell2: UITableViewCell
             if isLike == "-1" {
                 self.unlikeButton.setImage(UIImage(named:"unlikefill"), forState: UIControlState.Normal);
                 self.likeButton.setImage(UIImage(named:"LikeNew"), forState: UIControlState.Normal);
+                if (self.category == 1){
+                    self.mainController.changeButtonState(self.tableIndex, rIndex: self.rowIndex, key: "isLike", value: "-1")
+                    self.mainController.changeButtonState(self.tableIndex, rIndex: self.rowIndex, key: "likeNum", value: self.likeNum.text!)
+                }
+                else if (self.category == 2){
+                    self.universityController.changeButtonState(0, rIndex: self.rowIndex, key: "isLike", value: "-1")
+                    self.universityController.changeButtonState(0, rIndex: self.rowIndex, key: "likeNum", value: self.likeNum.text!)
+                }
+                else if (self.category == 3){
+                    self.postViewController.changeButtonState(0, rIndex: self.rowIndex, key: "isLike", value: "-1")
+                    self.postViewController.changeButtonState(0, rIndex: self.rowIndex, key: "likeNum", value: self.likeNum.text!)
+                }
+                else if (self.category == 4){
+                    self.replyController.changeButtonState(0, rIndex: self.rowIndex, key: "isLike", value: "-1")
+                    self.replyController.changeButtonState(0, rIndex: self.rowIndex, key: "likeNum", value: self.likeNum.text!)
+                }
             }else{
                 self.unlikeButton.setImage(UIImage(named:"unlikeNew"), forState: UIControlState.Normal);
+                if (self.category == 1){
+                    self.mainController.changeButtonState(self.tableIndex, rIndex: self.rowIndex, key: "isLike", value: "0")
+                    self.mainController.changeButtonState(self.tableIndex, rIndex: self.rowIndex, key: "likeNum", value: self.likeNum.text!)
+                }
+                else if (self.category == 2){
+                    self.universityController.changeButtonState(0, rIndex: self.rowIndex, key: "isLike", value: "0")
+                    self.universityController.changeButtonState(0, rIndex: self.rowIndex, key: "likeNum", value: self.likeNum.text!)
+                }
+                else if (self.category == 3){
+                    self.postViewController.changeButtonState(0, rIndex: self.rowIndex, key: "isLike", value: "0")
+                    self.postViewController.changeButtonState(0, rIndex: self.rowIndex, key: "likeNum", value: self.likeNum.text!)
+                }
+                else if (self.category == 4){
+                    self.replyController.changeButtonState(0, rIndex: self.rowIndex, key: "isLike", value: "0")
+                    self.replyController.changeButtonState(0, rIndex: self.rowIndex, key: "likeNum", value: self.likeNum.text!)
+                }
             }
 
             
@@ -553,13 +662,15 @@ class YRJokeCell2: UITableViewCell
     
     class func cellHeightByData(data:NSDictionary)->CGFloat
     {
-        let mainWidth = UIScreen.mainScreen().bounds.width
-        let lableContent = UILabel(frame: CGRectMake(3, 193, mainWidth - 26, 1000));
         
+        //lableContent比背景宽度少6，现在的背景宽度是mainWidth
+        let mainWidth = UIScreen.mainScreen().bounds.width
+        let lableContent = UILabel(frame: CGRectMake(3, 193, mainWidth-6, 1000));
+    
         lableContent.numberOfLines = 0;
         lableContent.font = UIFont.systemFontOfSize(17);
         let text = data.stringAttributeForKey("content");
-        let size = text.stringHeightWith(17,width:mainWidth - 26);
+        let size = text.stringHeightWith(17,width:mainWidth - 6);
         //size = size + 20.0;
         //设置图片
         let imageStr = data.stringAttributeForKey("image") as NSString;
@@ -569,7 +680,7 @@ class YRJokeCell2: UITableViewCell
 //        var xPositon:CGFloat = 5;
         let yPosition:CGFloat = 20;
         var width:CGFloat;
-        width = (CGFloat)(UIScreen.mainScreen().bounds.width - 20 - 55); //图片区域的宽度
+        width = (CGFloat)(UIScreen.mainScreen().bounds.width - 55); //图片区域的宽度
         
         
         
@@ -626,7 +737,7 @@ class YRJokeCell2: UITableViewCell
         else
         {
             isTop = true;
-            textTmpYpostion = 138;
+            textTmpYpostion = 118;
         }
         
         var lbPostion:CGFloat;
@@ -648,13 +759,13 @@ class YRJokeCell2: UITableViewCell
         
         if(isTop)
         {
-            if(size + 20 + lbPostion > 153)
+            if(size + 20 + lbPostion > 133)
             {
-                bottomY = size + lbPostion + 30;
+                bottomY = size + lbPostion + 20;
             }
             else
             {
-                bottomY = 153;
+                bottomY = 133;
             }
             
             resut = bottomY + bottomHeight;

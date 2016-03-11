@@ -35,17 +35,17 @@ class YRMainViewController: UIViewController,UITableViewDelegate,UITableViewData
     var page = [1,1,1,1,1]
     var refreshView:YRRefreshView?
     let locationManager: CLLocationManager = CLLocationManager()
-    var stopLoading: Bool = false
+    var stopLoading = [false, false, false, false, false]
     var lat:Double = 0
     var lng:Double = 0
     var school:Int = 0
     var userId:String = "0"
     
-    var type:Int = 4
+    var type:Int = 2
     
     let itemArray = ["New","Hot","Favorite","All Time Hot","Rank"]
     var loadingFlag = [0, 0, 0, 0, 0]
-    
+    var currentDataCount = [0, 0, 0, 0, 0]
     var buttons = NSMutableArray()
     var tableArray = NSMutableArray()
     var currentIndex = 2
@@ -87,7 +87,8 @@ class YRMainViewController: UIViewController,UITableViewDelegate,UITableViewData
     
     func SendButtonRefresh(sender:UIRefreshControl){
         page[self.type] = 1
-        self.stopLoading = false
+        self.stopLoading[self.type] = false
+        self.currentDataCount[self.type] = 0
         let url = urlString(self.type)
         //self.refreshView!.startLoading()
         YRHttpRequest.requestWithURL(url,completionHandler:{ data in
@@ -118,7 +119,7 @@ class YRMainViewController: UIViewController,UITableViewDelegate,UITableViewData
                 }
                 
             }
-            self.page[self.type]++
+            //self.page[self.type]++
             (self.tableArray[self.type] as! UITableView).reloadData()
 
         })
@@ -133,13 +134,20 @@ class YRMainViewController: UIViewController,UITableViewDelegate,UITableViewData
         
     }
     override func viewDidAppear(animated: Bool) {
+        
+        
         if (fromDetail == true){
             fromDetail = false
+
+            //for (var i = 0; i < 5; i++){
+            //    (self.tableArray[i] as! UITableView).reloadData()
+            //}
             return
         }
         
         self.loadTableViews()
-        self.addRefreshControl()
+        //self.addRefreshControl()
+        (self.tableArray[currentIndex] as! UITableView).scrollsToTop = true
         
         if (fromPost == true){
             self.tabBarButtonClicked(buttons[0])
@@ -149,10 +157,6 @@ class YRMainViewController: UIViewController,UITableViewDelegate,UITableViewData
             self.tabBarButtonClicked(buttons[currentIndex])
         }
         
-        
-        for (var i = 0; i < 5; i++){
-            
-        }
     }
     
     override func viewWillAppear(animated: Bool)
@@ -183,6 +187,7 @@ class YRMainViewController: UIViewController,UITableViewDelegate,UITableViewData
             table.registerNib(nib, forCellReuseIdentifier: identifier)
             table.tag = 1000 + i
             table.separatorStyle = .None
+            table.scrollsToTop = false
             tableArray.addObject(table)
             loadingFlag[i] = 0
         }
@@ -196,6 +201,8 @@ class YRMainViewController: UIViewController,UITableViewDelegate,UITableViewData
             table.frame = CGRectMake(0, 0, view.frame.width, view.frame.height)
             view.addSubview(table)
             self.scrollView.addSubview(view)
+            self.scrollView.scrollsToTop = false
+
         }
         
         self.scrollView.contentSize = CGSizeMake(mainWidth * 5, scrollView.frame.height)
@@ -205,6 +212,8 @@ class YRMainViewController: UIViewController,UITableViewDelegate,UITableViewData
     {
         self.scrollView.delegate = self
         rankBtn.setTitleColor(UIColor.whiteColor(), forState: .Selected)
+        self.loadTableViews()
+        self.addRefreshControl()
     }
     
     func addRefreshControl(){
@@ -222,7 +231,8 @@ class YRMainViewController: UIViewController,UITableViewDelegate,UITableViewData
     
     func actionRefreshHandler(sender:UIRefreshControl){
         page[self.type] = 1
-        self.stopLoading = false
+        self.stopLoading[self.type] = false
+        self.currentDataCount[self.type] = 0
         let url = urlString(self.type)
         //self.refreshView!.startLoading()
         YRHttpRequest.requestWithURL(url,completionHandler:{ data in
@@ -242,7 +252,7 @@ class YRMainViewController: UIViewController,UITableViewDelegate,UITableViewData
                 self.dataArray[self.type].addObject(data)
                 
             }
-            self.page[self.type]++
+            //self.page[self.type]++
             (self.tableArray[self.type] as! UITableView).reloadData()
             
             sender.endRefreshing()
@@ -269,9 +279,9 @@ class YRMainViewController: UIViewController,UITableViewDelegate,UITableViewData
             }
             
             if (arr.count == 0){
-                self.stopLoading = true
+                self.stopLoading[type] = true
             }else{
-                self.stopLoading = false
+                self.stopLoading[type] = false
             }
             
             for data : AnyObject  in arr
@@ -324,11 +334,11 @@ class YRMainViewController: UIViewController,UITableViewDelegate,UITableViewData
                 url += "post/listHotAll?pageNum=\(page[type])"
             }
         }
-        url += "&uid=\(FileUtility.getUserId())"
         
         if (type == 2){ //4
             url = FileUtility.getUrlDomain() + "post/listByActivity?activityId=1&pageNum=\(page[type])"
         }
+        url += "&uid=\(FileUtility.getUserId())"
         
         return url
     }
@@ -350,6 +360,16 @@ class YRMainViewController: UIViewController,UITableViewDelegate,UITableViewData
         // #warning Incomplete method implementation.
         // Return the number of rows in the section.
         let tableIndex = getTableIndex(tableView)
+        
+        if (self.currentDataCount[tableIndex] < self.dataArray[tableIndex].count){
+            self.currentDataCount[tableIndex] = self.dataArray[tableIndex].count
+            self.stopLoading[tableIndex] = false
+        }else{
+            if (self.page[tableIndex]>1){
+                self.stopLoading[tableIndex] = true
+            }
+        }
+        
         return self.dataArray[tableIndex].count
     }
     
@@ -360,11 +380,10 @@ class YRMainViewController: UIViewController,UITableViewDelegate,UITableViewData
                 return i
             }
         }
-        return -1
+        return self.type
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell{
-        
         let tableIndex = getTableIndex(tableView)
         let index = indexPath.row
         let data = self.dataArray[tableIndex][index] as! NSDictionary
@@ -374,11 +393,16 @@ class YRMainViewController: UIViewController,UITableViewDelegate,UITableViewData
         }
         
         cell!.data = data
+        cell!.tableIndex = tableIndex
+        cell!.rowIndex = indexPath
+        cell?.bInMain = true
+        cell?.category = 1
         cell!.setCellUp()
         cell!.delegate = self;
         cell!.refreshMainDelegate = self
+        cell!.mainController = self
         cell!.backgroundColor = UIColor(red:246.0/255.0 , green:246.0/255.0 , blue:246.0/255.0 , alpha: 1.0);
-        if (indexPath.row == self.dataArray[tableIndex].count-1) && (self.stopLoading == false){
+        if (indexPath.row == self.dataArray[tableIndex].count-1) && (self.stopLoading[self.type] == false){
             self.page[self.type]++
             loadData(self.type)
         }
@@ -394,11 +418,14 @@ class YRMainViewController: UIViewController,UITableViewDelegate,UITableViewData
     }
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath)
     {
-        let index = indexPath.row
+        let index = indexPath
         let tableIndex = getTableIndex(tableView)
-        let data = self.dataArray[tableIndex][index] as! NSDictionary
+        let data = self.dataArray[tableIndex][index.row] as! NSDictionary
         let commentsVC = YRCommentsViewController(nibName :nil, bundle: nil)
         commentsVC.jokeId = data.stringAttributeForKey("id")
+        commentsVC.tableIndex = tableIndex
+        commentsVC.rowIndex = index
+        commentsVC.category = 1
         commentsVC.hidesBottomBarWhenPushed = true
         commentsVC.listController = self
         
@@ -409,7 +436,7 @@ class YRMainViewController: UIViewController,UITableViewDelegate,UITableViewData
     
     func refreshView(refreshView:YRRefreshView,didClickButton btn:UIButton)
     {
-        self.page[self.type]++
+        //self.page[self.type]++
         loadData(self.type)
     }
     
@@ -425,13 +452,24 @@ class YRMainViewController: UIViewController,UITableViewDelegate,UITableViewData
         imgDetailVC.imageArray = imageArray as! [UIImage];
         imgDetailVC.parentController = self
         imgDetailVC.startImageIndex = imageIndex
-        imgDetailVC.modalTransitionStyle = UIModalTransitionStyle.FlipHorizontal
+        imgDetailVC.modalTransitionStyle = UIModalTransitionStyle.PartialCurl
 
-        self.tabBarController?.tabBar.hidden = true
+        //self.tabBarController?.tabBar.hidden = true
         
         self.presentViewController(imgDetailVC, animated: true, completion: nil)
         
     }
+    
+    func locationManager(manager: CLLocationManager, didChangeAuthorizationStatus status: CLAuthorizationStatus) {
+        if(ios8()){
+            if CLLocationManager.authorizationStatus() == CLAuthorizationStatus.Denied {
+                let mainStoryboard = UIStoryboard(name: "Main", bundle: NSBundle.mainBundle())
+                let vc : UIViewController = mainStoryboard.instantiateViewControllerWithIdentifier("CheckLocation")
+                self.presentViewController(vc, animated: true, completion: nil)
+            }
+        }
+    }
+    
     func locationManager(manager: CLLocationManager, didUpdateLocations locations: [CLLocation]){
         
         let location:CLLocation = locations[locations.count-1] 
@@ -452,7 +490,6 @@ class YRMainViewController: UIViewController,UITableViewDelegate,UITableViewData
     
     @IBAction func tabBarButtonClicked(sender: AnyObject) {
         let index = sender.tag
-        self.stopLoading = false
         
         for var i = 0;i<5;i++
         {
@@ -468,12 +505,22 @@ class YRMainViewController: UIViewController,UITableViewDelegate,UITableViewData
             }
         }
         
-        self.page[self.type] = 1
-        self.dataArray[self.type] = NSMutableArray()
+        (tableArray[currentIndex] as! UITableView).scrollsToTop = false
+        (tableArray[newIndex] as! UITableView).scrollsToTop = true
         
-        (tableArray[newIndex] as! UITableView).reloadData()
+        
         self.type = index - 100
-        self.loadData(index-100)
+        if (self.loadingFlag[newIndex] == 0){
+            self.page[self.type] = 1
+            self.dataArray[self.type] = NSMutableArray()
+            self.loadData(newIndex)
+            (tableArray[newIndex] as! UITableView).reloadData()
+            self.loadingFlag[newIndex] = 1
+            self.stopLoading[self.type] = false
+            self.currentDataCount[self.type] = 0
+        }
+        //(tableArray[newIndex] as! UITableView).reloadData()
+        //self.loadData(index-100)
 
 /*
         0 1 2 3 4
@@ -504,6 +551,7 @@ class YRMainViewController: UIViewController,UITableViewDelegate,UITableViewData
         animateButtons(offset, direction: direction)
         scrollPageWithIndex(self.type)
         
+        /*
         if (self.fromPost == true){
         
             for (var i = 0; i < 5; i++){
@@ -511,6 +559,8 @@ class YRMainViewController: UIViewController,UITableViewDelegate,UITableViewData
             }
             (self.refreshArray[self.type] as! UIRefreshControl).hidden = false
         }
+        */
+
     }
     
     
@@ -544,11 +594,21 @@ class YRMainViewController: UIViewController,UITableViewDelegate,UITableViewData
     }
     
     func refreshMain(){
-        let fresh:UIRefreshControl = UIRefreshControl()
-        self.actionRefreshHandler(fresh)
+        //let fresh:UIRefreshControl = UIRefreshControl()
+        //self.actionRefreshHandler(fresh)
+        for (var i=0; i<5; i++){
+            self.loadingFlag[i] = 0
+        }
     }
     
-    
+    func FaveBtnClicked(cell:YRJokeCell2){
+        
+        //let indexPath = (tableArray[self.type] as! UITableView).indexPathForCell(cell)
+        //let row = indexPath?.row
+        //(self.dataArray[self.type][row!] as! NSDictionary)["isFave"] =
+        //(tableArray[self.type] as! UITableView).reloadRowsAtIndexPaths([indexPath!], withRowAnimation: UITableViewRowAnimation.None)
+        
+    }
     
     func showSendMailErrorAlert() {
         let sendMailErrorAlert = UIAlertView(title: "Could Not Send Email".localized(), message: "Your device could not send e-mail.  Please check e-mail configuration and try again.".localized(), delegate: self, cancelButtonTitle: "OK".localized())
@@ -826,19 +886,27 @@ class YRMainViewController: UIViewController,UITableViewDelegate,UITableViewData
             }
             
             (buttons[newIndex] as! UIButton).selected = true
+            
+            
+            // Enable scroll to top in each tableview
+            (tableArray[currentIndex] as! UITableView).scrollsToTop = false
+            (tableArray[newIndex] as! UITableView).scrollsToTop = true
+            
             currentIndex = newIndex
             
             if (bEnd == true){
                 scrollView.scrollRectToVisible(CGRectMake(scrollView.frame.width * CGFloat(currentIndex), 0, scrollView.frame.width, scrollView.frame.height), animated: false)
             }
             
+            self.type = newIndex
             if (self.loadingFlag[newIndex] == 0){
-                self.type = newIndex
                 self.page[self.type] = 1
                 self.dataArray[self.type] = NSMutableArray()
-                (tableArray[newIndex] as! UITableView).reloadData()
                 self.loadData(newIndex)
+                (tableArray[newIndex] as! UITableView).reloadData()
                 self.loadingFlag[newIndex] = 1
+                self.stopLoading[self.type] = false
+                self.currentDataCount[self.type] = 0
             }
         }
     }
@@ -884,5 +952,35 @@ class YRMainViewController: UIViewController,UITableViewDelegate,UITableViewData
         else if (scrollView.contentOffset.x > frame.width * 4){
             scrollView.scrollRectToVisible(CGRectMake(0, 0, frame.width, frame.height), animated: false)
         }
+    }
+    
+    func changeButtonState(tbIndex:Int, rIndex:NSIndexPath, key:String, value:String){
+        let data:NSMutableDictionary = NSMutableDictionary(dictionary: dataArray[tbIndex][rIndex.row] as! [NSObject : AnyObject])
+        var bChanged = false
+        if (key == "isFavor"){
+            data.setValue(value, forKey: key)
+            bChanged = true
+        }
+        else if (key == "isLike"){
+            data.setValue(value, forKey: key)
+            bChanged = true
+        }
+        else if (key == "likeNum"){
+            if (value == "0"){
+                data.setValue(NSNull(), forKey: key)
+            }
+            else {
+                data.setValue(value, forKey: key)
+            }
+            bChanged = true
+        }
+        
+        if (bChanged == true){
+            let newData:NSDictionary = NSDictionary(dictionary: data)
+            dataArray[tbIndex].replaceObjectAtIndex(rIndex.row, withObject: newData)
+        }
+        
+        (tableArray[tbIndex] as! UITableView).reloadRowsAtIndexPaths([rIndex], withRowAnimation: UITableViewRowAnimation.None)
+
     }
 }

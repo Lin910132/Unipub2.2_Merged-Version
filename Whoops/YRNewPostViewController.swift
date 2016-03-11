@@ -199,7 +199,7 @@ class YRNewPostViewController: UIViewController, UIImagePickerControllerDelegate
         if self.schoolId == "0"{
             self.mainController.selectedIndex = 0
             let viewController:YRMainViewController = (self.mainController.viewControllers![0] as! UINavigationController).topViewController as! YRMainViewController
-            viewController.fromPost = true
+            viewController.fromDetail = true
             self.dismissViewControllerAnimated(true, completion: nil)
         }
         else //if isSchool{

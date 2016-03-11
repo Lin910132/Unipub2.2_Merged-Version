@@ -25,6 +25,13 @@ class YRCommentsViewController: UIViewController,UITableViewDelegate,UITableView
     
     var refreshCommentDelete:YRRefreshCommentDelegate?
     var listController:YRMainViewController?
+    var universityController:UniversityViewController?
+    var postController:MyPostsViewController?
+    var replyController:MyRepliesViewController?
+    var category:Int = 0
+    
+    var tableIndex:Int = 0
+    var rowIndex = NSIndexPath()
     
     override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: NSBundle?) {
         super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
@@ -210,6 +217,14 @@ class YRCommentsViewController: UIViewController,UITableViewDelegate,UITableView
             self.headerView = YRJokeCell2(style: .Default, reuseIdentifier: "cell")
             let post = data["data"] as! NSDictionary
             self.headerView?.data = post
+            self.headerView?.bInMain = true
+            self.headerView?.category = self.category
+            self.headerView?.rowIndex = self.rowIndex
+            self.headerView?.tableIndex = self.tableIndex
+            self.headerView?.mainController = self.listController
+            self.headerView?.postViewController = self.postController
+            self.headerView?.replyController = self.replyController
+            self.headerView?.universityController = self.universityController
             self.headerView?.setCellUp()
             self.headerView?.frame = CGRectMake(0, 0, self.view.frame.size.width,YRJokeCell2.cellHeightByData(post))
             self.headerView?.backgroundColor = UIColor(red:246.0/255.0 , green:246.0/255.0 , blue:246.0/255.0 , alpha: 1.0);
@@ -251,6 +266,7 @@ class YRCommentsViewController: UIViewController,UITableViewDelegate,UITableView
         let index = indexPath.row
         let data = self.dataArray[index] as! NSDictionary
         cell!.data = data
+        
         cell!.selectionStyle = UITableViewCellSelectionStyle.None
         cell!.backgroundColor = UIColor.whiteColor();
         return cell!
@@ -331,7 +347,9 @@ class YRCommentsViewController: UIViewController,UITableViewDelegate,UITableView
     
     override func viewWillDisappear(animated: Bool) {
         super.viewWillDisappear(animated)
-        self.listController?.fromDetail = true
+        if (self.category == 1){
+            self.listController?.fromDetail = true
+        }
     }
     
     /*
