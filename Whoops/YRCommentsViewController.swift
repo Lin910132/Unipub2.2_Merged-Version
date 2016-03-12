@@ -32,6 +32,11 @@ class YRCommentsViewController: UIViewController,UITableViewDelegate,UITableView
     
     var tableIndex:Int = 0
     var rowIndex = NSIndexPath()
+    var tapGesture:UITapGestureRecognizer?
+    var oldIndexPath:NSIndexPath?
+    
+    var notiDetect:Bool = false
+    
     
     override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: NSBundle?) {
         super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
@@ -48,8 +53,6 @@ class YRCommentsViewController: UIViewController,UITableViewDelegate,UITableView
         super.viewDidLoad()
         setupViews()
         loadData()
-        let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: "DismissKeyboard")
-        view.addGestureRecognizer(tap)
     }
     
     func DismissKeyboard(){
@@ -66,6 +69,22 @@ class YRCommentsViewController: UIViewController,UITableViewDelegate,UITableView
             selector: "onKeyboardWillChangeFrame:",
             name: UIKeyboardWillChangeFrameNotification,
             object: nil)
+    }
+    
+    override func viewDidAppear(animated: Bool) {
+        super.viewDidAppear(animated)
+        if (self.dataArray.count > 0 && notiDetect == true){
+            
+
+            let lastPath:NSIndexPath = NSIndexPath(forRow: self.dataArray.count - 1, inSection: 0)
+            self.tableView?.scrollToRowAtIndexPath(lastPath, atScrollPosition: UITableViewScrollPosition.Bottom, animated: true)
+            self.tableView?.selectRowAtIndexPath(lastPath, animated: true, scrollPosition: UITableViewScrollPosition.Bottom)
+            self.tableView(self.tableView!, didSelectRowAtIndexPath: lastPath)
+
+        }
+        
+        let detectGesture:UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: "detectTableTouch:")
+        self.view.addGestureRecognizer(detectGesture)
     }
     
     override func viewDidDisappear(animated: Bool) {
@@ -86,6 +105,16 @@ class YRCommentsViewController: UIViewController,UITableViewDelegate,UITableView
         print("keyboardFrame.origin.y \(keyboardFrame.origin.y)")
         print("self.sendView!.bounds.height \(self.sendView!.bounds.height)")
         let ty = keyboardFrame.origin.y - view.frame.height;
+        
+        if (ty < 0){
+            tapGesture = UITapGestureRecognizer(target: self, action: "DismissKeyboard")
+            view.addGestureRecognizer(tapGesture!)
+        }
+        else {
+            view.removeGestureRecognizer(tapGesture!)
+        }
+        
+        
         // 4、获取键盘弹出动画事件
         let duration = dict[UIKeyboardAnimationDurationUserInfoKey] as! Double;
         UIView.animateWithDuration(duration, animations: { () -> Void in
@@ -267,8 +296,12 @@ class YRCommentsViewController: UIViewController,UITableViewDelegate,UITableView
         let data = self.dataArray[index] as! NSDictionary
         cell!.data = data
         
-        cell!.selectionStyle = UITableViewCellSelectionStyle.None
+//        cell!.selectionStyle = UITableViewCellSelectionStyle.Blue
+        cell!.selectionStyle = UITableViewCellSelectionStyle.Gray
         cell!.backgroundColor = UIColor.whiteColor();
+        let selectedview = UIView()
+        selectedview.backgroundColor = UIColor.grayColor()
+        cell?.selectedBackgroundView = selectedview
         return cell!
     }
     
@@ -284,12 +317,10 @@ class YRCommentsViewController: UIViewController,UITableViewDelegate,UITableView
         let data = self.dataArray[index] as! NSDictionary
         return  YRCommnentsCell.cellHeightByData(data)
     }
-    //    func tableView(tableView: UITableView!, didSelectRowAtIndexPath indexPath: NSIndexPath!)
-    //    {
-    //        var index = indexPath!.row
-    //        var data = self.dataArray[index] as NSDictionary
-    //        println(data)
-    //    }
+    
+    func tableView(tableView: UITableView, shouldHighlightRowAtIndexPath indexPath: NSIndexPath) -> Bool{
+        return true
+    }
     
     func refreshView(refreshView:YRRefreshView,didClickButton btn:UIButton)
     {
@@ -344,6 +375,45 @@ class YRCommentsViewController: UIViewController,UITableViewDelegate,UITableView
         }
     }
     
+
+    func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        let cell:YRCommnentsCell = tableView.cellForRowAtIndexPath(indexPath) as! YRCommnentsCell
+        sendView?.commentText.placeholder = "Reply to: " + cell.contentLabel.text!
+        sendView?.commentId = "\(indexPath.row)"
+        oldIndexPath = indexPath
+    }
+    
+    func tableView(tableView: UITableView, didDeselectRowAtIndexPath indexPath: NSIndexPath) {
+        sendView?.commentText.placeholder = "Write some comments"
+        sendView?.commentId = ""
+        oldIndexPath = nil
+    }
+    
+    func detectTableTouch(tap:UITapGestureRecognizer){
+        let pos = tap.locationInView(self.tableView)
+        let indexPath = self.tableView?.indexPathForRowAtPoint(pos)
+        if (indexPath != nil){
+            let cell:YRCommnentsCell = self.tableView?.cellForRowAtIndexPath(indexPath!) as! YRCommnentsCell
+            if (cell.selected != true){
+                if (oldIndexPath != nil){
+                    self.tableView?.deselectRowAtIndexPath(oldIndexPath!, animated: true)
+                    self.tableView(self.tableView!, didDeselectRowAtIndexPath: oldIndexPath!)
+                }
+                self.tableView?.selectRowAtIndexPath(indexPath, animated: true, scrollPosition: UITableViewScrollPosition.Bottom)
+                self.tableView(self.tableView!, didSelectRowAtIndexPath: indexPath!)
+            }
+            else{
+                self.tableView?.deselectRowAtIndexPath(indexPath!, animated: true)
+                self.tableView(self.tableView!, didDeselectRowAtIndexPath: indexPath!)
+            }
+        }
+        else {
+            if (oldIndexPath != nil){
+                self.tableView?.deselectRowAtIndexPath(oldIndexPath!, animated: true)
+                self.tableView(self.tableView!, didDeselectRowAtIndexPath: oldIndexPath!)
+            }
+        }
+    }
     
     override func viewWillDisappear(animated: Bool) {
         super.viewWillDisappear(animated)

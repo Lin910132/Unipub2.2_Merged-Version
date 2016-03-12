@@ -15,7 +15,11 @@ class LikeViewController: UIViewController, UITableViewDelegate, UITableViewData
     var _db = NSMutableArray()
     var uid = String()
     var page: Int = 1
-
+    
+    var limitCount = 0
+    var realCount = 0
+    var bLoadMore = false
+    
     @IBOutlet weak var likeTableView: UITableView!
     
     override func viewDidLoad() {
@@ -36,6 +40,7 @@ class LikeViewController: UIViewController, UITableViewDelegate, UITableViewData
         //_db.removeAllObjects()
         //self.page = 1
         //load_Data()
+        bLoadMore = false
         let tabItem = self.tabBarController?.tabBar.items![3]
         var notificationNumber: Int64 = 0
         
@@ -45,6 +50,7 @@ class LikeViewController: UIViewController, UITableViewDelegate, UITableViewData
                 badgeNumber = badgeNumber.substringToIndex(badgeNumber.characters.count - 1)
             }
             notificationNumber = Int64 (badgeNumber)!
+            limitCount = Int (badgeNumber)!
         }
         
         if notificationNumber > 0{
@@ -144,7 +150,24 @@ class LikeViewController: UIViewController, UITableViewDelegate, UITableViewData
     }
     
     func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return self._db.count
+        let count = self._db.count
+        
+        if (bLoadMore == true){
+            realCount = count
+            return count
+        }
+        else {
+            if (count == 0){
+                return 0
+            }
+            else if (count < limitCount){
+                realCount = count
+            }
+            else{
+                realCount = limitCount
+            }
+            return realCount + 1
+        }
     }
     
     func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
@@ -155,31 +178,68 @@ class LikeViewController: UIViewController, UITableViewDelegate, UITableViewData
         }
         
         let index = indexPath.row
-        cell!.data = _db[index] as! NSDictionary
-        cell!.setupSubviews()
-        if (indexPath.row == self._db.count-1) && (self.stopLoading == false){
-            self.page++
-            load_Data()
+        if (indexPath.row < realCount){
+            cell!.data = _db[index] as! NSDictionary
+            cell!.setupSubviews()
+            if (indexPath.row == self._db.count-1) && (self.stopLoading == false){
+                self.page++
+                load_Data()
+            }
+        }
+        else if (indexPath.row == realCount && bLoadMore == false){
+            cell?.title.hidden = true
+            cell?.content.hidden = true
+            cell?.viewMore.hidden = false
+            cell?.likeImg.hidden = true
+            
         }
         return cell!
     }
     
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        let index = indexPath.row
-        let data = self._db[index] as! NSDictionary
-        let commentsVC = YRCommentsViewController(nibName :nil, bundle: nil)
-        commentsVC.jokeId = data.stringAttributeForKey("postId")
-        commentsVC.hidesBottomBarWhenPushed = true
         
-        likeTableView.deselectRowAtIndexPath(indexPath, animated: true)
-        self.navigationController?.pushViewController(commentsVC, animated: true)
+        if (bLoadMore == true){
+        
+            let index = indexPath.row
+            let data = self._db[index] as! NSDictionary
+            let commentsVC = YRCommentsViewController(nibName :nil, bundle: nil)
+            commentsVC.jokeId = data.stringAttributeForKey("postId")
+            commentsVC.hidesBottomBarWhenPushed = true
+        
+            likeTableView.deselectRowAtIndexPath(indexPath, animated: true)
+            self.navigationController?.pushViewController(commentsVC, animated: true)
+        }
+        else {
+            if (indexPath.row == realCount){
+                bLoadMore = true
+                tableView.reloadData()
+            }
+            else {
+                let index = indexPath.row
+                let data = self._db[index] as! NSDictionary
+                let commentsVC = YRCommentsViewController(nibName :nil, bundle: nil)
+                commentsVC.jokeId = data.stringAttributeForKey("postId")
+                commentsVC.hidesBottomBarWhenPushed = true
+                commentsVC.notiDetect = true
+                
+                likeTableView.deselectRowAtIndexPath(indexPath, animated: true)
+                self.navigationController?.pushViewController(commentsVC, animated: true)
+            }
+        }
     }
     
     func tableView(tableView: UITableView, heightForRowAtIndexPath indexPath: NSIndexPath) -> CGFloat
     {
         let index = indexPath.row
-        let data = self._db[index] as! NSDictionary
-        return  LikeViewCell.cellHeightByData(data)
+        if (index < realCount){
+            let data = self._db[index] as! NSDictionary
+            return  LikeViewCell.cellHeightByData(data, bLast: false)
+        }
+        else if (bLoadMore == false){
+            return 50.0
+        }
+        
+        return 50.0
     }
 
     /*

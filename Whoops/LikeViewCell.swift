@@ -13,6 +13,11 @@ class LikeViewCell: UITableViewCell {
     @IBOutlet weak var title: UILabel!
     @IBOutlet weak var content: UILabel!
     @IBOutlet weak var likeImg: UIImageView!
+    
+    @IBOutlet weak var viewMore: UILabel!
+    
+    
+    
     var data = NSDictionary()
 
 
@@ -60,6 +65,7 @@ class LikeViewCell: UITableViewCell {
         }
         //self.title.text = "You have a msg!!"
         
+        viewMore.hidden = true
     }
     
     override func setSelected(selected: Bool, animated: Bool) {
@@ -68,12 +74,17 @@ class LikeViewCell: UITableViewCell {
         // Configure the view for the selected state
     }
     
-    class func cellHeightByData(data:NSDictionary)->CGFloat
+    class func cellHeightByData(data:NSDictionary, bLast:Bool)->CGFloat
     {
-        let mainWidth = UIScreen.mainScreen().bounds.width
-        let content = data.stringAttributeForKey("msg")
-        let height = content.stringHeightWith(17,width:mainWidth-80)
-        return 60.0 + height
+        if (bLast == false){
+            let mainWidth = UIScreen.mainScreen().bounds.width
+            let content = data.stringAttributeForKey("msg")
+            let height = content.stringHeightWith(17,width:mainWidth-80)
+            return 60.0 + height
+        }
+        else {
+            return 60.0
+        }
     }
     
 }
