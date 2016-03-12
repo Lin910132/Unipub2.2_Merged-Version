@@ -62,7 +62,7 @@ class YRNewPostViewController: UIViewController, UIImagePickerControllerDelegate
         self.navigationItem.title = "Post".localized()
         self.navigationItem.leftBarButtonItem?.title = "Back".localized()
         //self.nickNameText.placeholder = "Email or Phone Number".localized()
-        self.nickNameText.enabled = false
+        self.nickNameText.enabled = true
         self.nickNameText.text = schoolName
         //need to be put in viewDidLoad to set only once
         //self.contentTextView.text = placeHolder.localized()
@@ -144,6 +144,12 @@ class YRNewPostViewController: UIViewController, UIImagePickerControllerDelegate
     }
     
     @IBAction func sendButtonClick(sender: AnyObject) {
+        
+        if (self.nickNameText.text == ""){
+            self.getSchoolName()
+            return
+        }
+        
         let content:String = contentTextView!.text
         
         if content.characters.count == 0 || content == placeHolder.localized() {
@@ -819,6 +825,14 @@ class YRNewPostViewController: UIViewController, UIImagePickerControllerDelegate
         
     }
     
+    func textFieldDidBeginEditing(textField: UITextField){
+        self.getSchoolName()
+    }
     
+    func getSchoolName(){
+        let storyboard = UIStoryboard.init(name: "Main", bundle: nil)
+        let nav:UINavigationController = storyboard.instantiateViewControllerWithIdentifier("ForPostSearchNav") as! UINavigationController
+        self.presentViewController(nav, animated: true, completion: nil)
+    }
     
 }
