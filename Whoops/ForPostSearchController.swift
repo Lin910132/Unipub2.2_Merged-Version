@@ -416,14 +416,15 @@ class ForPostSearchController: UIViewController,UITableViewDelegate, UITableView
             })
         }
         else {
-            if (indexPath.section == 1){
+//            if (indexPath.section == 1)
+//            {
                 let cell:SearchResultCell = tableView.cellForRowAtIndexPath(indexPath) as! SearchResultCell
                 let title = cell.title.text
                 let navController:UINavigationController = self.navigationController?.presentingViewController as! UINavigationController
                 let postcontroller:YRNewPostViewController = navController.topViewController as! YRNewPostViewController
                 postcontroller.schoolName = title!
                 self.navigationController?.dismissViewControllerAnimated(true, completion: nil)
-            }
+//            }
         }
     }
     
