@@ -3553,7 +3553,13 @@ If you have any questions about these Terms or otherwise need to contact Unipub 
                         </constraints>
                     </view>
                     <toolbarItems/>
-                    <navigationItem key="navigationItem" title="Select a School to Post" id="JPt-90-maF"/>
+                    <navigationItem key="navigationItem" title="Select a School to Post" id="JPt-90-maF">
+                        <barButtonItem key="rightBarButtonItem" systemItem="cancel" id="cCB-xU-go5">
+                            <connections>
+                                <action selector="onClickCancel:" destination="hcd-CZ-9Vm" id="7s2-ZK-utq"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                     <connections>

@@ -441,4 +441,10 @@ class ForPostSearchController: UIViewController,UITableViewDelegate, UITableView
         filteredTableData = array
         self.searchTableView.reloadData()
     }
+    
+    
+    @IBAction func onClickCancel(sender: AnyObject) {
+        self.dismissViewControllerAnimated(true, completion: nil)
+    }
+    
 }
