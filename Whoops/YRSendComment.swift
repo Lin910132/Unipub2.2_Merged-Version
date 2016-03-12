@@ -25,6 +25,7 @@ class YRSendComment:UIView , UITextFieldDelegate{
     var delegate:YRRefreshCommentViewDelegate!
     
     var postId:String = ""
+    var commentId:String = ""
     
     override func awakeFromNib()
     {
@@ -86,7 +87,14 @@ class YRSendComment:UIView , UITextFieldDelegate{
          content = content.stringByReplacingOccurrencesOfString("+", withString: "%2B", options: NSStringCompareOptions.LiteralSearch, range: nil)
         
         let url = FileUtility.getUrlDomain() + "comment/add?"
-        let paraData = "content=\(content)&postId=\(postId)&uid=\(FileUtility.getUserId())"
+        
+        var paraData:String = ""
+        if (commentId == ""){
+            paraData = "content=\(content)&postId=\(postId)&uid=\(FileUtility.getUserId())"
+        } else{
+            paraData = "content=\(content)&commentId=\(commentId)&postId=\(postId)&uid=\(FileUtility.getUserId())"
+        }
+        
         
         YRHttpRequest.postWithURL(urlString: url, paramData: paraData)
         
