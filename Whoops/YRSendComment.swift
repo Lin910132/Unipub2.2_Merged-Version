@@ -26,6 +26,7 @@ class YRSendComment:UIView , UITextFieldDelegate{
     
     var postId:String = ""
     var commentId:String = ""
+    var rowIndex = NSIndexPath()
     
     override func awakeFromNib()
     {
