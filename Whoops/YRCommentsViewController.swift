@@ -146,11 +146,12 @@ class YRCommentsViewController: UIViewController,UITableViewDelegate,UITableView
         self.tableView = UITableView(frame:CGRectMake(0,0,width,height - 50), style:.Grouped)
         self.tableView!.delegate = self;
         self.tableView!.dataSource = self;
-        
+/*
         if (self.fromReply == false){
             self.tableView!.allowsSelection = false
         }
         self.tableView!.allowsMultipleSelection = false
+*/
         
         //self.tableView!.separatorStyle = UITableViewCellSeparatorStyle.None
         //self.tableView?.separatorColor = UIColor.redColor()
