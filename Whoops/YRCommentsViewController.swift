@@ -36,7 +36,7 @@ class YRCommentsViewController: UIViewController,UITableViewDelegate,UITableView
     var oldIndexPath:NSIndexPath?
     
     var notiDetect:Bool = false
-    
+    var fromReply:Bool = false
     
     override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: NSBundle?) {
         super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
@@ -74,17 +74,16 @@ class YRCommentsViewController: UIViewController,UITableViewDelegate,UITableView
     override func viewDidAppear(animated: Bool) {
         super.viewDidAppear(animated)
         if (self.dataArray.count > 0 && notiDetect == true){
-            
-
             let lastPath:NSIndexPath = NSIndexPath(forRow: self.dataArray.count - 1, inSection: 0)
             self.tableView?.scrollToRowAtIndexPath(lastPath, atScrollPosition: UITableViewScrollPosition.Bottom, animated: true)
             self.tableView?.selectRowAtIndexPath(lastPath, animated: true, scrollPosition: UITableViewScrollPosition.Bottom)
             self.tableView(self.tableView!, didSelectRowAtIndexPath: lastPath)
-
         }
         
-        let detectGesture:UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: "detectTableTouch:")
-        self.view.addGestureRecognizer(detectGesture)
+        if (self.fromReply == true){
+            let detectGesture:UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: "detectTableTouch:")
+            self.view.addGestureRecognizer(detectGesture)
+        }
     }
     
     override func viewDidDisappear(animated: Bool) {
@@ -147,6 +146,11 @@ class YRCommentsViewController: UIViewController,UITableViewDelegate,UITableView
         self.tableView = UITableView(frame:CGRectMake(0,0,width,height - 50), style:.Grouped)
         self.tableView!.delegate = self;
         self.tableView!.dataSource = self;
+        
+        if (self.fromReply == false){
+            self.tableView!.allowsSelection = false
+        }
+        self.tableView!.allowsMultipleSelection = false
         
         //self.tableView!.separatorStyle = UITableViewCellSeparatorStyle.None
         //self.tableView?.separatorColor = UIColor.redColor()
@@ -221,22 +225,25 @@ class YRCommentsViewController: UIViewController,UITableViewDelegate,UITableView
             let width = self.view.frame.size.width
             let height = self.view.frame.size.height
             self.sendView?.frame = CGRectMake(0, height - 50 , width, 50)
-            
-            
-            self.tableView!.layoutIfNeeded()
-            let priority = DISPATCH_QUEUE_PRIORITY_DEFAULT
-            dispatch_async(dispatch_get_global_queue(priority, 0)) {
-                // do some task
+            if (self.fromReply == true)
+            {
                 self.tableView!.layoutIfNeeded()
-                dispatch_async(dispatch_get_main_queue()) {
-                    // update some UI
-                    let lastPath:NSIndexPath = NSIndexPath(forRow: self.dataArray.count - 1, inSection: 0)
-                    self.tableView?.scrollToRowAtIndexPath(lastPath, atScrollPosition: UITableViewScrollPosition.Bottom, animated: true)
-                    self.tableView?.selectRowAtIndexPath(lastPath, animated: true, scrollPosition: UITableViewScrollPosition.Bottom)
-                    self.tableView(self.tableView!, didSelectRowAtIndexPath: lastPath)
+                let priority = DISPATCH_QUEUE_PRIORITY_DEFAULT
+                dispatch_async(dispatch_get_global_queue(priority, 0)) {
+                    // do some task
+                    self.tableView!.layoutIfNeeded()
+                    dispatch_async(dispatch_get_main_queue()) {
+                        // update some UI
+                        let lastPath:NSIndexPath = NSIndexPath(forRow: self.dataArray.count - 1, inSection: 0)
+                        self.tableView?.scrollToRowAtIndexPath(lastPath, atScrollPosition: UITableViewScrollPosition.Bottom, animated: true)
+                        self.tableView?.selectRowAtIndexPath(lastPath, animated: true, scrollPosition: UITableViewScrollPosition.Bottom)
+                        self.tableView(self.tableView!, didSelectRowAtIndexPath: lastPath)
+                    }
                 }
             }
         })
+        
+
         
     }
     

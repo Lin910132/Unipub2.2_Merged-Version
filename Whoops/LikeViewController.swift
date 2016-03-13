@@ -204,6 +204,7 @@ class LikeViewController: UIViewController, UITableViewDelegate, UITableViewData
             let data = self._db[index] as! NSDictionary
             let commentsVC = YRCommentsViewController(nibName :nil, bundle: nil)
             commentsVC.jokeId = data.stringAttributeForKey("postId")
+            commentsVC.fromReply = true
             commentsVC.hidesBottomBarWhenPushed = true
         
             likeTableView.deselectRowAtIndexPath(indexPath, animated: true)
@@ -219,6 +220,7 @@ class LikeViewController: UIViewController, UITableViewDelegate, UITableViewData
                 let data = self._db[index] as! NSDictionary
                 let commentsVC = YRCommentsViewController(nibName :nil, bundle: nil)
                 commentsVC.jokeId = data.stringAttributeForKey("postId")
+                commentsVC.fromReply = true                
                 commentsVC.hidesBottomBarWhenPushed = true
                 commentsVC.notiDetect = true
                 
