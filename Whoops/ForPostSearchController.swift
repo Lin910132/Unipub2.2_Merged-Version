@@ -309,6 +309,7 @@ class ForPostSearchController: UIViewController,UITableViewDelegate, UITableView
             //cell.title.text = self.filteredTableData[row]
             cell.data = data
             cell.uid = self.uid
+            cell.schoolId = data.stringAttributeForKey("id")
             
             cell.isHighLighted = false
             cell.backgroundView = nil
@@ -344,6 +345,7 @@ class ForPostSearchController: UIViewController,UITableViewDelegate, UITableView
                 cell.data = data
                 //cell.uid = FileUtility.getUserId()
                 cell.uid = self.uid
+                cell.schoolId = data.stringAttributeForKey("schoolId")
                 
                 cell.isHighLighted = true
                 cell.backgroundView = nil
@@ -368,7 +370,7 @@ class ForPostSearchController: UIViewController,UITableViewDelegate, UITableView
                 cell.data = data
                 //cell.uid = FileUtility.getUserId()
                 cell.uid = self.uid
-                
+                cell.schoolId = data.stringAttributeForKey("id")
                 //if cell.flag{
                 //    self.searchTableView.reloadData()
                 //    cell.flag = false
@@ -412,6 +414,7 @@ class ForPostSearchController: UIViewController,UITableViewDelegate, UITableView
                 let navController:UINavigationController = self.navigationController?.presentingViewController as! UINavigationController
                 let postcontroller:YRNewPostViewController = navController.topViewController as! YRNewPostViewController
                 postcontroller.schoolName = title!
+                postcontroller.schoolId = cell.schoolId
                 self.navigationController?.dismissViewControllerAnimated(true, completion: nil)
             })
         }
@@ -423,6 +426,7 @@ class ForPostSearchController: UIViewController,UITableViewDelegate, UITableView
                 let navController:UINavigationController = self.navigationController?.presentingViewController as! UINavigationController
                 let postcontroller:YRNewPostViewController = navController.topViewController as! YRNewPostViewController
                 postcontroller.schoolName = title!
+                postcontroller.schoolId = cell.schoolId
                 self.navigationController?.dismissViewControllerAnimated(true, completion: nil)
 //            }
         }
