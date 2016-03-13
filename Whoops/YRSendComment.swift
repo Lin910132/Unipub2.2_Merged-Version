@@ -41,11 +41,6 @@ class YRSendComment:UIView , UITextFieldDelegate{
                
     }
     
-    
-   
-    
-       
-    
     func textField(textField: UITextField, shouldChangeCharactersInRange range: NSRange, replacementString string: String) -> Bool{
         
         let comment:String = self.commentText.text!

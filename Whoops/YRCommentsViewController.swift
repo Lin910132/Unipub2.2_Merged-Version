@@ -144,7 +144,7 @@ class YRCommentsViewController: UIViewController,UITableViewDelegate,UITableView
     {
         let width = self.view.frame.size.width
         let height = self.view.frame.size.height
-        self.tableView = UITableView(frame:CGRectMake(0,0,width,height), style:.Grouped)
+        self.tableView = UITableView(frame:CGRectMake(0,0,width,height - 50), style:.Grouped)
         self.tableView!.delegate = self;
         self.tableView!.dataSource = self;
         
@@ -223,6 +223,19 @@ class YRCommentsViewController: UIViewController,UITableViewDelegate,UITableView
             self.sendView?.frame = CGRectMake(0, height - 50 , width, 50)
             
             
+            self.tableView!.layoutIfNeeded()
+            let priority = DISPATCH_QUEUE_PRIORITY_DEFAULT
+            dispatch_async(dispatch_get_global_queue(priority, 0)) {
+                // do some task
+                self.tableView!.layoutIfNeeded()
+                dispatch_async(dispatch_get_main_queue()) {
+                    // update some UI
+                    let lastPath:NSIndexPath = NSIndexPath(forRow: self.dataArray.count - 1, inSection: 0)
+                    self.tableView?.scrollToRowAtIndexPath(lastPath, atScrollPosition: UITableViewScrollPosition.Bottom, animated: true)
+                    self.tableView?.selectRowAtIndexPath(lastPath, animated: true, scrollPosition: UITableViewScrollPosition.Bottom)
+                    self.tableView(self.tableView!, didSelectRowAtIndexPath: lastPath)
+                }
+            }
         })
         
     }
