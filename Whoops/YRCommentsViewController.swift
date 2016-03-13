@@ -321,7 +321,7 @@ class YRCommentsViewController: UIViewController,UITableViewDelegate,UITableView
         cell!.selectionStyle = UITableViewCellSelectionStyle.Gray
         cell!.backgroundColor = UIColor.whiteColor();
         let selectedview = UIView()
-        selectedview.backgroundColor = UIColor.grayColor()
+        selectedview.backgroundColor = UIColor.lightGrayColor()
         cell?.selectedBackgroundView = selectedview
         return cell!
     }
