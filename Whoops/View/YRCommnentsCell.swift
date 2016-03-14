@@ -12,11 +12,13 @@ class YRCommnentsCell: UITableViewCell {
     
     @IBOutlet weak var contentLabel: UILabel!
     @IBOutlet weak var createdDate: UILabel!
+    @IBOutlet var floorLabel: UILabel!
  
     
     var likeClick:Bool = true
     var likeHot = Int()
     var data :NSDictionary!
+    var index = NSIndexPath()
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -32,6 +34,8 @@ class YRCommnentsCell: UITableViewCell {
     override func layoutSubviews()
     {
         super.layoutSubviews()
+        floorLabel.text = String(index.row) + " " + "floor".localized()
+        
         let content = self.data.stringAttributeForKey("content")
         let width = self.contentLabel.width()
         let height = content.stringHeightWith(17,width:width)
@@ -107,7 +111,7 @@ class YRCommnentsCell: UITableViewCell {
         let mainWidth = UIScreen.mainScreen().bounds.width
         let content = data.stringAttributeForKey("content")
         let height = content.stringHeightWith(17,width:mainWidth-80)
-        return 30.0 + height + 24.0
+        return 45.0 + height + 24.0
     }
 
     

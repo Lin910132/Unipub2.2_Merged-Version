@@ -316,7 +316,7 @@ class YRCommentsViewController: UIViewController,UITableViewDelegate,UITableView
         let index = indexPath.row
         let data = self.dataArray[index] as! NSDictionary
         cell!.data = data
-        
+        cell!.index = indexPath
 //        cell!.selectionStyle = UITableViewCellSelectionStyle.Blue
         cell!.selectionStyle = UITableViewCellSelectionStyle.Gray
         cell!.backgroundColor = UIColor.whiteColor();
