@@ -398,16 +398,18 @@ class YRCommentsViewController: UIViewController,UITableViewDelegate,UITableView
     
 
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
+        let row = indexPath.row
         let cell:YRCommnentsCell = tableView.cellForRowAtIndexPath(indexPath) as! YRCommnentsCell
         sendView?.commentText.placeholder = "Reply to: " + cell.contentLabel.text!
         sendView?.commentId = "\(indexPath.row)"
         oldIndexPath = indexPath
+        tableView.deselectRowAtIndexPath(indexPath, animated: true)
     }
     
     func tableView(tableView: UITableView, didDeselectRowAtIndexPath indexPath: NSIndexPath) {
-        sendView?.commentText.placeholder = "Write some comments"
-        sendView?.commentId = ""
-        oldIndexPath = nil
+        //sendView?.commentText.placeholder = "Write some comments"
+        //sendView?.commentId = ""
+        //oldIndexPath = nil
     }
     
     func detectTableTouch(tap:UITapGestureRecognizer){
