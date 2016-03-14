@@ -46,6 +46,8 @@ class YRNewPostViewController: UIViewController, UIImagePickerControllerDelegate
     var schoolId:String = "0"
     var schoolName = String()
     
+    var fromSchool:Bool = false
+    
     var latitude:Double = 0.0
     var longitude:Double = 0.0
     
@@ -62,7 +64,7 @@ class YRNewPostViewController: UIViewController, UIImagePickerControllerDelegate
         self.navigationItem.title = "Post".localized()
         self.navigationItem.leftBarButtonItem?.title = "Back".localized()
         //self.nickNameText.placeholder = "Email or Phone Number".localized()
-        self.nickNameText.enabled = true
+        //self.nickNameText.enabled = true
         self.nickNameText.text = schoolName
         //need to be put in viewDidLoad to set only once
         //self.contentTextView.text = placeHolder.localized()
@@ -86,6 +88,14 @@ class YRNewPostViewController: UIViewController, UIImagePickerControllerDelegate
         contentTextView.delegate = self
         self.automaticallyAdjustsScrollViewInsets = false
         
+        if (self.schoolName != ""){
+            self.nickNameText.enabled = false
+            self.fromSchool = true
+        }else
+        {
+            self.nickNameText.enabled = true
+            self.fromSchool = false
+        }
         
         locationManager.delegate = self
         locationManager.desiredAccuracy = kCLLocationAccuracyBest
@@ -189,7 +199,7 @@ class YRNewPostViewController: UIViewController, UIImagePickerControllerDelegate
             
         }*/
 //        let mainStoryboard = UIStoryboard(name: "Main", bundle: NSBundle.mainBundle())
-        if self.schoolId == "0"{
+        if !fromSchool {
             self.mainController.selectedIndex = 0
             
             let viewController:YRMainViewController = (self.mainController.viewControllers![0] as! UINavigationController).topViewController as! YRMainViewController
@@ -827,6 +837,7 @@ class YRNewPostViewController: UIViewController, UIImagePickerControllerDelegate
     
     func textFieldDidBeginEditing(textField: UITextField){
         self.getSchoolName()
+        
     }
     
     func getSchoolName(){
