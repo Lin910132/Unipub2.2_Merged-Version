@@ -236,7 +236,7 @@ class YRCommentsViewController: UIViewController,UITableViewDelegate,UITableView
                     dispatch_async(dispatch_get_main_queue()) {
                         // update some UI
                         let lastPath:NSIndexPath = NSIndexPath(forRow: self.dataArray.count - 1, inSection: 0)
-                        self.tableView?.scrollToRowAtIndexPath(lastPath, atScrollPosition: UITableViewScrollPosition.Bottom, animated: true)
+                        self.tableView?.scrollToRowAtIndexPath(lastPath, atScrollPosition: UITableViewScrollPosition.Bottom, animated: false)
                         self.tableView?.selectRowAtIndexPath(lastPath, animated: true, scrollPosition: UITableViewScrollPosition.Bottom)
                         self.tableView(self.tableView!, didSelectRowAtIndexPath: lastPath)
                     }
