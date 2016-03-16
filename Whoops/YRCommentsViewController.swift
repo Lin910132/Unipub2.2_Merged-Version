@@ -78,7 +78,7 @@ class YRCommentsViewController: UIViewController,UITableViewDelegate,UITableView
         if (self.dataArray.count > 0 && fromReply == true){
             self.tableView?.setContentOffset(CGPoint.init(x: 0, y: -64), animated: false)
             
-            var rowToLocate = 0
+            var rowToLocate = -1
             if commentIdToLocate != "" {
                 for (var i=0; i < self.dataArray.count; i++){
                     let data = self.dataArray[i] as! NSDictionary
@@ -91,10 +91,11 @@ class YRCommentsViewController: UIViewController,UITableViewDelegate,UITableView
                 }
             }
             
-            if rowToLocate != 0 {
+            if rowToLocate != -1 {
                 let locatePath:NSIndexPath = NSIndexPath(forRow: rowToLocate, inSection: 0)
                 self.tableView?.scrollToRowAtIndexPath(locatePath, atScrollPosition: UITableViewScrollPosition.Bottom, animated: true)
                 self.tableView?.selectRowAtIndexPath(locatePath, animated: true, scrollPosition: UITableViewScrollPosition.Bottom)
+
                 self.tableView(self.tableView!, didSelectRowAtIndexPath: locatePath)
             }
         }
@@ -418,7 +419,7 @@ class YRCommentsViewController: UIViewController,UITableViewDelegate,UITableView
         let row = indexPath.row
         let cell:YRCommnentsCell = tableView.cellForRowAtIndexPath(indexPath) as! YRCommnentsCell
         let data = cell.data
-        let commentId = data.stringAttributeForKey("commentId")
+        let commentId = data.stringAttributeForKey("id")
         sendView?.commentText.placeholder = "@" + String(row + 1) + "floor".localized()
         sendView?.commentId = "\(commentId)"
         oldIndexPath = indexPath

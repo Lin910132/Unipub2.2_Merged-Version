@@ -80,7 +80,11 @@ class YRSendComment:UIView , UITextFieldDelegate{
         }
         
         
-         content = content.stringByReplacingOccurrencesOfString("+", withString: "%2B", options: NSStringCompareOptions.LiteralSearch, range: nil)
+        content = content.stringByReplacingOccurrencesOfString("+", withString: "%2B", options: NSStringCompareOptions.LiteralSearch, range: nil)
+        if (commentText.placeholder != "Write some comments".localized()){
+            content = commentText.placeholder! + ": " + content
+        }
+        
         
         let url = FileUtility.getUrlDomain() + "comment/add?"
         //let paraData = "content=\(content)&postId=\(postId)&uid=\(FileUtility.getUserId())"
