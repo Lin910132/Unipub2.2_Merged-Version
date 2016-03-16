@@ -34,6 +34,7 @@ class YRCommentsViewController: UIViewController,UITableViewDelegate,UITableView
     var rowIndex = NSIndexPath()
     var tapGesture:UITapGestureRecognizer?
     var oldIndexPath:NSIndexPath?
+    var commentIdToLocate : String = ""
     
     var notiDetect:Bool = false
     var fromReply:Bool = false
@@ -73,17 +74,33 @@ class YRCommentsViewController: UIViewController,UITableViewDelegate,UITableView
     
     override func viewDidAppear(animated: Bool) {
         super.viewDidAppear(animated)
-        if (self.dataArray.count > 0 && notiDetect == true){
-            let lastPath:NSIndexPath = NSIndexPath(forRow: self.dataArray.count - 1, inSection: 0)
-            self.tableView?.scrollToRowAtIndexPath(lastPath, atScrollPosition: UITableViewScrollPosition.Bottom, animated: true)
-            self.tableView?.selectRowAtIndexPath(lastPath, animated: true, scrollPosition: UITableViewScrollPosition.Bottom)
-            self.tableView(self.tableView!, didSelectRowAtIndexPath: lastPath)
+
+        if (self.dataArray.count > 0 && fromReply == true){
+            self.tableView?.setContentOffset(CGPoint.init(x: 0, y: -64), animated: false)
+            
+            var rowToLocate = 0
+            if commentIdToLocate != "" {
+                for (var i=0; i < self.dataArray.count; i++){
+                    let data = self.dataArray[i] as! NSDictionary
+                    let commentId = data.stringAttributeForKey("id")
+                    
+                    if commentIdToLocate == commentId {
+                        rowToLocate = i
+                        break
+                    }
+                }
+            }
+            
+            if rowToLocate != 0 {
+                let locatePath:NSIndexPath = NSIndexPath(forRow: rowToLocate, inSection: 0)
+                self.tableView?.scrollToRowAtIndexPath(locatePath, atScrollPosition: UITableViewScrollPosition.Bottom, animated: true)
+                self.tableView?.selectRowAtIndexPath(locatePath, animated: true, scrollPosition: UITableViewScrollPosition.Bottom)
+                self.tableView(self.tableView!, didSelectRowAtIndexPath: locatePath)
+            }
         }
         
-        if (self.fromReply == true){
-            let detectGesture:UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: "detectTableTouch:")
-            self.view.addGestureRecognizer(detectGesture)
-        }
+        let detectGesture:UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: "detectTableTouch:")
+        self.view.addGestureRecognizer(detectGesture)
     }
     
     override func viewDidDisappear(animated: Bool) {
@@ -237,8 +254,8 @@ class YRCommentsViewController: UIViewController,UITableViewDelegate,UITableView
                         // update some UI
                         let lastPath:NSIndexPath = NSIndexPath(forRow: self.dataArray.count - 1, inSection: 0)
                         self.tableView?.scrollToRowAtIndexPath(lastPath, atScrollPosition: UITableViewScrollPosition.Bottom, animated: false)
-                        self.tableView?.selectRowAtIndexPath(lastPath, animated: true, scrollPosition: UITableViewScrollPosition.Bottom)
-                        self.tableView(self.tableView!, didSelectRowAtIndexPath: lastPath)
+                        //self.tableView?.selectRowAtIndexPath(lastPath, animated: true, scrollPosition: UITableViewScrollPosition.Bottom)
+                        //self.tableView(self.tableView!, didSelectRowAtIndexPath: lastPath)
                     }
                 }
             }
@@ -400,8 +417,10 @@ class YRCommentsViewController: UIViewController,UITableViewDelegate,UITableView
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         let row = indexPath.row
         let cell:YRCommnentsCell = tableView.cellForRowAtIndexPath(indexPath) as! YRCommnentsCell
-        sendView?.commentText.placeholder = "Reply to: " + cell.contentLabel.text!
-        sendView?.commentId = "\(indexPath.row)"
+        let data = cell.data
+        let commentId = data.stringAttributeForKey("commentId")
+        sendView?.commentText.placeholder = "@" + String(row + 1) + "floor".localized()
+        sendView?.commentId = "\(commentId)"
         oldIndexPath = indexPath
         tableView.deselectRowAtIndexPath(indexPath, animated: true)
     }

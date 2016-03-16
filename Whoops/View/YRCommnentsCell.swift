@@ -34,7 +34,7 @@ class YRCommnentsCell: UITableViewCell {
     override func layoutSubviews()
     {
         super.layoutSubviews()
-        floorLabel.text = String(index.row) + " " + "floor".localized()
+        floorLabel.text = String(index.row + 1) + " " + "floor".localized()
         
         let content = self.data.stringAttributeForKey("content")
         let width = self.contentLabel.width()
