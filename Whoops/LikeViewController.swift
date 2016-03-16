@@ -188,11 +188,16 @@ class LikeViewController: UIViewController, UITableViewDelegate, UITableViewData
         }
         else if (indexPath.row == realCount && bLoadMore == false){
             cell?.title.hidden = true
-            cell?.content.hidden = true
+            cell?.contentLabel.hidden = true
             cell?.viewMore.hidden = false
             cell?.likeImg.hidden = true
             
         }
+        
+        if (cell?.viewMore.hidden == true){
+            cell?.title.hidden = false
+        }
+        
         return cell!
     }
     
@@ -237,7 +242,8 @@ class LikeViewController: UIViewController, UITableViewDelegate, UITableViewData
         let index = indexPath.row
         if (index < realCount){
             let data = self._db[index] as! NSDictionary
-            return  LikeViewCell.cellHeightByData(data, bLast: false)
+            let height = LikeViewCell.cellHeightByData(data, bLast: false)
+            return  height
         }
         else if (bLoadMore == false){
             return 50.0

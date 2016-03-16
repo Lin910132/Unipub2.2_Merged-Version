@@ -11,7 +11,7 @@ import UIKit
 class LikeViewCell: UITableViewCell {
 
     @IBOutlet weak var title: UILabel!
-    @IBOutlet weak var content: UILabel!
+    @IBOutlet weak var contentLabel: UILabel!
     @IBOutlet weak var likeImg: UIImageView!
     
     @IBOutlet weak var viewMore: UILabel!
@@ -59,9 +59,9 @@ class LikeViewCell: UITableViewCell {
         self.title.setHeight(height)
         self.title.text = content
         
-        self.content.hidden = false
+        self.contentLabel.hidden = false
         if self.data.stringAttributeForKey("content") != NSNull() {
-            self.content.text = self.data.stringAttributeForKey("content")
+            self.contentLabel.text = self.data.stringAttributeForKey("content")
         }
         //self.title.text = "You have a msg!!"
         
@@ -78,7 +78,7 @@ class LikeViewCell: UITableViewCell {
     {
         if (bLast == false){
             let mainWidth = UIScreen.mainScreen().bounds.width
-            let content = data.stringAttributeForKey("msg")
+            let content = data.stringAttributeForKey("msg").localized()
             let height = content.stringHeightWith(17,width:mainWidth-80)
             return 60.0 + height
         }
