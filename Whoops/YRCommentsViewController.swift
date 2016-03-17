@@ -76,7 +76,6 @@ class YRCommentsViewController: UIViewController,UITableViewDelegate,UITableView
         super.viewDidAppear(animated)
 
         if (self.dataArray.count > 0 && fromReply == true){
-            self.tableView?.setContentOffset(CGPoint.init(x: 0, y: -64), animated: false)
             
             var rowToLocate = -1
             if commentIdToLocate != "" {
@@ -89,6 +88,8 @@ class YRCommentsViewController: UIViewController,UITableViewDelegate,UITableView
                         break
                     }
                 }
+            }else{
+                self.tableView?.setContentOffset(CGPoint.init(x: 0, y: -64), animated: false)
             }
             
             if rowToLocate != -1 {
@@ -244,7 +245,7 @@ class YRCommentsViewController: UIViewController,UITableViewDelegate,UITableView
             let width = self.view.frame.size.width
             let height = self.view.frame.size.height
             self.sendView?.frame = CGRectMake(0, height - 50 , width, 50)
-            if (self.fromReply == true)
+            if ((self.fromReply == true) && (self.dataArray.count != 0))
             {
                 self.tableView!.layoutIfNeeded()
                 let priority = DISPATCH_QUEUE_PRIORITY_DEFAULT
@@ -420,8 +421,9 @@ class YRCommentsViewController: UIViewController,UITableViewDelegate,UITableView
         let cell:YRCommnentsCell = tableView.cellForRowAtIndexPath(indexPath) as! YRCommnentsCell
         let data = cell.data
         let commentId = data.stringAttributeForKey("id")
-        sendView?.commentText.placeholder = "@" + String(row + 1) + "floor".localized()
+        sendView?.commentText.placeholder = "@" + String(row + 1) + " floor".localized()
         sendView?.commentId = "\(commentId)"
+        sendView?.rowIndex = indexPath
         oldIndexPath = indexPath
         tableView.deselectRowAtIndexPath(indexPath, animated: true)
     }
