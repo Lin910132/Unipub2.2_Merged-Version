@@ -212,7 +212,7 @@ class YRNewPostViewController: UIViewController, UIImagePickerControllerDelegate
     }
     
     @IBAction func cancelButtonClicked(sender: AnyObject) {
-        if self.schoolId == "0"{
+        if !fromSchool{
             self.mainController.selectedIndex = 0
             let viewController:YRMainViewController = (self.mainController.viewControllers![0] as! UINavigationController).topViewController as! YRMainViewController
             viewController.fromDetail = true
