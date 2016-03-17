@@ -256,8 +256,8 @@ class ForPostSearchController: UIViewController,UITableViewDelegate, UITableView
         else
         {
             switch (section){
-            case 0: return self.myFavorite.count
-            case 1: return self.nearby.count
+            case 1: return self.myFavorite.count
+            case 0: return self.nearby.count
             default: return 0
             }
         }
@@ -275,9 +275,9 @@ class ForPostSearchController: UIViewController,UITableViewDelegate, UITableView
         else
         {
             switch (section){
-            case 0: headCell.header.text = "My Favorite".localized()
+            case 1: headCell.header.text = "My Favorite".localized()
             headCell.headImg.image = UIImage(named: "Like")
-            case 1: headCell.header.text = "Near By".localized()
+            case 0: headCell.header.text = "Near By".localized()
             headCell.headImg.image = UIImage(named: "Nearby")
             default: headCell.header.text = nil
             headCell.headImg.image = nil
@@ -336,7 +336,7 @@ class ForPostSearchController: UIViewController,UITableViewDelegate, UITableView
         }
         else
         {
-            if indexPath.section == 0
+            if indexPath.section == 1
             {
                 cell.favorite = self.myFavorite
                 //cell.title.text = self.myFavorite[row]
@@ -362,7 +362,7 @@ class ForPostSearchController: UIViewController,UITableViewDelegate, UITableView
                 return cell
             }
             
-            if indexPath.section == 1
+            if indexPath.section == 0
             {
                 //cell.title.text = self.nearby[row]
                 let data = self.nearby[row] as! NSDictionary
