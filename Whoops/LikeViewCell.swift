@@ -33,6 +33,12 @@ class LikeViewCell: UITableViewCell {
             return ;
         }
         
+        var imgUrl = self.data.stringAttributeForKey("image")
+        if (imgUrl != ""){
+            imgUrl = FileUtility.getUrlImage() + (imgUrl as String);
+            likeImg.setImage(imgUrl,placeHolder: UIImage(named: "Logoo.png"));
+        }
+        
         let likedString = "Someone liked your post"
         let dislikedString = "Someone disliked your post"
         let repliedString = "Someone replied your post"

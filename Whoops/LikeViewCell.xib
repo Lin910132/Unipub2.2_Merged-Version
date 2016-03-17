@@ -15,13 +15,13 @@
                 <rect key="frame" x="0.0" y="0.0" width="320" height="99.5"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="title" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="77c-vx-B04">
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="title" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="77c-vx-B04">
                         <rect key="frame" x="8" y="8" width="227" height="22"/>
                         <fontDescription key="fontDescription" type="system" pointSize="18"/>
                         <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                         <nil key="highlightedColor"/>
                     </label>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="content" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gGC-bt-sSz">
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="content" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gGC-bt-sSz">
                         <rect key="frame" x="8" y="44" width="227" height="21"/>
                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                         <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
@@ -31,8 +31,17 @@
                         <rect key="frame" x="243" y="8" width="69" height="83"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="83" id="Cjk-ty-zP4"/>
+                            <constraint firstAttribute="height" constant="83" id="Ibv-ro-8VL"/>
+                            <constraint firstAttribute="width" constant="69" id="pzo-DS-quu"/>
                             <constraint firstAttribute="width" constant="69" id="qgj-ym-v8s"/>
                         </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="Cjk-ty-zP4"/>
+                                <exclude reference="Ibv-ro-8VL"/>
+                                <exclude reference="qgj-ym-v8s"/>
+                            </mask>
+                        </variation>
                     </imageView>
                     <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="View More..." textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ile-ee-YTu">
                         <rect key="frame" x="113" y="39" width="95" height="21"/>
@@ -45,6 +54,9 @@
                     <constraint firstItem="R9M-It-ZkA" firstAttribute="leading" secondItem="gGC-bt-sSz" secondAttribute="trailing" constant="8" id="0I4-O3-BL9"/>
                     <constraint firstItem="R9M-It-ZkA" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" id="4Nm-XW-yOl"/>
                     <constraint firstItem="77c-vx-B04" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" id="BRH-ya-BGp"/>
+                    <constraint firstItem="R9M-It-ZkA" firstAttribute="leading" secondItem="gGC-bt-sSz" secondAttribute="trailing" constant="8" id="CD3-SY-zxr"/>
+                    <constraint firstItem="R9M-It-ZkA" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" id="Dgo-WU-XbU"/>
+                    <constraint firstItem="R9M-It-ZkA" firstAttribute="trailing" secondItem="H2p-sc-9uM" secondAttribute="trailingMargin" id="Ebg-uO-9a4"/>
                     <constraint firstItem="ile-ee-YTu" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="MtD-RK-9fd"/>
                     <constraint firstItem="R9M-It-ZkA" firstAttribute="trailing" secondItem="H2p-sc-9uM" secondAttribute="trailingMargin" id="NE4-q8-aU2"/>
                     <constraint firstItem="R9M-It-ZkA" firstAttribute="bottom" secondItem="H2p-sc-9uM" secondAttribute="bottomMargin" id="Rfd-8f-sPd"/>
@@ -55,11 +67,20 @@
                     <constraint firstItem="77c-vx-B04" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" id="dcg-Ka-j2x"/>
                     <constraint firstItem="77c-vx-B04" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" id="hEJ-iw-lnG"/>
                     <constraint firstItem="R9M-It-ZkA" firstAttribute="leading" secondItem="77c-vx-B04" secondAttribute="trailing" constant="8" id="hnP-yL-0Eh"/>
+                    <constraint firstAttribute="bottomMargin" secondItem="R9M-It-ZkA" secondAttribute="bottom" constant="0.5" id="k0F-U7-NRG"/>
+                    <constraint firstAttribute="bottomMargin" secondItem="R9M-It-ZkA" secondAttribute="bottom" constant="0.5" id="qhr-Js-Vxc"/>
                 </constraints>
                 <variation key="default">
                     <mask key="constraints">
                         <exclude reference="hEJ-iw-lnG"/>
+                        <exclude reference="0I4-O3-BL9"/>
+                        <exclude reference="4Nm-XW-yOl"/>
+                        <exclude reference="CD3-SY-zxr"/>
+                        <exclude reference="NE4-q8-aU2"/>
                         <exclude reference="Rfd-8f-sPd"/>
+                        <exclude reference="bHg-2B-hwk"/>
+                        <exclude reference="hnP-yL-0Eh"/>
+                        <exclude reference="qhr-Js-Vxc"/>
                     </mask>
                 </variation>
             </tableViewCellContentView>
