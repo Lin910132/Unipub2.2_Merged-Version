@@ -418,10 +418,10 @@ class YRCommentsViewController: UIViewController,UITableViewDelegate,UITableView
 
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         let row = indexPath.row
-        let cell:YRCommnentsCell = tableView.cellForRowAtIndexPath(indexPath) as! YRCommnentsCell
-        let data = cell.data
+        //let cell:YRCommnentsCell = tableView.cellForRowAtIndexPath(indexPath) as! YRCommnentsCell
+        let data = self.dataArray[row] as! NSDictionary
         let commentId = data.stringAttributeForKey("id")
-        sendView?.commentText.placeholder = "@" + String(row + 1) + " floor".localized()
+        sendView?.commentText.placeholder = "@" + String(row + 1) + " " + "floor".localized()
         sendView?.commentId = "\(commentId)"
         sendView?.rowIndex = indexPath
         oldIndexPath = indexPath

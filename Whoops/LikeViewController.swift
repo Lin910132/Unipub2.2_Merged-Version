@@ -212,7 +212,9 @@ class LikeViewController: UIViewController, UITableViewDelegate, UITableViewData
             commentsVC.jokeId = data.stringAttributeForKey("postId")
             commentsVC.fromReply = true
             commentsVC.hidesBottomBarWhenPushed = true
-            commentsVC.commentIdToLocate = data.stringAttributeForKey("commentId")
+            
+            let str = data.stringAttributeForKey("commentId")
+            commentsVC.commentIdToLocate = str
             
             likeTableView.deselectRowAtIndexPath(indexPath, animated: true)
             self.navigationController?.pushViewController(commentsVC, animated: true)
