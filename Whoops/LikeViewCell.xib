@@ -15,7 +15,7 @@
                 <rect key="frame" x="0.0" y="0.0" width="320" height="99.5"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="title" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="77c-vx-B04">
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="title" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="77c-vx-B04">
                         <rect key="frame" x="8" y="8" width="227" height="22"/>
                         <fontDescription key="fontDescription" type="system" pointSize="18"/>
                         <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
@@ -62,6 +62,7 @@
                     <constraint firstItem="R9M-It-ZkA" firstAttribute="bottom" secondItem="H2p-sc-9uM" secondAttribute="bottomMargin" id="Rfd-8f-sPd"/>
                     <constraint firstItem="gGC-bt-sSz" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" id="V3W-5b-89h"/>
                     <constraint firstItem="gGC-bt-sSz" firstAttribute="top" secondItem="77c-vx-B04" secondAttribute="bottom" constant="14" id="X3j-iP-Fcs"/>
+                    <constraint firstItem="R9M-It-ZkA" firstAttribute="leading" secondItem="77c-vx-B04" secondAttribute="trailing" constant="8" id="YAh-UR-4XZ"/>
                     <constraint firstItem="ile-ee-YTu" firstAttribute="centerX" secondItem="H2p-sc-9uM" secondAttribute="centerX" id="YuR-PQ-Bbm"/>
                     <constraint firstItem="R9M-It-ZkA" firstAttribute="trailing" secondItem="H2p-sc-9uM" secondAttribute="trailingMargin" id="bHg-2B-hwk"/>
                     <constraint firstItem="77c-vx-B04" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" id="dcg-Ka-j2x"/>
