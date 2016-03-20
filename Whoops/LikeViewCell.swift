@@ -37,24 +37,32 @@ class LikeViewCell: UITableViewCell {
         if (imgUrl != ""){
             imgUrl = FileUtility.getUrlImage() + (imgUrl as String);
             likeImg.setImage(imgUrl,placeHolder: UIImage(named: "Logoo.png"));
+        }else{
+            likeImg.hidden = true
         }
         
         let likedString = "Someone liked your post"
         let dislikedString = "Someone disliked your post"
         let repliedString = "Someone replied your post"
         let repliedComment = "Someone replies the post you commented"
+        let floorSrting = "@@floor@@"
+        let replied = "Someone replied your comment"
         
         var convertedMsg : String
         
         let rawMessage = self.data.stringAttributeForKey("msg")
+        convertedMsg = rawMessage
+        
         if rawMessage.containsString(likedString){
             convertedMsg = rawMessage.stringByReplacingOccurrencesOfString(likedString, withString: likedString.localized())
         }else if rawMessage.containsString(dislikedString) {
             convertedMsg = rawMessage.stringByReplacingOccurrencesOfString(dislikedString, withString: dislikedString.localized())
         }else if rawMessage.containsString(repliedString) {
             convertedMsg = rawMessage.stringByReplacingOccurrencesOfString(repliedString, withString: repliedString.localized())
-        }else {
+        }else if rawMessage.containsString(repliedComment){
             convertedMsg = rawMessage.stringByReplacingOccurrencesOfString(repliedComment, withString: repliedComment.localized())
+        }else if rawMessage.containsString(replied){
+            convertedMsg = rawMessage.stringByReplacingOccurrencesOfString(replied, withString: replied.localized())
         }
         
         let content = convertedMsg
@@ -67,7 +75,11 @@ class LikeViewCell: UITableViewCell {
         
         self.contentLabel.hidden = false
         if self.data.stringAttributeForKey("content") != NSNull() {
-            self.contentLabel.text = self.data.stringAttributeForKey("content")
+            var contentText = self.data.stringAttributeForKey("content")
+            if contentText.containsString(floorSrting){
+               contentText = contentText.stringByReplacingOccurrencesOfString(floorSrting, withString: "floor".localized())
+            }
+            contentLabel.text = contentText
         }
         //self.title.text = "You have a msg!!"
         

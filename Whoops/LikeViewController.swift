@@ -197,6 +197,12 @@ class LikeViewController: UIViewController, UITableViewDelegate, UITableViewData
         
         if (cell?.viewMore.hidden == true){
             cell?.title.hidden = false
+            cell?.likeImg.hidden = false
+        }
+        
+        let imgUrl = cell?.data.stringAttributeForKey("image")
+        if imgUrl == "" {
+            cell?.likeImg.hidden = true
         }
         
         return cell!
