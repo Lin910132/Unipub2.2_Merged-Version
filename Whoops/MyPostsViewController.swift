@@ -80,7 +80,7 @@ class MyPostsViewController: UIViewController, UITableViewDataSource, UITableVie
         
         
         let refresh = UIRefreshControl()
-        refresh.addTarget(self, action: "actionRefreshHandler:", forControlEvents: UIControlEvents.ValueChanged)
+        refresh.addTarget(self, action: #selector(MyPostsViewController.actionRefreshHandler(_:)), forControlEvents: UIControlEvents.ValueChanged)
         refresh.tintColor = UIColor.whiteColor()
         self.PostTableView.addSubview(refresh)
     }
@@ -100,7 +100,7 @@ class MyPostsViewController: UIViewController, UITableViewDataSource, UITableVie
                 return
             }
             
-            let arr = data["data"] as! NSArray
+            let arr = data.objectForKey("data") as! NSArray
             
             self.dataArray = NSMutableArray()
             for data : AnyObject  in arr
@@ -129,7 +129,7 @@ class MyPostsViewController: UIViewController, UITableViewDataSource, UITableVie
                 return
             }
             
-            let arr = data["data"] as! NSArray
+            let arr = data.objectForKey("data") as! NSArray
             if self.page == 1 {
                 self.dataArray = NSMutableArray()
             }
@@ -145,8 +145,11 @@ class MyPostsViewController: UIViewController, UITableViewDataSource, UITableVie
                 var isExist:Bool = false
                 for item in self.dataArray
                 {
-                    let oldId = data["id"] as! Int
-                    let newId = item["id"] as! Int
+                    let dataDic = data as! NSDictionary
+                    let oldId : Int? = dataDic.valueForKey("id") as? Int
+                    
+                    let itemDic = item as! NSDictionary
+                    let newId = itemDic.valueForKey("id") as? Int
                     if  oldId == newId
                     {
                         isExist = true

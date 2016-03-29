@@ -37,7 +37,7 @@ class SettingViewController: UITableViewController {
         clearsSelectionOnViewWillAppear = true
         
         self.navigationItem.title = "Settings".localized()
-        self.navigationItem.leftBarButtonItem = UIBarButtonItem(title: "Back".localized(), style: UIBarButtonItemStyle.Plain, target: self, action: "goBackBtn")
+        self.navigationItem.leftBarButtonItem = UIBarButtonItem(title: "Back".localized(), style: UIBarButtonItemStyle.Plain, target: self, action: #selector(SettingViewController.goBackBtn))
         
     }
     

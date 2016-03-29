@@ -153,7 +153,7 @@ class SearchViewController: UIViewController,UITableViewDelegate, UITableViewDat
         
         
         let refresh = UIRefreshControl()
-        refresh.addTarget(self, action: "actionRefreshHandler:", forControlEvents: UIControlEvents.ValueChanged)
+        refresh.addTarget(self, action: #selector(SearchViewController.actionRefreshHandler(_:)), forControlEvents: UIControlEvents.ValueChanged)
         refresh.tintColor = UIColor.whiteColor()
         self.searchTableView.addSubview(refresh)
     }
@@ -173,7 +173,7 @@ class SearchViewController: UIViewController,UITableViewDelegate, UITableViewDat
                 return
             }
             
-            let arr = data["data"] as! NSArray
+            let arr = data.objectForKey("data") as! NSArray
             
             for data : AnyObject  in arr
             {
@@ -221,7 +221,7 @@ class SearchViewController: UIViewController,UITableViewDelegate, UITableViewDat
                 return
             }
             
-            let arr = data["data"] as! NSArray
+            let arr = data.objectForKey("data") as! NSArray
             
             for data : AnyObject  in arr
             {

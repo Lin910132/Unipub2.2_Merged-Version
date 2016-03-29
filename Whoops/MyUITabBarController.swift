@@ -21,7 +21,7 @@ class MyUITabBarController: UITabBarController, UITabBarControllerDelegate{
         
         self.tabBar.tintColor = UIColor.applicationMainColor()
         
-        NSNotificationCenter.defaultCenter().addObserver(self, selector: "badgeUpdate:", name: "newLike", object: nil);
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(MyUITabBarController.badgeUpdate(_:)), name: "newLike", object: nil);
 
         
         //
@@ -70,7 +70,7 @@ class MyUITabBarController: UITabBarController, UITabBarControllerDelegate{
             item.setTitleTextAttributes(dic as? [String : AnyObject],forState: UIControlState.Selected)
             // MARK: tab bar image insets
             item.image = UIImage(named: imageName[iIndex])?.imageWithRenderingMode(.AlwaysOriginal)
-            iIndex++
+            iIndex += 1
             item.imageInsets = UIEdgeInsets(top: 7, left: 1, bottom: -5, right: 1)
             item.tag = iIndex
         }
@@ -104,7 +104,7 @@ class MyUITabBarController: UITabBarController, UITabBarControllerDelegate{
                     return
                 }
                 
-                let arr = data["data"] as! NSArray
+                let arr = data.objectForKey("data") as! NSArray
                 
                 let defaults = NSUserDefaults.standardUserDefaults()
                 let dataSave = NSKeyedArchiver.archivedDataWithRootObject(arr)

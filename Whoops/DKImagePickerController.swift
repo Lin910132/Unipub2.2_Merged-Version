@@ -433,7 +433,7 @@ public class DKImagePickerController: UINavigationController {
         button.setTitle("", forState: UIControlState.Normal)
         button.setTitleColor(self.navigationBar.tintColor, forState: UIControlState.Normal)
         button.reversesTitleShadowWhenHighlighted = true
-        button.addTarget(self, action: "onDoneClicked", forControlEvents: UIControlEvents.TouchUpInside)
+        button.addTarget(self, action: #selector(DKImagePickerController.onDoneClicked), forControlEvents: UIControlEvents.TouchUpInside)
         return button
     }()
     
@@ -472,10 +472,10 @@ public class DKImagePickerController: UINavigationController {
         
         view.addSubview(imagesPreviewView)
         
-        NSNotificationCenter.defaultCenter().addObserver(self, selector: "selectedImage:",
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(DKImagePickerController.selectedImage(_:)),
                                                                    name: DKImageSelectedNotification,
                                                                  object: nil)
-        NSNotificationCenter.defaultCenter().addObserver(self, selector: "unselectedImage:",
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(DKImagePickerController.unselectedImage(_:)),
                                                                    name: DKImageUnselectedNotification,
                                                                  object: nil)
     }
@@ -492,7 +492,7 @@ public class DKImagePickerController: UINavigationController {
         if self.viewControllers.count == 1 && self.topViewController?.navigationItem.leftBarButtonItem == nil {
             self.topViewController!.navigationItem.leftBarButtonItem = UIBarButtonItem(barButtonSystemItem: UIBarButtonSystemItem.Cancel,
                 target: self,
-                action: "onCancelClicked")
+                action: #selector(DKImagePickerController.onCancelClicked))
         }
     }
     

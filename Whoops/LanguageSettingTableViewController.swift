@@ -107,7 +107,7 @@ class LanguageSettingTableViewController: UITableViewController {
         self.setLang()
     }
     override func viewWillAppear(animated: Bool) {
-        NSNotificationCenter.defaultCenter().addObserver(self, selector: "setLang", name: LCLLanguageChangeNotification, object: nil)
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(LanguageSettingTableViewController.setLang), name: LCLLanguageChangeNotification, object: nil)
         
     }
     
@@ -120,7 +120,7 @@ class LanguageSettingTableViewController: UITableViewController {
     func setLang(){
         self.navigationItem.title = "Language Setting".localized()
         self.tableView.reloadData()
-        self.navigationItem.leftBarButtonItem = UIBarButtonItem(title: "Back".localized(), style: .Plain, target: self, action: "goBackBtn")
+        self.navigationItem.leftBarButtonItem = UIBarButtonItem(title: "Back".localized(), style: .Plain, target: self, action: #selector(LanguageSettingTableViewController.goBackBtn))
     }
 
     override func didReceiveMemoryWarning() {

@@ -86,7 +86,8 @@ class FileUtility: NSObject {
         YRHttpRequest.requestWithURL(url,completionHandler:{ data in
             
             
-            let user = data["data"] as! NSDictionary
+            //let user = data["data"] as! NSDictionary
+            let user = data.objectForKey("data") as! NSDictionary
             let userId = user.stringAttributeForKey("id")
             
             let paths = NSSearchPathForDirectoriesInDomains(.DocumentDirectory, .UserDomainMask, true) as NSArray

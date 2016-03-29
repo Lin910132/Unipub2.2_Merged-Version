@@ -64,7 +64,7 @@ class LikeViewController: UIViewController, UITableViewDelegate, UITableViewData
     func addRefreshControll()
     {
         let fresh:UIRefreshControl = UIRefreshControl()
-        fresh.addTarget(self, action: "actionRefreshHandler:", forControlEvents: UIControlEvents.ValueChanged)
+        fresh.addTarget(self, action: #selector(LikeViewController.actionRefreshHandler(_:)), forControlEvents: UIControlEvents.ValueChanged)
         fresh.tintColor = UIColor.whiteColor()
         self.likeTableView.addSubview(fresh)
     }
@@ -83,7 +83,7 @@ class LikeViewController: UIViewController, UITableViewDelegate, UITableViewData
                 return
             }
             
-            let arr = data["data"] as! NSArray
+            let arr = data.objectForKey("data") as! NSArray
             
             
             
@@ -109,7 +109,7 @@ class LikeViewController: UIViewController, UITableViewDelegate, UITableViewData
                 return
             }
             
-            let arr = data["data"] as! NSArray
+            let arr = data.objectForKey("data") as! NSArray
             
             if (arr.count == 0){
                 self.stopLoading = true
@@ -122,8 +122,11 @@ class LikeViewController: UIViewController, UITableViewDelegate, UITableViewData
                 var isExist:Bool = false
                 for item in self._db
                 {
-                    let oldId = data["id"] as! Int
-                    let newId = item["id"] as! Int
+                    let dataDic = data as! NSDictionary
+                    let oldId : Int? = dataDic.valueForKey("id") as? Int
+                    
+                    let itemDic = item as! NSDictionary
+                    let newId = itemDic.valueForKey("id") as? Int
                     if  oldId == newId
                     {
                         isExist = true
@@ -183,7 +186,7 @@ class LikeViewController: UIViewController, UITableViewDelegate, UITableViewData
             cell!.data = _db[index] as! NSDictionary
             cell!.setupSubviews()
             if (indexPath.row == self._db.count-1) && (self.stopLoading == false){
-                self.page++
+                self.page += 1
                 load_Data()
             }
         }

@@ -67,7 +67,7 @@ class YRCommentsViewController: UIViewController,UITableViewDelegate,UITableView
         self.navigationItem.title = "Detail".localized()
         self.sendView?.commentText.placeholder = "Write some comments".localized()
         NSNotificationCenter.defaultCenter().addObserver(self,
-            selector: "onKeyboardWillChangeFrame:",
+            selector: #selector(YRCommentsViewController.onKeyboardWillChangeFrame(_:)),
             name: UIKeyboardWillChangeFrameNotification,
             object: nil)
     }
@@ -220,14 +220,19 @@ class YRCommentsViewController: UIViewController,UITableViewDelegate,UITableView
                 return
             }
             
-            let arr = data["data"] as! NSArray
+            //let arr = data["data"] as! NSArray
+            let arr = data.objectForKey("data") as! NSArray
+            
             for data : AnyObject  in arr
             {
                 var isExist:Bool = false
                 for item in self.dataArray
                 {
-                    let oldId = data["id"] as! Int
-                    let newId = item["id"] as! Int
+                    let dataDic = data as! NSDictionary
+                    let oldId : Int? = dataDic.valueForKey("id") as? Int
+                    
+                    let itemDic = item as! NSDictionary
+                    let newId = itemDic.valueForKey("id") as? Int
                     if  oldId == newId
                     {
                         isExist = true
@@ -284,7 +289,8 @@ class YRCommentsViewController: UIViewController,UITableViewDelegate,UITableView
 //            var arrHeader =  NSBundle.mainBundle().loadNibNamed("YRJokeCell" ,owner: self, options: nil) as Array
             
             self.headerView = YRJokeCell2(style: .Default, reuseIdentifier: "cell")
-            let post = data["data"] as! NSDictionary
+            //let post = data["data"] as! NSDictionary
+            let post = data.objectForKey("data") as! NSDictionary
             self.headerView?.data = post
             self.headerView?.bInMain = true
             self.headerView?.category = self.category
