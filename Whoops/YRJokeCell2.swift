@@ -446,7 +446,8 @@ class YRJokeCell2: UITableViewCell
         commentCount.text = "\(strcommentCount) ";
         viewBottom.addSubview(commentCount);
         
-        postId = self.data.stringAttributeForKey("id") as String    }
+        postId = self.data.stringAttributeForKey("id") as String
+    }
     
     func btnNickClick(sender:UIButton)
     {
