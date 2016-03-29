@@ -104,7 +104,7 @@ class MyUITabBarController: UITabBarController, UITabBarControllerDelegate{
                     return
                 }
                 
-                let arr = data["data"] as! NSArray
+                let arr = data.objectForKey("data") as! NSArray
                 
                 let defaults = NSUserDefaults.standardUserDefaults()
                 let dataSave = NSKeyedArchiver.archivedDataWithRootObject(arr)

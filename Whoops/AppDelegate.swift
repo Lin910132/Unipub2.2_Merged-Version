@@ -118,7 +118,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UITabBarControllerDelegat
                 return
             }
             
-            let arr = data["data"] as! NSArray
+            let arr = data.objectForKey("data") as! NSArray
 
             let defaults = NSUserDefaults.standardUserDefaults()
             if((defaults.objectForKey("likes")) == nil){
@@ -138,8 +138,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UITabBarControllerDelegat
                 var isExist:Bool = false
                 for item in saved
                 {
-                    let newId = data["id"] as! Int
-                    let oldId = item["id"] as! Int
+                    //let newId = data["id"] as! Int
+                    //let oldId = item["id"] as! Int
+                    let dataDic = data as! NSDictionary
+                    let oldId : Int? = dataDic.valueForKey("id") as? Int
+                    
+                    let itemDic = item as! NSDictionary
+                    let newId = itemDic.valueForKey("id") as? Int
+                    
                     if  oldId == newId
                     {
                         isExist = true

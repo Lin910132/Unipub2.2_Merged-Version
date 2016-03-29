@@ -99,7 +99,7 @@ class YRMainViewController: UIViewController,UITableViewDelegate,UITableViewData
                 return
             }
             
-            let arr = data["data"] as! NSArray
+            let arr = data.objectForKey("data") as! NSArray
             
             self.dataArray[self.type] = NSMutableArray()
             for data : AnyObject  in arr
@@ -107,8 +107,11 @@ class YRMainViewController: UIViewController,UITableViewDelegate,UITableViewData
                 var isExist:Bool = false
                 for item in self.dataArray[self.type]
                 {
-                    let oldId = data["id"] as! Int
-                    let newId = item["id"] as! Int
+                    let dataDic = data as! NSDictionary
+                    let oldId : Int? = dataDic.valueForKey("id") as? Int
+                    
+                    let itemDic = item as! NSDictionary
+                    let newId = itemDic.valueForKey("id") as? Int
                     if  oldId == newId
                     {
                         isExist = true
@@ -244,7 +247,8 @@ class YRMainViewController: UIViewController,UITableViewDelegate,UITableViewData
                 return
             }
             
-            let arr = data["data"] as! NSArray
+            //let arr = data["data"] as! NSArray
+            let arr = data.objectForKey("data") as! NSArray
             
             self.dataArray[self.type] = NSMutableArray()
             for data : AnyObject  in arr
@@ -272,7 +276,8 @@ class YRMainViewController: UIViewController,UITableViewDelegate,UITableViewData
                 return
             }
             
-            let arr = data["data"] as! NSArray
+            //let arr = data["data"] as! NSArray
+            let arr = data.objectForKey("data") as! NSArray
             
             if self.page[self.type] == 1 {
                 self.dataArray[self.type] = NSMutableArray()
@@ -284,13 +289,17 @@ class YRMainViewController: UIViewController,UITableViewDelegate,UITableViewData
                 self.stopLoading[type] = false
             }
             
-            for data : AnyObject  in arr
+            for data in arr
             {
                 var isExist:Bool = false
                 for item in self.dataArray[self.type]
                 {
-                    let oldId = data["id"] as! Int
-                    let newId = item["id"] as! Int
+                    let dataDic = data as! NSDictionary
+                    let oldId : Int? = dataDic.valueForKey("id") as? Int
+                    
+                    let itemDic = item as! NSDictionary
+                    let newId = itemDic.valueForKey("id") as? Int
+                    
                     if  oldId == newId
                     {
                         isExist = true
@@ -596,7 +605,7 @@ class YRMainViewController: UIViewController,UITableViewDelegate,UITableViewData
     func refreshMain(){
         //let fresh:UIRefreshControl = UIRefreshControl()
         //self.actionRefreshHandler(fresh)
-        for (var i=0; i<5; i++){
+        for (var i = 0; i < 5; i++){
             self.loadingFlag[i] = 0
         }
     }

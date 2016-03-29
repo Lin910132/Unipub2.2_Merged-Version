@@ -37,7 +37,7 @@ class ImagesDetailViewController: UIViewController,UIScrollViewDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        let gesture = UITapGestureRecognizer(target: self, action: "tapHandler:")
+        let gesture = UITapGestureRecognizer(target: self, action: #selector(ImagesDetailViewController.tapHandler(_:)))
         scrollView.addGestureRecognizer(gesture)
         scrollView.backgroundColor=UIColor.blackColor()
         currentIndex=1
@@ -45,7 +45,8 @@ class ImagesDetailViewController: UIViewController,UIScrollViewDelegate {
         
         scrollView.contentSize = CGSizeMake(CGFloat(countOfimageArray) * SCREEN_WIDTH, SCREEN_HEIGHT)
         
-        for var i = 0 ; i < countOfimageArray;i++
+        var i = 0
+        for _ in imageArray
         {
 //            let gesture = UITapGestureRecognizer(target: self, action: "tapProductHandler")
 //            itemView.addGestureRecognizer(gesture)
@@ -60,7 +61,7 @@ class ImagesDetailViewController: UIViewController,UIScrollViewDelegate {
 //                imageview.transform = CGAffineTransformMakeScale(1, 1)
 //            }
             scrollView.delegate = self
-        
+            i += 1
         }
     }
     
@@ -75,7 +76,7 @@ class ImagesDetailViewController: UIViewController,UIScrollViewDelegate {
     
     func scrollViewDidScroll(scrollView: UIScrollView){
         
-        for var i = currentIndex-2 ; i < currentIndex+1 ; i++
+        for var i = currentIndex-2 ; i < currentIndex+1 ; i += 1
         {
             if(i == -1){continue}
             let cell : UIView  = scrollView.subviews[i]
@@ -88,10 +89,10 @@ class ImagesDetailViewController: UIViewController,UIScrollViewDelegate {
         var offset = targetContentOffset.memory
         if(velocity.x>0){
             print("Siwpe Left")
-            currentIndex++
+            currentIndex += 1
         }else{
             print("Siwpe right")
-            currentIndex--
+            currentIndex -= 1
         }
         
         if(currentIndex > self.imageArray.count){

@@ -83,7 +83,7 @@ class LikeViewController: UIViewController, UITableViewDelegate, UITableViewData
                 return
             }
             
-            let arr = data["data"] as! NSArray
+            let arr = data.objectForKey("data") as! NSArray
             
             
             
@@ -109,7 +109,7 @@ class LikeViewController: UIViewController, UITableViewDelegate, UITableViewData
                 return
             }
             
-            let arr = data["data"] as! NSArray
+            let arr = data.objectForKey("data") as! NSArray
             
             if (arr.count == 0){
                 self.stopLoading = true
@@ -122,8 +122,11 @@ class LikeViewController: UIViewController, UITableViewDelegate, UITableViewData
                 var isExist:Bool = false
                 for item in self._db
                 {
-                    let oldId = data["id"] as! Int
-                    let newId = item["id"] as! Int
+                    let dataDic = data as! NSDictionary
+                    let oldId : Int? = dataDic.valueForKey("id") as? Int
+                    
+                    let itemDic = item as! NSDictionary
+                    let newId = itemDic.valueForKey("id") as? Int
                     if  oldId == newId
                     {
                         isExist = true

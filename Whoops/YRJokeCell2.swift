@@ -552,9 +552,10 @@ class YRJokeCell2: UITableViewCell
                 UIView.showAlertView("WARNING",message: "Loading Failed".localized())
                 return
             }
-            let result:Int = data["result"] as! Int
+            //let result:Int = data["result"] as! Int
+            let result = (Int) (data.stringForKey("result")!)
             self.likeNum!.text = "\(result)"
-            let post = data["data"] as! NSDictionary
+            let post = data.objectForKey("data") as! NSDictionary
             let isLike = post["isLike"] as! String;
             if isLike == "1" {
                 self.likeButton.setImage(UIImage(named:"Likefill"), forState: UIControlState.Normal);
@@ -611,10 +612,10 @@ class YRJokeCell2: UITableViewCell
                 UIView.showAlertView("提示",message:"加载失败")
                 return
             }
-            let result:Int = data["result"] as! Int
+            let result = data.stringForKey("result")
             self.likeNum!.text = "\(result)"
             
-            let post = data["data"] as! NSDictionary
+            let post = data.objectForKey("data") as! NSDictionary
             let isLike = post["isLike"] as! String;
 
             if isLike == "-1" {

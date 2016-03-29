@@ -259,7 +259,7 @@ class YRJokeCell: UITableViewCell {
                     UIView.showAlertView("提示",message:"加载失败")
                     return
                 }
-                let result:Int = data["result"] as! Int
+                let result = data.stringForKey("result")
                 self.likeHotLabel!.text = "\(result)"
 
                 
@@ -278,7 +278,7 @@ class YRJokeCell: UITableViewCell {
                     UIView.showAlertView("提示",message:"加载失败")
                     return
                 }
-                let result:Int = data["result"] as! Int
+                let result = data.stringForKey("result")
                 self.likeHotLabel!.text = "\(result)"
                 
             })

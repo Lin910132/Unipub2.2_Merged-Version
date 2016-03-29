@@ -154,7 +154,7 @@ class ForPostSearchController: UIViewController,UITableViewDelegate, UITableView
         
         
         let refresh = UIRefreshControl()
-        refresh.addTarget(self, action: "actionRefreshHandler:", forControlEvents: UIControlEvents.ValueChanged)
+        refresh.addTarget(self, action: #selector(ForPostSearchController.actionRefreshHandler(_:)), forControlEvents: UIControlEvents.ValueChanged)
         refresh.tintColor = UIColor.whiteColor()
         self.searchTableView.addSubview(refresh)
     }
@@ -174,7 +174,8 @@ class ForPostSearchController: UIViewController,UITableViewDelegate, UITableView
                 return
             }
             
-            let arr = data["data"] as! NSArray
+            //let arr = data["data"] as! NSArray
+            let arr = data.objectForKey("data") as! NSArray
             
             for data : AnyObject  in arr
             {
@@ -220,7 +221,8 @@ class ForPostSearchController: UIViewController,UITableViewDelegate, UITableView
                 return
             }
             
-            let arr = data["data"] as! NSArray
+            //let arr = data["data"] as! NSArray
+            let arr = data.objectForKey("data") as! NSArray
             
             for data : AnyObject  in arr
             {

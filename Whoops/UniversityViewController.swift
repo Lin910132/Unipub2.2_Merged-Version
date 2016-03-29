@@ -80,7 +80,7 @@ class UniversityViewController: UITableViewController, YRRefreshViewDelegate,MFM
     func addRefreshControll()
     {
         let fresh:UIRefreshControl = UIRefreshControl()
-        fresh.addTarget(self, action: "actionRefreshHandler:", forControlEvents: UIControlEvents.ValueChanged)
+        fresh.addTarget(self, action: #selector(UniversityViewController.actionRefreshHandler(_:)), forControlEvents: UIControlEvents.ValueChanged)
         fresh.tintColor = UIColor.whiteColor()
         self.tableView.addSubview(fresh)
     }
@@ -98,7 +98,7 @@ class UniversityViewController: UITableViewController, YRRefreshViewDelegate,MFM
                 return
             }
             
-            let arr = data["data"] as! NSArray
+            let arr = data.objectForKey("data") as! NSArray
             
             self.dataArray = NSMutableArray()
             
@@ -128,7 +128,7 @@ class UniversityViewController: UITableViewController, YRRefreshViewDelegate,MFM
                 return
             }
             
-            let arr = data["data"] as! NSArray
+            let arr = data.objectForKey("data") as! NSArray
             
             
             
@@ -155,7 +155,7 @@ class UniversityViewController: UITableViewController, YRRefreshViewDelegate,MFM
                 return
             }
             
-            let arr = data["data"] as! NSArray
+            let arr = data.objectForKey("data") as! NSArray
             if self.page == 1 {
                 self.dataArray = NSMutableArray()
             }
@@ -172,8 +172,12 @@ class UniversityViewController: UITableViewController, YRRefreshViewDelegate,MFM
                 var isExist:Bool = false
                 for item in self.dataArray
                 {
-                    let oldId = data["id"] as! Int
-                    let newId = item["id"] as! Int
+                    let dataDic = data as! NSDictionary
+                    let oldId : Int? = dataDic.valueForKey("id") as? Int
+                    
+                    let itemDic = item as! NSDictionary
+                    let newId = itemDic.valueForKey("id") as? Int
+                    
                     if  oldId == newId
                     {
                         isExist = true
