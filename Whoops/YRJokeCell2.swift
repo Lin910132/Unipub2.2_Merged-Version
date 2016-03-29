@@ -134,7 +134,7 @@ class YRJokeCell2: UITableViewCell
             isFaveFlag = false
             fav.setImage(UIImage(named:"star"), forState: UIControlState.Normal);
         }
-        fav.addTarget(self, action: "btnFavClick:", forControlEvents: UIControlEvents.TouchUpInside);
+        fav.addTarget(self, action: #selector(YRJokeCell2.btnFavClick(_:)), forControlEvents: UIControlEvents.TouchUpInside);
         self.favButton = fav;
         ivBack.addSubview(self.favButton);
         
@@ -166,7 +166,7 @@ class YRJokeCell2: UITableViewCell
                 
                 imgView.contentMode = UIViewContentMode.ScaleAspectFill;
                 imgView.userInteractionEnabled = true
-                let tap = UITapGestureRecognizer(target: self, action: "imageViewTapped:")
+                let tap = UITapGestureRecognizer(target: self, action: #selector(YRJokeCell2.imageViewTapped(_:)))
                 imgView.addGestureRecognizer(tap)
                 
                 self.imgList.append(imgView)
@@ -210,13 +210,13 @@ class YRJokeCell2: UITableViewCell
                     imgView.contentMode = UIViewContentMode.ScaleAspectFill;
                     self.imgList.append(imgView)
                     imgView.userInteractionEnabled = true
-                    let tap = UITapGestureRecognizer(target: self, action: "imageViewTapped:")
+                    let tap = UITapGestureRecognizer(target: self, action: #selector(YRJokeCell2.imageViewTapped(_:)))
                     imgView.addGestureRecognizer(tap)
                     let imagURL = FileUtility.getUrlImage() + (imgUrl as! String)
                     imgView.tag = index;
                     imgView.setImage(imagURL,placeHolder: UIImage(named: "Logoo.png"))
                     imgView.tag = baseTagValue + index
-                    index++;
+                    index += 1;
                     ivBack.addSubview(imgView);
                     
                 }
@@ -245,14 +245,14 @@ class YRJokeCell2: UITableViewCell
                     imgView.contentMode = UIViewContentMode.ScaleAspectFill;
                     self.imgList.append(imgView)
                     imgView.userInteractionEnabled = true
-                    let tap = UITapGestureRecognizer(target: self, action: "imageViewTapped:")
+                    let tap = UITapGestureRecognizer(target: self, action: #selector(YRJokeCell2.imageViewTapped(_:)))
                     imgView.addGestureRecognizer(tap)
                     let imagURL = FileUtility.getUrlImage() + (imgUrl as! String)
                     imgView.tag = index;
                     imgView.setImage(imagURL,placeHolder: UIImage(named: "Logoo.png"))
                     
                     imgView.tag = baseTagValue + index
-                    index++;
+                    index += 1;
                     ivBack.addSubview(imgView);
                 }
                 
@@ -280,13 +280,13 @@ class YRJokeCell2: UITableViewCell
                     imgView.contentMode = UIViewContentMode.ScaleAspectFill;
                     self.imgList.append(imgView)
                     imgView.userInteractionEnabled = true
-                    let tap = UITapGestureRecognizer(target: self, action: "imageViewTapped:")
+                    let tap = UITapGestureRecognizer(target: self, action: #selector(YRJokeCell2.imageViewTapped(_:)))
                     imgView.addGestureRecognizer(tap)
                     let imagURL = FileUtility.getUrlImage() + (imgUrl as! String)
                     imgView.tag = index;
                     imgView.setImage(imagURL,placeHolder: UIImage(named: "Logoo.png"))
                     imgView.tag = baseTagValue + index
-                    index++;
+                    index += 1;
                     ivBack.addSubview(imgView);
                 }
                 
@@ -363,7 +363,7 @@ class YRJokeCell2: UITableViewCell
         }else{
             like.setImage(UIImage(named:"LikeNew"), forState: UIControlState.Normal);
         }
-        like.addTarget(self, action: "btnLikeClick:", forControlEvents: UIControlEvents.TouchUpInside);
+        like.addTarget(self, action: #selector(YRJokeCell2.btnLikeClick(_:)), forControlEvents: UIControlEvents.TouchUpInside);
         self.likeButton = like
         ivBack.addSubview(self.likeButton);
         
@@ -390,7 +390,7 @@ class YRJokeCell2: UITableViewCell
             unlike.setImage(UIImage(named:"unlikeNew"), forState: UIControlState.Normal);
         }
         
-        unlike.addTarget(self, action: "btnUnLikeClick:", forControlEvents: UIControlEvents.TouchUpInside);
+        unlike.addTarget(self, action: #selector(YRJokeCell2.btnUnLikeClick(_:)), forControlEvents: UIControlEvents.TouchUpInside);
         self.unlikeButton = unlike
         ivBack.addSubview(self.unlikeButton);
         
@@ -427,7 +427,7 @@ class YRJokeCell2: UITableViewCell
         
         let btnNick = UIButton(frame: CGRectMake(75, (bottomHeight - 16)/2, ivBack.frame.width - 164, 16));
         btnNick.backgroundColor = UIColor.clearColor();
-        btnNick.addTarget(self, action: "btnNickClick:", forControlEvents: UIControlEvents.TouchUpInside);
+        btnNick.addTarget(self, action: #selector(YRJokeCell2.btnNickClick(_:)), forControlEvents: UIControlEvents.TouchUpInside);
         viewBottom.addSubview(btnNick);
         
         let commentCount = UILabel(frame: CGRectMake(ivBack.frame.width - 80, (bottomHeight - 16)/2, 70, 16));
@@ -722,7 +722,7 @@ class YRJokeCell2: UITableViewCell
                 var index = 0
                 for _ in imgArray
                 {
-                    index++;
+                    index += 1;
                 }
                 
                 if(index > 3)

@@ -21,7 +21,7 @@ class PostTableViewCell: UITableViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         self.selectionStyle = .None
-        let tap = UITapGestureRecognizer(target: self, action: "imageViewTapped:")
+        let tap = UITapGestureRecognizer(target: self, action: #selector(PostTableViewCell.imageViewTapped(_:)))
         self.PostImage.addGestureRecognizer(tap)
         // Initialization code
     }

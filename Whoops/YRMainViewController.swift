@@ -69,7 +69,7 @@ class YRMainViewController: UIViewController,UITableViewDelegate,UITableViewData
             }
         }
         
-        NSNotificationCenter.defaultCenter().addObserver(self, selector: "SendButtonRefresh:",name:"loadMain", object: nil)
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(YRMainViewController.SendButtonRefresh(_:)),name:"loadMain", object: nil)
         
         locationManager.startUpdatingLocation()
         userId = FileUtility.getUserId()
@@ -165,7 +165,7 @@ class YRMainViewController: UIViewController,UITableViewDelegate,UITableViewData
     override func viewWillAppear(animated: Bool)
     {
         super.viewWillAppear(animated)
-        NSNotificationCenter.defaultCenter().addObserver(self, selector: "imageViewTapped:", name: "imageCellTap", object: nil)
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(YRMainViewController.imageViewTapped(_:)), name: "imageCellTap", object: nil)
         
         //page[self.type] = 1
         //loadData(self.type)
@@ -183,7 +183,7 @@ class YRMainViewController: UIViewController,UITableViewDelegate,UITableViewData
         
         let nib = UINib(nibName:"YRJokeCell", bundle: nil)
         
-        for (var i = 0; i < 5; i++){
+        for i in 0 ... 4{
             let table:UITableView = UITableView()
             table.delegate = self
             table.dataSource = self
@@ -197,7 +197,7 @@ class YRMainViewController: UIViewController,UITableViewDelegate,UITableViewData
         
         let mainWidth = UIScreen.mainScreen().bounds.width
         
-        for (var i = 0; i < 5; i++){
+        for i in 0 ... 4{
             let rect:CGRect = CGRectMake(mainWidth * CGFloat(i), 0, mainWidth, scrollView.frame.height)
             let view:UIView = UIView(frame: rect)
             let table:UITableView = tableArray[i] as! UITableView
@@ -221,9 +221,9 @@ class YRMainViewController: UIViewController,UITableViewDelegate,UITableViewData
     
     func addRefreshControl(){
         refreshArray.removeAllObjects()
-        for (var i = 0; i < 5; i++){
+        for i in 0 ... 4{
             let fresh:UIRefreshControl = UIRefreshControl()
-            fresh.addTarget(self, action: "actionRefreshHandler:", forControlEvents: UIControlEvents.ValueChanged)
+            fresh.addTarget(self, action: #selector(YRMainViewController.actionRefreshHandler(_:)), forControlEvents: UIControlEvents.ValueChanged)
             fresh.tintColor = UIColor.grayColor()
             fresh.attributedTitle = NSAttributedString(string: "Loading".localized())
             (self.tableArray[i] as! UITableView).addSubview(fresh)
@@ -412,7 +412,7 @@ class YRMainViewController: UIViewController,UITableViewDelegate,UITableViewData
         cell!.mainController = self
         cell!.backgroundColor = UIColor(red:246.0/255.0 , green:246.0/255.0 , blue:246.0/255.0 , alpha: 1.0);
         if (indexPath.row == self.dataArray[tableIndex].count-1) && (self.stopLoading[self.type] == false){
-            self.page[self.type]++
+            self.page[self.type] += 1
             loadData(self.type)
         }
         return cell!
@@ -540,8 +540,10 @@ class YRMainViewController: UIViewController,UITableViewDelegate,UITableViewData
 */
         var arr = [3, 4, 0, 1, 2]
         for (var i = 0; i < currentIndex; i++){
+        //for i in 0...currentIndex - 1{
             let tmp = arr[0]
-            for (var j = 0; j < 4; j++){
+            //for (var j = 0; j < 4; j++){
+            for j in 0...3{
                 arr[j] = arr[j + 1]
             }
             arr[4] = tmp
@@ -821,7 +823,7 @@ class YRMainViewController: UIViewController,UITableViewDelegate,UITableViewData
             animationArray.append(colorGroup)
         }
         
-        let sequence:QBAnimationSequence = QBAnimationSequence(animationGroups: animationArray, `repeat`: false)
+        let sequence:QBAnimationSequence = QBAnimationSequence(animationGroups: animationArray, repeat: false)
         sequence.start()
     }
     

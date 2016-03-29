@@ -282,7 +282,7 @@ class YRNewPostViewController: UIViewController, UIImagePickerControllerDelegate
             imgView.userInteractionEnabled = true
             imgView.tag = imgList.count
             
-            let tap = UITapGestureRecognizer(target: self, action: "imageViewTapped:")
+            let tap = UITapGestureRecognizer(target: self, action: #selector(YRNewPostViewController.imageViewTapped(_:)))
             imgView.addGestureRecognizer(tap)
 
             if imgList.count < 6 {
@@ -314,7 +314,7 @@ class YRNewPostViewController: UIViewController, UIImagePickerControllerDelegate
             imgView.userInteractionEnabled = true
             imgView.tag = imgList.count
             
-            let tap = UITapGestureRecognizer(target: self, action: "addPhotoButtonClick:")
+            let tap = UITapGestureRecognizer(target: self, action: #selector(YRNewPostViewController.addPhotoButtonClick(_:)))
             imgView.addGestureRecognizer(tap)
 
 
@@ -381,7 +381,7 @@ class YRNewPostViewController: UIViewController, UIImagePickerControllerDelegate
 //        //        deleteTap.numberOfTapsRequired = 1
 //        imgView.addGestureRecognizer(deleteTap)
         
-        let tap = UITapGestureRecognizer(target: self, action: "imageViewTapped:")
+        let tap = UITapGestureRecognizer(target: self, action: #selector(YRNewPostViewController.imageViewTapped(_:)))
         imgView.addGestureRecognizer(tap)
         
         
@@ -413,7 +413,7 @@ class YRNewPostViewController: UIViewController, UIImagePickerControllerDelegate
             imgView.userInteractionEnabled = true
             imgView.tag = imgList.count
             
-            let tap = UITapGestureRecognizer(target: self, action: "addPhotoButtonClick:")
+            let tap = UITapGestureRecognizer(target: self, action: #selector(YRNewPostViewController.addPhotoButtonClick(_:)))
             imgView.addGestureRecognizer(tap)
             
             
@@ -487,7 +487,7 @@ class YRNewPostViewController: UIViewController, UIImagePickerControllerDelegate
         //        imageView.tag = i + 1
         backgroundView.addSubview(imageView)
         window?.addSubview(backgroundView)
-        let hide = UITapGestureRecognizer(target: self, action: "hideImage:")
+        let hide = UITapGestureRecognizer(target: self, action: #selector(YRNewPostViewController.hideImage(_:)))
         
         imageView.userInteractionEnabled = true
         imageView.addGestureRecognizer(hide)

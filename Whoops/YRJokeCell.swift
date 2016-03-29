@@ -50,7 +50,7 @@ class YRJokeCell: UITableViewCell {
         mainWidth = UIScreen.mainScreen().bounds.width
        
         favorPost.userInteractionEnabled = true
-        let tap = UITapGestureRecognizer(target: self, action: "favorViewTapped:")
+        let tap = UITapGestureRecognizer(target: self, action: #selector(YRJokeCell.favorViewTapped(_:)))
         favorPost!.addGestureRecognizer(tap)
     }
     
@@ -97,13 +97,13 @@ class YRJokeCell: UITableViewCell {
                 for imgUrl in imgUrls {
                     let imgView = UIImageView()
                     imgView.userInteractionEnabled = true
-                    let tap = UITapGestureRecognizer(target: self, action: "imageViewTapped:")
+                    let tap = UITapGestureRecognizer(target: self, action: #selector(YRJokeCell.imageViewTapped(_:)))
                     imgView.addGestureRecognizer(tap)
                     let imagURL = FileUtility.getUrlImage() + imgUrl
                     imgView.tag = i
                     imgView.setImage(imagURL,placeHolder: UIImage(named: "Logoo.png"))
                     
-                    i++
+                    i += 1
                     let tempWidth = 10 * i + (i-1) * Int(imgWidth)
                     imgView.frame = CGRectMake(CGFloat(tempWidth), height , imgWidth, imgWidth)
                     
@@ -123,13 +123,13 @@ class YRJokeCell: UITableViewCell {
                 for imgUrl in imgUrls {
                     let imgView = UIImageView()
                     imgView.userInteractionEnabled = true
-                    let tap = UITapGestureRecognizer(target: self, action: "imageViewTapped:")
+                    let tap = UITapGestureRecognizer(target: self, action: #selector(YRJokeCell.imageViewTapped(_:)))
                     imgView.addGestureRecognizer(tap)
                     let imagURL = FileUtility.getUrlImage() + imgUrl
                     imgView.tag = i
                     imgView.setImage(imagURL,placeHolder: UIImage(named: "Logoo.png"))
                     
-                    i++
+                    i += 1
                     
                     if i <= 3 {
                         let tempWidth = 10 * i + (i-1) * Int(imgWidth)

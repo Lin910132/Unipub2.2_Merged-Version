@@ -44,7 +44,7 @@ class PhotoDetailViewController:MWPhotoBrowser, MWPhotoBrowserDelegate{
     }
     
     func registerGestureRecorgnizer(){
-        let gesture:UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: Selector("dismissByTap:"))
+        let gesture:UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(PhotoDetailViewController.dismissByTap(_:)))
         self.view.addGestureRecognizer(gesture)
     }
     

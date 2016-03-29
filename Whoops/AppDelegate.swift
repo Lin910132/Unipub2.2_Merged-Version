@@ -48,8 +48,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UITabBarControllerDelegat
         UIApplication.sharedApplication().statusBarStyle = .LightContent
        // UIApplication.sharedApplication().statusBarFrame =
         swizzlingMethod(UIViewController.self,
-            oldSelector: "viewDidLoad",
-            newSelector: "viewDidLoadForChangeTitleColor")
+            oldSelector: #selector(UIViewController.viewDidLoad),
+            newSelector: Selector("viewDidLoadForChangeTitleColor"))
         
         Parse.setApplicationId("OEcTC65wuvGwqASgutgQDjFce3Dp0l8bhQ8hmAhs",
             clientKey: "Vm9QRZfBVb5aVHbiZs1m42nyfV4JhoyZFhRznnzs")
@@ -63,8 +63,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UITabBarControllerDelegat
             // "content_available" was used to trigger a background push (introduced in iOS 7).
             // In that case, we skip tracking here to avoid double counting the app-open.
             
-            let preBackgroundPush = !application.respondsToSelector("backgroundRefreshStatus")
-            let oldPushHandlerOnly = !self.respondsToSelector("application:didReceiveRemoteNotification:fetchCompletionHandler:")
+            let preBackgroundPush = !application.respondsToSelector(Selector("backgroundRefreshStatus"))
+            let oldPushHandlerOnly = !self.respondsToSelector(#selector(UIApplicationDelegate.application(_:didReceiveRemoteNotification:fetchCompletionHandler:)))
             var pushPayload = false
             if let options = launchOptions {
                 pushPayload = options[UIApplicationLaunchOptionsRemoteNotificationKey] != nil
@@ -74,7 +74,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UITabBarControllerDelegat
            
             }
         }
-        if application.respondsToSelector("registerUserNotificationSettings:") {
+        if application.respondsToSelector(#selector(UIApplication.registerUserNotificationSettings(_:))) {
             let userNotificationTypes: UIUserNotificationType = [UIUserNotificationType.Alert, UIUserNotificationType.Badge, UIUserNotificationType.Sound]
             let settings = UIUserNotificationSettings(forTypes: userNotificationTypes, categories: nil)
             application.registerUserNotificationSettings(settings)
@@ -97,7 +97,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, UITabBarControllerDelegat
 //        let defaults = NSUserDefaults.standardUserDefaults()
 //        defaults.removeObjectForKey("likes");
         
-        let myTimer = NSTimer(timeInterval: 1, target: self, selector: "timerDidFire", userInfo: nil, repeats: true)
+        let myTimer = NSTimer(timeInterval: 1, target: self, selector: #selector(AppDelegate.timerDidFire), userInfo: nil, repeats: true)
         NSRunLoop.currentRunLoop().addTimer(myTimer, forMode: NSRunLoopCommonModes)
         
 //        let storyboard = UIStoryboard(name: "Main", bundle: nil)

@@ -64,7 +64,7 @@ class LikeViewController: UIViewController, UITableViewDelegate, UITableViewData
     func addRefreshControll()
     {
         let fresh:UIRefreshControl = UIRefreshControl()
-        fresh.addTarget(self, action: "actionRefreshHandler:", forControlEvents: UIControlEvents.ValueChanged)
+        fresh.addTarget(self, action: #selector(LikeViewController.actionRefreshHandler(_:)), forControlEvents: UIControlEvents.ValueChanged)
         fresh.tintColor = UIColor.whiteColor()
         self.likeTableView.addSubview(fresh)
     }
@@ -186,7 +186,7 @@ class LikeViewController: UIViewController, UITableViewDelegate, UITableViewData
             cell!.data = _db[index] as! NSDictionary
             cell!.setupSubviews()
             if (indexPath.row == self._db.count-1) && (self.stopLoading == false){
-                self.page++
+                self.page += 1
                 load_Data()
             }
         }

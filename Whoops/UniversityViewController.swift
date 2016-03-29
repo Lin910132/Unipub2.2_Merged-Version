@@ -38,7 +38,7 @@ class UniversityViewController: UITableViewController, YRRefreshViewDelegate,MFM
         super.viewDidLoad()
         self.title = currentUniversity
         
-        NSNotificationCenter.defaultCenter().addObserver(self, selector: "SendButtonRefresh:",name:"load", object: nil)
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(UniversityViewController.SendButtonRefresh(_:)),name:"load", object: nil)
         setupViews()
         loadData()
     }
@@ -65,7 +65,7 @@ class UniversityViewController: UITableViewController, YRRefreshViewDelegate,MFM
         self.tableView.registerNib(nib, forCellReuseIdentifier: identifier)
         
         tableView.toLoadMoreAction({ () -> Void in
-            self.page++
+            self.page += 1
             self.loadData()
             self.tableView.doneRefresh()
         })
@@ -203,7 +203,7 @@ class UniversityViewController: UITableViewController, YRRefreshViewDelegate,MFM
     
     func refreshView(refreshView:YRRefreshView,didClickButton btn:UIButton)
     {
-        self.page++
+        self.page += 1
         loadData()
     }
     
@@ -221,7 +221,7 @@ class UniversityViewController: UITableViewController, YRRefreshViewDelegate,MFM
     override func viewWillAppear(animated: Bool)
     {
         super.viewWillAppear(animated)
-        NSNotificationCenter.defaultCenter().addObserver(self, selector: "imageViewTapped:", name: "imageViewTapped", object: nil)
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(UniversityViewController.imageViewTapped(_:)), name: "imageViewTapped", object: nil)
         //self.tableView.re
         //page = 1
         //loadData()
