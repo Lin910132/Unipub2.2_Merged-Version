@@ -554,7 +554,8 @@ class YRJokeCell2: UITableViewCell
                 return
             }
             //let result:Int = data["result"] as! Int
-            let result = (Int) (data.stringForKey("result")!)
+            
+            let result = data.objectForKey("result") as! Int
             self.likeNum!.text = "\(result)"
             let post = data.objectForKey("data") as! NSDictionary
             let isLike = post["isLike"] as! String;
@@ -613,7 +614,7 @@ class YRJokeCell2: UITableViewCell
                 UIView.showAlertView("提示",message:"加载失败")
                 return
             }
-            let result = data.stringForKey("result")
+            let result = data.objectForKey("result") as! Int
             self.likeNum!.text = "\(result)"
             
             let post = data.objectForKey("data") as! NSDictionary
