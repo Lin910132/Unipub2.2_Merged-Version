@@ -129,7 +129,7 @@ class YRCommnentsCell: UITableViewCell {
         
         let mainWidth = UIScreen.mainScreen().bounds.width
         //let content = data.stringAttributeForKey("content")
-        let height = content.stringHeightWith(17,width:mainWidth-80)
+        let height = content.stringHeightWith(17,width:mainWidth-40)
         return 45.0 + height + 24.0
     }
 
