@@ -99,6 +99,7 @@ class YRSendComment:UIView , UITextFieldDelegate{
         
         commentText.text = ""
         self.delegate.refreshCommentView(self,didClickButton:sender)
+        commentText.placeholder = "Write some comments".localized()
         self.commentText.resignFirstResponder()
     }
     
