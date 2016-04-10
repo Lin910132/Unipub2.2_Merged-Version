@@ -28,6 +28,7 @@ class YRCommentsViewController: UIViewController,UITableViewDelegate,UITableView
     var universityController:UniversityViewController?
     var postController:MyPostsViewController?
     var replyController:MyRepliesViewController?
+    var activityController:ActivityViewController?
     var category:Int = 0
     
     var tableIndex:Int = 0

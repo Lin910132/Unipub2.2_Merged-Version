@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="9531" systemVersion="15D21" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="49e-Tb-3d3">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10116" systemVersion="15D21" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="49e-Tb-3d3">
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
         <capability name="Alignment constraints to the first baseline" minToolsVersion="6.0"/>
         <capability name="Alignment constraints with different attributes" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
@@ -2452,7 +2452,7 @@ If you have any questions about these Terms or otherwise need to contact Unipub 
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="X5V-kk-WVP" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2510.25" y="579.5"/>
+            <point key="canvasLocation" x="3321.5" y="579.5"/>
         </scene>
         <!--Photo Detail View Controller-->
         <scene sceneID="eom-7f-mdI">
@@ -2471,7 +2471,28 @@ If you have any questions about these Terms or otherwise need to contact Unipub 
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="yxd-gu-Nby" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3081.5" y="579.5"/>
+            <point key="canvasLocation" x="3893.5" y="579.5"/>
+        </scene>
+        <!--Activity View Controller-->
+        <scene sceneID="Ywf-yY-Apq">
+            <objects>
+                <viewController storyboardIdentifier="ActivityView" hidesBottomBarWhenPushed="YES" id="rvQ-eq-6X7" customClass="ActivityViewController" customModule="UniPub" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="Au5-gk-d7z"/>
+                        <viewControllerLayoutGuide type="bottom" id="HD5-wS-FR9"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="h3F-kV-jkm">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="tintColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="K5p-jd-E2y"/>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="pLu-I6-GlK" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="455.5" y="578.5"/>
         </scene>
         <!--MyUI Tab Bar Controller-->
         <scene sceneID="yl2-sM-qoP">
@@ -2498,7 +2519,7 @@ If you have any questions about these Terms or otherwise need to contact Unipub 
                 </tabBarController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="HuB-VB-40B" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="725.25" y="554.5"/>
+            <point key="canvasLocation" x="1536.5" y="554.5"/>
         </scene>
         <!--Check Location View Controller-->
         <scene sceneID="gro-uN-HKR">
@@ -2960,7 +2981,7 @@ If you have any questions about these Terms or otherwise need to contact Unipub 
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Kyy-Eb-cn7" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1568.25" y="559.5"/>
+            <point key="canvasLocation" x="2379.5" y="559.5"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="eEI-yf-JiH">
@@ -3577,7 +3598,7 @@ If you have any questions about these Terms or otherwise need to contact Unipub 
                     </connections>
                 </searchDisplayController>
             </objects>
-            <point key="canvasLocation" x="4137.5" y="579.5"/>
+            <point key="canvasLocation" x="4949.5" y="579.5"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="kP8-WY-Myl">
@@ -3604,7 +3625,7 @@ If you have any questions about these Terms or otherwise need to contact Unipub 
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bBK-9G-mtG" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3615.5" y="579.5"/>
+            <point key="canvasLocation" x="4427.5" y="579.5"/>
         </scene>
     </scenes>
     <resources>

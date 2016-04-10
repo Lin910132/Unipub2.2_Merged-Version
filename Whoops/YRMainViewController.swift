@@ -31,6 +31,7 @@ class YRMainViewController: UIViewController,UITableViewDelegate,UITableViewData
     //@IBOutlet weak var segmentedControl: UISegmentedControl!
     
     let identifier = "cell"
+    let activityIdentifier = "ActivityCell"
     var dataArray = [NSMutableArray](count: 5, repeatedValue: NSMutableArray())
     var page = [1,1,1,1,1]
     var refreshView:YRRefreshView?
@@ -182,12 +183,14 @@ class YRMainViewController: UIViewController,UITableViewDelegate,UITableViewData
     func loadTableViews(){
         
         let nib = UINib(nibName:"YRJokeCell", bundle: nil)
+        let activityNib = UINib(nibName: "ActivityCell", bundle: nil)
         
         for i in 0 ... 4{
             let table:UITableView = UITableView()
             table.delegate = self
             table.dataSource = self
             table.registerNib(nib, forCellReuseIdentifier: identifier)
+            table.registerNib(activityNib, forCellReuseIdentifier: activityIdentifier)
             table.tag = 1000 + i
             table.separatorStyle = .None
             table.scrollsToTop = false
@@ -383,7 +386,8 @@ class YRMainViewController: UIViewController,UITableViewDelegate,UITableViewData
     }
     
     func getTableIndex(tableView: UITableView) -> Int{
-        for (var i = 0; i < 5; i++){
+        for i in 0...4
+        {
             let table: UITableView = tableArray[i] as! UITableView
             if (table == tableView){
                 return i
@@ -396,6 +400,7 @@ class YRMainViewController: UIViewController,UITableViewDelegate,UITableViewData
         let tableIndex = getTableIndex(tableView)
         let index = indexPath.row
         let data = self.dataArray[tableIndex][index] as! NSDictionary
+        
         var cell :YRJokeCell2? = tableView.dequeueReusableCellWithIdentifier(identifier) as? YRJokeCell2
         if cell == nil{
             cell = YRJokeCell2(style: .Default, reuseIdentifier: identifier)
@@ -406,7 +411,18 @@ class YRMainViewController: UIViewController,UITableViewDelegate,UITableViewData
         cell!.rowIndex = indexPath
         cell?.bInMain = true
         cell?.category = 1
-        cell!.setCellUp()
+        
+        if (self.type != 2){
+            cell!.setCellUp()
+        }else{
+            var activityCell : ActivityCell? = tableView.dequeueReusableCellWithIdentifier(activityIdentifier) as? ActivityCell
+            if activityCell == nil{
+                activityCell = ActivityCell(style: .Default, reuseIdentifier: activityIdentifier)
+            }
+            activityCell?.SetUpVeiw()
+            return activityCell!
+        }
+        
         cell!.delegate = self;
         cell!.refreshMainDelegate = self
         cell!.mainController = self
@@ -423,24 +439,40 @@ class YRMainViewController: UIViewController,UITableViewDelegate,UITableViewData
         let index = indexPath.row
         let tableIndex = getTableIndex(tableView)
         let data = self.dataArray[tableIndex][index] as! NSDictionary
-        return  YRJokeCell2.cellHeightByData(data)
+        if self.type != 2 {
+            return  YRJokeCell2.cellHeightByData(data)
+        }else{
+            return 100
+        }
+        
     }
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath)
     {
         let index = indexPath
         let tableIndex = getTableIndex(tableView)
-        let data = self.dataArray[tableIndex][index.row] as! NSDictionary
-        let commentsVC = YRCommentsViewController(nibName :nil, bundle: nil)
-        commentsVC.jokeId = data.stringAttributeForKey("id")
-        commentsVC.tableIndex = tableIndex
-        commentsVC.rowIndex = index
-        commentsVC.category = 1
-        commentsVC.hidesBottomBarWhenPushed = true
-        commentsVC.listController = self
         
-        tableView.deselectRowAtIndexPath(indexPath, animated: true)
-        
-        self.navigationController?.pushViewController(commentsVC, animated: true)
+        if (tableIndex == 2){
+            let activityVC = ActivityViewController(nibName: nil, bundle: nil)
+            activityVC.url = FileUtility.getUrlDomain() + "post/listByActivity?activityId=1&pageNum=\(page[type])" +
+                "&uid=\(FileUtility.getUserId())"
+            tableView.deselectRowAtIndexPath(indexPath, animated: true)
+            //self.tabBarController?.hidesBottomBarWhenPushed = true
+            self.navigationController?.pushViewController(activityVC, animated: true)
+            
+        }else{
+            let data = self.dataArray[tableIndex][index.row] as! NSDictionary
+            let commentsVC = YRCommentsViewController(nibName :nil, bundle: nil)
+            commentsVC.jokeId = data.stringAttributeForKey("id")
+            commentsVC.tableIndex = tableIndex
+            commentsVC.rowIndex = index
+            commentsVC.category = 1
+            commentsVC.hidesBottomBarWhenPushed = true
+            commentsVC.listController = self
+            
+            tableView.deselectRowAtIndexPath(indexPath, animated: true)
+            
+            self.navigationController?.pushViewController(commentsVC, animated: true)
+        }
     }
     
     func refreshView(refreshView:YRRefreshView,didClickButton btn:UIButton)
@@ -461,7 +493,7 @@ class YRMainViewController: UIViewController,UITableViewDelegate,UITableViewData
         imgDetailVC.imageArray = imageArray as! [UIImage];
         imgDetailVC.parentController = self
         imgDetailVC.startImageIndex = imageIndex
-        imgDetailVC.modalTransitionStyle = UIModalTransitionStyle.PartialCurl
+        imgDetailVC.modalTransitionStyle = UIModalTransitionStyle.CrossDissolve
 
         //self.tabBarController?.tabBar.hidden = true
         

@@ -35,9 +35,12 @@
 		73BB89FE1AAF4A1E00CAECB5 /* 108.png in Resources */ = {isa = PBXBuildFile; fileRef = 73BB89FD1AAF4A1E00CAECB5 /* 108.png */; };
 		73BB8A001AAF533600CAECB5 /* YRSendComment.xib in Resources */ = {isa = PBXBuildFile; fileRef = 73BB89FF1AAF533600CAECB5 /* YRSendComment.xib */; };
 		73BB8A021AAF53AE00CAECB5 /* YRSendComment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 73BB8A011AAF53AE00CAECB5 /* YRSendComment.swift */; };
+		860804A31CAB69FB00372A00 /* ActivityCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 860804A11CAB69FB00372A00 /* ActivityCell.swift */; };
+		860804A41CAB69FB00372A00 /* ActivityCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 860804A21CAB69FB00372A00 /* ActivityCell.xib */; };
 		860D538C1BBCCCAD00F16202 /* UniversityPageObj.swift in Sources */ = {isa = PBXBuildFile; fileRef = 860D538B1BBCCCAD00F16202 /* UniversityPageObj.swift */; };
 		86450F3F1AACB254001D6CE8 /* MyPostCommentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86450F3E1AACB254001D6CE8 /* MyPostCommentViewController.swift */; };
 		86450F411AACDFB9001D6CE8 /* MyRepliesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 86450F401AACDFB9001D6CE8 /* MyRepliesViewController.swift */; };
+		864A4F761CB2D38F00631EA9 /* ActivityViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 864A4F751CB2D38F00631EA9 /* ActivityViewController.swift */; };
 		8670A7FE1C6F8D2C00A3F7ED /* QBAnimationSequence.m in Sources */ = {isa = PBXBuildFile; fileRef = 8670A7F81C6F8D2C00A3F7ED /* QBAnimationSequence.m */; };
 		8670A7FF1C6F8D2C00A3F7ED /* QBAnimationItem.m in Sources */ = {isa = PBXBuildFile; fileRef = 8670A7FA1C6F8D2C00A3F7ED /* QBAnimationItem.m */; };
 		8670A8001C6F8D2C00A3F7ED /* QBAnimationGroup.m in Sources */ = {isa = PBXBuildFile; fileRef = 8670A7FC1C6F8D2C00A3F7ED /* QBAnimationGroup.m */; };
@@ -127,9 +130,12 @@
 		73BB89FF1AAF533600CAECB5 /* YRSendComment.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = YRSendComment.xib; sourceTree = "<group>"; };
 		73BB8A011AAF53AE00CAECB5 /* YRSendComment.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YRSendComment.swift; sourceTree = "<group>"; };
 		7E2882FA1B1DEA04003F95EB /* MessageUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MessageUI.framework; path = System/Library/Frameworks/MessageUI.framework; sourceTree = SDKROOT; };
+		860804A11CAB69FB00372A00 /* ActivityCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActivityCell.swift; sourceTree = "<group>"; };
+		860804A21CAB69FB00372A00 /* ActivityCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ActivityCell.xib; sourceTree = "<group>"; };
 		860D538B1BBCCCAD00F16202 /* UniversityPageObj.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UniversityPageObj.swift; sourceTree = "<group>"; };
 		86450F3E1AACB254001D6CE8 /* MyPostCommentViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyPostCommentViewController.swift; sourceTree = "<group>"; };
 		86450F401AACDFB9001D6CE8 /* MyRepliesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyRepliesViewController.swift; sourceTree = "<group>"; };
+		864A4F751CB2D38F00631EA9 /* ActivityViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActivityViewController.swift; sourceTree = "<group>"; };
 		8670A7F81C6F8D2C00A3F7ED /* QBAnimationSequence.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QBAnimationSequence.m; sourceTree = "<group>"; };
 		8670A7F91C6F8D2C00A3F7ED /* QBAnimationSequence.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QBAnimationSequence.h; sourceTree = "<group>"; };
 		8670A7FA1C6F8D2C00A3F7ED /* QBAnimationItem.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QBAnimationItem.m; sourceTree = "<group>"; };
@@ -272,6 +278,8 @@
 				73BB8A011AAF53AE00CAECB5 /* YRSendComment.swift */,
 				86D0A4F61AE012A100D86953 /* LikeViewCell.swift */,
 				86D0A4F71AE012A100D86953 /* LikeViewCell.xib */,
+				860804A11CAB69FB00372A00 /* ActivityCell.swift */,
+				860804A21CAB69FB00372A00 /* ActivityCell.xib */,
 			);
 			name = view;
 			sourceTree = "<group>";
@@ -302,6 +310,7 @@
 				9CC38CD51C3DC4AA00D559B2 /* LanguageSettingTableViewController.swift */,
 				2F0A4F3F1C4E1A7100C9580A /* ImagesDetailViewController.swift */,
 				86A11FC91C6466440028CE4C /* CheckLocationViewController.swift */,
+				864A4F751CB2D38F00631EA9 /* ActivityViewController.swift */,
 			);
 			name = viewController;
 			sourceTree = "<group>";
@@ -507,6 +516,7 @@
 				73BB8A001AAF533600CAECB5 /* YRSendComment.xib in Resources */,
 				73BB084B1AADED0800F8C878 /* user.plist in Resources */,
 				868A30621A9E972700FC9EF9 /* LaunchScreen.xib in Resources */,
+				860804A41CAB69FB00372A00 /* ActivityCell.xib in Resources */,
 				239A384E1A9FFB13000976E0 /* YRCommnentsCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -577,6 +587,7 @@
 				9C1B7BDB1C41995B001924A5 /* ProfileTableViewController.swift in Sources */,
 				E342EB581B90FDBE00B2E534 /* SchoolObject.swift in Sources */,
 				86F213E41BD03CA40032EC94 /* ZLSwiftConstDefine.swift in Sources */,
+				864A4F761CB2D38F00631EA9 /* ActivityViewController.swift in Sources */,
 				2363F9981AA00A1E009957D1 /* YRImageViewController.swift in Sources */,
 				239A38401A9FF414000976E0 /* NSStringExt.swift in Sources */,
 				239A38421A9FF414000976E0 /* UIViewExt.swift in Sources */,
@@ -588,6 +599,7 @@
 				86F7EFA21BDA7BB400FC1C2B /* ZLSwiftHeadView.swift in Sources */,
 				86A2E6481AAC9ECC00499C13 /* UniversityViewController.swift in Sources */,
 				86F213E81BD03CA40032EC94 /* ZLSwiftRefreshExtension.swift in Sources */,
+				860804A31CAB69FB00372A00 /* ActivityCell.swift in Sources */,
 				86D0A4F81AE012A100D86953 /* LikeViewCell.swift in Sources */,
 				860D538C1BBCCCAD00F16202 /* UniversityPageObj.swift in Sources */,
 				E3780B0A1B1FE67500EB662E /* YRJokeCell2.swift in Sources */,
@@ -785,6 +797,7 @@
 				PRODUCT_NAME = UniPub;
 				PROVISIONING_PROFILE = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "Whoops/Swift-Bridging-OC.h";
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
 		};
@@ -819,6 +832,7 @@
 				PRODUCT_NAME = UniPub;
 				PROVISIONING_PROFILE = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "Whoops/Swift-Bridging-OC.h";
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
 		};

@@ -73,7 +73,7 @@ class YRJokeCell2: UITableViewCell
     var universityController:UniversityViewController!
     var postViewController:MyPostsViewController!
     var replyController:MyRepliesViewController!
-    
+    var activityConroller:ActivityViewController!
     
     var bInMain:Bool = false
     
