@@ -59,6 +59,7 @@ class YRCommentsViewController: UIViewController,UITableViewDelegate,UITableView
     
     func DismissKeyboard(){
         //Causes the view (or one of its embedded text fields) to resign the first responder status.
+        self.sendView?.commentText.placeholder = "Write some comments".localized()
         view.endEditing(true)
     }
     
@@ -102,7 +103,7 @@ class YRCommentsViewController: UIViewController,UITableViewDelegate,UITableView
             }
         }
         
-        let detectGesture:UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: "detectTableTouch:")
+        let detectGesture:UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(YRCommentsViewController.detectTableTouch(_:)))
         self.view.addGestureRecognizer(detectGesture)
     }
     
@@ -126,7 +127,7 @@ class YRCommentsViewController: UIViewController,UITableViewDelegate,UITableView
         let ty = keyboardFrame.origin.y - view.frame.height;
         
         if (ty < 0){
-            tapGesture = UITapGestureRecognizer(target: self, action: "DismissKeyboard")
+            tapGesture = UITapGestureRecognizer(target: self, action: #selector(YRCommentsViewController.DismissKeyboard))
             view.addGestureRecognizer(tapGesture!)
         }
         else {
@@ -426,6 +427,10 @@ class YRCommentsViewController: UIViewController,UITableViewDelegate,UITableView
     func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
         let row = indexPath.row
         //let cell:YRCommnentsCell = tableView.cellForRowAtIndexPath(indexPath) as! YRCommnentsCell
+        
+        if (oldIndexPath != indexPath){
+            sendView?.commentText.text = ""
+        }
         let data = self.dataArray[row] as! NSDictionary
         let commentId = data.stringAttributeForKey("id")
         sendView?.commentText.placeholder = "@" + String(row + 1) + " " + "floor".localized()
