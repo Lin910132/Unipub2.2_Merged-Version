@@ -349,7 +349,7 @@ class YRMainViewController: UIViewController,UITableViewDelegate,UITableViewData
         url += "&uid=\(FileUtility.getUserId())"
         
         if (type == 2){ //4
-            url = FileUtility.getUrlDomain() + "whoops/activity/activityData"
+            url = FileUtility.getUrlDomain() + "activity/activityData"
         }
         
         
