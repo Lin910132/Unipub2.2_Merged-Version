@@ -346,11 +346,12 @@ class YRMainViewController: UIViewController,UITableViewDelegate,UITableViewData
                 url += "post/listHotAll?pageNum=\(page[type])"
             }
         }
+        url += "&uid=\(FileUtility.getUserId())"
         
         if (type == 2){ //4
-            url = FileUtility.getUrlDomain() + "post/listByActivity?activityId=1&pageNum=\(page[type])"
+            url = FileUtility.getUrlDomain() + "whoops/activity/activityData"
         }
-        url += "&uid=\(FileUtility.getUserId())"
+        
         
         return url
     }
@@ -419,6 +420,7 @@ class YRMainViewController: UIViewController,UITableViewDelegate,UITableViewData
             if activityCell == nil{
                 activityCell = ActivityCell(style: .Default, reuseIdentifier: activityIdentifier)
             }
+            activityCell?.imgUrl = data.stringAttributeForKey("images")
             activityCell?.SetUpVeiw()
             return activityCell!
         }
@@ -442,7 +444,7 @@ class YRMainViewController: UIViewController,UITableViewDelegate,UITableViewData
         if self.type != 2 {
             return  YRJokeCell2.cellHeightByData(data)
         }else{
-            return 100
+            return 200
         }
         
     }
@@ -455,6 +457,7 @@ class YRMainViewController: UIViewController,UITableViewDelegate,UITableViewData
             let activityVC = ActivityViewController(nibName: nil, bundle: nil)
             activityVC.url = FileUtility.getUrlDomain() + "post/listByActivity?activityId=1&pageNum=\(page[type])" +
                 "&uid=\(FileUtility.getUserId())"
+            activityVC.MainViewController = self
             tableView.deselectRowAtIndexPath(indexPath, animated: true)
             //self.tabBarController?.hidesBottomBarWhenPushed = true
             self.navigationController?.pushViewController(activityVC, animated: true)

@@ -18,6 +18,7 @@ class ActivityViewController: UIViewController, UITableViewDelegate, UITableView
     var stopLoading = Bool()
     
     var tableView: UITableView!
+    var MainViewController:YRMainViewController?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -34,6 +35,7 @@ class ActivityViewController: UIViewController, UITableViewDelegate, UITableView
     }
     override func viewWillDisappear(animated: Bool) {
         self.tabBarController?.tabBar.hidden = false
+        self.MainViewController?.fromDetail = true
         NSNotificationCenter.defaultCenter().removeObserver(self, name: "imageViewTapped", object:nil)
     }
     

@@ -12,6 +12,7 @@ class ActivityCell: UITableViewCell {
 
     
     @IBOutlet var activityImg: UIImageView!
+    var imgUrl = ""
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -24,7 +25,11 @@ class ActivityCell: UITableViewCell {
     }
     
     func SetUpVeiw() {
-        activityImg.image = UIImage(named: "Logoo")
+        if (imgUrl != ""){
+            imgUrl = FileUtility.getUrlImage() + (imgUrl as String);
+            activityImg.setImage(imgUrl,placeHolder: UIImage(named: "Logoo.png"));
+        }
+        //activityImg.image = UIImage(named: "Logoo")
     }
     
 }
