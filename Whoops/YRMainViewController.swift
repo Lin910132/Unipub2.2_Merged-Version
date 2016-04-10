@@ -43,7 +43,6 @@ class YRMainViewController: UIViewController,UITableViewDelegate,UITableViewData
     var userId:String = "0"
     
     var type:Int = 2
-    var startIndex:Int = 2
     
     let itemArray = ["New","Hot","Favorite","All Time Hot","Rank"]
     var loadingFlag = [0, 0, 0, 0, 0]
@@ -159,7 +158,7 @@ class YRMainViewController: UIViewController,UITableViewDelegate,UITableViewData
             fromPost = false
         }
         else {
-            self.tabBarButtonClicked(buttons[startIndex])
+            self.tabBarButtonClicked(buttons[currentIndex])
         }
         
     }
