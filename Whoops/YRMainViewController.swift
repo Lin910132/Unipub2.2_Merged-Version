@@ -421,7 +421,7 @@ class YRMainViewController: UIViewController,UITableViewDelegate,UITableViewData
             if activityCell == nil{
                 activityCell = ActivityCell(style: .Default, reuseIdentifier: activityIdentifier)
             }
-            activityCell?.imgUrl = data.stringAttributeForKey("images")
+            activityCell?.imgString = data.stringAttributeForKey("images")
             activityCell?.SetUpVeiw()
             return activityCell!
         }
@@ -445,7 +445,7 @@ class YRMainViewController: UIViewController,UITableViewDelegate,UITableViewData
         if self.type != 2 {
             return  YRJokeCell2.cellHeightByData(data)
         }else{
-            return 200
+            return 250
         }
         
     }

@@ -12,7 +12,8 @@ class ActivityCell: UITableViewCell {
 
     
     @IBOutlet var activityImg: UIImageView!
-    var imgUrl = ""
+    var imgString = ""
+    var data = NSDictionary()
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -25,8 +26,12 @@ class ActivityCell: UITableViewCell {
     }
     
     func SetUpVeiw() {
-        if (imgUrl != ""){
-            imgUrl = FileUtility.getUrlImage() + (imgUrl as String);
+        
+        let imgArray = imgString.componentsSeparatedByString(",") as NSArray
+
+        if (imgArray.count > 0){
+            var imgUrl = imgArray[0] as! String
+            imgUrl = FileUtility.getUrlImage() + imgUrl;
             activityImg.setImage(imgUrl,placeHolder: UIImage(named: "Logoo.png"));
         }
         //activityImg.image = UIImage(named: "Logoo")
