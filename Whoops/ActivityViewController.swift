@@ -8,7 +8,7 @@
 
 import UIKit
 
-class ActivityViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+class ActivityViewController: UIViewController, UITableViewDelegate, UITableViewDataSource{
 
     let identifier = "cell"
     
@@ -217,7 +217,7 @@ class ActivityViewController: UIViewController, UITableViewDelegate, UITableView
         cell!.setCellUp()
         cell?.rowIndex = indexPath
         cell?.activityConroller = self
-        cell?.category = 2
+        cell?.category = 5
         //cell!.delegate = self;
         //cell!.refreshUniversityDelete = self
         cell!.backgroundColor = UIColor(red:246.0/255.0 , green:246.0/255.0 , blue:246.0/255.0 , alpha: 1.0);
@@ -231,7 +231,7 @@ class ActivityViewController: UIViewController, UITableViewDelegate, UITableView
         commentsVC.jokeId = data.stringAttributeForKey("id")
         commentsVC.activityController = self
         commentsVC.rowIndex = indexPath
-        commentsVC.category = 2
+        commentsVC.category = 5
         commentsVC.hidesBottomBarWhenPushed = true
         tableView.deselectRowAtIndexPath(indexPath, animated: true)
         self.navigationController?.pushViewController(commentsVC, animated: true)

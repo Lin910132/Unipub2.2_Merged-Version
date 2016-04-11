@@ -302,6 +302,7 @@ class YRCommentsViewController: UIViewController,UITableViewDelegate,UITableView
             self.headerView?.postViewController = self.postController
             self.headerView?.replyController = self.replyController
             self.headerView?.universityController = self.universityController
+            self.headerView?.activityConroller = self.activityController
             self.headerView?.setCellUp()
             self.headerView?.frame = CGRectMake(0, 0, self.view.frame.size.width,YRJokeCell2.cellHeightByData(post))
             self.headerView?.backgroundColor = UIColor(red:246.0/255.0 , green:246.0/255.0 , blue:246.0/255.0 , alpha: 1.0);

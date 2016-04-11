@@ -43,6 +43,10 @@ protocol YRRefreshMyRepliesDelegate
     func refreshMyRepliesByFavor();
 }
 
+protocol RefreshActivityDelegate {
+    func refreshActivityByFavor()
+}
+
 
 
 
@@ -522,6 +526,9 @@ class YRJokeCell2: UITableViewCell
             else if (self.category == 4){
                 self.replyController.changeButtonState(0, rIndex: rowIndex, key: "isFavor", value: "")
             }
+            else if (self.category == 5){
+                self.activityConroller.changeButtonState(0, rIndex: rowIndex, key: "isFavor", value: "")
+            }
         }else{
             self.favButton.setImage(UIImage(named:"starB1"), forState: UIControlState.Normal);
             isFaveFlag = true
@@ -536,6 +543,9 @@ class YRJokeCell2: UITableViewCell
             }
             else if (self.category == 4){
                 self.replyController.changeButtonState(0, rIndex: rowIndex, key: "isFavor", value: "favor")
+            }
+            else if (self.category == 5){
+                self.activityConroller.changeButtonState(0, rIndex: rowIndex, key: "isFavor", value: "")
             }
         }
         
@@ -578,6 +588,10 @@ class YRJokeCell2: UITableViewCell
                     self.replyController.changeButtonState(0, rIndex: self.rowIndex, key: "isLike", value: "1")
                     self.replyController.changeButtonState(0, rIndex: self.rowIndex, key: "likeNum", value: self.likeNum.text!)
                 }
+                else if (self.category == 5){
+                    self.activityConroller.changeButtonState(0, rIndex: self.rowIndex, key: "isLike", value: "1")
+                    self.activityConroller.changeButtonState(0, rIndex: self.rowIndex, key: "likeNum", value: self.likeNum.text!)
+                }
                 
             }else{
                 self.likeButton.setImage(UIImage(named:"LikeNew"), forState: UIControlState.Normal);
@@ -596,6 +610,10 @@ class YRJokeCell2: UITableViewCell
                 else if (self.category == 4){
                     self.replyController.changeButtonState(0, rIndex: self.rowIndex, key: "isLike", value: "0")
                     self.replyController.changeButtonState(0, rIndex: self.rowIndex, key: "likeNum", value: self.likeNum.text!)
+                }
+                else if (self.category == 5){
+                    self.activityConroller.changeButtonState(0, rIndex: self.rowIndex, key: "isLike", value: "1")
+                    self.activityConroller.changeButtonState(0, rIndex: self.rowIndex, key: "likeNum", value: self.likeNum.text!)
                 }
             }
 
@@ -639,6 +657,10 @@ class YRJokeCell2: UITableViewCell
                     self.replyController.changeButtonState(0, rIndex: self.rowIndex, key: "isLike", value: "-1")
                     self.replyController.changeButtonState(0, rIndex: self.rowIndex, key: "likeNum", value: self.likeNum.text!)
                 }
+                else if (self.category == 5){
+                    self.activityConroller.changeButtonState(0, rIndex: self.rowIndex, key: "isLike", value: "-1")
+                    self.activityConroller.changeButtonState(0, rIndex: self.rowIndex, key: "likeNum", value: self.likeNum.text!)
+                }
             }else{
                 self.unlikeButton.setImage(UIImage(named:"unlikeNew"), forState: UIControlState.Normal);
                 if (self.category == 1){
@@ -656,6 +678,10 @@ class YRJokeCell2: UITableViewCell
                 else if (self.category == 4){
                     self.replyController.changeButtonState(0, rIndex: self.rowIndex, key: "isLike", value: "0")
                     self.replyController.changeButtonState(0, rIndex: self.rowIndex, key: "likeNum", value: self.likeNum.text!)
+                }
+                else if (self.category == 5){
+                    self.activityConroller.changeButtonState(0, rIndex: self.rowIndex, key: "isLike", value: "-1")
+                    self.activityConroller.changeButtonState(0, rIndex: self.rowIndex, key: "likeNum", value: self.likeNum.text!)
                 }
             }
 
