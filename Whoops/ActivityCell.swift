@@ -34,15 +34,8 @@ class ActivityCell: UITableViewCell {
     func SetUpVeiw() {
         //self.wftLabel.backgroundColor = UIColor(colorLiteralRed: 1, green: 1, blue: 1, alpha: 0.5)
         self.bringSubviewToFront(labelBackground)
-        
-        let content = data.stringAttributeForKey("name")
-        
-        let width = self.ChineseName.width()
-        let height = content.stringHeightWith(17,width:width)
-        
-        self.ChineseName.setHeight(height)
-        self.ChineseName.text = content
-        
+        self.ChineseName.text = data.stringAttributeForKey("name")
+        self.EnglishName.text = data.stringAttributeForKey("remark")
         //let backgroundHeight = self.ChineseName.height() + 10
         self.labelBackground.backgroundColor = UIColor(colorLiteralRed: 1, green: 1, blue: 1, alpha: 0.5)
         //self.labelBackground.frame = CGRectMake(x(), self.height() - backgroundHeight, width, 50)
