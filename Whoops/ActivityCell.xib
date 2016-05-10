@@ -1,8 +1,9 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="10116" systemVersion="15D21" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="10117" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <objects>
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
@@ -15,18 +16,53 @@
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="7zw-9M-Jsd">
-                        <rect key="frame" x="0.0" y="0.0" width="376" height="173"/>
+                        <rect key="frame" x="0.0" y="0.0" width="376" height="172.5"/>
                     </imageView>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="X5r-hT-LH5">
+                        <rect key="frame" x="208" y="106" width="160" height="58"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7bZ-7D-IMD">
+                                <rect key="frame" x="6" y="8" width="129" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AaZ-Z6-Y0V">
+                                <rect key="frame" x="6" y="29" width="129" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="AaZ-Z6-Y0V" firstAttribute="leading" secondItem="X5r-hT-LH5" secondAttribute="leading" constant="6" id="5Bt-pd-NBi"/>
+                            <constraint firstItem="AaZ-Z6-Y0V" firstAttribute="top" secondItem="7bZ-7D-IMD" secondAttribute="bottom" id="8kc-aT-hlW"/>
+                            <constraint firstAttribute="trailing" secondItem="AaZ-Z6-Y0V" secondAttribute="trailing" constant="8" id="ENa-d7-F0s"/>
+                            <constraint firstItem="7bZ-7D-IMD" firstAttribute="top" secondItem="X5r-hT-LH5" secondAttribute="top" constant="8" id="Hw4-Jt-v1V"/>
+                            <constraint firstItem="AaZ-Z6-Y0V" firstAttribute="top" secondItem="7bZ-7D-IMD" secondAttribute="bottom" id="NKT-Vo-4t1"/>
+                            <constraint firstAttribute="height" constant="58" id="PfL-NR-2sA"/>
+                            <constraint firstItem="7bZ-7D-IMD" firstAttribute="leading" secondItem="X5r-hT-LH5" secondAttribute="leading" constant="6" id="T1Z-Dc-2Wx"/>
+                            <constraint firstAttribute="width" constant="160" id="XLK-ji-mVZ"/>
+                            <constraint firstAttribute="bottom" secondItem="AaZ-Z6-Y0V" secondAttribute="bottom" constant="8" id="bDm-6p-MJF"/>
+                            <constraint firstAttribute="trailing" secondItem="7bZ-7D-IMD" secondAttribute="trailing" constant="8" id="uLX-KW-pio"/>
+                        </constraints>
+                    </view>
                 </subviews>
                 <constraints>
-                    <constraint firstItem="7zw-9M-Jsd" firstAttribute="centerY" secondItem="H2p-sc-9uM" secondAttribute="centerY" id="GCu-X0-IOu"/>
-                    <constraint firstItem="7zw-9M-Jsd" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" id="LfX-Sq-Nuo"/>
-                    <constraint firstItem="7zw-9M-Jsd" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" id="VOd-t7-nQW"/>
-                    <constraint firstAttribute="trailing" secondItem="7zw-9M-Jsd" secondAttribute="trailing" id="rhl-SZ-7Qr"/>
+                    <constraint firstAttribute="bottomMargin" secondItem="X5r-hT-LH5" secondAttribute="bottom" constant="0.5" id="3G2-bU-efi"/>
+                    <constraint firstItem="7zw-9M-Jsd" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" constant="-8" id="HHF-jJ-nt5"/>
+                    <constraint firstAttribute="bottomMargin" secondItem="7zw-9M-Jsd" secondAttribute="bottom" constant="-8" id="P81-38-nRm"/>
+                    <constraint firstItem="7zw-9M-Jsd" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" constant="-8" id="ZlT-il-ZuT"/>
+                    <constraint firstItem="X5r-hT-LH5" firstAttribute="trailing" secondItem="H2p-sc-9uM" secondAttribute="trailingMargin" id="oUJ-9j-WSK"/>
+                    <constraint firstAttribute="trailingMargin" secondItem="7zw-9M-Jsd" secondAttribute="trailing" constant="-8" id="pJn-lK-01S"/>
                 </constraints>
             </tableViewCellContentView>
             <connections>
+                <outlet property="ChineseName" destination="7bZ-7D-IMD" id="2SF-X3-TPH"/>
+                <outlet property="EnglishName" destination="AaZ-Z6-Y0V" id="87i-zo-IPh"/>
                 <outlet property="activityImg" destination="7zw-9M-Jsd" id="SFW-bz-dcC"/>
+                <outlet property="labelBackground" destination="X5r-hT-LH5" id="XnQ-ZZ-eaK"/>
             </connections>
             <point key="canvasLocation" x="257" y="317.5"/>
         </tableViewCell>

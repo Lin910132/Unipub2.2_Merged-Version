@@ -422,6 +422,7 @@ class YRMainViewController: UIViewController,UITableViewDelegate,UITableViewData
                 activityCell = ActivityCell(style: .Default, reuseIdentifier: activityIdentifier)
             }
             activityCell?.imgString = data.stringAttributeForKey("images")
+            activityCell?.data = data
             activityCell?.SetUpVeiw()
             return activityCell!
         }

@@ -14,6 +14,12 @@ class ActivityCell: UITableViewCell {
     @IBOutlet var activityImg: UIImageView!
     var imgString = ""
     var data = NSDictionary()
+    @IBOutlet var nameLabel: UILabel!
+    @IBOutlet var labelBackground: UIView!
+    @IBOutlet var ChineseName: UILabel!
+    @IBOutlet var EnglishName: UILabel!
+    
+
     
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -26,7 +32,21 @@ class ActivityCell: UITableViewCell {
     }
     
     func SetUpVeiw() {
+        //self.wftLabel.backgroundColor = UIColor(colorLiteralRed: 1, green: 1, blue: 1, alpha: 0.5)
+        self.bringSubviewToFront(labelBackground)
         
+        let content = data.stringAttributeForKey("name")
+        
+        let width = self.ChineseName.width()
+        let height = content.stringHeightWith(17,width:width)
+        
+        self.ChineseName.setHeight(height)
+        self.ChineseName.text = content
+        
+        //let backgroundHeight = self.ChineseName.height() + 10
+        self.labelBackground.backgroundColor = UIColor(colorLiteralRed: 1, green: 1, blue: 1, alpha: 0.5)
+        //self.labelBackground.frame = CGRectMake(x(), self.height() - backgroundHeight, width, 50)
+        self.labelBackground.setHeight(50)
         let imgArray = imgString.componentsSeparatedByString(",") as NSArray
 
         if (imgArray.count > 0){
