@@ -13,9 +13,10 @@ class ActivityViewController: UIViewController, UITableViewDelegate, UITableView
     let identifier = "cell"
     
     var url = ""
+    var sorceUrl = ""
     var page = 1
     var dataArray = NSMutableArray()
-    var stopLoading = Bool()
+    var stopLoading = false
     
     var tableView: UITableView!
     var MainViewController:YRMainViewController?
@@ -78,11 +79,14 @@ class ActivityViewController: UIViewController, UITableViewDelegate, UITableView
     
     func actionRefreshHandler(sender: UIRefreshControl)
     {
+        self.stopLoading = false
         self.page = 1
         //let url = "http://104.131.91.181:8080/whoops/post/listNewBySchool?schoolId=\(self.schoolId)&pageNum=1&uid=\(FileUtility.getUserId())"
         if url == ""{
             UIView.showAlertView("Opps".localized(), message: "Can't find the Activity...")
             return
+        }else{
+            self.sorceUrl = url + "&pageNum=\(page)"
         }
         
         YRHttpRequest.requestWithURL(url,completionHandler:{ data in
@@ -114,9 +118,11 @@ class ActivityViewController: UIViewController, UITableViewDelegate, UITableView
         if url == ""{
             UIView.showAlertView("Opps".localized(), message: "Can't find the Activity...")
             return
+        }else{
+            self.sorceUrl = url + "&pageNum=\(page)"
         }
         
-        YRHttpRequest.requestWithURL(url,completionHandler:{ data in
+        YRHttpRequest.requestWithURL(self.sorceUrl,completionHandler:{ data in
             
             if data as! NSObject == NSNull()
             {
@@ -130,7 +136,9 @@ class ActivityViewController: UIViewController, UITableViewDelegate, UITableView
             }
             
             if (arr.count == 0){
-                self.tableView.endLoadMoreData()
+                self.stopLoading = true
+            }else{
+                self.stopLoading = false
             }
             
             for data : AnyObject  in arr
@@ -221,6 +229,12 @@ class ActivityViewController: UIViewController, UITableViewDelegate, UITableView
         //cell!.delegate = self;
         //cell!.refreshUniversityDelete = self
         cell!.backgroundColor = UIColor(red:246.0/255.0 , green:246.0/255.0 , blue:246.0/255.0 , alpha: 1.0);
+        
+        if (indexPath.row == dataArray.count-1)&&(!self.stopLoading){
+            page++
+            loadData()
+        }
+        
         return cell!
     }
     
