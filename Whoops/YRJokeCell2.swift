@@ -545,7 +545,7 @@ class YRJokeCell2: UITableViewCell
                 self.replyController.changeButtonState(0, rIndex: rowIndex, key: "isFavor", value: "favor")
             }
             else if (self.category == 5){
-                self.activityConroller.changeButtonState(0, rIndex: rowIndex, key: "isFavor", value: "")
+                self.activityConroller.changeButtonState(0, rIndex: rowIndex, key: "isFavor", value: "favor")
             }
         }
         

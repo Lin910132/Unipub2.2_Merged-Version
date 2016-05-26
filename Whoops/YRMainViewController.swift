@@ -654,7 +654,7 @@ class YRMainViewController: UIViewController,UITableViewDelegate,UITableViewData
     func refreshMain(){
         //let fresh:UIRefreshControl = UIRefreshControl()
         //self.actionRefreshHandler(fresh)
-        for (var i = 0; i < 5; i++){
+        for i in 0 ... 4{
             self.loadingFlag[i] = 0
         }
     }

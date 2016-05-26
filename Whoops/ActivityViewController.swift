@@ -176,6 +176,7 @@ class ActivityViewController: UIViewController, UITableViewDelegate, UITableView
         if (key == "isFavor"){
             data.setValue(value, forKey: key)
             bChanged = true
+            MainViewController?.refreshMain()
         }
         else if (key == "isLike"){
             data.setValue(value, forKey: key)
