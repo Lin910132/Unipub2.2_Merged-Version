@@ -456,19 +456,9 @@ class YRMainViewController: UIViewController,UITableViewDelegate,UITableViewData
         let tableIndex = getTableIndex(tableView)
         
         if (tableIndex == 2){
-            let data = self.dataArray[tableIndex][index.row] as! NSDictionary
-            let activityId = data.stringAttributeForKey("id")
             let activityVC = ActivityViewController(nibName: nil, bundle: nil)
-            
-            if (index.row == 0){
-                activityVC.url = FileUtility.getUrlDomain() + "post/listByActivity?activityId=1" +
-                    "&uid=\(FileUtility.getUserId())"
-            }else{
-                activityVC.url = FileUtility.getUrlDomain() + "post/listByActivity?activityId=\(activityId)" +
-                    "&uid=\(FileUtility.getUserId())"
-            }
-            
-            
+            activityVC.url = FileUtility.getUrlDomain() + "post/listByActivity?activityId=1&pageNum=\(page[type])" +
+                "&uid=\(FileUtility.getUserId())"
             activityVC.MainViewController = self
             tableView.deselectRowAtIndexPath(indexPath, animated: true)
             //self.tabBarController?.hidesBottomBarWhenPushed = true
