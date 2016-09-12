@@ -41,11 +41,17 @@ class ActivityCell: UITableViewCell {
         //self.labelBackground.frame = CGRectMake(x(), self.height() - backgroundHeight, width, 50)
         self.labelBackground.setHeight(50)
         let imgArray = imgString.componentsSeparatedByString(",") as NSArray
-
+        
         if (imgArray.count > 0){
             var imgUrl = imgArray[0] as! String
-            imgUrl = FileUtility.getUrlImage() + imgUrl;
-            activityImg.setImage(imgUrl,placeHolder: UIImage(named: "Logoo.png"));
+            if (imgUrl == ""){
+                activityImg.image=UIImage(named: "Logoo.png")
+            }else{
+                imgUrl = FileUtility.getUrlImage() + imgUrl;
+                activityImg.setImage(imgUrl,placeHolder: UIImage(named: "Logoo.png"));
+            }
+            
+            //activityImg.setImage()
         }
         //activityImg.image = UIImage(named: "Logoo")
     }

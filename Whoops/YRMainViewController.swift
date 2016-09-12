@@ -45,7 +45,7 @@ class YRMainViewController: UIViewController,UITableViewDelegate,UITableViewData
     var type:Int = 2
     var startIndex:Int = 2
     
-    let itemArray = ["New","Hot","Favorite","All Time Hot","Rank"]
+    let itemArray = ["New","Hot","Favorite","All Time Hot","Activities"]
     var loadingFlag = [0, 0, 0, 0, 0]
     var currentDataCount = [0, 0, 0, 0, 0]
     var buttons = NSMutableArray()
